@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                  </button>
 				<a href="http://www.state.gov"><img src="img/doslogo5.png" alt="" height="65" width="65"></a>				
-				<a class="navbar-brand" href="https://hiu.state.gov/">HIU</a>
+				<!--<a href="https://hiu.state.gov/"><img src="img/doslogo5.png" alt="" height="65" width="65"></a>-->
 			</div>
 
      <!-- Collect the nav links, forms, and other content for toggling -->
@@ -145,7 +145,7 @@
                                 <i class=""><h3>Medellin,<br>Colombia</h3></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/Medellin_b.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/medellin_b.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
