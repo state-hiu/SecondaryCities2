@@ -26,6 +26,17 @@ gulp.task('squish-jquery', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Minify Javascript Plugins: Run manually with: "gulp squish-js"
+gulp.task('squish-js', function () {
+    return gulp.src('assets/js/libs/**/*.js')
+        .pipe(plugins.uglify({
+            output: {
+                'ascii_only': true
+            }
+        }))
+        .pipe(plugins.concat('plugins.min.js'))
+        .pipe(gulp.dest('build'));
+});
 
 // re-size images: Run manually with: "gulp resize-img"
 gulp.task('resize-img', function () {
