@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Kharkiv, Ukraine"
+date:   2016-02-03 15:08:10 -0500
+img: img/portfolio/Kharkiv2.jpg
+modalID: modalSubmarine
+category: Design
+---
+Kharkiv was founded in 1654 as a small fortress that grew to become a major center of Ukrainian culture within the Russian Empire.  The city functioned as the first capital of the Ukrainian Soviet Socialist Republic until 1935, after which the capital was relocated to Kiev. Kharkiv is the administrative center of Kharkiv Oblast and of the surrounding Kharkiv district.  The city’s population is the second largest in Ukraine.  Although the majority of the population is Ukrainian both in nationality and ethnicity, Kharkiv’s largest minority is of Russian descent due to its history and proximity to Russia.
+
+[flat-icons-link]: https://sellfy.com/p/8Q9P/jV3VZ/

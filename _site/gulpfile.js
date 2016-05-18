@@ -42,8 +42,8 @@ gulp.task('squish-js', function () {
 gulp.task('resize-img', function () {
   gulp.src('img/portfolio/original/*')
     .pipe(imageResize({ 
-      width : 900,
-      height : 650,
+      width : 700,
+      height : 500,
       crop : true,
       upscale : false
     }))
