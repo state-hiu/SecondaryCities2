@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Medellin, Colombia"
+title:  "Medellin, Peru"
 date:   2016-02-04 15:08:10 -0500
 img: img/portfolio/Medellin2.jpg
 modalID: modalGame
