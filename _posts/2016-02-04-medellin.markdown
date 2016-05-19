@@ -8,4 +8,20 @@ category: Design
 ---
 Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.
 
+# This is the Example Section
+
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://mapgive.state.gov)
+
+# This is part II
+
+#### This is an ordered list
+
+1. step 1
+2. step 2
+3. step 3
+
+![sample img](https://github.com/state-hiu/SecondaryCities2/blob/gh-pages/img/geonode.png)
+
+
+
 [flat-icons-link]: https://sellfy.com/p/8Q9P/jV3VZ/
