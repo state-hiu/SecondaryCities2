@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+{% include head.html %}
+<body>
+
+<nav class="small-12 columns fill-dark phn keyline-bottom">
+  <ul class="small-12 medium-8 medium-push-2 columns">
+    <li>
+      <h3 class="center serif"><a href="#">{{page.title}}</a></h3>
+    </li>
+  </ul>
+  <ul class="medium-2 columns inline-list right man">
+    <li class="right pas"><a href="#">home</a></li>
+  </ul>
+</nav>
+
+<div id="report-container" class="small-12">
+  <div id="report" class="small-4 columns keyline-right fill-white">
+
+    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
+<div class="slider tabs col10 pad0x margin1 mobile-cols space-bottom1 clearfix">
+<a class="col3 active" data-index="1">Report</a>
+<a class="col3" data-index="2">Maps</a>
+<a class="col3" data-index="3">Export</a>
+<a id="id-edit" class="col3 page-fade-link" href="//osm.moabi.org/edit?editor=id#map=5/-2.855/22.830">Edit</a>
+</div>
+</div>
+
+    {% for section in page.sections %}
+      <section class="animate{% if forloop.first %}active{% endif %}"
+               {% if section.latlng or section.zoom %}data-nav='{"latlng": [ {{section.latlng | join: ","}} ], "zoom": {{section.zoom}} }'{% endif %}
+               {% if section.tile_layers %}data-tileid='{{section.tile_layers | join: ","}}'{% endif %}
+               {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %}>
+        {% if section.title %}<h1 class="serif keyline-bottom pvs">{{ section.title }}</h1>{% endif %}
+        {% if forloop.first %}
+          <div class="mvs">
+            <div class="small"><strong>By {{page.author}}</strong></div>
+            <div class="small serif">{{page.date}}</div>
+          </div>
+        {% endif %}
+        <!-- display section banner_image.
+             If first section and there is no section banner_image specified, default to page banner_image -->
+        {% if section.banner_image %}
+          <figure>
+            <img src="{{section.banner_image}}" alt="banner image">
+            <figcaption>{{section.banner_image_caption}}</figcaption>
+            <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
+          </figure>
+        {% elsif forloop.first %}
+          <figure>
+            <img src="{{page.banner_image}}" alt="banner image">
+            <figcaption>{{page.banner_image_caption}}</figcaption>
+            <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
+          </figure>
+        {% endif %}
+
+        {{ section.body | markdownify }}
+
+      </section>
+    {% endfor %}
+
+    {% if page.footer %} <aside class="small quiet pvs keyline-top">{{page.footer}}</aside> {% endif %}
+  </div>
+
+  <div id="map" class="small-8 columns"></div>
+</div>
+
+{{ content }}
+
+<!-- Loading JavaScripts
+================================================== -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="{{site.baseurl}}js/vendor/jquery.js"><\/script>')
+  // simple hack to pass variables defined in Jekyll front matter to app.js
+  // set opening latlng and zoom coordinates to those set for the first section
+  pageConfig = {
+                 latlng: [ {{page.sections[0].latlng | join: ","}} ] , zoom: {{page.sections[0].zoom}},
+                 {% if page.data_source_name %}source_name: '{{page.data_source_name}}',{% endif %}
+                 {% if page.data_source_url %}source_url: '{{page.data_source_url}}',{% endif %}
+                 tileOrigins: {
+                   {% for origin in page.tileOrigins %}
+                     '{{origin.name}}':'{{origin.url}}'{% unless forloop.last %},{% endunless %}
+                   {% endfor %}
+                 }
+               };
+</script>
+<script src="{{site.baseurl}}js/vendor/jquery.waypoints.js"></script>
+<script src="{{site.baseurl}}js/foundation.min.js"></script>
+<script src="{{site.baseurl}}js/app.js"></script>
+
+</body>
+</html>
