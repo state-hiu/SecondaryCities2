@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-{% include head.html %}
+{% include georeport_head.html %}
+<style type="text/css">
+p {
+  font-size: 17px;
+}
+</style>
 <body>
 
+<!--
 <nav class="small-12 columns fill-dark phn keyline-bottom">
   <ul class="small-12 medium-8 medium-push-2 columns">
     <li>
@@ -13,11 +19,13 @@
     <li class="right pas"><a href="#">home</a></li>
   </ul>
 </nav>
+-->
+{% include georeport_navbar.html %}
 
 <div id="report-container" class="small-12">
-  <div id="report" class="small-4 columns keyline-right fill-white">
+  <div id="report" class="small-4 keyline-right fill-white">
 
-    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
+    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px;padding-bottom: 8px">
 <div class="slider tabs col10 pad0x margin1 mobile-cols space-bottom1 clearfix">
 <a class="col3 active" data-index="1">Report</a>
 <a class="col3" data-index="2">Maps</a>
@@ -30,7 +38,7 @@
       <section class="animate{% if forloop.first %}active{% endif %}"
                {% if section.latlng or section.zoom %}data-nav='{"latlng": [ {{section.latlng | join: ","}} ], "zoom": {{section.zoom}} }'{% endif %}
                {% if section.tile_layers %}data-tileid='{{section.tile_layers | join: ","}}'{% endif %}
-               {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %}>
+               {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %} id="sidebar">
         {% if section.title %}<h1 class="serif keyline-bottom pvs">{{ section.title }}</h1>{% endif %}
         {% if forloop.first %}
           <div class="mvs">
@@ -85,9 +93,9 @@
                  }
                };
 </script>
-<script src="{{site.baseurl}}js/vendor/jquery.waypoints.js"></script>
-<script src="{{site.baseurl}}js/foundation.min.js"></script>
-<script src="{{site.baseurl}}js/app.js"></script>
+<script src="{{site.baseurl}}/js/vendor/jquery.waypoints.js"></script>
+<script src="{{site.baseurl}}/js/foundation.min.js"></script>
+<script src="{{site.baseurl}}/js/app.js"></script>
 
 </body>
 </html>
