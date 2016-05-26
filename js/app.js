@@ -3,7 +3,7 @@ $(document).foundation();
 (function(){
   var report = {
     init: function(){
-      L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
+      L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
       report.map = L.mapbox.map('map', 'james-lane-conkling.5630f970',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
@@ -13,6 +13,9 @@ $(document).foundation();
         attributionControl: false,
         zoomControl: false // we'll add later
       });
+
+      // Use styleLayer to add a Mapbox style created in Mapbox Studio
+      L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9').addTo(this.map);
 
       // extend map object to contain reference to all layers
       var shareControl = L.control({position: 'topleft'});
