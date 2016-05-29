@@ -73,6 +73,7 @@ body {
   padding:0;
   min-width: 940px;
   word-wrap: break-word;
+  position: inherit;
 }
 
 #report-container { position: absolute; top:80px; bottom:0; }
@@ -152,6 +153,12 @@ figcaption {
     max-width: 300px;
 }
 
+.col4 {
+    float: left;
+    width: 33.33%;
+    max-width: 300px;
+}
+
 .tabs > * {
     border: 0 solid rgba(0, 0, 0, 0.25);
     border-right-width: 1px;
@@ -178,10 +185,6 @@ figcaption {
     float: left;
     width: 83.3333%;
     max-width: 1000px;
-}
-
-#sidebar {
-  padding: 20px;
 }
 
 /* Name.Variable.Instance */
@@ -338,3 +341,49 @@ figcaption {
   -ms-transform: translateY(100%);
   transform: translateY(100%); }
 
+#sidebar {
+    left: 0;
+    width: 450px;
+}
+
+
+
+#map, #sidebar {
+    position: absolute;
+    top: 68px;
+    bottom: 75px;
+}
+
+#map.no-footer, #sidebar.no-footer {
+    bottom: 0;
+}
+#map.sidebarred {
+    width: calc(100% - 450px);
+}
+#map {
+    background-color: #333;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.scroll-styled .highlight pre, .scroll-styled {
+    overflow: auto;
+    padding-right: 20px;
+}
+
+.dropshadow-right {
+    box-shadow: rgba(0, 0, 0, 0.15) 5px 0 10px -2px;
+}
+.strongline-right {
+    border-right: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.pad2 {
+    padding: 20px;
+}
+
+.pad2x {
+    padding-left: 20px;
+    padding-right: 20px;
+}
