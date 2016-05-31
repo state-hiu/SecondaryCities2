@@ -46,7 +46,7 @@ section {
         <div class="caption">
               <div class="caption-content">
                   <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                <i class="" ><h1 style="font-style: italic;font-size: 26px">{{ page.title }}</h1></i>
+                <i class="" ><h1 style="font-style: italic;font-size: 26px;color: #333">{{ page.title }}</h1></i>
               </div>
         </div>
     </div>
@@ -62,6 +62,17 @@ section {
 
     <!--This div below needs to be the exact height and not over so scrolling doesn't appear-->
     <div class="col12 clip sliding h active1" style="height: calc(100% - 91px)">
+
+
+      <!-- About -->
+      
+      <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;" markdown="1">
+
+      {{ content }}
+
+      </div>
+
+      <!-- Story -->
       <!--The report id activates the report scroll feature-->
       <div class="report-panel col12 scroll-styled pad2 prose animate" id="report" style="height:100%;">
 
@@ -102,48 +113,8 @@ section {
 
       </div>
 
-    <!-- Export -->
-  <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;">
-      <ul>
 
-      <li class="space-bottom4 clearfix">
-          <h3 class="">Print Map</h3>
-          <div class="pad0y quiet small">Take a screenshot of the current map view and download</div>
-          <div id="images" class="col12 fill-darken strongline-all contain">
-              <div class="pill pin-left">
-                  <a id="snap" href="#" class="button short quiet" style="border-top:0; border-left:0;">capture</a><!--
-                  --><a id="map-download" href="#" download="map.png" class="button short quiet" style="border-top:0;">download</a>
-              </div>
-              <img src="https://farm6.staticflickr.com/5274/14482085473_d8a7f95126.jpg" alt="screen shot">
-          </div>
-      </li>
-
-      <li class="space-bottom4">
-          <h3 class="">Map Embed</h3>
-          <div class="pad0y quiet small">Easily embed the map in any blog or website using simple HTML</div>
-          <fieldset class="">
-              <input type="text" id="map-embed" class="stretch short small" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" onclick="this.focus();this.select()">
-          </fieldset>
-      </li>
-
-      <li class="space-bottom4">
-          <h3>
-              <strong>Data Extracts</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
-          </h3>
-          <div class="pad0y quiet small">Download extracts of the Database</div>
-
-          <div class="col8 margin2 pill mobile-cols clearfix">
-              <a href="http://planet.osm.moabi.org/extracts/" class="col6 button quiet short">Download</a><!--
-              --><a href="http://osm.moabi.org/copyright" class="col6 button quiet short">&copy; CC 4.0 </a>
-          </div>
-
-      </li>
-
-    </ul>
-
-  </div>
-
-    <!-- Export2 -->
+    <!-- Data -->
   <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;">
       <ul>
 
@@ -197,8 +168,6 @@ section {
   leaflet-container leaflet-fade-anim" tabindex="0"></div>
 
 
-
-{{ content }}
 
 <!-- Loading JavaScripts
 ================================================== -->

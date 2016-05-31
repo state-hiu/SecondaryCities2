@@ -89,3 +89,27 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
+## Summary
+
+![Machu Pichu]({{ site.baseurl }}/img/portfolio/Cusco2.jpg)
+
+
+Cusco is located in the highlands for southeastern Peru at an elevation of 3,400 meters. It is the capital of the Cusco region and province, and has an estimated population of more than 435,000. From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site. It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination. In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo. These locations are particularly susceptible to earthquakes, landslides, and flooding.
+
+## Partners
+
+[EcoCity Builders](http://www.ecocitybuilders.org/)
+
+Founded in 1992, Ecocity Builders is a nonprofit organization dedicated to reshaping cities for the long-term health of human and natural systems.
+
+## Timeline:
+
+    - Workshop 1: Date
+        - short summary
+    - Workshop 2: Date
+        - short summary
+
+
+
+
+
