@@ -7,10 +7,38 @@ $(document).foundation();
     console.log( "clicked" );
 }); 
 */
+var map;
 
   var report = {
+
+    
+
     init: function(){
-      L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+      mapboxgl.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+
+       map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/mapbox/light-v9', //hosted style id
+          center: [-77.38, 39], // starting position
+          zoom: pageConfig.zoom // starting zoom
+      });
+
+    map.setCenter([-30.9749, -40.7736]);
+
+    console.log('lng: ');
+    console.log(pageConfig.latlng[1]);
+
+    console.log('report: ');
+    console.log(report);
+
+    console.log('map: ');
+    console.log(map);
+
+    map.setCenter([pageConfig.latlng[1], pageConfig.latlng[0]]);
+
+    map.addControl(new mapboxgl.Navigation({position: 'top-left'})); // position is optional
+
+/*
       report.map = L.mapbox.map('map', 'james-lane-conkling.5630f970',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
@@ -20,17 +48,20 @@ $(document).foundation();
         attributionControl: false,
         zoomControl: false // we'll add later
       });
+*/
 
       /*This activates the slider*/
       $('.slider').on('click', 'a', this.slidePanel);
 
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
-      L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9').addTo(this.map);
+      //L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9').addTo(this.map);
 
       // extend map object to contain reference to all layers
-      var shareControl = L.control({position: 'topleft'});
+      //var shareControl = L.control({position: 'topleft'});
       // https://developers.facebook.com/docs/sharing/reference/share-dialog
+
+      /*
       shareControl.onAdd = function(){
         var controlHTML = $('<div>', {
           class: 'leaflet-bar leaflet-control',
@@ -70,6 +101,7 @@ $(document).foundation();
       this.map.on('click', function(e){
         console.log(e.latlng);
       });
+      */
 
       $('#report section').waypoint(this.reportScroll, {
         context: '#report',
@@ -97,12 +129,17 @@ $(document).foundation();
       }
       var nav = $this.data('nav'),
           newLayerIds = $this.data('tileid'),
-          newVectorId = $this.data('vector'),
-          displayedLayerIds = report.getLayers(),
-          displayedVectorId = report.getVector();
+          newVectorId = $this.data('vector');
+          /*displayedLayerIds = report.getLayers(),
+          displayedVectorId = report.getVector();*/
 
       if(nav && nav.latlng.length === 2 && nav.zoom){
-        report.map.setView(nav.latlng, nav.zoom);
+        //report.map.setView(nav.latlng, nav.zoom);
+        console.log('report2: ');
+        console.log(report);
+        console.log('map2: ');
+        console.log(map);
+        map.setCenter([nav.latlng[1], nav.latlng[0]]);
       }else if(nav && nav.latlng.length === 2){
         report.map.panTo(nav.latlng);
       }else if(nav && nav.zoom){
@@ -222,6 +259,7 @@ $(document).foundation();
       return undefined;
     },
 
+/*
     getLayers: function(){
       // return an array of mapIds ordered by zIndex from lowest to highest
       // it is not guaranteed that a mapId's index in the array matches its zIndex
@@ -238,6 +276,7 @@ $(document).foundation();
         return n != undefined;
       });
     },
+*/
 
     getLayerZIndex: function(mapId){
       // return mapId zIndex, or -1 if reportLayers doesn't contain mapId

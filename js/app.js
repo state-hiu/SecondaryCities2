@@ -11,6 +11,12 @@ $(document).foundation();
   var report = {
     init: function(){
       L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+      report.map = L.mapbox.map('map', '', {
+        attributionControl: false
+      });
+
+
+/*
       report.map = L.mapbox.map('map', 'james-lane-conkling.5630f970',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
@@ -20,13 +26,21 @@ $(document).foundation();
         attributionControl: false,
         zoomControl: false // we'll add later
       });
+      */
 
       /*This activates the slider*/
       $('.slider').on('click', 'a', this.slidePanel);
 
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
-      L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9').addTo(this.map);
+      L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+        center: pageConfig.latlng,
+        zoom: pageConfig.zoom,
+        minZoom: 4,
+        maxZoom: 16,
+        scrollWheelZoom: true,
+        zoomControl: false // we'll add later
+      }).addTo(this.map);
 
       // extend map object to contain reference to all layers
       var shareControl = L.control({position: 'topleft'});
@@ -58,7 +72,7 @@ $(document).foundation();
         reportLayers: {},
         reportVectors: {},
         reportControls: {
-          zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
+          //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
           scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
           infoControl: infoControl.addTo(this.map),
           share: shareControl.addTo(this.map)
