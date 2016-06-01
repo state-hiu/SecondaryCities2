@@ -66,7 +66,7 @@ section {
 
       <!-- About -->
       
-      <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;" markdown="1">
+      <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;width:450px" markdown="1">
 
       {{ content }}
 
@@ -74,7 +74,7 @@ section {
 
       <!-- Story -->
       <!--The report id activates the report scroll feature-->
-      <div class="report-panel col12 scroll-styled pad2 prose animate" id="report" style="height:100%;">
+      <div class="report-panel col12 scroll-styled pad2 prose animate" id="report" style="height:100%;width:450px;overflow:auto;">
 
         {% for section in page.sections %}
           <section class="animate{% if forloop.first %}active{% endif %}"
@@ -115,7 +115,7 @@ section {
 
 
     <!-- Data -->
-  <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;">
+  <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;width:450px;">
       <ul>
 
       <li class="space-bottom4 clearfix">
