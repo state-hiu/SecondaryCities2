@@ -2,7 +2,7 @@
 layout: post
 title:  "Medellin, Colombia"
 date:   2016-02-04 15:08:10 -0500
-img: img/portfolio/Medellin2.jpg
+img: img/portfolio/Medellin2.png
 modalID: modalGame
 category: Design
 ---
