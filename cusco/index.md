@@ -91,10 +91,20 @@ sections:
 
 ## Summary
 
-![Machu Pichu]({{ site.baseurl }}/img/portfolio/Cusco2.jpg)
+![cusco rooftop]({{ site.baseurl }}/img/cusco/rooftop.jpg)
 
 
-Cusco is located in the highlands for southeastern Peru at an elevation of 3,400 meters. It is the capital of the Cusco region and province, and has an estimated population of more than 435,000. From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site. It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination. In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo. These locations are particularly susceptible to earthquakes, landslides, and flooding.
+Cusco is located in the highlands for southeastern Peru at an elevation of 3,400 meters (11,200 feet). It is the capital of the Cusco region and province, and has an estimated population of more than 435,000. From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site. It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination. In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo. These locations are particularly susceptible to earthquakes, landslides, and flooding.
+
+## Participatory Data Generation
+
+*Local-level data generation is key for addressing the linkages between increased unplanned growth and the high potential for natural disaster.*
+
+In June 2015 a Secondary Cities pilot project was launched in Cusco, Peru. Local participants (25) learned the power of integrating state-of-the art, open source geospatial tools with field-based data collection. Participants used high-resolution satellite imagery provided by the National Geospatial-Intelligence Agency, hand-drawn maps, and smart phone apps to generate hundreds of spatial layers on Cusco's high-risk neighborhoods.
+
+### Urban Flow Mapping
+
+This workshop laid the groundwork for a partnership with our non-profit partner Ecocity Builders to conduct training and workshops on ecocity assessments and mapping urban flows. This capacity building activity will support emergency preparedness, human security, and resilience to address urban growth.
 
 ## Partners
 
@@ -102,12 +112,9 @@ Cusco is located in the highlands for southeastern Peru at an elevation of 3,400
 
 Founded in 1992, Ecocity Builders is a nonprofit organization dedicated to reshaping cities for the long-term health of human and natural systems.
 
-## Timeline:
+[Universidad Nacional de San Antonio Abad del Cusco](http://www.unsaac.edu.pe/)
 
-    - Workshop 1: Date
-        - short summary
-    - Workshop 2: Date
-        - short summary
+
 
 
 
