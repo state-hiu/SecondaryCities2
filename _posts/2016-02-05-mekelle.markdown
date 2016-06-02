@@ -2,7 +2,7 @@
 layout: post
 title:  "Mekelle, Ethiopia"
 date:   2016-02-05 15:08:10 -0500
-img: img/portfolio/Mekelle2.png
+img: img/portfolio/Mekelle3.png
 modalID: modalCake
 category: Design
 ---
