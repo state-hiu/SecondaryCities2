@@ -31,6 +31,42 @@ $(document).foundation();
       /*This activates the slider*/
       $('.slider').on('click', 'a', this.slidePanel);
 
+      var flag=0;
+
+      $('#esri-story').on('click', function() {
+
+          if(flag==0){
+            console.log("esri story clicked!");
+            //remove sidebar and map
+            $( "#sidebar" ).hide();
+            $( "#map" ).hide();
+            //insert esri story map iframe
+            $( "body").append( '<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="margin-top:74px;" src="http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=4e3e6e624fd048718066294207008a75"></iframe>');
+            flag=1;
+            return;
+          }
+          if(flag==1){
+            console.log("esri story clicked again!");
+            $( "iframe").remove();
+            $( "#sidebar" ).show();
+            $( "#map" ).show();
+            flag=0;
+            return;
+          }
+        });
+
+      $('#about-tab,#data-tab').on('click', function() {
+          if(flag==1){
+            console.log("about or data tab clicked!");
+            $( "iframe").remove();
+            $( "#sidebar" ).show();
+            $( "#map" ).show();
+            flag=0;
+            return;
+          }
+      });
+
+
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
       L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{

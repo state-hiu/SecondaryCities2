@@ -139,12 +139,13 @@ figcaption {
     font-size: 12px;
     text-align: center;
     display: inline-block;
-    height: 30px;
+    height: 25px;
     margin: 0;
     padding: 5px;
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
+    background-color: #fff;
 }
 
 .col3 {
@@ -171,6 +172,7 @@ figcaption {
 .tabs > *.active {
     background: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 1);
+    background-color: #fff;
 }
 
 .clearfix {
@@ -346,11 +348,9 @@ figcaption {
     width: 450px;
 }
 
-
-
 #map, #sidebar {
     position: absolute;
-    top: 68px;
+    top: 74px;
     bottom: 75px;
 }
 
@@ -386,4 +386,18 @@ figcaption {
 .pad2x {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+#header_logo {
+  position: absolute;
+  left: 40%;
+  margin-top: 8px;
+}
+
+#city_title {
+  width: 450px;
+}
+
+#georeport_nav {
+  padding: 0px
 }

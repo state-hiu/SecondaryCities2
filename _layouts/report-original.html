@@ -43,8 +43,31 @@ section {
 <!--<div id="report-container" class="small-12">-->
   <div id="sidebar" class="small-4 keyline-right fill-white left-bar fill-light strongline-right dropshadow-right no-footer">
 
+    <div class="col12 clearfix keyline-bottom grey" style="padding-bottom: 14px">
+        <div class="caption">
+              <div class="caption-content">
+                  <!--<i class="fa fa-search-plus fa-3x"></i>-->
+                <i class="" ><h1 style="font-style: italic;font-size: 26px;color: #333">{{ page.title }}</h1></i>
+              </div>
+        </div>
+    </div>
+
+    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px;padding-bottom: 8px">
+        <div class="slider tabs col10 pad0x margin1 mobile-cols space-bottom1 clearfix">
+            <a class="col4 active" data-index="1">About</a>
+            {% if page.esri_story  == true %}
+            <a class="col4" data-index="2">Story new</a>
+            {% else %}
+            <a class="col4" data-index="2">Story</a>
+            {% endif %}
+            
+            <a class="col4" data-index="3">Data</a>
+            <!--<a id="id-edit" class="col3 page-fade-link" href="//osm.moabi.org/edit?editor=id#map=5/-2.855/22.830">Edit</a>-->
+        </div>
+    </div>
+
     <!--This div below needs to be the exact height and not over so scrolling doesn't appear-->
-    <div class="col12 clip sliding h active1" style="height: 100%">
+    <div class="col12 clip sliding h active1" style="height: calc(100% - 91px)">
 
 
       <!-- About -->
