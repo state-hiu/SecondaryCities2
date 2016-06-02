@@ -401,3 +401,26 @@ figcaption {
 #georeport_nav {
   padding: 0px
 }
+
+.layer-ui .not-displayed {
+    max-height: 195px;
+}
+
+.layer-ui .not-displayed, .layer-ui .displayed {
+    overflow: scroll;
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid #707070;
+    margin: 4px 0 16px;
+}
+
+.fill-darken0 {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.insetshadow-down {
+    box-shadow: inset 0px 3px 4px rgba(180, 180, 180, 0.3);
+}
+
+.keyline-all {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
