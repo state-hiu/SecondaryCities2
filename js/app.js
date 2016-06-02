@@ -28,6 +28,18 @@ $(document).foundation();
       });
       */
 
+      $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
+      //jquery function, will make layers sortable in the Displayed Map Layers window
+/*
+      $('.sortable').sortable({
+        placeholder: "ui-state-highlight",
+        helper: 'clone',
+        update: this.layerSortedUpdate
+      });
+*/
+      $('#snap').on('click', this.mapCapture);
+      $('.page-fade-link').on('click', this.fade2Page);
+
       /*This activates the slider*/
       $('.slider').on('click', 'a', this.slidePanel);
 
@@ -65,6 +77,8 @@ $(document).foundation();
             return;
           }
       });
+
+      
 
 
 
@@ -226,6 +240,34 @@ $(document).foundation();
 
     },
 
+    layerButtonClick: function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      report.map.changeLayer($(this).parent('li').data('id'));
+    },
+
+    layerSortedUpdate: function(e, ui){
+      var displayedButtonContainer = $(this),
+          layers = report.map.getLayers(),
+          newTopButtonId = displayedButtonContainer.children('li:first').data('id');
+
+      moabi.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
+        // unless new top button is the same as the old top button, add grids and summary of new topButton
+        if(newTopButtonId !== layers[layers.length -1]){
+          report.map.clearGrids();
+          report.map.addGrid(newTopButtonId, topLayerJSON);
+          report.map.showSummary(newTopButtonId, topLayerJSON);
+        }
+
+        orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
+          return $(button).data('id')
+        }).reverse();
+        report.map.setLayersZIndices(orderedButtonIds);
+        report.map.leaflet_hash.trigger('move');
+      });
+    },
+
     changeLayer: function(layerId){
       // initiate everything that should happen when a map layer is added/removed
 
@@ -301,6 +343,149 @@ $(document).foundation();
       report.map.reportLayers[mapId].setZIndex(zIndex);
     },
 
+    setLayersZIndices: function(mapIds){
+      var legendContents = $('.legend-contents');
+
+      for(var i=0; i<mapIds.length; i++){
+        // set zIndex for each mapId in array mapIds, arranged from lowest to highest
+        report.map.setLayerZIndex(mapIds[i], i);
+
+        // reorder legends
+        legendContents.children('.report-legend[data-id="' + mapIds[i] + '"]')
+                      .prependTo(legendContents);
+      }
+    },
+
+    getDisplayedLayersButtons: function(){
+      // return a jQuery object containing all layer buttons, sorted from bottom to top
+      return $('.layer-ui ul.displayed li.layer-toggle');
+    },
+
+    getNotDisplayedLayersButtons: function(){
+      return $('.layer-ui ul.not-displayed li.layer-toggle');
+    },
+
+    removeAllExcept: function(keepLayers) {
+      // removes all layers from map, except for keepLayers (pass as array)
+      // returns a list of removed layers
+      if(! Array.isArray(keepLayers)){
+        keepLayers = [keepLayers];
+      }
+      var displayedLayers = moabi.getLayers();
+      return $.map(displayedLayers, function(removeLayer, index){
+                moabi.keepLayers = keepLayers;
+                moabi.removeLayer = removeLayer;
+
+                if( keepLayers.indexOf(removeLayer) === -1){
+                  moabi.changeLayer(removeLayer);
+                  return removeLayer;
+                }
+              });
+    },
+
+    showLayerButton: function(mapId){
+      // move layerButton from .not-displayed to .displayed
+      var layerButton = report.map.getNotDisplayedLayersButtons().filter('[data-id="' + mapId + '"]'),
+          displayed = $('.layer-ui .displayed');
+
+      layerButton.addClass('active').prependTo(displayed);
+    },
+
+    showLegend: function(mapId, layerJSON){
+      $('<div>', {
+                  'class': 'moabi-legend space-bottom1',
+                  'data-id': mapId,
+                  html: layerJSON.legend
+      }).prependTo('.map-legend .legend-contents');
+
+      /*
+     * Replace all SVG images with inline SVG
+     */
+    $('img.svg').each(function(){
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+
+        $.get(imgURL, function(data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+
+            // Add replaced image's ID to the new SVG
+            if(typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if(typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass+' replaced-svg');
+            }
+
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+
+            // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+            }
+
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+
+        }, 'xml');
+
+});
+    },
+
+    removeLegend: function(mapId){
+      $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
+    },
+
+    removeLayerButton: function(mapId){
+      // move layerButton from .displayed to where it was originally located in .not-displayed
+      var layerButton = report.map.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
+          layerButtonIndex = layerButton.data('index'),
+          notDisplayedButtons = moabi.getNotDisplayedLayersButtons();
+
+      for(i=0; i<notDisplayedButtons.length; i++){
+        var notDisplayedButton = notDisplayedButtons.eq(i),
+            notDisplayedButtonIndex = notDisplayedButton.data('index');
+        // if button index is less than the smallest, insert at beginning
+        if(i===0 && layerButtonIndex < notDisplayedButtonIndex){
+          notDisplayedButton.before(layerButton);
+          break;
+        // else, if button index is greater than the largest, insert at end
+        }else if(i===notDisplayedButtons.length - 1 && layerButtonIndex > notDisplayedButtonIndex){
+          notDisplayedButton.after(layerButton);
+          break;
+        // else, insert button before next-largest button index
+        }else if(layerButtonIndex < notDisplayedButtonIndex){
+          notDisplayedButton.before(layerButton);
+          break;
+        // else, if loop gets to end and hasn't broken, something's wrong
+        }else if(i===notDisplayedButtons.length -1 && layerButtonIndex <= notDisplayedButtonIndex){
+          console.log("WARNING: something's wrong with removeLayerButton()")
+        }
+      }
+
+    },
+
+     mapCapture: function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      leafletImage(moabi.map, function(err, canvas) {
+        var $imgContainer = $('#images'),
+            download = document.getElementById('map-download');
+
+        var mapCapture = document.createElement('img');
+        mapImage = canvas.toDataURL();
+        download.href = mapImage;
+        mapCapture.src = mapImage;
+        $imgContainer.children('img').remove();
+        $imgContainer.append(mapCapture);
+      });
+    },
+
 
     slidePanel: function(e) {
           var $this = $(this),
@@ -313,6 +498,46 @@ $(document).foundation();
           slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
           return false;
         },
+
+    showSummary: function(mapId, layerJSON){
+      // remove existing summary, if exists
+      moabi.removeSummary();
+      var summary = ['<ul data-id="', mapId, '" class="layer-summary small keyline-all pad0x space-bottom2">',
+        '<li class="pad0">', '<h3>', layerJSON.name, '</h3>', '</li>',
+        '<li class="pad0 keyline-bottom">', layerJSON.description, '</li>',
+        '<li class="pad0 keyline-bottom space">',
+          '<strong class="quiet">Source: </strong>', //insert source_name and optionally source_url here
+        '</li>',
+        '<li class="pad0 space">',
+          '<strong class="quiet">Date:</strong> ',
+          '<span class="micro">', layerJSON.date, '</span>',
+        '</li>',
+      '</ul>'];
+
+      if(layerJSON.source_url){
+        var urlHTML = ['<a href="', layerJSON.source_url, '" class="micro">',
+          layerJSON.source_name, '</a>']
+      }else{
+        var urlHTML = ['<span class="micro">', layerJSON.source_name, '</span>'];
+      }
+      summary.splice(13, 0, urlHTML.join(''));
+
+      $('.layer-ui').append(summary.join(''));
+    },
+
+    removeSummary: function(){
+      $('.layer-ui ul.layer-summary').remove();
+    },
+
+     fade2Page: function(e) {
+      // on link click, fade page out, then follow link
+      e.preventDefault();
+      var newPage = this.href;
+
+      $('body').fadeOut(500, function(){
+          window.location = newPage;
+      });
+    }
 
 
   };
