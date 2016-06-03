@@ -1,5 +1,5 @@
 ---
-layout: report
+layout: report2
 title: Cusco, Peru
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
