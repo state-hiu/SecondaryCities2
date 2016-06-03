@@ -1,10 +1,10 @@
 ---
 layout: report2
-title: Medellin, Colombia
-author: Leo Bottrill of CrowdCover
+title: Pokhara, Nepal
+author: Tom G of HIU
 date: January 20, 2015
 data_source_name: UNEP
-data_source_url: http://geodata.grid.unep.ch/
+data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
@@ -18,8 +18,8 @@ footer: |
   # find the layers here: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/
 
 tileOrigins:
-  - name: egn
-    url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+  - name: scgn
+    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: wfp
     url: http://geonode.wfp.org/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
@@ -29,7 +29,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [6.02, -11.1]
+    latlng: [28.22, 83.85]
     zoom: 6
     tile_layers:
     vector_data:
@@ -42,9 +42,9 @@ sections:
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
     banner_image_source: Jim Hollander/European Pressphoto Agency
-    latlng: [5.8, -9.3]
-    zoom: 6
-    tile_layers: ['egn:lbr_telc_pt_misc_transmissiontowers', 'egn:lbr_policestnp_undp']
+    latlng: [28.232, 83.969]
+    zoom: 13
+    tile_layers: ['scgn:pokhara_schools']
     vector_data:
     body: |
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a. Dolorem fugit vitae quis nam et, deleniti, odio unde dolores. Ipsam, nihil.
@@ -56,9 +56,9 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [5.2, -9.2]
-    zoom: 7
-    tile_layers: ['egn:lbr_rdsl_unmil', 'egn:lbr_hltfacp_undp']
+    latlng: [28.232, 83.969]
+    zoom: 11
+    tile_layers: ['scgn:pokhara_landcover']
     vector_data:
     body: |
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.

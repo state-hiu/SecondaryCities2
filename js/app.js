@@ -30,13 +30,13 @@ $(document).foundation();
 
       $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
       //jquery function, will make layers sortable in the Displayed Map Layers window
-/*
+
       $('.sortable').sortable({
         placeholder: "ui-state-highlight",
         helper: 'clone',
         update: this.layerSortedUpdate
       });
-*/
+
       $('#snap').on('click', this.mapCapture);
       $('.page-fade-link').on('click', this.fade2Page);
 
@@ -78,12 +78,9 @@ $(document).foundation();
           }
       });
 
-      
-
-
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
-      L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+      var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
         minZoom: 4,
@@ -118,8 +115,13 @@ $(document).foundation();
         infoControl.addInfo(pageConfig.source_name);
       }
 
+      // add additional object to map object to store references to layers
       $.extend(this.map, {
-        reportLayers: {},
+        // set baselayer z-index to -1, while you're at it
+        reportLayers: {
+          baseLayer: baseLayer.setZIndex(-1),
+          dataLayers: {}
+        },
         reportVectors: {},
         reportControls: {
           //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
@@ -128,6 +130,17 @@ $(document).foundation();
           share: shareControl.addTo(this.map)
         }
       });
+
+      report.leaflet_hash = L.hash(this.map);
+
+      this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+      //L.easyPrint().addTo(this.map);
+
+      report.leaflet_hash.on('update', report.getLayerHash);
+      report.leaflet_hash.on('change', report.setLayerHash);
+      //report.leaflet_hash.on('hash', report.updateExportLink);
+      //report.updateExportLink(location.hash);
 
       // event handlers
       // helper function to return latlng on map click; useful for drafting stories--comment out at production
@@ -244,7 +257,7 @@ $(document).foundation();
       e.preventDefault();
       e.stopPropagation();
 
-      report.map.changeLayer($(this).parent('li').data('id'));
+      report.changeLayer($(this).parent('li').data('id'));
     },
 
     layerSortedUpdate: function(e, ui){
@@ -252,8 +265,8 @@ $(document).foundation();
           layers = report.map.getLayers(),
           newTopButtonId = displayedButtonContainer.children('li:first').data('id');
 
-      moabi.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
-        // unless new top button is the same as the old top button, add grids and summary of new topButton
+/* see if possible to replace getLayerJSON with GeoNode catalog
+      report.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
         if(newTopButtonId !== layers[layers.length -1]){
           report.map.clearGrids();
           report.map.addGrid(newTopButtonId, topLayerJSON);
@@ -266,6 +279,8 @@ $(document).foundation();
         report.map.setLayersZIndices(orderedButtonIds);
         report.map.leaflet_hash.trigger('move');
       });
+*/
+
     },
 
     changeLayer: function(layerId){
@@ -288,18 +303,87 @@ $(document).foundation();
       }
       var tileLayer = this.map.reportLayers[layerId];
 
-      // if layer is present, remove layer
+      // if layer is present, run all remove layer actions
       if(this.map.hasLayer(tileLayer)){
+        var layers = this.getLayers();
+        // run all remove layer actions
         this.map.removeLayer(tileLayer);
+        this.removeLayerButton(mapId);
+        this.removeLegend(mapId);
+        this.removeSummary();
+
+        // if removed layer was highest layer, clear grids
+        if(mapId === layers[layers.length -1]){
+          this.clearGrids();
+          // if 1+ more layers on map, add grid of the new top layer
+          if(layers.length > 1){
+            var nextLayerId = layers[layers.length -2];
+
+            this.getLayerJSON(nextLayerId).done(function(nextLayerJSON){
+              report.addGrid(nextLayerId, nextLayerJSON);
+            });
+          }
+        }
       }else{
+        // run all add layer actions:
+          // add layer to map; add legend; move layer-ui button
+          // show description summary; add grid; update hash
+
         // find zIndex of current top layer, or -1 if no current layers
         var layers = this.getLayers(),
             topLayerZIndex = this.getLayerZIndex(layers[layers.length -1]);
 
         this.map.addLayer(tileLayer);
         tileLayer.setZIndex(topLayerZIndex + 1);
+        this.showLayerButton(mapId);
+
+        this.getLayerJSON(mapId).done(function(layerJSON){
+          report.showLegend(mapId, layerJSON);
+          report.showSummary(mapId, layerJSON);
+          // not very smart: simply remove all grids and add for the new layer
+          report.clearGrids();
+          report.addGrid(mapId, layerJSON);
+        });
       }
 
+      this.leaflet_hash.trigger('move');
+    },
+
+    getLayerJSON: function(mapId){
+      // returns a promise object, that when resolved, contains JSON for mapId
+      // assumes that map.moabiLayers.dataLayers[mapId] already exists and contains [mapId].tileLayer
+      var JSONPromise = $.Deferred();
+      if(! report.map.reportLayers[mapId].layerJSON){
+        // run ajax request for layerJSON and when loaded, store in map.moabiLayers.dataLayers[mapId].layerJSON
+        $.ajax('/map_layers.json', {
+          type: 'GET',
+          dataType: 'json',
+          contentType: 'application/json',
+          success: function(layersJSON){
+            if(layersJSON[mapId]){
+              // cache layerJSON in map.moabiLayers.dataLayers
+              report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
+
+              // resolve promise object
+              JSONPromise.resolve(layersJSON[mapId]);
+            }else{
+              JSONPromise.reject('no mapId ' + mapId);
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown){
+            JSONPromise.reject(errorThrown);
+          }
+        });
+      }else{
+        JSONPromise.resolve(report.map.reportLayers[mapId].layerJSON);
+      }
+      return JSONPromise;
+      // working with JSONPromise
+      // moabi.getJSONPromise(mapId).done(function(result){
+      //   console.log('returned layer name: ' + result.name);
+      // }).fail(function(error){
+      //   console.log('getJSON failed. Error: ' + error);
+      // })
     },
 
     getVector: function(){
@@ -373,11 +457,11 @@ $(document).foundation();
       }
       var displayedLayers = moabi.getLayers();
       return $.map(displayedLayers, function(removeLayer, index){
-                moabi.keepLayers = keepLayers;
-                moabi.removeLayer = removeLayer;
+                report.keepLayers = keepLayers;
+                report.removeLayer = removeLayer;
 
                 if( keepLayers.indexOf(removeLayer) === -1){
-                  moabi.changeLayer(removeLayer);
+                  report.changeLayer(removeLayer);
                   return removeLayer;
                 }
               });
@@ -385,7 +469,7 @@ $(document).foundation();
 
     showLayerButton: function(mapId){
       // move layerButton from .not-displayed to .displayed
-      var layerButton = report.map.getNotDisplayedLayersButtons().filter('[data-id="' + mapId + '"]'),
+      var layerButton = report.getNotDisplayedLayersButtons().filter('[data-id="' + mapId + '"]'),
           displayed = $('.layer-ui .displayed');
 
       layerButton.addClass('active').prependTo(displayed);
@@ -442,9 +526,9 @@ $(document).foundation();
 
     removeLayerButton: function(mapId){
       // move layerButton from .displayed to where it was originally located in .not-displayed
-      var layerButton = report.map.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
+      var layerButton = report.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
           layerButtonIndex = layerButton.data('index'),
-          notDisplayedButtons = moabi.getNotDisplayedLayersButtons();
+          notDisplayedButtons = report.getNotDisplayedLayersButtons();
 
       for(i=0; i<notDisplayedButtons.length; i++){
         var notDisplayedButton = notDisplayedButtons.eq(i),
@@ -501,7 +585,7 @@ $(document).foundation();
 
     showSummary: function(mapId, layerJSON){
       // remove existing summary, if exists
-      moabi.removeSummary();
+      report.map.removeSummary();
       var summary = ['<ul data-id="', mapId, '" class="layer-summary small keyline-all pad0x space-bottom2">',
         '<li class="pad0">', '<h3>', layerJSON.name, '</h3>', '</li>',
         '<li class="pad0 keyline-bottom">', layerJSON.description, '</li>',
@@ -527,6 +611,77 @@ $(document).foundation();
 
     removeSummary: function(){
       $('.layer-ui ul.layer-summary').remove();
+    },
+
+    addGrid: function(mapId, layerJSON){
+      if(! layerJSON.template){ return false; }
+      var tilejson = {
+        "tilejson":"2.1.0",
+        "grids":["http://grids.osm.report.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
+        "template":layerJSON.template
+      };
+      report.gridLayer = L.mapbox.gridLayer(tilejson).addTo(moabi.map),
+      report.gridControl = L.mapbox.gridControl(report.gridLayer).addTo(report.map);
+    },
+
+    clearGrids: function(){
+      if (report.gridLayer){
+        report.map.removeLayer(moabi.gridLayer);
+      }
+      $('.map-tooltip').remove();
+    },
+
+    updateExportLink: function(hash) {
+      // update map embed link and iD edit link
+      $('#map-embed').val("<iframe src='///embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>");
+
+      if ($('#id-edit')) {
+        var z_lat_lon = hash.split('&')[0].split('/'),
+            zoom = z_lat_lon[0].replace("#", ""),
+            lat = z_lat_lon[1],
+            lon = z_lat_lon[2];
+
+        $('#id-edit').attr('href', '//osm.report.org/edit?editor=id#map=' + zoom + '/' + lat + '/' + lon)
+      }
+    },
+
+    // leaflet hash functions
+    setLayerHash: function(hash) {
+      return report.setQueryVariable(hash, "layers", report.getLayers().join(','));
+    },
+
+    getLayerHash: function() {
+      var layers = report.getQueryVariable(location.hash, "layers");
+      if (layers) {
+        layers = layers.split(',');
+        moabi.removeAllExcept([]); //could be smarter
+        for (i=0; i<layers.length; i++){
+          moabi.changeLayer(layers[i]);
+        }
+      }
+    },
+
+    getQueryVariable: function(hash, variable) {
+      var vars = hash.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+      }
+      return(false);
+    },
+
+    setQueryVariable: function(hash, key, value) {
+      var vars = hash.split("&");
+      var found = false;
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == key){
+          vars[i] = key + "=" + value;
+          found = true;
+        }
+      }
+      if (! found) { vars.push(  key + "=" + value ); }
+      return(vars.join("&"));
     },
 
      fade2Page: function(e) {
