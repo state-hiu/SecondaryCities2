@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Cusco, Peru"
+title:  "Cusco,           Peru"
 date:   2016-02-01 15:08:10 -0500
 img: img/portfolio/Cusco2.png
 modalID: modalSafe
 category: Design
 ---
-Cusco is located in the highlands for southeastern Peru at an elevation of 3,400 meters.  It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.  From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site.  It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination.  In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo.  These locations are particularly susceptible to earthquakes, landslides, and flooding.
+Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters.  It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.  From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site.  It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination.  In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo.  These locations are particularly susceptible to earthquakes, landslides, and flooding.
 
 [flat-icons-link]: https://sellfy.com/p/8Q9P/jV3VZ/
