@@ -321,8 +321,8 @@ $(document).foundation();
         var layers = this.getLayers();
         // run all remove layer actions
         this.map.removeLayer(tileLayer);
-        this.removeLayerButton(mapId);
-        this.removeLegend(mapId);
+        this.removeLayerButton(layerId);
+        this.removeLegend(layerId);
         this.removeSummary();
 
         // if removed layer was highest layer, clear grids
@@ -468,7 +468,7 @@ $(document).foundation();
       if(! Array.isArray(keepLayers)){
         keepLayers = [keepLayers];
       }
-      var displayedLayers = moabi.getLayers();
+      var displayedLayers = report.getLayers();
       return $.map(displayedLayers, function(removeLayer, index){
                 report.keepLayers = keepLayers;
                 report.removeLayer = removeLayer;
@@ -543,16 +543,30 @@ $(document).foundation();
       var layerButton = report.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
           layerButtonIndex = layerButton.data('index'),
           notDisplayedButtons = report.getNotDisplayedLayersButtons();
+          console.log('notDisplayedButtons: ');
+          console.log(notDisplayedButtons);
+          console.log('length: ');
+          console.log(notDisplayedButtons.length);
+
+          // .eq is a jquery function that reduces the set of matched elements to the one at the specified index
+          var notDisplayedButton = notDisplayedButtons.eq(i),
+          notDisplayedButtonIndex = notDisplayedButton.data('index');
+
+          if (notDisplayedButtons.length == 0) {
+            console.log('hoorah');
+            //notDisplayedButton.after(layerButton);
+            $('.layer-ui ul.not-displayed ').append(layerButton);
+          }
 
 //need to imporove the logic here
       for(i=0; i<notDisplayedButtons.length; i++){
-        var notDisplayedButton = notDisplayedButtons.eq(i),
-            notDisplayedButtonIndex = notDisplayedButton.data('index');
+        
         // if button index is less than the smallest, insert at beginning
         if(i===0 && layerButtonIndex < notDisplayedButtonIndex){
           notDisplayedButton.before(layerButton);
           break;
         // else, if button index is greater than the largest, insert at end
+        // this is what is inserting the layer in the available layers window
         }else if(i===notDisplayedButtons.length - 1 && layerButtonIndex > notDisplayedButtonIndex){
           notDisplayedButton.after(layerButton);
           break;
@@ -566,13 +580,15 @@ $(document).foundation();
         }
       }
 
+      console.log('end of function');
+
     },
 
      mapCapture: function(e) {
       e.preventDefault();
       e.stopPropagation();
 
-      leafletImage(moabi.map, function(err, canvas) {
+      leafletImage(report.map, function(err, canvas) {
         var $imgContainer = $('#images'),
             download = document.getElementById('map-download');
 
@@ -635,13 +651,13 @@ $(document).foundation();
         "grids":["http://grids.osm.report.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
         "template":layerJSON.template
       };
-      report.gridLayer = L.mapbox.gridLayer(tilejson).addTo(moabi.map),
+      report.gridLayer = L.mapbox.gridLayer(tilejson).addTo(report.map),
       report.gridControl = L.mapbox.gridControl(report.gridLayer).addTo(report.map);
     },
 
     clearGrids: function(){
       if (report.gridLayer){
-        report.map.removeLayer(moabi.gridLayer);
+        report.map.removeLayer(report.gridLayer);
       }
       $('.map-tooltip').remove();
     },
@@ -669,9 +685,9 @@ $(document).foundation();
       var layers = report.getQueryVariable(location.hash, "layers");
       if (layers) {
         layers = layers.split(',');
-        moabi.removeAllExcept([]); //could be smarter
+        report.removeAllExcept([]); //could be smarter
         for (i=0; i<layers.length; i++){
-          moabi.changeLayer(layers[i]);
+          report.changeLayer(layers[i]);
         }
       }
     },

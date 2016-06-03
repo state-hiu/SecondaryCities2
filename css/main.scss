@@ -424,3 +424,15 @@ figcaption {
 .keyline-all {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.fill-brown {
+    background: rgba(226, 215, 199, 0.5);
+}
+
+.layer-ui  {
+    text-decoration: none;
+}
+
+.activate a, a.active {
+    color: rgba(0, 0, 0, 0.75);
+}
