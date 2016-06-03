@@ -281,6 +281,19 @@ $(document).foundation();
       });
 */
 
+
+        if(newTopButtonId !== layers[layers.length -1]){
+          report.map.clearGrids();
+          report.map.addGrid(newTopButtonId, topLayerJSON);
+          report.map.showSummary(newTopButtonId, topLayerJSON);
+        }
+
+        orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
+          return $(button).data('id')
+        }).reverse();
+        report.map.setLayersZIndices(orderedButtonIds);
+        report.map.leaflet_hash.trigger('move');
+
     },
 
     changeLayer: function(layerId){
@@ -335,14 +348,14 @@ $(document).foundation();
 
         this.map.addLayer(tileLayer);
         tileLayer.setZIndex(topLayerZIndex + 1);
-        this.showLayerButton(mapId);
+        this.showLayerButton(layerId);
 
         this.getLayerJSON(mapId).done(function(layerJSON){
-          report.showLegend(mapId, layerJSON);
-          report.showSummary(mapId, layerJSON);
+          report.showLegend(layerId, layerJSON);
+          report.showSummary(layerId, layerJSON);
           // not very smart: simply remove all grids and add for the new layer
           report.clearGrids();
-          report.addGrid(mapId, layerJSON);
+          report.addGrid(layerId, layerJSON);
         });
       }
 
@@ -524,12 +537,14 @@ $(document).foundation();
       $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
     },
 
+
     removeLayerButton: function(mapId){
       // move layerButton from .displayed to where it was originally located in .not-displayed
       var layerButton = report.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
           layerButtonIndex = layerButton.data('index'),
           notDisplayedButtons = report.getNotDisplayedLayersButtons();
 
+//need to imporove the logic here
       for(i=0; i<notDisplayedButtons.length; i++){
         var notDisplayedButton = notDisplayedButtons.eq(i),
             notDisplayedButtonIndex = notDisplayedButton.data('index');
