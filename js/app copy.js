@@ -36,6 +36,7 @@ $(document).foundation();
       //create our deferred object
       var globalapiJSONpromise = $.Deferred();
 
+      
 
       //jquery function, will make layers sortable in the Displayed Map Layers window
       $('.sortable').sortable({
@@ -86,185 +87,183 @@ $(document).foundation();
       });
 
       function getAPIJSON (api_url){
-          //had to enable CORS in the GeoNode site by adding Header set Access-Control-Allow-Origin "*"
-          //to the etc/apache2/sites-available/geonode.conf file
-          //also had to install header module in apache2 by running "a2enmod headers"
 
-          $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").done(function(data) {
+        //had to enable CORS in the GeoNode site by adding Header set Access-Control-Allow-Origin "*"
+        //to the etc/apache2/sites-available/geonode.conf file
+        //also had to install header module in apache2 by running "a2enmod headers"
 
-            //resolve the deferred, passing it our custom data
-              globalapiJSONpromise.resolve(data);
+        $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").done(function(data) {
 
-          });
+          //resolve the deferred, passing it our custom data
+            globalapiJSONpromise.resolve(data);
+
+        });
+
       }
 
       getAPIJSON(api_url);
 
+      
 
       globalapiJSONpromise.then (function(value) {
 
-              console.log("data! ");
-              console.log(value);
-              //return value;
+          console.log("data! ");
+          console.log(value);
+          //return value;
 
-              var layersList = [];
+          var layersList = [];
 
-              //This list will have the MapID as the key, and the other info as the values
+          //This list will have the MapID as the key, and the other info as the values
 
-              var myRegexp = /geonode%3A(.*)/;
+          var myRegexp = /geonode%3A(.*)/;
 
-              for (var i = 0; i < value.objects.length; i++) {
+          for (var i = 0; i < value.objects.length; i++) {
 
 
-                var match = myRegexp.exec(value.objects[i].detail_url);
+            var match = myRegexp.exec(value.objects[i].detail_url);
 
-                console.log(match[1]);
+            console.log(match[1]);
 
-                layersList.push({ mapID: 'scgn:' + match[1], title: value.objects[i].title, abstract: value.objects[i].abstract, categories: value.objects[i].category__gn_description, supplemental_information: value.objects[i].supplemental_information})
-              }
-
-              console.log('layersList');
-              console.log(layersList);
-
-              dataIndex = 1;
-
-              for (var i = 0; i < layersList.length; i++) {
-
-                var mapID = layersList[i].mapID;
-
-                var title = layersList[i].title;
-
-                var categories = layersList[i].categories;
-
-                var html = [
-                '<li class="layer-toggle"', 
-                'data-index=' + String(dataIndex),
-                'data-categories=' + categories, 
-                'data-id="' + mapID + '"">',
-                '<a class="keyline-bottom" href="#">' + title + '</a>', 
-                '</li>'
-                ].join("\n");
-
-                $('.not-displayed').append(html);
-
-                dataIndex++;
-
-              }
-
-              console.log('layersList2: ');
-              console.log(layersList);
-
-              $('.layer-ui li.layer-toggle').on('click', 'a', layerButtonClick);
-
-              function layerButtonClick(e){
-                e.preventDefault();
-                e.stopPropagation();
-
-                console.log('display layer info: ');
-                console.log(layersList);
-
-                report.changeLayer($(this).parent('li').data('id'),layersList);
-              }
-
-              //// re-initialise plugins
-              //report.init();
-
-              $('#report section').waypoint(report.reportScroll, {
-                context: '#report',
-                offset: '70%'
-              });
-
-              //$('.layer-ui li.layer-toggle').on('click', 'a', report.layerButtonClick(layersList));
-
-              //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
-
-        });
-
-        // Use styleLayer to add a Mapbox style created in Mapbox Studio
-        var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
-          center: pageConfig.latlng,
-          zoom: pageConfig.zoom,
-          minZoom: 4,
-          maxZoom: 16,
-          scrollWheelZoom: true,
-          zoomControl: false // we'll add later
-        }).addTo(this.map);
-
-        // extend map object to contain reference to all layers
-        var shareControl = L.control({position: 'topleft'});
-        // https://developers.facebook.com/docs/sharing/reference/share-dialog
-        shareControl.onAdd = function(){
-          var controlHTML = $('<div>', {
-            class: 'leaflet-bar leaflet-control',
-          });
-          var fbButton = $('<a>',{
-            class: 'mapbox-icon mapbox-icon-facebook',
-            href: '#'
-          })
-          var twitterButton = $('<a>',{
-            class: 'mapbox-icon mapbox-icon-twitter',
-            href: '#'
-          })
-          controlHTML.append(fbButton, twitterButton);
-          return controlHTML[0];
-        }
-
-        var infoControl = L.mapbox.infoControl().addInfo('<strong>Map Data</strong> &copy; <a href="//www.openstreetmap.org/">OpenStreetMap</a>');
-        if (pageConfig.source_name && pageConfig.source_url){
-          infoControl.addInfo('<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>');
-        }else if(pageConfig.source_name){
-          infoControl.addInfo(pageConfig.source_name);
-        }
-
-        // add additional object to map object to store references to layers
-        $.extend(this.map, {
-          // set baselayer z-index to -1, while you're at it
-          reportLayers: {
-            baseLayer: baseLayer.setZIndex(-1),
-            dataLayers: {}
-          },
-          reportVectors: {},
-          reportControls: {
-            //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
-            scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
-            infoControl: infoControl.addTo(this.map),
-            share: shareControl.addTo(this.map)
+            layersList.push({ mapID: match[1], title: value.objects[i].title, abstract: value.objects[i].abstract, categories: value.objects[i].category__gn_description})
           }
+
+          console.log('layersList');
+          console.log(layersList);
+
+          dataIndex = 1;
+
+          for (var i = 0; i < layersList.length; i++) {
+
+            var mapID = 'scgn:' + layersList[i].mapID;
+
+            var title = layersList[i].title;
+
+            var categories = layersList[i].categories;
+
+            var html = [
+            '<li class="layer-toggle"', 
+            'data-index=' + String(dataIndex),
+            'data-categories=' + categories, 
+            'data-id="' + mapID + '"">',
+            '<a class="keyline-bottom" href="#">' + title + '</a>', 
+            '</li>'
+            ].join("\n");
+
+            $('.not-displayed').append(html);
+
+            dataIndex++;
+
+          }
+
+          console.log('layersList2: ');
+          console.log(layersList);
+
+          $('.layer-ui li.layer-toggle').on('click', 'a', layerButtonClick);
+
+          function layerButtonClick(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            console.log('display layer info: ');
+            console.log(layersList);
+
+            report.changeLayer($(this).parent('li').data('id'));
+          }
+
+
+
+          //$('.layer-ui li.layer-toggle').on('click', 'a', report.layerButtonClick(layersList));
+
+          //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
+
         });
 
-        report.leaflet_hash = L.hash(this.map);
 
-       this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
 
-       //L.easyPrint().addTo(this.map);
+      // Use styleLayer to add a Mapbox style created in Mapbox Studio
+      var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+        center: pageConfig.latlng,
+        zoom: pageConfig.zoom,
+        minZoom: 4,
+        maxZoom: 16,
+        scrollWheelZoom: true,
+        zoomControl: false // we'll add later
+      }).addTo(this.map);
 
-        report.leaflet_hash.on('update', report.getLayerHash);
-        report.leaflet_hash.on('change', report.setLayerHash);
-        //report.leaflet_hash.on('hash', report.updateExportLink);
-        //report.updateExportLink(location.hash);
-
-        // event handlers
-        // helper function to return latlng on map click; useful for drafting stories--comment out at production
-        this.map.on('click', function(e){
-          console.log(e.latlng);
+      // extend map object to contain reference to all layers
+      var shareControl = L.control({position: 'topleft'});
+      // https://developers.facebook.com/docs/sharing/reference/share-dialog
+      shareControl.onAdd = function(){
+        var controlHTML = $('<div>', {
+          class: 'leaflet-bar leaflet-control',
         });
+        var fbButton = $('<a>',{
+          class: 'mapbox-icon mapbox-icon-facebook',
+          href: '#'
+        })
+        var twitterButton = $('<a>',{
+          class: 'mapbox-icon mapbox-icon-twitter',
+          href: '#'
+        })
+        controlHTML.append(fbButton, twitterButton);
+        return controlHTML[0];
+      }
 
+      var infoControl = L.mapbox.infoControl().addInfo('<strong>Map Data</strong> &copy; <a href="//www.openstreetmap.org/">OpenStreetMap</a>');
+      if (pageConfig.source_name && pageConfig.source_url){
+        infoControl.addInfo('<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>');
+      }else if(pageConfig.source_name){
+        infoControl.addInfo(pageConfig.source_name);
+      }
 
+      // add additional object to map object to store references to layers
+      $.extend(this.map, {
+        // set baselayer z-index to -1, while you're at it
+        reportLayers: {
+          baseLayer: baseLayer.setZIndex(-1),
+          dataLayers: {}
+        },
+        reportVectors: {},
+        reportControls: {
+          //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
+          scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
+          infoControl: infoControl.addTo(this.map),
+          share: shareControl.addTo(this.map)
+        }
+      });
 
-        // $('.navigate').on('click', 'a', this.navigate);
+      report.leaflet_hash = L.hash(this.map);
 
-        // refresh all Waypoints when window resizes
-        // (docs say this happens automatically, but doesn't appear so: http://imakewebthings.com/waypoints/api/refresh-all/)
-        $(window).on('resize', function(){
-          Waypoint.refreshAll();
-        });
+      this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
 
+      //L.easyPrint().addTo(this.map);
+
+      report.leaflet_hash.on('update', report.getLayerHash);
+      report.leaflet_hash.on('change', report.setLayerHash);
+      //report.leaflet_hash.on('hash', report.updateExportLink);
+      //report.updateExportLink(location.hash);
+
+      // event handlers
+      // helper function to return latlng on map click; useful for drafting stories--comment out at production
+      this.map.on('click', function(e){
+        console.log(e.latlng);
+      });
+
+      $('#report section').waypoint(this.reportScroll, {
+        context: '#report',
+        offset: '70%'
+      });
+
+      // $('.navigate').on('click', 'a', this.navigate);
+
+      // refresh all Waypoints when window resizes
+      // (docs say this happens automatically, but doesn't appear so: http://imakewebthings.com/waypoints/api/refresh-all/)
+      $(window).on('resize', function(){
+        Waypoint.refreshAll();
+      });
     },
 
     reportScroll: function(direction) {
-
-      var nolayersList = 'none';
-
       if(direction === 'down'){
           var $this = $(this.element);
           $this.prev().removeClass('active');
@@ -295,7 +294,7 @@ $(document).foundation();
         for(i=0; i<displayedLayerIds.length; i++){
           var displayedLayerId = displayedLayerIds[i];
           if(newLayerIds.indexOf(displayedLayerId) === -1){
-            report.changeLayer(displayedLayerId,nolayersList);
+            report.changeLayer(displayedLayerId);
           }
         }
         // add all newLayerIds unless they are already present
@@ -303,13 +302,13 @@ $(document).foundation();
           var newLayerId = newLayerIds[i],
               newTileLayer = report.map.reportLayers[newLayerId];
           if(! report.map.hasLayer(newTileLayer)){
-            report.changeLayer(newLayerId,nolayersList);
+            report.changeLayer(newLayerId);
           }
         }
       }else{
         // if no newLayers, remove all displayed layers
         for(i=0; i<displayedLayerIds.length; i++){
-          report.changeLayer(displayedLayerIds[i],nolayersList);
+          report.changeLayer(displayedLayerIds[i]);
         }
       }
 
@@ -317,7 +316,7 @@ $(document).foundation();
         report.changeVector(newVectorId);
       }else if(displayedVectorId){
         // if no new vector data to add, and existing vector data, remove existing vector data
-        report.changeVector(displayedVectorId,nolayersList);
+        report.changeVector(displayedVectorId);
       }
 
     },
@@ -392,11 +391,8 @@ $(document).foundation();
 
     },
 
-    changeLayer: function(layerId,layersList){
+    changeLayer: function(layerId){
       // initiate everything that should happen when a map layer is added/removed
-
-      console.log("layersList data from promise");
-      console.log(layersList);
 
       // cache tileLayer in report.map.reportLayers[mapId]
       if(! report.map.reportLayers[layerId]){
@@ -431,14 +427,9 @@ $(document).foundation();
           if(layers.length > 1){
             var nextLayerId = layers[layers.length -2];
 
-            if(layersList != 'none') {
-
-              this.getLayerJSON(nextLayerId,layersList).done(function(nextLayerJSON){
-                report.addGrid(nextLayerId, nextLayerJSON);
-                });
-            }
-
-
+            this.getLayerJSON(nextLayerId).done(function(nextLayerJSON){
+              report.addGrid(nextLayerId, nextLayerJSON);
+            });
           }
         }
       }else{
@@ -454,24 +445,19 @@ $(document).foundation();
         tileLayer.setZIndex(topLayerZIndex + 1);
         this.showLayerButton(layerId);
 
-        if(layersList != 'none') {
-
-            this.getLayerJSON(mapId,layersList).done(function(layerJSON){
-              report.showLegend(layerId, layerJSON);
-              report.showSummary(layerId, layerJSON);
-              // not very smart: simply remove all grids and add for the new layer
-              report.clearGrids();
-              report.addGrid(layerId, layerJSON);
-            });
-
-        }
-        
+        this.getLayerJSON(mapId).done(function(layerJSON){
+          report.showLegend(layerId, layerJSON);
+          report.showSummary(layerId, layerJSON);
+          // not very smart: simply remove all grids and add for the new layer
+          report.clearGrids();
+          report.addGrid(layerId, layerJSON);
+        });
       }
 
       this.leaflet_hash.trigger('move');
     },
 
-    getLayerJSON: function(inputMapId,layersList){
+    getLayerJSON: function(inputMapId){
       // returns a promise object, that when resolved, contains JSON for mapId
       // assumes that map.moabiLayers.dataLayers[mapId] already exists and contains [mapId].tileLayer
       var JSONPromise = $.Deferred();
@@ -489,29 +475,27 @@ $(document).foundation();
             console.log("data from api");
             console.log(layersList);
 
-            console.log("data from mapID");
-            console.log(layersList[0].mapID);
-
-            
+            console.log('display layer info: ');
+            console.log(layersList)
 
             for (var i = 0; i < layersList.length; i++) {
 
-              console.log('looping...');
-              console.log(inputMapId);
-              console.log("data from mapID 2");
-              console.log(layersList[i].mapID);
+              
 
-              if (layersList[i].mapID == inputMapId) {
+              if (layersList[i].mapId == inputMapId) {
                 console.log("inputMapId: ");
                 console.log(inputMapId);
 
 
                 // cache layerJSON in map.moabiLayers.dataLayers
-                //report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
+                report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
 
                 // resolve promise object
-                JSONPromise.resolve(layersList[i]);
+                JSONPromise.resolve(layersJSON[mapId]);
+              } else {
+                JSONPromise.reject('no mapId ' + mapId);
               }
+
             }
 
         
@@ -775,15 +759,16 @@ $(document).foundation();
 
     showSummary: function(mapId, layerJSON){
       // remove existing summary, if exists
-
-
-      report.removeSummary();
-
+      report.map.removeSummary();
       var summary = ['<ul data-id="', mapId, '" class="layer-summary small keyline-all pad0x space-bottom2">',
-        '<li class="pad0">', '<h3>', layerJSON.title, '</h3>', '</li>',
-        '<li class="pad0 keyline-bottom">', layerJSON.abstract, '</li>',
+        '<li class="pad0">', '<h3>', layerJSON.name, '</h3>', '</li>',
+        '<li class="pad0 keyline-bottom">', layerJSON.description, '</li>',
         '<li class="pad0 keyline-bottom space">',
           '<strong class="quiet">Source: </strong>', //insert source_name and optionally source_url here
+        '</li>',
+        '<li class="pad0 space">',
+          '<strong class="quiet">Date:</strong> ',
+          '<span class="micro">', layerJSON.date, '</span>',
         '</li>',
       '</ul>'];
 
@@ -791,7 +776,7 @@ $(document).foundation();
         var urlHTML = ['<a href="', layerJSON.source_url, '" class="micro">',
           layerJSON.source_name, '</a>']
       }else{
-        var urlHTML = ['<span class="micro">', layerJSON.supplemental_information, '</span>'];
+        var urlHTML = ['<span class="micro">', layerJSON.source_name, '</span>'];
       }
       summary.splice(13, 0, urlHTML.join(''));
 
