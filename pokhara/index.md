@@ -32,8 +32,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [28.22, 83.85]
-    zoom: 6
+    latlng: [28.22, 84.00]
+    zoom: 12
     tile_layers:
     vector_data:
     body: |

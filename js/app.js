@@ -28,9 +28,10 @@ $(document).foundation();
       });
       */
 
-      $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
-      //jquery function, will make layers sortable in the Displayed Map Layers window
+      //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
+      //$('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
 
+      //jquery function, will make layers sortable in the Displayed Map Layers window
       $('.sortable').sortable({
         placeholder: "ui-state-highlight",
         helper: 'clone',
@@ -77,6 +78,84 @@ $(document).foundation();
             return;
           }
       });
+
+      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara";
+
+      //create our deferred object
+      var globalapiJSONpromise = $.Deferred();
+
+      var layersList = [];
+
+      function getAPIJSON (api_url){
+
+        //had to enable CORS in the GeoNode site by adding Header set Access-Control-Allow-Origin "*"
+        //to the etc/apache2/sites-available/geonode.conf file
+        //also had to install header module in apache2 by running "a2enmod headers"
+
+        $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").done(function(data) {
+
+          //resolve the deferred, passing it our custom data
+            globalapiJSONpromise.resolve(data);
+
+        });
+
+      }
+
+      getAPIJSON(api_url);
+
+      globalapiJSONpromise.then (function(value) {
+          console.log("data! ");
+          console.log(value);
+          //return value;
+
+          //This list will have the MapID as the key, and the other info as the values
+
+          var myRegexp = /geonode%3A(.*)/;
+
+          for (var i = 0; i < value.objects.length; i++) {
+
+
+            var match = myRegexp.exec(value.objects[i].detail_url);
+
+            console.log(match[1]);
+
+            layersList.push({ mapID: match[1], title: value.objects[i].title, abstract: value.objects[i].abstract, categories: value.objects[i].category__gn_description})
+          }
+
+          console.log('layersList');
+          console.log(layersList);
+
+          dataIndex = 1;
+
+          for (var i = 0; i < layersList.length; i++) {
+
+            var mapID = 'scgn:' + layersList[i].mapID;
+
+            var title = layersList[i].title;
+
+            var categories = layersList[i].categories;
+
+            var html = [
+            '<li class="layer-toggle"', 
+            'data-index=' + String(dataIndex),
+            'data-categories=' + categories, 
+            'data-id="' + mapID + '"">',
+            '<a class="keyline-bottom" href="#">' + title + '</a>', 
+            '</li>'
+            ].join("\n");
+
+            $('.not-displayed').append(html);
+
+            dataIndex++;
+
+          }
+
+          $('.layer-ui li.layer-toggle').on('click', 'a', report.layerButtonClick);
+
+          //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
+
+        });
+
 
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
@@ -256,6 +335,7 @@ $(document).foundation();
     layerButtonClick: function(e){
       e.preventDefault();
       e.stopPropagation();
+      //console.log('clocked went thorugh');
 
       report.changeLayer($(this).parent('li').data('id'));
     },
@@ -280,7 +360,6 @@ $(document).foundation();
         report.map.leaflet_hash.trigger('move');
       });
 */
-
 
         if(newTopButtonId !== layers[layers.length -1]){
           report.map.clearGrids();
@@ -368,26 +447,52 @@ $(document).foundation();
       var JSONPromise = $.Deferred();
       if(! report.map.reportLayers[mapId].layerJSON){
         // run ajax request for layerJSON and when loaded, store in map.moabiLayers.dataLayers[mapId].layerJSON
+        
+
+/*
         $.ajax('/map_layers.json', {
           type: 'GET',
           dataType: 'json',
           contentType: 'application/json',
           success: function(layersJSON){
-            if(layersJSON[mapId]){
-              // cache layerJSON in map.moabiLayers.dataLayers
-              report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
+*/
+            console.log("data from api");
+            console.log(layersJSON);
 
-              // resolve promise object
-              JSONPromise.resolve(layersJSON[mapId]);
-            }else{
-              JSONPromise.reject('no mapId ' + mapId);
+            console.log(layersJSON.objects[0].detail_url);
+
+            var myRegexp = /geonode%3A(.*)/;
+            var match = myRegexp.exec(layersJSON.objects[0].detail_url);
+
+            console.log(match[1]);
+
+            //parse through JSON and see if any matches to mapId
+
+
+            for (var i = 0; i < layersJSON.objects.length; i++) {
+
+              console.log("mapID: ");
+              console.log(mapId);
+
+              match = myRegexp.exec(layersJSON.objects[0].detail_url);
+
+              if(mapId == match[1]) {
+                console.log("it's a match!");
+                console.log(match[1]);
+
+                // cache layerJSON in map.moabiLayers.dataLayers
+                report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
+
+                // resolve promise object
+                JSONPromise.resolve(layersJSON[mapId]);
+              } else {
+                JSONPromise.reject('no mapId ' + mapId);
+              }
+
             }
-          },
-          error: function(jqXHR, textStatus, errorThrown){
-            JSONPromise.reject(errorThrown);
-          }
-        });
-      }else{
+
+        
+      } else {
         JSONPromise.resolve(report.map.reportLayers[mapId].layerJSON);
       }
       return JSONPromise;
@@ -535,6 +640,37 @@ $(document).foundation();
 
     removeLegend: function(mapId){
       $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
+    },
+
+
+    updateExportLink: function(hash) {
+      // update map embed link and iD edit link
+      $('#map-embed').val("<iframe src='///embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>");
+
+      if ($('#id-edit')) {
+        var z_lat_lon = hash.split('&')[0].split('/'),
+            zoom = z_lat_lon[0].replace("#", ""),
+            lat = z_lat_lon[1],
+            lon = z_lat_lon[2];
+
+        $('#id-edit').attr('href', '//osm.moabi.org/edit?editor=id#map=' + zoom + '/' + lat + '/' + lon)
+      }
+    },
+
+    // leaflet hash functions
+    setLayerHash: function(hash) {
+      return moabi.setQueryVariable(hash, "layers", moabi.getLayers().join(','));
+    },
+
+    getLayerHash: function() {
+      var layers = moabi.getQueryVariable(location.hash, "layers");
+      if (layers) {
+        layers = layers.split(',');
+        moabi.removeAllExcept([]); //could be smarter
+        for (i=0; i<layers.length; i++){
+          moabi.changeLayer(layers[i]);
+        }
+      }
     },
 
 

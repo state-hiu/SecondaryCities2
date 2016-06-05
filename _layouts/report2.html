@@ -150,24 +150,29 @@ section {
 
         <ul class="not-displayed fill-darken0 keyline-all insetshadow-down activate animate copper">
           
+                <!-- This is where a new li divs will appear that will have the layers populated from GeoNode -->
+
+                <!-- example
+
                 <li class="layer-toggle"
                   data-index="5"
                   data-categories="indigenous,"
                   data-id="egn:lbr_policestnp_undp">
                     <a class="keyline-bottom" href="#">Liberia Layer 1</a>
                 </li>
+              -->
               
-                <li class="layer-toggle"
-                  data-index="8"
-                  data-categories="forestry,concession,"
-                  data-id="egn:lbr_lakeresa_lake_unmil">
-                    <a class="keyline-bottom" href="#">Liberia Lake</a>
-                </li>
+                
         </ul>
 
         <div class="small center">Displayed Map Layers</div>
             
         <ul class="displayed sortable fill-brown keyline-all insetshadow-down activate animate black" data-lang="en"></ul>
+
+        <!-- This is where a new ul div will appear that will have the layer info -->
+        <!-- From the GeoNode layer API (ex: /api/layers/?keywords__slug__in=pokhara ) -->
+        <!-- It will retrieve the correct info from the last part of the distribution_url -->
+        <!-- It will display the title and abstract. Possibly later on the data and the supplemental information to display the source data -->
 
     </div>
 

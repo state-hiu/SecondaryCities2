@@ -413,6 +413,18 @@ figcaption {
     margin: 4px 0 16px;
 }
 
+.layer-ui  {
+    text-decoration: none;
+}
+
+.layer-ui .displayed:empty:before {
+    content: "none";
+    font: 12px/20px 'Open Sans Italic', sans-serif;
+    padding-top: 8px;
+    text-align: center;
+    display: block;
+  }
+
 .fill-darken0 {
     background: rgba(0, 0, 0, 0.05);
 }
@@ -429,10 +441,6 @@ figcaption {
     background: rgba(226, 215, 199, 0.5);
 }
 
-.layer-ui  {
-    text-decoration: none;
-}
-
-.activate a, a.active {
+.activate a {
     color: rgba(0, 0, 0, 0.75);
 }
