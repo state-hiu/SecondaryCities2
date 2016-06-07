@@ -428,7 +428,7 @@ $(document).foundation();
         this.removeSummary();
 
         // if removed layer was highest layer, clear grids
-        if(mapId === layers[layers.length -1]){
+        if(layerId === layers[layers.length -1]){
           this.clearGrids();
           // if 1+ more layers on map, add grid of the new top layer
           if(layers.length > 1){
@@ -459,7 +459,7 @@ $(document).foundation();
 
         if(layersList != 'none') {
 
-            this.getLayerJSON(mapId,layersList).done(function(layerJSON){
+            this.getLayerJSON(layerId,layersList).done(function(layerJSON){
               report.showLegend(layerId, layerJSON);
               report.showSummary(layerId, layerJSON);
               // not very smart: simply remove all grids and add for the new layer
