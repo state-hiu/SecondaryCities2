@@ -72,8 +72,8 @@ $(document).foundation();
 
       //L.easyPrint().addTo(this.map);
 
-      report.leaflet_hash.on('update', report.getLayerHash);
-      report.leaflet_hash.on('change', report.setLayerHash);
+      //report.leaflet_hash.on('update', report.getLayerHash);
+      //report.leaflet_hash.on('change', report.setLayerHash);
       //report.leaflet_hash.on('hash', report.updateExportLink);
       //report.updateExportLink(location.hash);
 
@@ -122,7 +122,7 @@ $(document).foundation();
 
       $('#about-tab,#data-tab').on('click', function() {
           if(flag==1){
-            console.log("about or data tab clicked!");
+            //console.log("about or data tab clicked!");
             $( "iframe").remove();
             $( "#sidebar" ).show();
             $( "#map" ).show();
@@ -149,20 +149,28 @@ $(document).foundation();
 
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
 
-      });
+/*
+        $('#report section').waypoint(report.reportScroll(), {
+          context: '#report',
+          offset: '70%'
+        });
+*/
 
-      $('#report section').waypoint(report.reportScroll, {
-        context: '#report',
-        offset: '70%'
-      });
+        //$('#report section').reportScroll(layersList,waypointSection);
 
-      $('.navigate').on('click', 'a', this.navigate);
+        var waypointSection = $('#report section')
+
+        report.reportScroll(layersList,waypointSection);
+
+      });
 
       // refresh all Waypoints when window resizes
       // (docs say this happens automatically, but doesn't appear so: http://imakewebthings.com/waypoints/api/refresh-all/)
       $(window).on('resize', function(){
         Waypoint.refreshAll();
       });
+
+      $('.navigate').on('click', 'a', this.navigate);
 
     },
 
@@ -200,9 +208,6 @@ $(document).foundation();
 
               layersList.push({ mapID: 'scgn:' + match[1], title: apiJSON.objects[i].title, abstract: apiJSON.objects[i].abstract, categories: apiJSON.objects[i].category__gn_description, supplemental_information: apiJSON.objects[i].supplemental_information})
             }
-
-            console.log('layersList');
-            console.log(layersList);
 
             dataIndex = 1;
 
@@ -244,64 +249,81 @@ $(document).foundation();
       report.changeLayer($(this).parent('li').data('id'),e.data);
     },
 
-    reportScroll: function(direction) {
+    reportScroll: function(layersList,waypointSection) {
 
-      var nolayersList = 'none';
-
-      if(direction === 'down'){
-          var $this = $(this.element);
-          $this.prev().removeClass('active');
-          $this.addClass('active');
-      }else{
-          var $this = $(this.element).prev();
-          $this.next().removeClass('active');
-          $this.addClass('active');
-      }
-      var nav = $this.data('nav'),
-          newLayerIds = $this.data('tileid'),
-          newVectorId = $this.data('vector'),
-          displayedLayerIds = report.getLayers(),
-          displayedVectorId = report.getVector();
-
-      if(nav && nav.latlng.length === 2 && nav.zoom){
-        report.map.setView(nav.latlng, nav.zoom);
-      }else if(nav && nav.latlng.length === 2){
-        report.map.panTo(nav.latlng);
-      }else if(nav && nav.zoom){
-        report.map.setZoom(nav.zoom);
+      if (!layersList) {
+        var layersList = 'none';
       }
 
-      if(newLayerIds){
-        // for all existing layers, remove it unless it is present in newLayerIds
-        newLayerIds = newLayerIds.split(',');
+      console.log('layersList from reportScroll: ');
+      console.log(layersList);
 
-        for(i=0; i<displayedLayerIds.length; i++){
-          var displayedLayerId = displayedLayerIds[i];
-          if(newLayerIds.indexOf(displayedLayerId) === -1){
-            report.changeLayer(displayedLayerId,nolayersList);
-          }
-        }
-        // add all newLayerIds unless they are already present
-        for(i=0; i<newLayerIds.length; i++){
-          var newLayerId = newLayerIds[i],
-              newTileLayer = report.map.reportLayers[newLayerId];
-          if(! report.map.hasLayer(newTileLayer)){
-            report.changeLayer(newLayerId,nolayersList);
-          }
-        }
-      }else{
-        // if no newLayers, remove all displayed layers
-        for(i=0; i<displayedLayerIds.length; i++){
-          report.changeLayer(displayedLayerIds[i],nolayersList);
-        }
-      }
+      console.log('waypointSection: ');
+      console.log(waypointSection);
 
-      if(newVectorId && newVectorId != displayedVectorId){
-        report.changeVector(newVectorId);
-      }else if(displayedVectorId){
-        // if no new vector data to add, and existing vector data, remove existing vector data
-        report.changeVector(displayedVectorId,nolayersList);
-      }
+      waypointSection.waypoint(function(direction){
+
+            console.log(direction); // 0, "down"
+
+            if(direction === 'down'){
+                var $this = $(this.element);
+                $this.prev().removeClass('active');
+                $this.addClass('active');
+            }else{
+                var $this = $(this.element).prev();
+                $this.next().removeClass('active');
+                $this.addClass('active');
+            }
+            var nav = $this.data('nav'),
+                newLayerIds = $this.data('tileid'),
+                newVectorId = $this.data('vector'),
+                displayedLayerIds = report.getLayers(),
+                displayedVectorId = report.getVector();
+
+            if(nav && nav.latlng.length === 2 && nav.zoom){
+              report.map.setView(nav.latlng, nav.zoom);
+            }else if(nav && nav.latlng.length === 2){
+              report.map.panTo(nav.latlng);
+            }else if(nav && nav.zoom){
+              report.map.setZoom(nav.zoom);
+            }
+
+            if(newLayerIds){
+              // for all existing layers, remove it unless it is present in newLayerIds
+              newLayerIds = newLayerIds.split(',');
+
+              for(i=0; i<displayedLayerIds.length; i++){
+                var displayedLayerId = displayedLayerIds[i];
+                if(newLayerIds.indexOf(displayedLayerId) === -1){
+                  report.changeLayer(displayedLayerId,layersList);
+                }
+              }
+              // add all newLayerIds unless they are already present
+              for(i=0; i<newLayerIds.length; i++){
+                var newLayerId = newLayerIds[i],
+                    newTileLayer = report.map.reportLayers[newLayerId];
+                if(! report.map.hasLayer(newTileLayer)){
+                  report.changeLayer(newLayerId,layersList);
+                }
+              }
+            }else{
+              // if no newLayers, remove all displayed layers
+              for(i=0; i<displayedLayerIds.length; i++){
+                report.changeLayer(displayedLayerIds[i],layersList);
+              }
+            }
+
+            if(newVectorId && newVectorId != displayedVectorId){
+              report.changeVector(newVectorId);
+            }else if(displayedVectorId){
+              // if no new vector data to add, and existing vector data, remove existing vector data
+              report.changeVector(displayedVectorId,layersList);
+            }
+
+        }, {
+          context: '#report',
+          offset: '70%'
+        });
 
     },
 
@@ -337,8 +359,6 @@ $(document).foundation();
       }
 
     },
-
- 
 
     layerSortedUpdate: function(e, ui){
       var displayedButtonContainer = $(this),
@@ -378,7 +398,7 @@ $(document).foundation();
     changeLayer: function(layerId,layersList){
       // initiate everything that should happen when a map layer is added/removed
 
-      console.log("layersList data from promise");
+      console.log("changelayer function layersList data: ");
       console.log(layersList);
 
       // cache tileLayer in report.map.reportLayers[mapId]
