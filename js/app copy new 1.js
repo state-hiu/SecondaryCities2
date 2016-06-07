@@ -2,86 +2,40 @@ $(document).foundation();
 
 (function(){
 
-  FastClick.attach(document.body);
+/*
+  $('.slider').on('click', 'a', function() {
+    console.log( "clicked" );
+}); 
+*/
 
-  //The report object
   var report = {
-
     init: function(){
-
       L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
       report.map = L.mapbox.map('map', '', {
         attributionControl: false
       });
 
-      // Use styleLayer to add a Mapbox style created in Mapbox Studio
-      var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+
+/*
+      report.map = L.mapbox.map('map', 'james-lane-conkling.5630f970',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
         minZoom: 4,
         maxZoom: 16,
         scrollWheelZoom: true,
+        attributionControl: false,
         zoomControl: false // we'll add later
-      }).addTo(this.map);
-
-      // extend map object to contain reference to all layers
-      var shareControl = L.control({position: 'topleft'});
-      // https://developers.facebook.com/docs/sharing/reference/share-dialog
-      shareControl.onAdd = function(){
-        var controlHTML = $('<div>', {
-          class: 'leaflet-bar leaflet-control',
-        });
-        var fbButton = $('<a>',{
-          class: 'mapbox-icon mapbox-icon-facebook',
-          href: '#'
-        })
-        var twitterButton = $('<a>',{
-          class: 'mapbox-icon mapbox-icon-twitter',
-          href: '#'
-        })
-        controlHTML.append(fbButton, twitterButton);
-        return controlHTML[0];
-      }
-
-      var infoControl = L.mapbox.infoControl().addInfo('<strong>Map Data</strong> &copy; <a href="//www.openstreetmap.org/">OpenStreetMap</a>');
-      if (pageConfig.source_name && pageConfig.source_url){
-        infoControl.addInfo('<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>');
-      }else if(pageConfig.source_name){
-        infoControl.addInfo(pageConfig.source_name);
-      }
-
-      // add additional object to map object to store references to layers
-      $.extend(this.map, {
-        // set baselayer z-index to -1, while you're at it
-        reportLayers: {
-          baseLayer: baseLayer.setZIndex(-1),
-          dataLayers: {}
-        },
-        reportVectors: {},
-        reportControls: {
-          //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
-          scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
-          infoControl: infoControl.addTo(this.map),
-          share: shareControl.addTo(this.map)
-        }
       });
+      */
 
-      report.leaflet_hash = L.hash(this.map);
+      //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
+      //$('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
 
-      this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara";
 
-      //L.easyPrint().addTo(this.map);
+      //create our deferred object
+      var globalapiJSONpromise = $.Deferred();
 
-      report.leaflet_hash.on('update', report.getLayerHash);
-      report.leaflet_hash.on('change', report.setLayerHash);
-      //report.leaflet_hash.on('hash', report.updateExportLink);
-      //report.updateExportLink(location.hash);
-
-      // event handlers
-      // helper function to return latlng on map click; useful for drafting stories--comment out at production
-      this.map.on('click', function(e){
-        console.log(e.latlng);
-      });
 
       //jquery function, will make layers sortable in the Displayed Map Layers window
       $('.sortable').sortable({
@@ -131,117 +85,180 @@ $(document).foundation();
           }
       });
 
-      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara";
-
-      //create our deferred object
-      //var globalapiJSONpromise = $.Deferred();
-
-/*
-      report.getAPIJSON(api_url).done(function(result) {
-        console.log('API Returned: ');
-        console.log(result);
-      });
-*/
-
-      report.buildLayerJSON(api_url).done(function(layersList) {
-        //console.log('layersList Returned: ');
-        //console.log(layersList);
-
-        $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
-
-      });
-
-      $('#report section').waypoint(report.reportScroll, {
-        context: '#report',
-        offset: '70%'
-      });
-
-      $('.navigate').on('click', 'a', this.navigate);
-
-      // refresh all Waypoints when window resizes
-      // (docs say this happens automatically, but doesn't appear so: http://imakewebthings.com/waypoints/api/refresh-all/)
-      $(window).on('resize', function(){
-        Waypoint.refreshAll();
-      });
-
-    },
-
-    //report object methods declarations
-
-    getAPIJSON: function (api_url){
+      function getAPIJSON (api_url){
           //had to enable CORS in the GeoNode site by adding Header set Access-Control-Allow-Origin "*"
           //to the etc/apache2/sites-available/geonode.conf file
           //also had to install header module in apache2 by running "a2enmod headers"
 
-          return $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").then(function(data) {
+          $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").done(function(data) {
 
             //resolve the deferred, passing it our custom data
-              //globalapiJSONpromise.resolve(data);
-              return data;
+              globalapiJSONpromise.resolve(data);
 
           });
-      },
+      }
 
-    buildLayerJSON: function() {
+      getAPIJSON(api_url);
 
-        return this.getAPIJSON().then(function(apiJSON) {
 
-            var layersList = [];
+      globalapiJSONpromise.then (function(value) {
 
-            //This list will have the MapID as the key, and the other info as the values
+              console.log("data! ");
+              console.log(value);
+              //return value;
 
-            var myRegexp = /geonode%3A(.*)/;
+              var layersList = [];
 
-            for (var i = 0; i < apiJSON.objects.length; i++) {
+              //This list will have the MapID as the key, and the other info as the values
 
-              var match = myRegexp.exec(apiJSON.objects[i].detail_url);
+              var myRegexp = /geonode%3A(.*)/;
 
-              console.log(match[1]);
+              for (var i = 0; i < value.objects.length; i++) {
 
-              layersList.push({ mapID: 'scgn:' + match[1], title: apiJSON.objects[i].title, abstract: apiJSON.objects[i].abstract, categories: apiJSON.objects[i].category__gn_description, supplemental_information: apiJSON.objects[i].supplemental_information})
-            }
 
-            console.log('layersList');
-            console.log(layersList);
+                var match = myRegexp.exec(value.objects[i].detail_url);
 
-            dataIndex = 1;
+                console.log(match[1]);
 
-            for (var i = 0; i < layersList.length; i++) {
+                layersList.push({ mapID: 'scgn:' + match[1], title: value.objects[i].title, abstract: value.objects[i].abstract, categories: value.objects[i].category__gn_description, supplemental_information: value.objects[i].supplemental_information})
+              }
 
-              var mapID = layersList[i].mapID;
+              console.log('layersList');
+              console.log(layersList);
 
-              var title = layersList[i].title;
+              dataIndex = 1;
 
-              var categories = layersList[i].categories;
+              for (var i = 0; i < layersList.length; i++) {
 
-              var html = [
-              '<li class="layer-toggle"', 
-              'data-index=' + String(dataIndex),
-              'data-categories=' + categories, 
-              'data-id="' + mapID + '"">',
-              '<a class="keyline-bottom" href="#">' + title + '</a>', 
-              '</li>'
-              ].join("\n");
+                var mapID = layersList[i].mapID;
 
-              $('.not-displayed').append(html);
+                var title = layersList[i].title;
 
-              dataIndex++;
-            }
+                var categories = layersList[i].categories;
 
-            return layersList;
+                var html = [
+                '<li class="layer-toggle"', 
+                'data-index=' + String(dataIndex),
+                'data-categories=' + categories, 
+                'data-id="' + mapID + '"">',
+                '<a class="keyline-bottom" href="#">' + title + '</a>', 
+                '</li>'
+                ].join("\n");
 
+                $('.not-displayed').append(html);
+
+                dataIndex++;
+
+              }
+
+              console.log('layersList2: ');
+              console.log(layersList);
+
+              $('.layer-ui li.layer-toggle').on('click', 'a', layerButtonClick);
+
+              function layerButtonClick(e){
+                e.preventDefault();
+                e.stopPropagation();
+
+                console.log('display layer info: ');
+                console.log(layersList);
+
+                report.changeLayer($(this).parent('li').data('id'),layersList);
+              }
+
+              //// re-initialise plugins
+              //report.init();
+
+              $('#report section').waypoint(report.reportScroll, {
+                context: '#report',
+                offset: '70%'
+              });
+
+              //$('.layer-ui li.layer-toggle').on('click', 'a', report.layerButtonClick(layersList));
+
+              //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
+
+        });
+
+        // Use styleLayer to add a Mapbox style created in Mapbox Studio
+        var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+          center: pageConfig.latlng,
+          zoom: pageConfig.zoom,
+          minZoom: 4,
+          maxZoom: 16,
+          scrollWheelZoom: true,
+          zoomControl: false // we'll add later
+        }).addTo(this.map);
+
+        // extend map object to contain reference to all layers
+        var shareControl = L.control({position: 'topleft'});
+        // https://developers.facebook.com/docs/sharing/reference/share-dialog
+        shareControl.onAdd = function(){
+          var controlHTML = $('<div>', {
+            class: 'leaflet-bar leaflet-control',
           });
+          var fbButton = $('<a>',{
+            class: 'mapbox-icon mapbox-icon-facebook',
+            href: '#'
+          })
+          var twitterButton = $('<a>',{
+            class: 'mapbox-icon mapbox-icon-twitter',
+            href: '#'
+          })
+          controlHTML.append(fbButton, twitterButton);
+          return controlHTML[0];
+        }
 
-        },
+        var infoControl = L.mapbox.infoControl().addInfo('<strong>Map Data</strong> &copy; <a href="//www.openstreetmap.org/">OpenStreetMap</a>');
+        if (pageConfig.source_name && pageConfig.source_url){
+          infoControl.addInfo('<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>');
+        }else if(pageConfig.source_name){
+          infoControl.addInfo(pageConfig.source_name);
+        }
 
-    layerButtonClick: function(e){
-      e.preventDefault();
-      e.stopPropagation();
+        // add additional object to map object to store references to layers
+        $.extend(this.map, {
+          // set baselayer z-index to -1, while you're at it
+          reportLayers: {
+            baseLayer: baseLayer.setZIndex(-1),
+            dataLayers: {}
+          },
+          reportVectors: {},
+          reportControls: {
+            //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
+            scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
+            infoControl: infoControl.addTo(this.map),
+            share: shareControl.addTo(this.map)
+          }
+        });
 
-      console.log('display layer info: ');
-      console.log(e.data);
+        report.leaflet_hash = L.hash(this.map);
 
-      report.changeLayer($(this).parent('li').data('id'),e.data);
+       this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+       //L.easyPrint().addTo(this.map);
+
+        report.leaflet_hash.on('update', report.getLayerHash);
+        report.leaflet_hash.on('change', report.setLayerHash);
+        //report.leaflet_hash.on('hash', report.updateExportLink);
+        //report.updateExportLink(location.hash);
+
+        // event handlers
+        // helper function to return latlng on map click; useful for drafting stories--comment out at production
+        this.map.on('click', function(e){
+          console.log(e.latlng);
+        });
+
+
+
+        // $('.navigate').on('click', 'a', this.navigate);
+
+        // refresh all Waypoints when window resizes
+        // (docs say this happens automatically, but doesn't appear so: http://imakewebthings.com/waypoints/api/refresh-all/)
+        $(window).on('resize', function(){
+          Waypoint.refreshAll();
+        });
+
     },
 
     reportScroll: function(direction) {
@@ -306,20 +323,20 @@ $(document).foundation();
     },
 
     // map interaction functions
-     navigate: function(e) {
-       e.preventDefault();
-       e.stopPropagation();
+    // navigate: function(e) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
 
-       var $this = $(this),
-           lat = $this.data("nav")[0],
-           lon = $this.data("nav")[1],
-           zoom = $this.data("nav")[2];
+    //   var $this = $(this),
+    //       lat = $this.data("nav")[0],
+    //       lon = $this.data("nav")[1],
+    //       zoom = $this.data("nav")[2];
 
-       report.map.setView([lat, lon], zoom);
+    //   report.map.setView([lat, lon], zoom);
 
-       $this.parent('li').siblings('li').children('a.active').removeClass('active');
-       $this.addClass('active');
-     },
+    //   $this.parent('li').siblings('li').children('a.active').removeClass('active');
+    //   $this.addClass('active');
+    // },
 
     changeVector: function(newVectorId){
       if(! report.map.reportVectors[newVectorId]){
@@ -871,5 +888,4 @@ $(document).foundation();
 
   window.report = report;
   report.init();
-
 })();
