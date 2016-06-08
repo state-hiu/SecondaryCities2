@@ -31,7 +31,7 @@ $(document).foundation();
       //$('.layer-ui li.layer-toggle').on('click', 'a', function(){console.log('clicked');});
       //$('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
 
-      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara";
+      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=denpasar";
 
       //create our deferred object
       var globalapiJSONpromise = $.Deferred();
@@ -90,7 +90,7 @@ $(document).foundation();
           //to the etc/apache2/sites-available/geonode.conf file
           //also had to install header module in apache2 by running "a2enmod headers"
 
-          $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").done(function(data) {
+          $.getJSON(api_url).done(function(data) {
 
             //resolve the deferred, passing it our custom data
               globalapiJSONpromise.resolve(data);

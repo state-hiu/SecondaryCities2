@@ -1,14 +1,14 @@
 ---
 layout: report2
-title: Pokhara, Nepal
-author: Tom G of HIU
-date: January 20, 2015
+title: Mekelle, Ethiopia
+author: Secondary Cities
+date: June 7, 2016
 data_source_name: Secondary Cities
 data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
-banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
-banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara'
+banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+banner_image_source: Lorem ipsum dolor sit amet
+api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=mekelle'
 esri_story: false
 
 footer: |
@@ -33,7 +33,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [28.22, 84.00]
+    latlng: [13.491, 39.464]
     zoom: 12
     tile_layers:
     vector_data:
@@ -96,22 +96,9 @@ sections:
 
 ## Summary
 
-![kharkiv](http://www.teaminternational.com/wp-content/uploads/2013/06/kharkov3_b.jpg)
+#### Urban water accessibility and planning
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-## Participatory Data Generation
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-### Urban Flow Mapping
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-## Partners
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
+More information to come
 
 
 

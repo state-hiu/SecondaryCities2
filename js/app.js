@@ -15,7 +15,7 @@ $(document).foundation();
       });
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
-      var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9',{
+      var baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v9',{
         center: pageConfig.latlng,
         zoom: pageConfig.zoom,
         minZoom: 4,
@@ -23,6 +23,25 @@ $(document).foundation();
         scrollWheelZoom: true,
         zoomControl: false // we'll add later
       }).addTo(this.map);
+
+      function switchLayer(layer) {
+          //L.mapbox.tileLayer('mapbox.light').addTo(report.map);
+          L.mapbox.styleLayer('mapbox://styles/mapbox/' + layer + '-v9').addTo(report.map);
+      }
+
+      $("#data-tab").click(function() {
+        switchLayer('light');
+      });
+
+      $("#story-tab").click(function() {
+        switchLayer('light');
+      });
+
+      $("#about-tab").click(function() {
+        switchLayer('streets');
+      });
+
+      //$(#about-tab).onclick = switchLayer('streets');
 
       // extend map object to contain reference to all layers
       var shareControl = L.control({position: 'topleft'});
@@ -131,8 +150,6 @@ $(document).foundation();
           }
       });
 
-      var api_url = "http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara";
-
       //create our deferred object
       //var globalapiJSONpromise = $.Deferred();
 
@@ -143,7 +160,7 @@ $(document).foundation();
       });
 */
 
-      report.buildLayerJSON(api_url).done(function(layersList) {
+      report.buildLayerJSON().done(function(layersList) {
         //console.log('layersList Returned: ');
         //console.log(layersList);
 
@@ -176,18 +193,37 @@ $(document).foundation();
 
     //report object methods declarations
 
-    getAPIJSON: function (api_url){
+    getAPIJSON: function (){
           //had to enable CORS in the GeoNode site by adding Header set Access-Control-Allow-Origin "*"
           //to the etc/apache2/sites-available/geonode.conf file
           //also had to install header module in apache2 by running "a2enmod headers"
 
-          return $.getJSON("http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara").then(function(data) {
+          console.log('pageConfig api_url !!');
+          console.log(pageConfig.api_url);
+          console.log('pageConfig done !!');
 
-            //resolve the deferred, passing it our custom data
+          if(pageConfig.api_url) {
+
+              return $.getJSON(pageConfig.api_url).then(function(data) {
+
+              //resolve the deferred, passing it our custom data
               //globalapiJSONpromise.resolve(data);
               return data;
 
-          });
+              });
+
+          } else {
+
+              return $.getJSON('http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara').then(function(data) {
+
+              //resolve the deferred, passing it our custom data
+              //globalapiJSONpromise.resolve(data);
+              return data;
+
+              });
+
+          }
+          
       },
 
     buildLayerJSON: function() {
@@ -440,14 +476,12 @@ $(document).foundation();
                 report.addGrid(nextLayerId, nextLayerJSON);
                 });
             }
-
-
           }
         }
       }else{
         // run all add layer actions:
-          // add layer to map; add legend; move layer-ui button
-          // show description summary; add grid; update hash
+        // add layer to map; add legend; move layer-ui button
+        // show description summary; add grid; update hash
 
         // find zIndex of current top layer, or -1 if no current layers
         var layers = this.getLayers(),
@@ -458,7 +492,6 @@ $(document).foundation();
         this.showLayerButton(layerId);
 
         if(layersList != 'none') {
-
             this.getLayerJSON(layerId,layersList).done(function(layerJSON){
               report.showLegend(layerId, layerJSON);
               report.showSummary(layerId, layerJSON);
@@ -466,7 +499,6 @@ $(document).foundation();
               report.clearGrids();
               report.addGrid(layerId, layerJSON);
             });
-
         }
         
       }
