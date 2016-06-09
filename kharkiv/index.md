@@ -9,6 +9,7 @@ banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=kharkiv'
+tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: true
 
 footer: |
@@ -21,7 +22,7 @@ footer: |
 tileOrigins:
   - name: scgn
     url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
-    
+
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 

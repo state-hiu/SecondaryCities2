@@ -52,11 +52,11 @@ $(document).foundation();
         });
         var fbButton = $('<a>',{
           class: 'mapbox-icon mapbox-icon-facebook',
-          href: '#'
+          href: 'http://www.facebook.com/sharer/sharer.php?u=' + pageConfig.fb_site
         })
         var twitterButton = $('<a>',{
-          class: 'mapbox-icon mapbox-icon-twitter',
-          href: '#'
+          class: 'mapbox-icon mapbox-icon-twitter twitter-share-button',
+          href: 'https://twitter.com/intent/tweet?text=' + pageConfig.tweet_text 
         })
         controlHTML.append(fbButton, twitterButton);
         return controlHTML[0];
@@ -653,7 +653,7 @@ $(document).foundation();
 
     showLegend: function(mapId, layerJSON){
       $('<div>', {
-                  'class': 'moabi-legend space-bottom1',
+                  'class': 'report-legend space-bottom1',
                   'data-id': mapId,
                   html: layerJSON.legend
       }).prependTo('.map-legend .legend-contents');
