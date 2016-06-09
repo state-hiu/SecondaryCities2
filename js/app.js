@@ -684,6 +684,8 @@ $(document).foundation();
 
       console.log(match[1]);
 
+      //retrieving legends from SLDs on Geoserver!
+      //http://docs.geoserver.org/2.7.0/user/services/wms/get_legend_graphic/legendgraphic.html
 
       var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
