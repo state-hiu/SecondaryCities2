@@ -4,11 +4,12 @@ title: Medellin, Colombia
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
 data_source_name: Secondary Cities
-data_source_url: http://geodata.grid.unep.ch/
+data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=medellin'
+tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: false
 
 footer: |
@@ -25,6 +26,10 @@ tileOrigins:
   - name: wfp
     url: http://geonode.wfp.org/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
+about_tab_data:
+  - tile_layers: 
+    vector_data:
+    
 sections:
   - title:
     banner_image:

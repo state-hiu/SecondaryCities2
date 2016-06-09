@@ -212,7 +212,10 @@ section {
                    {% for origin in page.tileOrigins %}
                      '{{origin.name}}':'{{origin.url}}'{% unless forloop.last %},{% endunless %}
                    {% endfor %}
-                 }
+                 },
+                  {% for section in page.about_tab_data %}
+                    {% if section.tile_layers %}about_tab_tile_layers: '{{ section.tile_layers | join: "," }}' {% endif %}
+                  {% endfor %}
                };
   console.log('pageConfig: ');
   console.log(pageConfig);

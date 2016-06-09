@@ -87,7 +87,7 @@ $(document).foundation();
 
       report.leaflet_hash = L.hash(this.map);
 
-      this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+      
 
       //L.easyPrint().addTo(this.map);
 
@@ -163,6 +163,13 @@ $(document).foundation();
       report.buildLayerJSON().done(function(layersList) {
         //console.log('layersList Returned: ');
         //console.log(layersList);
+
+        console.log('testing pageConfig.about_tab_tile_layers: ');
+
+        if(pageConfig.about_tab_tile_layers) {
+          console.log(pageConfig.about_tab_tile_layers);
+          report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+        }
 
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
 
@@ -652,11 +659,38 @@ $(document).foundation();
     },
 
     showLegend: function(mapId, layerJSON){
+
+      /*
       $('<div>', {
                   'class': 'report-legend space-bottom1',
                   'data-id': mapId,
                   html: layerJSON.legend
       }).prependTo('.map-legend .legend-contents');
+      */
+
+      //('<img src="http://icons.iconarchive.com/icons/rokey/smooth/128/apple-icon.png">').prependTo('.map-legend .legend-contents');
+
+      //if legend does not exist
+      if ($("legend-contents").length == 0) {
+        report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+      }
+
+      console.log('map id legend:');
+      console.log(mapId);
+
+      var myRegexp = /:(.*)/;
+
+      var match = myRegexp.exec(mapId);
+
+      console.log(match[1]);
+
+
+      var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
+
+      var html_string = '<img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ">';
+
+      $( ".map-legend").append(html_string);
+
 
       /*
      * Replace all SVG images with inline SVG
@@ -697,7 +731,7 @@ $(document).foundation();
     },
 
     removeLegend: function(mapId){
-      $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
+      $('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
     },
 
 
