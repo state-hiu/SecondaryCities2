@@ -294,7 +294,7 @@ $(document).foundation();
 
     reportScroll: function(layersList,waypointSection) {
 
-      if (!layersList) {
+      if (!layersList || layersList.length == 0) {
         var layersList = 'none';
       }
 
