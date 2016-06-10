@@ -101,25 +101,21 @@ sections:
 
 ## Summary
 
-![kharkiv](http://www.teaminternational.com/wp-content/uploads/2013/06/kharkov3_b.jpg)
+![kharkiv]( {{ site.baseurl }}/img/kharkiv/LopanStrelkaKharkov.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+Kharkiv was founded in 1654 and after a humble beginning as a small fortress grew to become a major centre of Ukrainian culture within the Russian Empire. Kharkiv became the first city in Ukraine occupied by Soviet troops in December 1917. It functioned as the first capital of the Ukrainian Soviet Socialist Republic until January 1935, after which the capital relocated to Kiev. Kharkiv is the administrative center of Kharkiv Oblast and of the surrounding Kharkiv district.
 
-## Participatory Data Generation
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-### Urban Flow Mapping
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+Kharkiv has a population of 1.451 million people (2014), the second largest in Ukraine. Although the majority of the population is Ukrainian both in nationality and ethnicity, Kharkiv’s largest minority is of Russian descent due to it’s history and proximity to Russia.
 
 ## Partners
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+[Kharkiv City Government](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
 
+[Kharkiv National University Government](http://www.univer.kharkov.ua/en)
 
+## Upcoming Events
 
-
+- 3rd Secondary Cities Workshop, September 2016
 
 
 
