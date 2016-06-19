@@ -457,3 +457,20 @@ figcaption {
 .pad0 {
     padding: 5px;
 }
+
+.not-displayed li {
+    float: left;
+    display: inline;
+}
+
+#double {
+    width: 75%;
+}
+
+#double-right {
+    width: 25%;
+}
+
+.inline-block li{
+  display:inline;
+}

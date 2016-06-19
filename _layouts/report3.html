@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+{% include georeport_head.html %}
+<style type="text/css">
+p {
+  font-size: 17px;
+}
+.grey {
+    background: rgba(0, 0, 0, 0.1);
+}
+.caption-content {
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 50%;
+    margin-top: -12px;
+    color: #333;
+}
+section {
+    padding: 0px 0;
+}
+</style>
+
+<body>
+
+{% include georeport_navbar2.html %}
+
+<!--<div id="report-container" class="small-12">-->
+  <div id="sidebar" class="small-4 keyline-right fill-white left-bar fill-light strongline-right dropshadow-right no-footer">
+
+    <!--This div below needs to be the exact height and not over so scrolling doesn't appear-->
+    <div class="col12 clip sliding h active1" style="height: 100%">
+
+
+      <!-- About -->
+      
+      <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;width:450px" markdown="1">
+
+      {{ content }}
+
+      </div>
+
+      <!-- Story -->
+      <!--The report id activates the report scroll feature-->
+      <div class="report-panel col12 scroll-styled pad2 prose animate" id="report" style="height:100%;width:450px;overflow:auto;">
+
+        {% for section in page.sections %}
+          <section class="animate{% if forloop.first %}active{% endif %}"
+                   {% if section.latlng or section.zoom %}data-nav='{"latlng": [ {{section.latlng | join: ","}} ], "zoom": {{section.zoom}} }'{% endif %}
+                   {% if section.tile_layers %}data-tileid='{{section.tile_layers | join: ","}}'{% endif %}
+                   {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %}>
+            {% if section.title %}<h1 class="serif keyline-bottom pvs">{{ section.title }}</h1>{% endif %}
+            {% if forloop.first %}
+              <div class="mvs">
+                <div class="small"><strong>By {{page.author}}</strong></div>
+                <div class="small serif">{{page.date}}</div>
+              </div>
+            {% endif %}
+            <!-- display section banner_image.
+                 If first section and there is no section banner_image specified, default to page banner_image -->
+            {% if section.banner_image %}
+              <figure>
+                <img src="{{section.banner_image}}" alt="banner image">
+                <figcaption>{{section.banner_image_caption}}</figcaption>
+                <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
+              </figure>
+            {% elsif forloop.first %}
+              <figure>
+                <img src="{{page.banner_image}}" alt="banner image">
+                <figcaption>{{page.banner_image_caption}}</figcaption>
+                <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
+              </figure>
+            {% endif %}
+
+            {{ section.body | markdownify }}
+
+          </section>
+        {% endfor %}
+
+        {% if page.footer %} <aside class="small quiet pvs keyline-top">{{page.footer}}</aside> {% endif %}
+
+      </div>
+
+
+      <div class="col12 pad2x pad1y scroll-styled animate" style="height:100%;width:450px;">
+
+        <h2 class="space-bottom1 ">Map Layers</h2>
+        <!--<p class="small quiet">Click on a layer to add it to the map</p>-->
+
+        <div class="layer-ui col12 minor-panel-viewer">
+        <!-- <p class="prose small center quiet">Click on a layer to add it to the map.</p> -->
+
+
+            <ul class="inline-block" style="margin-bottom: 0px";>
+              <li id="double" style="margin-left: 15px;">Categories</li>
+              <li id="double-right" style="margin-left: 210px;"># layers</li>
+            </ul>
+
+
+            <ul class="not-displayed fill-darken0 keyline-all insetshadow-down activate animate copper">
+
+                    <!--This will need to get from the GeoNode API and count for all of the layers and each category and create an array that has each category and the count of layers and will display it-->
+              
+                    <!-- This is where a new li divs will appear that will have the layers populated from GeoNode -->
+
+                    <!-- example
+
+                    <li class="layer-toggle"
+                      data-index="5"
+                      data-categories="indigenous,"
+                      data-id="egn:lbr_policestnp_undp">
+                        <a class="keyline-bottom" href="#">Liberia Layer 1</a>
+                    </li>
+                  -->
+                  
+                    
+            </ul>
+
+            <div class="small center">Available Map Layers</div>
+                
+            <ul class="displayed sortable fill-brown keyline-all insetshadow-down activate animate black" data-lang="en"></ul>
+
+            <!-- This is where a new ul div will appear that will have the layer info -->
+            <!-- From the GeoNode layer API (ex: /api/layers/?keywords__slug__in=pokhara ) -->
+            <!-- It will retrieve the correct info from the last part of the distribution_url -->
+            <!-- It will display the title and abstract. Possibly later on the data and the supplemental information to display the source data -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+<div id="map" class="
+  sidebarred 
+  no-footer 
+  leaflet-container leaflet-fade-anim" tabindex="0"></div>
+
+
+<!-- Loading JavaScripts
+================================================== -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="{{site.baseurl}}js/vendor/jquery.js"><\/script>')
+  // simple hack to pass variables defined in Jekyll front matter to app.js
+  // set opening latlng and zoom coordinates to those set for the first section
+  pageConfig = {
+                 latlng: [ {{page.sections[0].latlng | join: ","}} ] , zoom: {{page.sections[0].zoom}},
+                 {% if page.data_source_name %}source_name: '{{page.data_source_name}}',{% endif %}
+                 {% if page.data_source_url %}source_url: '{{page.data_source_url}}',{% endif %}
+                 {% if page.api_url %}api_url: '{{page.api_url}}',{% endif %}
+                 {% if page.tweet_text %}tweet_text: '{{page.tweet_text}}',{% endif %}
+                 fb_site: '{{site.baseurl}}' + '{{page.url}}',
+                 tileOrigins: {
+                   {% for origin in page.tileOrigins %}
+                     '{{origin.name}}':'{{origin.url}}'{% unless forloop.last %},{% endunless %}
+                   {% endfor %}
+                 },
+                  {% for section in page.about_tab_data %}
+                    {% if section.tile_layers %}about_tab_tile_layers: '{{ section.tile_layers | join: "," }}' {% endif %}
+                  {% endfor %}
+               };
+  console.log('pageConfig: ');
+  console.log(pageConfig);
+</script>
+<script src="{{site.baseurl}}/js/vendor/jquery.waypoints.js"></script>
+<script src="{{site.baseurl}}/js/vendor/fastclick.js"></script>
+<script src="{{site.baseurl}}/js/foundation.min.js"></script>
+<!-- version 0.2.1 on api.mapbox.com did not work -->
+<script src='{{site.baseurl}}/js/vendor/leaflet-hash.js'></script>
+<script src="{{site.baseurl}}/js/app2.js"></script>
+
+
+</body>
+</html>

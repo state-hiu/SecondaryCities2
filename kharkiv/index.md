@@ -1,5 +1,5 @@
 ---
-layout: report2
+layout: report3
 title: Kharkiv, Ukraine
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
