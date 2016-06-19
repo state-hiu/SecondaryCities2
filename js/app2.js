@@ -169,7 +169,7 @@ $(document).foundation();
 
         layersList = layersListANDsortedCategoriesARRAY[0];
 
-        console.log('testing pageConfig.about_tab_tile_layers: ');
+        //console.log('testing pageConfig.about_tab_tile_layers: ');
 
         if(pageConfig.about_tab_tile_layers) {
           console.log(pageConfig.about_tab_tile_layers);
@@ -212,9 +212,9 @@ $(document).foundation();
           //to the etc/apache2/sites-available/geonode.conf file
           //also had to install header module in apache2 by running "a2enmod headers"
 
-          console.log('pageConfig api_url !!');
-          console.log(pageConfig.api_url);
-          console.log('pageConfig done !!');
+          //console.log('pageConfig api_url !!');
+          //console.log(pageConfig.api_url);
+          //console.log('pageConfig done !!');
 
           if(pageConfig.api_url) {
 
@@ -334,12 +334,13 @@ $(document).foundation();
               dataIndex++;
             }
 
-            console.log('before layersList: '); 
-            console.log(layersList); 
+            //console.log('before layersList: '); 
+            //console.log(layersList); 
 
-            console.log('before sortedCategories: '); 
-            console.log(sortedCategories); 
+            //console.log('before sortedCategories: '); 
+            //console.log(sortedCategories); 
 
+            //need to return in one array because in javascript cannot return two seperate variables
             return [layersList,sortedCategories];
 
           });
@@ -350,23 +351,23 @@ $(document).foundation();
       e.preventDefault();
       e.stopPropagation();
 
-      console.log('display layer info: ');
-      console.log(e.data);
+      //console.log('display layer info: ');
+      //console.log(e.data);
 
       //get all layers
 
-      console.log('display category: ');
-      console.log($(this).parent('li').data('id'));
+      //console.log('display category: ');
+      //console.log($(this).parent('li').data('id'));
 
-      console.log('layersList exists');
-      console.log(e.data);
+      //console.log('layersList exists');
+      //console.log(e.data);
 
       report.removeAllLayers();
 
       for(var y in e.data){
-        console.log(e.data[y].category);
+        //console.log(e.data[y].category);
         if (e.data[y].category == $(this).parent('li').data('id')) {
-          console.log('wowowowow');
+          //console.log('wowowowow');
           report.changeLayer(e.data[y].mapID,e.data);
           }
 
@@ -381,14 +382,15 @@ $(document).foundation();
         var layersList = 'none';
       }
 
-      console.log('layersList from reportScroll: ');
-      console.log(layersList);
+      //console.log('layersList from reportScroll: ');
+      //console.log(layersList);
 
-      console.log('waypointSection: ');
-      console.log(waypointSection);
+      //console.log('waypointSection: ');
+      //console.log(waypointSection);
 
       waypointSection.waypoint(function(direction){
 
+            console.log('waypoint direction: ');
             console.log(direction); // 0, "down"
 
             if(direction === 'down'){
@@ -523,20 +525,30 @@ $(document).foundation();
 
     removeAllLayers: function() {
       console.log("removing all layers!");
-      report.removeAllExcept();
-      //this.removeLayerButton(layerId);
-      var layerButton = report.getDisplayedLayersButtons().empty();
+
       //work on this
       //this.removeLegend(layerId);
+      
+      displayedLayerIds = report.getLayers();
+
+      for(i=0; i<displayedLayerIds.length; i++){
+                //report.changeLayer(displayedLayerIds[i],layersList);
+                report.getDisplayedLayersButtons().filter('[data-id="' + displayedLayerIds[i] + '"]').remove();
+              }
+
       //good
       this.removeSummary();
+
+      //removes all map layers
+      report.removeAllExcept();
+
     },
 
     changeLayer: function(layerId,layersList){
       // initiate everything that should happen when a map layer is added/removed
 
-      console.log("changelayer function layersList data: ");
-      console.log(layersList);
+      //console.log("changelayer function layersList data: ");
+      //console.log(layersList);
 
       // cache tileLayer in report.map.reportLayers[mapId]
       if(! report.map.reportLayers[layerId]){
@@ -622,13 +634,11 @@ $(document).foundation();
           contentType: 'application/json',
           success: function(layersJSON){
 */
-            console.log("data from api");
-            console.log(layersList);
+            //console.log("data from api");
+            //console.log(layersList);
 
-            console.log("data from mapID");
-            console.log(layersList[0].mapID);
-
-            
+            //console.log("data from mapID");
+            //console.log(layersList[0].mapID);
 
             for (var i = 0; i < layersList.length; i++) {
 
@@ -638,9 +648,8 @@ $(document).foundation();
               //console.log(layersList[i].mapID);
 
               if (layersList[i].mapID == inputMapId) {
-                console.log("inputMapId: ");
-                console.log(inputMapId);
-
+                //console.log("inputMapId: ");
+                //console.log(inputMapId);
 
                 // cache layerJSON in map.moabiLayers.dataLayers
                 //report.map.reportLayers[mapId].layerJSON = layersJSON[mapId];
@@ -649,7 +658,6 @@ $(document).foundation();
                 JSONPromise.resolve(layersList[i]);
               }
             }
-
         
       } else {
         JSONPromise.resolve(report.map.reportLayers[inputMapId].layerJSON);
@@ -770,10 +778,7 @@ $(document).foundation();
                   $('.displayed').append(html);
 
               }
-
             }
-
-      
     },
 
     showLegend: function(mapId, layerJSON){
@@ -793,14 +798,14 @@ $(document).foundation();
         report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
       }
 
-      console.log('map id legend:');
-      console.log(mapId);
+      //console.log('map id legend:');
+      //console.log(mapId);
 
       var myRegexp = /:(.*)/;
 
       var match = myRegexp.exec(mapId);
 
-      console.log(match[1]);
+      //console.log(match[1]);
 
       //retrieving legends from SLDs on Geoserver!
       //http://docs.geoserver.org/2.7.0/user/services/wms/get_legend_graphic/legendgraphic.html
@@ -847,7 +852,7 @@ $(document).foundation();
 
         }, 'xml');
 
-});
+      });
     },
 
     removeLegend: function(mapId){
@@ -871,20 +876,19 @@ $(document).foundation();
 
     // leaflet hash functions
     setLayerHash: function(hash) {
-      return moabi.setQueryVariable(hash, "layers", moabi.getLayers().join(','));
+      return report.setQueryVariable(hash, "layers", report.getLayers().join(','));
     },
 
     getLayerHash: function() {
-      var layers = moabi.getQueryVariable(location.hash, "layers");
+      var layers = report.getQueryVariable(location.hash, "layers");
       if (layers) {
         layers = layers.split(',');
-        moabi.removeAllExcept([]); //could be smarter
+        report.removeAllExcept([]); //could be smarter
         for (i=0; i<layers.length; i++){
-          moabi.changeLayer(layers[i]);
+          report.changeLayer(layers[i]);
         }
       }
     },
-
 
     removeLayerButton: function(mapId){
       // move layerButton from .displayed to where it was originally located in .not-displayed
@@ -906,7 +910,7 @@ $(document).foundation();
             $('.layer-ui ul.not-displayed ').append(layerButton);
           }
 
-//need to imporove the logic here
+      //need to imporove the logic here
       for(i=0; i<notDisplayedButtons.length; i++){
         
         // if button index is less than the smallest, insert at beginning
