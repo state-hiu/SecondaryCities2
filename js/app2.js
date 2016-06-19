@@ -287,7 +287,7 @@ $(document).foundation();
             for(var y in categoryList) {
               //console.log(categoryList[y]);
               //console.log(categoryList[y].length);
-              categoryArray[y]=categoryList[y].length;
+              categoryArray[y]=categoryList[y].length - 1;
             }
 
             //https://gist.github.com/umidjons/9614157
