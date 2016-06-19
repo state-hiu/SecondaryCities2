@@ -771,7 +771,8 @@ $(document).foundation();
                   'data-index=' + String(dataIndex),
                   'data-categories=' + categories, 
                   'data-id="' + mapID + '"">',
-                  '<a class="keyline-bottom" href="#">' + title + '</a>', 
+                  '<a id="leftofCheckbox" href="#">' + title + '</a>',
+                  '<input type="checkbox" name="text1" value="value1" />', 
                   '</li>'
                   ].join("\n");
 

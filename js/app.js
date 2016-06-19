@@ -263,7 +263,7 @@ $(document).foundation();
               var categories = layersList[i].categories;
 
               var html = [
-              '<li class="layer-toggle"', 
+              '<li class="layer-toggle keyline-bottom"', 
               'data-index=' + String(dataIndex),
               'data-categories=' + categories, 
               'data-id="' + mapID + '"">',
