@@ -87,8 +87,6 @@ $(document).foundation();
 
       report.leaflet_hash = L.hash(this.map);
 
-      
-
       //L.easyPrint().addTo(this.map);
 
       //report.leaflet_hash.on('update', report.getLayerHash);
@@ -772,7 +770,7 @@ $(document).foundation();
                   'data-categories=' + categories, 
                   'data-id="' + mapID + '"">',
                   '<a id="leftofCheckbox" href="#">' + title + '</a>',
-                  '<input type="checkbox" name="text1" value="value1" />', 
+                  '<input type="checkbox" name="mapID" value="'+mapID+'" checked>', 
                   '</li>'
                   ].join("\n");
 
@@ -780,6 +778,41 @@ $(document).foundation();
 
               }
             }
+
+            //The selector doesn't work if put above in the intialization code
+             $( "input[type=checkbox]" ).on( "click", function() {
+                
+                //console.log($( "input:checked" ).val() + " is checked!" );
+                var layerID = $( "input" ).val();
+                console.log('layerID val');
+                console.log(layerID);
+
+                if($( "input:checked" ).val()){
+                  console.log($( "input" ).val() + " is checked!" );
+
+                  report.changeLayer(layerID);
+
+                }else{
+
+                  report.changeLayer(layerID);
+
+/*
+                  console.log('unchecked');
+                  var tileLayer = report.map.reportLayers[layerID];
+
+                  // if layer is present, run all remove layer actions
+                  if(report.map.hasLayer(tileLayer)){
+                    var layers = report.getLayers();
+                    // run all remove layer actions
+                    report.map.removeLayer(tileLayer);
+                    report.removeLayerButton(layerId);
+                    report.removeLegend(layerId);
+                    report.removeSummary();
+                  }
+                
+*/
+                }
+              });
     },
 
     showLegend: function(mapId, layerJSON){
