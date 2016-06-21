@@ -247,7 +247,7 @@ $(document).foundation();
 
               //console.log(match[1]);
 
-              layersList.push({ mapID: 'scgn:' + match[1], title: apiJSON.objects[i].title, abstract: apiJSON.objects[i].abstract, category: apiJSON.objects[i].category__gn_description.trim(), supplemental_information: apiJSON.objects[i].supplemental_information})
+              layersList.push({ mapID: 'scgn:' + match[1], title: apiJSON.objects[i].title, abstract: apiJSON.objects[i].abstract, category: apiJSON.objects[i].category__gn_description.trim(), supplemental_information: apiJSON.objects[i].supplemental_information, distribution_url: apiJSON.objects[i].distribution_url})
             }
 
             dataIndex = 1;
@@ -623,11 +623,8 @@ $(document).foundation();
 
     getLayerJSON: function(inputMapId,layersList){
       // returns a promise object, that when resolved, contains JSON for mapId
-      // assumes that map.moabiLayers.dataLayers[mapId] already exists and contains [mapId].tileLayer
       var JSONPromise = $.Deferred();
       if(! report.map.reportLayers[mapId].layerJSON){
-        // run ajax request for layerJSON and when loaded, store in map.moabiLayers.dataLayers[mapId].layerJSON
-        
 
 /*
         $.ajax('/map_layers.json', {
@@ -638,9 +635,6 @@ $(document).foundation();
 */
             //console.log("data from api");
             //console.log(layersList);
-
-            //console.log("data from mapID");
-            //console.log(layersList[0].mapID);
 
             for (var i = 0; i < layersList.length; i++) {
 
@@ -664,13 +658,11 @@ $(document).foundation();
       } else {
         JSONPromise.resolve(report.map.reportLayers[inputMapId].layerJSON);
       }
+
+      console.log('what is JSONPromise?: ');
+      console.log(JSONPromise);
       return JSONPromise;
-      // working with JSONPromise
-      // moabi.getJSONPromise(mapId).done(function(result){
-      //   console.log('returned layer name: ' + result.name);
-      // }).fail(function(error){
-      //   console.log('getJSON failed. Error: ' + error);
-      // })
+
     },
 
     getVector: function(){
@@ -816,25 +808,9 @@ $(document).foundation();
 
                   report.changeLayer(layerID,layersList);
 
-              }
+                }
               });
 
-/*
-                  console.log('unchecked');
-                  var tileLayer = report.map.reportLayers[layerID];
-
-                  // if layer is present, run all remove layer actions
-                  if(report.map.hasLayer(tileLayer)){
-                    var layers = report.getLayers();
-                    // run all remove layer actions
-                    report.map.removeLayer(tileLayer);
-                    report.removeLayerButton(layerId);
-                    report.removeLegend(layerId);
-                    report.removeSummary();
-                  }
-                
-*/
-                
     },
 
     showLegend: function(mapId, layerJSON){
@@ -1033,6 +1009,9 @@ $(document).foundation();
         '<li class="pad0 keyline-bottom">', layerJSON.abstract, '</li>',
         '<li class="pad0 keyline-bottom space">',
           '<strong class="quiet">Source: </strong>', //insert source_name and optionally source_url here
+        '</li>',
+        '<li class="pad0 keyline-bottom space">',
+          '<a href="'+layerJSON.distribution_url+'" target="_blank">Download Dataset on Secondary Cities GeoNode</a>',
         '</li>',
       '</ul>'];
 
