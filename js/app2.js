@@ -169,8 +169,6 @@ $(document).foundation();
           report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
         }
 
-        //$('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
-
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
 
 /*
@@ -784,6 +782,19 @@ $(document).foundation();
 
               }
             }
+
+            $('.layer-ui ul.displayed li.layer-toggle').unbind("click").click(function() {
+              console.log('clicked!!!!!!');
+              mapID = $(this).attr('data-id');
+              console.log(mapID);
+
+              report.getLayerJSON(mapID,layersList).done(function(layerJSON){
+
+                report.showSummary(mapID, layerJSON);
+
+              });
+
+            });
 
             //The selector doesn't work if put above in the intialization code
             //http://stackoverflow.com/questions/1536660/jquery-click-event-handler-is-called-twice-for-a-checkbox
