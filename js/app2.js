@@ -541,6 +541,8 @@ $(document).foundation();
       //console.log("changelayer function layersList data: ");
       //console.log(layersList);
 
+      console.log('changelayer is running');
+
       // cache tileLayer in report.map.reportLayers[mapId]
       if(! report.map.reportLayers[layerId]){
         // construct tilelayer url template out of tileOrigins and newLayerId
@@ -556,6 +558,7 @@ $(document).foundation();
         var tileUrl = tileOrigin.replace('{layerId}', layerName);
         report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {tms: true});
       }
+
       var tileLayer = this.map.reportLayers[layerId];
 
       // if layer is present, run all remove layer actions
@@ -593,7 +596,17 @@ $(document).foundation();
 
         this.map.addLayer(tileLayer);
         tileLayer.setZIndex(topLayerZIndex + 1);
-        this.showLayerButton(layerId,layersList);
+
+        //if LayerButton exists, don't add it 
+
+        console.log('testing if LayerButton exists');
+        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length);
+
+        if (report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length > 0){
+          console.log('LayerButton exists already, do not add');
+        }else{
+          this.showLayerButton(layerId,layersList);
+        }
 
         if(layersList != 'none') {
             this.getLayerJSON(layerId,layersList).done(function(layerJSON){
@@ -773,7 +786,10 @@ $(document).foundation();
             }
 
             //The selector doesn't work if put above in the intialization code
-             $( "input[type=checkbox]" ).change(function() {
+            //http://stackoverflow.com/questions/1536660/jquery-click-event-handler-is-called-twice-for-a-checkbox
+            //Also for the first checkbox it was firing twice when clicked
+            //added the unbind function to fix it
+             $( "input[type=checkbox]" ).unbind("click").click(function() {
                 
                 //console.log($( "input:checked" ).val() + " is checked!" );
                 var layerID = $(this).val();
@@ -783,11 +799,14 @@ $(document).foundation();
                 if($( "input:checked" ).val()){
                   console.log($( "input" ).val() + " is checked!" );
 
-                  report.changeLayer(layerID);
+                  report.changeLayer(layerID,layersList);
 
                 }else{
 
-                  report.changeLayer(layerID);
+                  report.changeLayer(layerID,layersList);
+
+              }
+              });
 
 /*
                   console.log('unchecked');
@@ -804,8 +823,7 @@ $(document).foundation();
                   }
                 
 */
-                }
-              });
+                
     },
 
     showLegend: function(mapId, layerJSON){
