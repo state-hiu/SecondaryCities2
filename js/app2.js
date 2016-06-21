@@ -41,8 +41,6 @@ $(document).foundation();
         switchLayer('streets');
       });
 
-      //$(#about-tab).onclick = switchLayer('streets');
-
       // extend map object to contain reference to all layers
       var shareControl = L.control({position: 'topleft'});
       // https://developers.facebook.com/docs/sharing/reference/share-dialog
@@ -148,9 +146,6 @@ $(document).foundation();
           }
       });
 
-      //create our deferred object
-      //var globalapiJSONpromise = $.Deferred();
-
 /*
       report.getAPIJSON(api_url).done(function(result) {
         console.log('API Returned: ');
@@ -184,8 +179,6 @@ $(document).foundation();
           offset: '70%'
         });
 */
-
-        //$('#report section').reportScroll(layersList,waypointSection);
 
         var waypointSection = $('#report section')
 
@@ -488,10 +481,10 @@ $(document).foundation();
 
     layerSortedUpdate: function(e, ui){
       var displayedButtonContainer = $(this),
-          layers = report.map.getLayers(),
+          layers = report.getLayers(),
           newTopButtonId = displayedButtonContainer.children('li:first').data('id');
 
-/* see if possible to replace getLayerJSON with GeoNode catalog
+
       report.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
         if(newTopButtonId !== layers[layers.length -1]){
           report.map.clearGrids();
@@ -499,25 +492,25 @@ $(document).foundation();
           report.map.showSummary(newTopButtonId, topLayerJSON);
         }
 
-        orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
-          return $(button).data('id')
-        }).reverse();
-        report.map.setLayersZIndices(orderedButtonIds);
-        report.map.leaflet_hash.trigger('move');
-      });
-*/
+      orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
+        return $(button).data('id')
+      }).reverse();
+      report.map.setLayersZIndices(orderedButtonIds);
+      report.map.leaflet_hash.trigger('move');
+    });
 
-        if(newTopButtonId !== layers[layers.length -1]){
-          report.map.clearGrids();
-          report.map.addGrid(newTopButtonId, topLayerJSON);
-          report.map.showSummary(newTopButtonId, topLayerJSON);
-        }
 
-        orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
-          return $(button).data('id')
-        }).reverse();
-        report.map.setLayersZIndices(orderedButtonIds);
-        report.map.leaflet_hash.trigger('move');
+      if(newTopButtonId !== layers[layers.length -1]){
+        report.map.clearGrids();
+        report.map.addGrid(newTopButtonId, topLayerJSON);
+        report.map.showSummary(newTopButtonId, topLayerJSON);
+      }
+
+      orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
+        return $(button).data('id')
+      }).reverse();
+      report.map.setLayersZIndices(orderedButtonIds);
+      report.map.leaflet_hash.trigger('move');
 
     },
 
@@ -780,10 +773,10 @@ $(document).foundation();
             }
 
             //The selector doesn't work if put above in the intialization code
-             $( "input[type=checkbox]" ).on( "click", function() {
+             $( "input[type=checkbox]" ).change(function() {
                 
                 //console.log($( "input:checked" ).val() + " is checked!" );
-                var layerID = $( "input" ).val();
+                var layerID = $(this).val();
                 console.log('layerID val');
                 console.log(layerID);
 
