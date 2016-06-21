@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/SecondaryCities2/</link>
     <atom:link href="http://yourdomain.com/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Jun 2016 23:57:12 -0400</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2016 23:57:12 -0400</lastBuildDate>
+    <pubDate>Tue, 21 Jun 2016 01:30:59 -0400</pubDate>
+    <lastBuildDate>Tue, 21 Jun 2016 01:30:59 -0400</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -91,6 +91,51 @@
         
         
         <category>Design</category>
+        
+      </item>
+    
+      <item>
+        <title>Connect Camps</title>
+        <description>&lt;p&gt;The Connect Camps offer an opportunity for alumni of the Mandela Washington Fellowship to share the professional skills and networks they acquired from the &lt;a href=&quot;https://youngafricanleaders.state.gov/washington-fellowship/&quot; target=&quot;_blank&quot;&gt;Young African Leaders Initiative&lt;/a&gt; with other young African leaders in their rural communities.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 09 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/SecondaryCities2/events/2015/03/09/connect-camps.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/2015/03/09/connect-camps.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>OpenStreetMap Geography Awareness Week</title>
+        <description>&lt;p&gt;Nov 18&lt;sup&gt;th&lt;/sup&gt; 2014, Teachers, students, community groups, map lovers, in the US and around the world, join together to celebrate geography and make maps with OpenStreetMap, the free and openly editable map of the world.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Nov 2014 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/SecondaryCities2/events/2014/11/08/osmgeoweek.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/2014/11/08/osmgeoweek.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Ramallah Mapathon</title>
+        <description>&lt;p&gt;American Consulate General Co-Sponsors Palestinian University Students’ Efforts to Map West African Nations Stricken with Ebola&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Oct 2014 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/SecondaryCities2/events/2014/10/18/ramallah-mapathon.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/2014/10/18/ramallah-mapathon.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
         
       </item>
     
