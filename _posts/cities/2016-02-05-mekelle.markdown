@@ -1,10 +1,10 @@
 ---
 layout: post
+category: cities
 title:  "Mekelle, Ethiopia"
 date:   2016-02-05 15:08:10 -0500
 img: img/portfolio/Mekelle4.png
 modalID: modalCake
-category: Design
 ---
 Mekelle is the capital city of the Tigray Regional State of Ethiopia. It is one of the principal economic, cultural, political, and educational centers of the country. Mekelle is known for the cultural landmarks that include Ethiopian Orthodox churches and historic castles. Climate extremes are characteristic of the region. Mekelle is experiencing severe water problems that include lack of an adequate supply and quality issues.
 

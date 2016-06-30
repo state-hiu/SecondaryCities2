@@ -1,10 +1,10 @@
 ---
 layout: post
+category: cities
 title:  "Denpasar, Indonesia"
 date:   2016-02-02 15:08:10 -0500
 img: img/portfolio/Denpasar2.png
 modalID: modalCabin
-category: Design
 ---
 Denpasar is the capital of Bali island and has the highest growth rate in Bali Province where tourism has expanded massively in recent years. The city is a hub for other cities in eastern Indonesia. Due to development pressures, Denpasar has experienced rapid physical, economic, and cultural change. Informal growth and the expanding tourist industry have fueled significant problems for waste management, particularly ocean trash.
  

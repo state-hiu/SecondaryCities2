@@ -8,16 +8,16 @@
                 </div>
             </div>
             <div class="row">
-                {% for post in site.posts reversed%}
+                {% for city in site.categories.cities reversed%}
                     <div class="col-sm-4 portfolio-item">
-                        <a href="#{{ post.modalID }}" class="portfolio-link" data-toggle="modal">
+                        <a href="#{{ city.modalID }}" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <!--<i class="fa fa-search-plus fa-3x"></i>-->
-				                    <i class=""><h3>{{ post.title }}</h3></i>
+				                    <i class=""><h3>{{ city.title }}</h3></i>
                                 </div>
                             </div>
-                            <img src="{{ site.baseurl }}/{{ post.img }}" class="img-responsive" alt="{{ post.title }}">
+                            <img src="{{ site.baseurl }}/{{ city.img }}" class="img-responsive" alt="{{ city.title }}">
                         </a>
                     </div>
 
