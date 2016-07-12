@@ -1,0 +1,48 @@
+---
+layout: basic
+---
+
+    <article>
+      <header>
+        <h2>{{ page.title }}</h2>
+      </header>
+
+        {{ content }}
+
+    </article>
+
+
+        {% for section in page.sections %}
+          <section class="animate{% if forloop.first %}active{% endif %}"
+                   {% if section.latlng or section.zoom %}data-nav='{"latlng": [ {{section.latlng | join: ","}} ], "zoom": {{section.zoom}} }'{% endif %}
+                   {% if section.tile_layers %}data-tileid='{{section.tile_layers | join: ","}}'{% endif %}
+                   {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %}>
+            {% if section.title %}<h1 class="serif keyline-bottom pvs">{{ section.title }}</h1>{% endif %}
+            {% if forloop.first %}
+              <div class="mvs">
+                <div class="small"><strong>By {{page.author}}</strong></div>
+                <div class="small serif">{{page.date}}</div>
+              </div>
+            {% endif %}
+            <!-- display section banner_image.
+                 If first section and there is no section banner_image specified, default to page banner_image -->
+            {% if section.banner_image %}
+              <figure>
+                <img src="{{section.banner_image}}" alt="banner image">
+                <figcaption>{{section.banner_image_caption}}</figcaption>
+                <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
+              </figure>
+            {% elsif forloop.first %}
+              <figure>
+                <img src="{{page.banner_image}}" alt="banner image">
+                <figcaption>{{page.banner_image_caption}}</figcaption>
+                <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
+              </figure>
+            {% endif %}
+
+            {{ section.body | markdownify }}
+
+                      </section>
+        {% endfor %}
+
+

@@ -25,3 +25,6 @@ markdown: kramdown
 # saves time with compilling jekyll
 # http://stackoverflow.com/questions/26855552/jekyll-compiling-seems-way-too-slow
 exclude: [node_modules]
+
+# Outputting
+permalink: none
