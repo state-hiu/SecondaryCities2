@@ -11,6 +11,7 @@ sections:
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: Harvard University
     banner_image_source: journalist 1
+    banner_slides: '<iframe src="http://www.slideshare.net/kuratowa/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
     latlng: [28.22, 84.00]
     zoom: 12
     tile_layers:
@@ -24,6 +25,7 @@ sections:
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
     banner_image_source: Jim Hollander/European Pressphoto Agency
+    banner_slides:
     latlng: [28.232, 83.969]
     zoom: 13
     tile_layers: ['scgn:pokhara_schools']
@@ -38,6 +40,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
+    banner_slides:
     latlng: [28.232, 83.969]
     zoom: 11
     tile_layers: ['scgn:pokhara_landcover']
@@ -51,6 +54,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
+    banner_slides:
     latlng: [6.9, -11.4]
     zoom: 9
     tile_layers: ['egn:lbr_lakeresa_lake_unmil']
@@ -64,6 +68,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
+    banner_slides:
     latlng: [8.468285, -13.242686]
     zoom: 13
     tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']

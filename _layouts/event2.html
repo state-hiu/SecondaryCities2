@@ -59,6 +59,12 @@ layout: basic
                       <br>
                     {% endif %}
 
+                    {% if section.banner_slides %}
+
+                      {{ section.banner_slides }}
+
+                    {% endif %}
+
                     {{ section.body | markdownify }}
 
               </div>
