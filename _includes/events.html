@@ -23,7 +23,11 @@
                       {% if display == true %}
                         {% if post.status == "upcoming" %}
                         <div class='keyline-all pad4 space-bottom4 project-tile'>
-                          <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
+                          {% if post.external_url %}
+                            <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
+                            {% else %}
+                            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                          {% endif %}
                           <h3>{{ post.subtitle }}</h3>
                           <p>{{ post.excerpt }}</p>
                         </div>
@@ -60,7 +64,7 @@
                       {% if post.external_url %}
                         <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
                         {% else %}
-                        <h3><a href="{{ site.baseurl }}{{ post.url }}">worked?</a></h3>
+                        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                       {% endif %}
                       <h3>{{ post.subtitle }}</h3>
                       <p>{{ post.excerpt }}</p>

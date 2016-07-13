@@ -2,47 +2,70 @@
 layout: basic
 ---
 
-    <article>
-      <header>
-        <h2>{{ page.title }}</h2>
-      </header>
+{% for section in page.sections %}
+  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 
-        {{ content }}
+  {% if thecycle == 'odd' %}
+    {% if forloop.first %}
+      <section class="data" id="about">
+    {% else %}
+      <section class="data" id="about" style="padding-top: 50px;">
+    {% endif %}
+  {% else %}
+  <section class="success" id="about" style="padding-top: 50px;">
+  {% endif %}
 
-    </article>
-
-
-        {% for section in page.sections %}
-          <section class="animate{% if forloop.first %}active{% endif %}"
-                   {% if section.latlng or section.zoom %}data-nav='{"latlng": [ {{section.latlng | join: ","}} ], "zoom": {{section.zoom}} }'{% endif %}
-                   {% if section.tile_layers %}data-tileid='{{section.tile_layers | join: ","}}'{% endif %}
-                   {% if section.vector_data %}data-vector='{{section.vector_data | join: ","}}'{% endif %}>
-            {% if section.title %}<h1 class="serif keyline-bottom pvs">{{ section.title }}</h1>{% endif %}
-            {% if forloop.first %}
+        <div class="row">
+          <div class="col-lg-12 text-center">
+              {% if forloop.first %}
+              <h3> {{page.title}} </h3>
               <div class="mvs">
-                <div class="small"><strong>By {{page.author}}</strong></div>
-                <div class="small serif">{{page.date}}</div>
+                {% if page.author %}
+                  <div class="small"><strong>By {{page.author}}</strong></div>
+                {% endif %}
+                {% if page.date %}
+                  <div class="small serif">{{page.date | date: '%B %d, %Y' }}</div>
+                {% endif %}
               </div>
             {% endif %}
-            <!-- display section banner_image.
-                 If first section and there is no section banner_image specified, default to page banner_image -->
-            {% if section.banner_image %}
-              <figure>
-                <img src="{{section.banner_image}}" alt="banner image">
-                <figcaption>{{section.banner_image_caption}}</figcaption>
-                <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
-              </figure>
-            {% elsif forloop.first %}
-              <figure>
-                <img src="{{page.banner_image}}" alt="banner image">
-                <figcaption>{{page.banner_image_caption}}</figcaption>
-                <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
-              </figure>
-            {% endif %}
+          </div>
+        </div>
 
-            {{ section.body | markdownify }}
+        <br>
 
-                      </section>
-        {% endfor %}
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                  {% if section.title %}<h3>{{ section.title }}</h3>{% endif %}
+                    <hr class="star-primary2" style="border-width:3px">
+                
+
+                    <!-- display section banner_image.
+                         If first section and there is no section banner_image specified, default to page banner_image -->
+                    {% if section.banner_image %}
+                      <figure>
+                        <img src="{{section.banner_image}}" alt="banner image">
+                        <figcaption>{{section.banner_image_caption}}</figcaption>
+                        <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
+                      </figure>
+                      <br>
+                    {% elsif forloop.first %}
+                      <figure>
+                        <img src="{{page.banner_image}}" alt="banner image">
+                        <figcaption>{{page.banner_image_caption}}</figcaption>
+                        <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
+                      </figure>
+                      <br>
+                    {% endif %}
+
+                    {{ section.body | markdownify }}
+
+              </div>
+            </div>
+
+  </section>
+
+{% endfor %}
 
 
