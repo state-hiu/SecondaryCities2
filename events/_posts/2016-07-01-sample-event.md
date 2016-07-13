@@ -40,7 +40,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    banner_slides:
+    banner_slides: '<script async class="speakerdeck-embed" data-id="1f957e89563b440d96c16986507b790f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
     latlng: [28.232, 83.969]
     zoom: 11
     tile_layers: ['scgn:pokhara_landcover']
