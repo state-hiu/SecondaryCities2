@@ -36,7 +36,7 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
 
 
-  - title: Panel II: Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing Communities
+  - title: Panel II-Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing Communities
     banner_image:
     banner_image_caption:
     banner_image_source:
