@@ -25,7 +25,7 @@ sections:
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
     banner_image_source: Jim Hollander/European Pressphoto Agency
-    banner_slides: <iframe width="560" height="315" src="https://www.youtube.com/embed/WTEio_8jBhM" frameborder="0" allowfullscreen></iframe>
+    banner_slides:
     latlng: [28.232, 83.969]
     zoom: 13
     tile_layers: ['scgn:pokhara_schools']
@@ -41,6 +41,7 @@ sections:
     banner_image_caption:
     banner_image_source:
     banner_slides: '<script async class="speakerdeck-embed" data-id="b618f3cafb4c449686a06f2b7c527c74" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>'
+    banner_slides: <iframe width="560" height="315" src="https://www.youtube.com/embed/WTEio_8jBhM" frameborder="0" allowfullscreen></iframe>
     latlng: [28.232, 83.969]
     zoom: 11
     tile_layers: ['scgn:pokhara_landcover']
