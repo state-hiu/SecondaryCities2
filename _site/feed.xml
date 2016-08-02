@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/SecondaryCities2/</link>
     <atom:link href="http://yourdomain.com/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Aug 2016 23:48:57 -0400</pubDate>
-    <lastBuildDate>Mon, 01 Aug 2016 23:48:57 -0400</lastBuildDate>
+    <pubDate>Tue, 02 Aug 2016 01:26:05 -0400</pubDate>
+    <lastBuildDate>Tue, 02 Aug 2016 01:26:05 -0400</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -18,6 +18,22 @@
         <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
         <link>http://yourdomain.com/SecondaryCities2/events/sample-event.html</link>
         <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/sample-event.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Dynamic Mapping of Secondary Cities Symposium 2</title>
+        <description>&lt;p&gt;Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jul 2016 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/SecondaryCities2/events/sample-event-page-2.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/sample-event-page-2.html</guid>
         
         <category>event</category>
         
@@ -132,21 +148,6 @@
         <pubDate>Mon, 09 Mar 2015 00:00:00 -0400</pubDate>
         <link>http://yourdomain.com/SecondaryCities2/events/connect-camps.html</link>
         <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/connect-camps.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>OpenStreetMap Geography Awareness Week</title>
-        <description>&lt;p&gt;Nov 18&lt;sup&gt;th&lt;/sup&gt; 2014, Teachers, students, community groups, map lovers, in the US and around the world, join together to celebrate geography and make maps with OpenStreetMap, the free and openly editable map of the world.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 08 Nov 2014 00:00:00 -0500</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/osmgeoweek.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/osmgeoweek.html</guid>
         
         <category>event</category>
         
