@@ -36,11 +36,12 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
 
 
-  - title: Section 3
+  - title: Panel II-Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing Communities
     banner_image:
     banner_image_caption:
     banner_image_source:
-    banner_slides: '<script async class="speakerdeck-embed" data-id="1f957e89563b440d96c16986507b790f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
+    banner_slides: '<script async class="speakerdeck-embed" data-id="b618f3cafb4c449686a06f2b7c527c74" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>'
+    banner_slides: '<iframe width="560" height="315" src="https://www.youtube.com/embed/WTEio_8jBhM" frameborder="0" allowfullscreen></iframe>'
     latlng: [28.232, 83.969]
     zoom: 11
     tile_layers: ['scgn:pokhara_landcover']
