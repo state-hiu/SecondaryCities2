@@ -10,7 +10,7 @@ previous-page-url: "/SecondaryCities2/events/sample-event.html"
 tags:
   - event
 sections:
-  - title: Section 1
+  - title: Section 6
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: Harvard University
     banner_image_source: journalist 1
@@ -25,7 +25,7 @@ sections:
 
           Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.
 
-  - title: Section 2
+  - title: Section 7
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
     banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
     banner_image_source: Jim Hollander/European Pressphoto Agency
@@ -41,7 +41,7 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
 
 
-  - title: Panel II-Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing Communities
+  - title: Section 8
     banner_image:
     banner_image_caption:
     banner_image_source:
@@ -56,7 +56,7 @@ sections:
 
           Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
 
-  - title: Section 4
+  - title: Section 9
     banner_image:
     banner_image_caption:
     banner_image_source:
@@ -71,7 +71,7 @@ sections:
 
           Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
 
-  - title: Section 5
+  - title: Section 10
     banner_image:
     banner_image_caption:
     banner_image_source:
