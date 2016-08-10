@@ -12,8 +12,9 @@ tags:
 sections:
   - title: Welcome to Dynamic Mapping of Secondary Cities
     banner_image: 
-    banner_image_caption: Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University
+    banner_image_caption: 
     banner_image_source: 
+    banner_video_caption: Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University
     banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
     banner_slides: '<script async class="speakerdeck-embed" data-id="6282c16a12ab4990aac48b734568f856" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
     latlng: [28.22, 84.00]
