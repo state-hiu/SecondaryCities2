@@ -38,44 +38,6 @@ sections:
     body: |
           The ability to combine data from both private enterprise (telcos, banks, etc) and government allows continuous mapping of variables relevant to good government and sustainable development. The key is a framework that protects individual privacy and private interests.
 
-
-  - title: 
-    banner_image: 
-    banner_image_caption: 
-    banner_image_source: 
-    banner_video: 
-    banner_slides: 
-    latlng: [28.232, 83.969]
-    zoom: 11
-    tile_layers: ['scgn:pokhara_landcover']
-    vector_data:
-    body: |
-          
-
-  - title: Section 9
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    banner_video:
-    banner_slides:
-    latlng: [6.9, -11.4]
-    zoom: 9
-    tile_layers: ['egn:lbr_lakeresa_lake_unmil']
-    vector_data:
-    body: |
-         
-
-  - title: Section 10
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    banner_video:
-    banner_slides:
-    latlng: [8.468285, -13.242686]
-    zoom: 13
-    tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
-    vector_data:
-    body: |
          
 ---
 
