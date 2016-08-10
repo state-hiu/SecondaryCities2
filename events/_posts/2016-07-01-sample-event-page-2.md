@@ -3,9 +3,9 @@ layout: event2
 category: events
 title: Dynamic Mapping of Secondary Cities Symposium 2
 status: past
-date: 20160701
+date: 20160614-15
 page-num: 2
-final-page: true
+final-page: false
 previous-page-url: "/SecondaryCities2/events/sample-event.html"
 tags:
   - event
