@@ -10,35 +10,33 @@ previous-page-url: "/SecondaryCities2/events/sample-event.html"
 tags:
   - event
 sections:
-  - title: Section 6
+  - title: Welcome to Dynamic Mapping of Secondary Cities
     banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: Harvard University
-    banner_image_source: journalist 1
-    banner_video:
-    banner_slides: '<iframe src="http://www.slideshare.net/kuratowa/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
+    banner_image_caption: Welcome Address by Dr. Jason Ur and Dr. Melinda Laituri
+    banner_image_source: 
+    banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
+    banner_slides: '<iframe src="http://http://www.slideshare.net/FaithSternliebPhD/dynamic-mapping-an-introduction-to-tools-technologies" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
     latlng: [28.22, 84.00]
     zoom: 12
     tile_layers:
     vector_data:
     body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, exercitationem tempore. Ipsam itaque magnam expedita quibusdam, architecto maxime, repellat eveniet laborum quidem quam quia autem! Consequatur natus quia distinctio rem neque atque aliquam dignissimos perferendis iure quaerat dicta et tempora animi magni, sapiente officiis optio hic ratione ipsum. Delectus, eum accusantium rem quia repellat, pariatur. Libero voluptatibus sequi non! Fugiat ipsum deleniti nulla, quibusdam cum velit sed eaque dolores molestiae quas, et asperiores!
+          Mobile tools for data generation provide a method to actively engage in data collection for different stakeholders. Intersecting these tools with web-based maps and geographic information systems are the basis for dynamic mapping – one where the map is interactive and where the data lends itself to analysis for generating new information. Within the current milieu, maps are dynamic on a number of levels: scale (ability to zoom); turning on and off data layers; creating map animations. Maps are also dynamic with respect to what and how data are collected, who participates in the collection process, and who analyzes the data and uses it.
 
-          Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.
+          This symposium is an opportunity to unpack dynamic mapping as it applies to the suite of tools under examination here. The symposium will also lay the groundwork for a network of users to identify intersections and discuss lessons learned on how improvements can be made from data development to stakeholder involvement in the context of secondary cities. Secondary cities are non-primary cities that often serve as regional hubs for commerce, services, and governance, with populations that can range from 100,000 to 5 million. They are generally experiencing rapid urbanization and are often the fastest growing areas in developing countries, experiencing unplanned growth and development with limited geospatial data.
 
-  - title: Section 7
-    banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
-    banner_image_source: Jim Hollander/European Pressphoto Agency
-    banner_video:
+  - title: Open Algorithms, Open Data: Toward Continuous Mapping of Sustainable Development
+    banner_image: 
+    banner_image_caption:
+    banner_image_source:
+    banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Rn7VdlWJjN8" frameborder="0" allowfullscreen></iframe>'
     banner_slides:
     latlng: [28.232, 83.969]
     zoom: 13
     tile_layers: ['scgn:pokhara_schools']
     vector_data:
     body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a. Dolorem fugit vitae quis nam et, deleniti, odio unde dolores. Ipsam, nihil.
-
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
+          The ability to combine data from both private enterprise (telcos, banks, etc) and government allows continuous mapping of variables relevant to good government and sustainable development. The key is a framework that protects individual privacy and private interests.
 
 
   - title: Section 8
