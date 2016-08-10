@@ -11,8 +11,8 @@ tags:
   - event
 sections:
   - title: Welcome to Dynamic Mapping of Secondary Cities
-    banner_image:
-    banner_image_caption:
+    banner_image: 
+    banner_image_caption: Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University
     banner_image_source: 
     banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
     banner_slides: '<script async class="speakerdeck-embed" data-id="6282c16a12ab4990aac48b734568f856" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
@@ -27,7 +27,7 @@ sections:
 
   - title: Open Algorithms, Open Data - Toward Continuous Mapping of Sustainable Development
     banner_image: 
-    banner_image_caption:
+    banner_image_caption: Dr. Sandy Pentland, MIT Media Lab
     banner_image_source:
     banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/Rn7VdlWJjN8" frameborder="0" allowfullscreen></iframe>'
     banner_slides:
@@ -39,20 +39,18 @@ sections:
           The ability to combine data from both private enterprise (telcos, banks, etc) and government allows continuous mapping of variables relevant to good government and sustainable development. The key is a framework that protects individual privacy and private interests.
 
 
-  - title: Section 8
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/WTEio_8jBhM" frameborder="0" allowfullscreen></iframe>'
-    banner_slides: '<script async class="speakerdeck-embed" data-id="b618f3cafb4c449686a06f2b7c527c74" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>'
+  - title: 
+    banner_image: 
+    banner_image_caption: 
+    banner_image_source: 
+    banner_video: 
+    banner_slides: 
     latlng: [28.232, 83.969]
     zoom: 11
     tile_layers: ['scgn:pokhara_landcover']
     vector_data:
     body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
+          
 
   - title: Section 9
     banner_image:
@@ -65,9 +63,7 @@ sections:
     tile_layers: ['egn:lbr_lakeresa_lake_unmil']
     vector_data:
     body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
+         
 
   - title: Section 10
     banner_image:
@@ -80,7 +76,7 @@ sections:
     tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
     vector_data:
     body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+         
 ---
 
 Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.
