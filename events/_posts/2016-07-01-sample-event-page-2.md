@@ -11,8 +11,8 @@ tags:
   - event
 sections:
   - title: Welcome to Dynamic Mapping of Secondary Cities
-    banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: Welcome Address by Dr. Jason Ur and Dr. Melinda Laituri
+    banner_image:
+    banner_image_caption:
     banner_image_source: 
     banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
     banner_slides: '<iframe src="http://http://www.slideshare.net/FaithSternliebPhD/dynamic-mapping-an-introduction-to-tools-technologies" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
