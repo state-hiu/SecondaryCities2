@@ -40,7 +40,5 @@ sections:
     body_title: Abstract
     body: |
           Effective humanitarian action requires an in-depth understanding of risks and needs, context of operations and level of damages among other. Humanitarians must also monitor action and demonstrate impact. Gathering the necessary information, however, is a major challenge in very fluid and data poor settings. In response, humanitarians are increasingly using technology. Despite important progress, these efforts are hindered by a number of challenges, including the lack of common standards, organizational behaviors that do not foster data sharing and integration, and narrow, uncoordinated, focus of data gathering efforts. In response to these challenges, KoBoToolbox has become a platform of choice for humanitarian applications and beyond – enabling the constant gathering, sharing and use of data streams in near-real time. Developed by faculty at the Harvard Humanitarian Initiative, KoBoToolbox is a free, open source platform for data collection analysis, and visualization. KoBoToolbox is the result of a partnership with leading humanitarian agencies, addressing critical needs and feedback from field experts. The tools are used for data collection in ongoing humanitarian crises, including those in Ukraine, South Sudan, Syria, Iraq, and all countries affected by the Ebola outbreak.
-
-         
 ---
 
