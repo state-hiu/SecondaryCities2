@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/SecondaryCities2/</link>
     <atom:link href="http://yourdomain.com/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Aug 2016 23:06:56 +0200</pubDate>
-    <lastBuildDate>Fri, 12 Aug 2016 23:06:56 +0200</lastBuildDate>
+    <pubDate>Fri, 12 Aug 2016 23:27:39 +0200</pubDate>
+    <lastBuildDate>Fri, 12 Aug 2016 23:27:39 +0200</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -47,21 +47,6 @@
         <pubDate>Tue, 14 Jun 2016 17:00:00 +0200</pubDate>
         <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-2.html</link>
         <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-2.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>&lt;p&gt;Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-mapping-symp.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-mapping-symp.html</guid>
         
         <category>event</category>
         
@@ -150,6 +135,20 @@
         <pubDate>Wed, 03 Feb 2016 21:08:10 +0100</pubDate>
         <link>http://yourdomain.com/SecondaryCities2/cities/kharkiv.html</link>
         <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/cities/kharkiv.html</guid>
+        
+        
+        <category>cities</category>
+        
+      </item>
+    
+      <item>
+        <title>Denpasar, Indonesia</title>
+        <description>&lt;p&gt;Denpasar is the capital of Bali island and has the highest growth rate in Bali Province where tourism has expanded massively in recent years. The city is a hub for other cities in eastern Indonesia. Due to development pressures, Denpasar has experienced rapid physical, economic, and cultural change. Informal growth and the expanding tourist industry have fueled significant problems for waste management, particularly ocean trash.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 02 Feb 2016 21:08:10 +0100</pubDate>
+        <link>http://yourdomain.com/SecondaryCities2/cities/denpasar.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/cities/denpasar.html</guid>
         
         
         <category>cities</category>

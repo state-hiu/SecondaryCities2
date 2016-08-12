@@ -2,6 +2,14 @@
     <section class="success" id="about">
         <div class="container">
 
+		{% for post in site.categories.events %}
+		{% if post.status == "upcoming" %}
+				{% capture post_count %}{{ post_count | plus: 1 }} {% endcapture %}
+		{% endif %}
+		{% endfor %}
+		
+		{% if post_count %}
+		
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Events</h2>
@@ -40,6 +48,8 @@
         </div>
 
         <br><br><br>
+
+		{% endif %}
 
         <div class="col-lg-12 text-center">
             <h2>Past Events</h2>
