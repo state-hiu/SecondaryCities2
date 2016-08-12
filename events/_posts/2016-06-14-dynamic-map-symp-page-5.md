@@ -9,8 +9,8 @@ final-page: true
 previous-page-url: "/SecondaryCities2/events/dynamic-map-symp-page-4.html"
 tags:
   - event
-sections:
-  - title: WorldMap - Using GeoNode to Organize Distributed Geospatial Data
+sections: 
+  - title: "WorldMap: Using GeoNode to Organize Distributed Geospatial Data"
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
