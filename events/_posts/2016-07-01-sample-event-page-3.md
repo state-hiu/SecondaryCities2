@@ -14,7 +14,7 @@ sections:
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
-    banner_video_caption: 
+    banner_video_caption: Mr. James Pardue, Vice President of Sales, ikeGPS
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/f7avqDbORb4" frameborder="0" allowfullscreen></iframe>'
     banner_slides_caption: 
     banner_slides: '<script async class="speakerdeck-embed" data-id="e6662a77b974493e85116fed85cde4fb" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>'
@@ -30,6 +30,7 @@ sections:
     banner_image: 
     banner_image_caption: 
     banner_image_source:
+    Banner_video_caption: Mr. Jeff Ferzoco, New York City Business Development Manager, Carto DB
     banner_video: <iframe width="640" height="360" src="https://www.youtube.com/embed/YEzyIgsDrus" frameborder="0" allowfullscreen></iframe>
     banner_slides:
     latlng: [28.232, 83.969]
