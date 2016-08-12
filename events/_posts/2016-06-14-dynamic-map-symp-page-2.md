@@ -40,7 +40,5 @@ sections:
     body_title: Abstract
     body: |
           What is the role of open, accessible data in secondary cities, and how does rapid mapping and insight into location data help those cities achieve their goals? In this talk, we will look specifically at the evolution of open data and how it has evolved to be a tool for cities to communicate, prioritize and make decisions with less overhead and complexity than ever before. As cities make their data more open and transparent, location and demographics can guide leaders through actionable insights and informed decisions. We will look at the array of mapping tools and examples of how it has been successful in helping city leaders achieve goals.
-
-         
 ---
 
