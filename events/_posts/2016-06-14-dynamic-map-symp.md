@@ -14,7 +14,7 @@ sections:
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
-    banner_video_caption: "Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University"
+    banner_video_caption: Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
     banner_slides_caption: 
     banner_slides: '<script async class="speakerdeck-embed" data-id="6282c16a12ab4990aac48b734568f856" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
