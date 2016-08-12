@@ -14,7 +14,7 @@ sections:
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
-    banner_video_caption: Dr. Melinda Laituri, Director, Centroid, Colorado State University
+    banner_video_caption: Dr. Melinda Laituri, Director of the Centroid, Colorado State University
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/obYV2FwGhtk" frameborder="0" allowfullscreen></iframe>'
     banner_slides_caption: 
     banner_slides: 
