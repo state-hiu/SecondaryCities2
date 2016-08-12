@@ -10,7 +10,7 @@ previous-page-url: "/SecondaryCities2/events/dynamic-map-symp-page-4.html"
 tags:
   - event
 sections: 
-  - title: 
+  - title: WorldMap
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
