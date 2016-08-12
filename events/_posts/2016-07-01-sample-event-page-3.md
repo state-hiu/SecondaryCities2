@@ -30,7 +30,7 @@ sections:
     banner_image: 
     banner_image_caption: 
     banner_image_source:
-    Banner_video_caption: Mr. Jeff Ferzoco, New York City Business Development Manager, Carto DB
+    banner_video_caption: Mr. Jeff Ferzoco, New York City Business Development Manager, Carto DB
     banner_video: <iframe width="640" height="360" src="https://www.youtube.com/embed/YEzyIgsDrus" frameborder="0" allowfullscreen></iframe>
     banner_slides:
     latlng: [28.232, 83.969]
