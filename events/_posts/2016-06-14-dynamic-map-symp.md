@@ -40,7 +40,7 @@ sections:
     vector_data:
     body_title:
     body: |
-          The ability to combine data from both private enterprise (telcos, banks, etc) and government allows continuous mapping of variables relevant to good government and sustainable development. The key is a framework that protects individual privacy and private interests.
+          The ability to combine data from both private enterprise and government allows continuous mapping of variables relevant to good government and sustainable development. The key is a framework that protects individual privacy and private interests.
  
 ---
 
