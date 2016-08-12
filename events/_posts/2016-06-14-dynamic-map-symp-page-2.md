@@ -24,7 +24,7 @@ sections:
     vector_data:
     body_title: Abstract
     body: |
-          Most private organizations and government agencies are looking to reduce field data collection costs and improve the effectiveness of their field data collection. As a growing trend mobile devices such as smartphones and tablets are a great way to do that. In order to get the best bang for the buck you need to use a commercial off-the-shelf solution that will adequately replace the multitude of tools that are taken into the field today, reduce time in the field, and collect a wide range of field data. Spike accomplishes that task.
+          Most private &#58; &#58; &#58;organizations and government agencies are looking to reduce field data collection costs and improve the effectiveness of their field data collection. As a growing trend mobile devices such as smartphones and tablets are a great way to do that. In order to get the best bang for the buck you need to use a commercial off-the-shelf solution that will adequately replace the multitude of tools that are taken into the field today, reduce time in the field, and collect a wide range of field data. Spike accomplishes that task.
 
   - title: Carto DB Intro & Demo
     banner_image: 
