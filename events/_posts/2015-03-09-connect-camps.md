@@ -5,6 +5,8 @@ external_url: 'http://mapgive.state.gov/events/connect-camp-maps/'
 title: Connect Camps
 status: upcoming
 date: 20150309
+page-num: 1
+final-page: false
 tags:
   - event
 ---

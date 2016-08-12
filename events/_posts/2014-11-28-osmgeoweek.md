@@ -5,6 +5,8 @@ external_url: 'http://osmgeoweek.org/'
 title: OpenStreetMap Geography Awareness Week
 status: past
 date: 20141108
+page-num: 1
+final-page: false
 tags:
   - event
 ---

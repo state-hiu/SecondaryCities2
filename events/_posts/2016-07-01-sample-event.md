@@ -6,6 +6,7 @@ status: past
 date: 20160701
 page-num: 1
 final-page: false
+previous-page-url: none
 tags:
   - event
 sections:

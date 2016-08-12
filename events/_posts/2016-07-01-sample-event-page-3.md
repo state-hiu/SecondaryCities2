@@ -1,26 +1,28 @@
 ---
-layout: event3
+layout: event2
 category: events
 title: Dynamic Mapping of Secondary Cities Symposium
 status: past
 date: 20160614-15
 page-num: 3
-final-page: false
-previous-page-url: "/SecondaryCities2/events/sample-event.html"
+final-page: true
+previous-page-url: "/SecondaryCities2/events/sample-event-page-2.html"
 tags:
   - event
 sections:
   - title: ikeGPS Spike Intro & Demo
-    banner_image: 
     banner_image_caption: 
+    banner_image: 
     banner_image_source: 
     banner_video_caption: 
-    banner_video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/f7avqDbORb4" frameborder="0" allowfullscreen></iframe>'
+    banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/f7avqDbORb4" frameborder="0" allowfullscreen></iframe>'
+    banner_slides_caption: 
     banner_slides: '<script async class="speakerdeck-embed" data-id="e6662a77b974493e85116fed85cde4fb" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>'
     latlng: [28.22, 84.00]
     zoom: 12
     tile_layers:
     vector_data:
+    body_title: 
     body: |
           Most private organizations and government agencies are looking to reduce field data collection costs and improve the effectiveness of their field data collection. As a growing trend mobile devices such as smartphones and tablets are a great way to do that. In order to get the best bang for the buck you need to use a commercial off-the-shelf solution that will adequately replace the multitude of tools that are taken into the field today, reduce time in the field, and collect a wide range of field data. Spike accomplishes that task.
 
@@ -28,7 +30,7 @@ sections:
     banner_image: 
     banner_image_caption: 
     banner_image_source:
-    banner_video: <iframe width="560" height="315" src="https://www.youtube.com/embed/YEzyIgsDrus" frameborder="0" allowfullscreen></iframe>
+    banner_video: <iframe width="640" height="360" src="https://www.youtube.com/embed/YEzyIgsDrus" frameborder="0" allowfullscreen></iframe>
     banner_slides:
     latlng: [28.232, 83.969]
     zoom: 13

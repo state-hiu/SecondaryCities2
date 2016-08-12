@@ -5,6 +5,8 @@ external_url: 'http://jerusalem.usconsulate.gov/pr-10182014.html'
 title: Ramallah Mapathon
 status: past
 date: 20141018
+page-num: 1
+final-page: false
 tags:
   - event
 ---

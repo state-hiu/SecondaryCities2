@@ -37,7 +37,7 @@ layout: basic
 
             <div class="row">
                 <div class="col-lg-12 text-center">
-                  {% if section.title %}<h3>{{ section.title }}</h3>{% endif %}
+                  {% if section.title %}<h4>{{ section.title }}</h4>{% endif %}
                     <hr class="star-primary2" style="border-width:3px">
                 
 
@@ -45,23 +45,18 @@ layout: basic
                          If first section and there is no section banner_image specified, default to page banner_image -->
                     {% if section.banner_image %}
                       <figure>
-                        <img src="{{section.banner_image}}" alt="banner image">
                         <figcaption>{{section.banner_image_caption}}</figcaption>
+                        <img src="{{section.banner_image}}" alt="banner image">
                         <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
                       </figure>
                       <br>
-                    {% elsif forloop.first %}
-                      <figure>
-                        <img src="{{page.banner_image}}" alt="banner image">
-                        <figcaption>{{page.banner_image_caption}}</figcaption>
-                        <figcaption><strong>Credit </strong>{{page.banner_image_source}}</figcaption>
-                      </figure>
-                      <br>
+
                     {% endif %}
 
                     {% if section.banner_video %}
 
                     <div style="width:640px;margin:auto">
+                      <div style="text-align:left"><h6>{{ section.banner_video_caption }}</h6></div>
                       {{ section.banner_video }}
                       <br>
                     </div>
@@ -72,9 +67,19 @@ layout: basic
                     {% if section.banner_slides %}
 
                     <div style="width:640px;margin:auto">
+                      <div style="text-align:left"><h6>{{ section.banner_slides_caption }}</h6></div>
                       {{ section.banner_slides }}
                       <br>
                     </div>
+
+                    {% endif %}
+
+                    {% if section.body_title %}
+
+                    <h5 style="width:640px;margin:auto">
+                      {{ section.body_title }}
+                      <br>
+                    </h5>
 
                     {% endif %}
 
@@ -83,28 +88,65 @@ layout: basic
               </div>
             </div>
 
-  </section>
+    {% if forloop.last %}
 
-{% endfor %}
-
-<section style="padding-top:0px;">
-
-<div class="col-lg-12 text-center">
+<div class="col-lg-12 text-center" style="padding-top: 55px">
 
 {% if page.page-num  > 1 %}
 
-    <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-times"></i> Previous</button></a>
+      <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-times"></i> Previous</button></a>
+
+      {% if page.final-page == false %}
+
+      <a id="nextlink"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-times"></i> Next</button></a>
+
+      <script type="text/javascript">
+
+        var str = "{{ site.baseurl }}{{ page.url}}";
+
+        //http://stackoverflow.com/questions/9781245/how-to-increment-number-in-string-using-javascript-or-jquery
+        var nextPageURL = str.replace(/(\d+)(?!.*(\d+))/, function(match, number) {
+         return parseInt(number)+1;
+        });
+
+        console.log(str);
+
+        console.log("{{ page.page-num }}");
+
+        console.log(nextPageURL);
+
+        document.getElementById("nextlink").setAttribute("href",nextPageURL);
+
+      </script>
+
+      {% endif %}
 
 {% endif %}
 
+{% if page.page-num  == 1 %}
+
 
 {% if page.final-page == false %}
+  
 
     <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-times"></i> Next</button></a>
 
 {% endif %}
+{% endif %}
 
 </div>
 
-</section>
+  {% endif %}
+
+  </section>
+
+
+
+{% endfor %}
+
+
+
+
+
+
 

@@ -5,6 +5,8 @@ external_url: 'http://gis.harvard.edu/events/conferences/dynamic-mapping-seconda
 title: Dynamic Mapping of Secondary Cities Symposium
 status: past
 date: 20160614
+page-num: 1
+final-page: false
 tags:
   - event
 ---

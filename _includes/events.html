@@ -58,7 +58,7 @@
                   {% for tag in post.tags %}
                     {% if tag == "event" %}{% assign display = true %}{% endif %}
                   {% endfor %}
-                  {% if display == true %}
+                  {% if post.page-num  == 1 %}
                     {% if post.status == "past" %}
                     <div class='keyline-all pad4 space-bottom4 project-tile'>
                       {% if post.external_url %}
