@@ -28,7 +28,7 @@ sections:
 
           This symposium is an opportunity to unpack dynamic mapping as it applies to the suite of tools under examination here. The symposium will also lay the groundwork for a network of users to identify intersections and discuss lessons learned on how improvements can be made from data development to stakeholder involvement in the context of secondary cities. Secondary cities are non-primary cities that often serve as regional hubs for commerce, services, and governance, with populations that can range from 100,000 to 5 million. They are generally experiencing rapid urbanization and are often the fastest growing areas in developing countries, experiencing unplanned growth and development with limited geospatial data.
 
-  - title: KEYNOTE Open Algorithms, Open Data - Toward Continuous Mapping of Sustainable Development
+  - title: KEYNOTE&#58; Open Algorithms, Open Data - Toward Continuous Mapping of Sustainable Development
     banner_image_caption: Dr. Sandy Pentland, MIT Media Lab
     banner_image: 
     banner_image_source:
