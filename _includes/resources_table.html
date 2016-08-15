@@ -1,11 +1,13 @@
 <!-- Header -->
 
-{% assign count_featured = 0 %}
-{% for product in site.categories.resources %}
-  {% if product.featured == true %}
-    {% assign count_featured = count_featured | plus: 1 %}
-  {% endif %}
-{% endfor %}
+<style>
+
+ul a, a.active, a:active, a:focus, a:hover {
+        color: #7B533F;
+}
+
+</style>
+
 
 {% assign count_workshops = 0 %}
 {% for product in site.categories.resources %}
@@ -29,24 +31,30 @@
 {% endfor %}
 
 
+
 <header>
     <div class="container" style="padding-top:120px;padding-bottom:80px;">
         <div class="row">
             <div class="col-lg-12">
 
-                <div><h2 class="page-title">{{ page.title }}</h2></div>
+                <div class="col-lg-12 text-center">
+                    <h2>Resources</h2>
+                    <hr class="star-primary2">
+                </div>
+
+                <div><h4 class="page-title" style="text-transform: none;">The Resources page is broken down by resources found in workshops, events, and the bibliography</h4></div>
 
                 <ul class="nav nav-tabs" style="padding: 10px 10px 0px 10px;">
-                  <li class="active"><a href="#featured" data-toggle="tab">Featured ({{ count_featured }})</a></li>
-                  <li><a href="#workshops" data-toggle="tab">workshops ({{ count_workshops }})</a></li>
+                  <li class="active"><a href="#workshops" data-toggle="tab">workshops ({{ count_workshops }})</a></li>
                   <li><a href="#events" data-toggle="tab">events ({{ count_events }})</a></li>
                   <li><a href="#bibliography" data-toggle="tab">bibliography ({{ count_bibliography }})</a></li>
                 </ul>
 
                 <div class="tab-content" style="padding: 10px;">
-                  <div id="workshops" class="tab-pane active">
+
+                   <div id="workshops" class="tab-pane ">
                     {% for product in site.categories.resources %}
-                      {% if product.featured == true %}
+                      {% if product.id == "workshops" %}
                         {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
                         {% if thecycle == 'odd' %}
                           {% include main/listitem_product.html odd=true %}
@@ -57,7 +65,7 @@
                     {% endfor %}
                   </div>
 
-                    <div id="events" class="tab-pane ">
+                  <div id="events" class="tab-pane ">
                     {% for product in site.categories.resources %}
                       {% if product.id == "events" %}
                         {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
