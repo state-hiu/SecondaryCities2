@@ -83,7 +83,11 @@ layout: basic
 
                     {% endif %}
 
+                    {% if section.body %}
+
                     {{ section.body | markdownify }}
+
+                    {% endif %}
 
               </div>
             </div>

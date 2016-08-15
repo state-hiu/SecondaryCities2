@@ -25,12 +25,11 @@ sections:
     body_title: Abstract
     body: |
           Dr. Melinda Laituri presents an overview of the first day of the Dynamic Mapping Symposium which presented a number of open source and proprietary mapping tools and technologies for Secondary Cities. She then presents the Secondary City project, partners, and activities in three cities - Cuzco, Kharkiv and Pokhara.
-
   - title: "Keynote: The Challenge of Mapping Human Geography Data in the Urban Milieu"
     banner_image: 
     banner_image_caption: 
     banner_image_source:
-    banner_video_caption: Dr. Lee Schwartz, Director, Office of the Geographer, U.S. Department of State
+    banner_video_caption: "Dr. Lee Schwartz, Director, Office of the Geographer, U.S. Department of State"
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/j21anT1rHps" frameborder="0" allowfullscreen></iframe>'
     banner_slides: '<script async class="speakerdeck-embed" data-id="e4aaa4f9fb2041388bbc5981c9a3f63b" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
     latlng: [28.232, 83.969]
@@ -38,8 +37,7 @@ sections:
     tile_layers:
     vector_data:
     body_title: 
-    body: 
-
+    body:
   - title: "Panel 1: Why Dynamic Mapping in Secondary Cities"
     banner_image: 
     banner_image_caption: 
@@ -58,5 +56,5 @@ sections:
     tile_layers:
     vector_data:
     body_title: 
-    body: 
+    body:
 ---
