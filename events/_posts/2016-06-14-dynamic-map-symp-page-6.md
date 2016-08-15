@@ -25,6 +25,7 @@ sections:
     body_title: Abstract
     body: |
           Dr. Melinda Laituri presents an overview of the first day of the Dynamic Mapping Symposium which presented a number of open source and proprietary mapping tools and technologies for Secondary Cities. She then presents the Secondary City project, partners, and activities in three cities - Cuzco, Kharkiv and Pokhara.
+  
   - title: "Keynote: The Challenge of Mapping Human Geography Data in the Urban Milieu"
     banner_image: 
     banner_image_caption: 
@@ -38,6 +39,7 @@ sections:
     vector_data:
     body_title: 
     body:
+  
   - title: "Panel 1: Why Dynamic Mapping in Secondary Cities"
     banner_image: 
     banner_image_caption: 
