@@ -3,18 +3,18 @@ layout: event2
 category: events
 title: Dynamic Mapping of Secondary Cities Symposium
 status: past
-date: 20160614-15
+date: 20160614
 page-num: 2
 final-page: false
 previous-page-url: "/SecondaryCities2/events/dynamic-map-symp.html"
 tags:
   - event
 sections:
-  - title: ikeGPS Spike Intro & Demo
+  - title: ikeGPS SPIKE INTRO & DEMO
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
-    banner_video_caption: Mr. James Pardue, Vice President of Sales, ikeGPS
+    banner_video_caption: "MR. JAMES PARDUE, VICE PRESIDENT OF SALES, ikeGPS"
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/f7avqDbORb4" frameborder="0" allowfullscreen></iframe>'
     banner_slides_caption: 
     banner_slides: '<script async class="speakerdeck-embed" data-id="e6662a77b974493e85116fed85cde4fb" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>'

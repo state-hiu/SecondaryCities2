@@ -1,9 +1,10 @@
 ---
 layout: event2
 category: events
-title: Dynamic Mapping of Secondary Cities Symposium
+title: Dynamic Mapping of Secondary Cities Symposium, 14 June 2016
+ref: dynamic-map-symp
 status: past
-date: 20160614-15
+date: 20160614
 page-num: 1
 final-page: false
 previous-page-url: ""
@@ -14,7 +15,9 @@ sections:
     banner_image_caption: 
     banner_image: 
     banner_image_source: 
-    banner_video_caption: Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University & Dr. Melinda Laituri, Director Centroid, Colorado State University
+    banner_video_caption: |
+        Dr. Jason Ur, Director Center for Geographic Analysis, Harvard University 
+        & Dr. Melinda Laituri, Director Centroid, Colorado State University
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/X8BxcZ9Cp7Q" frameborder="0" allowfullscreen></iframe>'
     banner_slides_caption: 
     banner_slides: '<script async class="speakerdeck-embed" data-id="6282c16a12ab4990aac48b734568f856" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
@@ -44,4 +47,5 @@ sections:
  
 ---
 
+Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department. <a href="{{ site.baseurl }}/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf"> Symposium Program </a>
 

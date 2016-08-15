@@ -1,4 +1,12 @@
-<!-- About Section -->
+<!-- Events Section -->
+
+<style>
+.anchor{
+  padding-top: 200px;
+  margin-top: -200px;
+}
+</style>
+
     <section class="success" id="about">
         <div class="container">
 
@@ -30,14 +38,22 @@
                       {% endfor %}
                       {% if display == true %}
                         {% if post.status == "upcoming" %}
-                        <div class='keyline-all pad4 space-bottom4 project-tile'>
+                            {% if post.ref %}
+                                <div id="{{ post.ref }}" class='keyline-all pad4 space-bottom4 project-tile'>
+                            {% else %}
+                                <div class='keyline-all pad4 space-bottom4 project-tile'>
+                            {% endif %}
                           {% if post.external_url %}
                             <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
                             {% else %}
                             <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                           {% endif %}
                           <h3>{{ post.subtitle }}</h3>
-                          <p>{{ post.excerpt }}</p>
+                          <p>
+                            <div style="text-align:justify;">
+                                {{ post.excerpt }}
+                            </div>
+                          </p>
                         </div>
                         {% endif %}
                       {% endif %}
@@ -70,14 +86,22 @@
                   {% endfor %}
                   {% if post.page-num  == 1 %}
                     {% if post.status == "past" %}
-                    <div class='keyline-all pad4 space-bottom4 project-tile'>
+                        {% if post.ref %}
+                            <div id="{{ post.ref }}" class='keyline-all pad4 space-bottom4 project-tile anchor'>
+                        {% else %}
+                            <div class='keyline-all pad4 space-bottom4 project-tile'>
+                        {% endif %}
                       {% if post.external_url %}
                         <h3><a href="{{ post.external_url }}">{{ post.title }}</a></h3>
                         {% else %}
                         <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                       {% endif %}
                       <h3>{{ post.subtitle }}</h3>
-                      <p>{{ post.excerpt }}</p>
+                      <p>
+                        <div style="text-align:justify;">
+                            {{ post.excerpt }}
+                        </div>
+                       </p>
                     </div>
                     {% endif %}
                   {% endif %}
@@ -89,3 +113,5 @@
         </div>
 
     </section>
+
+
