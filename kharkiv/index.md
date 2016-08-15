@@ -99,17 +99,17 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
 
 ![kharkiv]( {{ site.baseurl }}/img/kharkiv/LopanStrelkaKharkov.jpg)
 
 The Kharkiv Secondary City (2C) project focuses on development of geospatial data for the human geography theme of Emergency Preparedness. Data is being collected for vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.
 
-## Goals
+### Goals
 
 The project will build partnerships with local universities, government, NGOs and the private sector to create geospatial data on Kharkiv; enhance the understanding and management of the city through better data and mapping; build resiliency and develop local capacity in geospatial science-based decision making; provide open geospatial data solutions; and empower the community and facilitate the creation of long-term partnerships and networks.
 
-## Partners
+### Partners
 
 - U.S. Embassy
 
@@ -145,10 +145,10 @@ The project will build partnerships with local universities, government, NGOs an
 - Kharkiv Human Rights Protection Group
 - Kharkiv Going Global
 
-## Workshop Materials
+### Workshop Materials
 **Link to Resources page
 
-## Upcoming Events
+### Upcoming Events
 
 - Workshop: 19-23 September, 2016 @ National University of Urban Economics
 
