@@ -111,14 +111,16 @@ The project will build partnerships with local universities, government, NGOs an
 
 ## Partners
 
+- U.S. Embassy
+
 #### Local Partners
 - [Kharkiv City Government & Information Center](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
-Kharkiv City Council
-Kharkiv Oblast Government
+- Kharkiv City Council
+- Kharkiv Oblast Government
  
 #### National/Regional
-National agencies Kiev – informational meetings
-State Service for Emergencies in Kharkiv Oblast
+- National agencies Kiev – informational meetings
+- State Service for Emergencies in Kharkiv Oblast
  
 #### Universities
 - [V.N. Karazin Kharkiv National University](http://www.univer.kharkov.ua/en)
@@ -128,28 +130,22 @@ State Service for Emergencies in Kharkiv Oblast
 - [Kharkiv National Aerospace University](http://www.khai.edu/efc/)
  
 #### United Nations
-UN World Food Program
-UN High Commissioner for Refugees
+- UN World Food Program
+- UN High Commissioner for Refugees
  
 #### Private
-SpaeroGIS
-
-ESRI Ukraine
-
-Kharkiv IT Cluster
+- SpaeroGIS
+- ESRI Ukraine
+- Kharkiv IT Cluster
  
 #### Non-profit
 - [Association of American Geographers](http://www.aag.org/)
+- SPALAH - Center for Young People
+- Kharkiv Station
+- Kharkiv Human Rights Protection Group
+- Kharkiv Going Global
 
-SPALAH - Center for Young People
-Kharkiv Station
-Kharkiv Human Rights Protection Group
-
-Kharkiv Going Global
- 
-#### US Embassy
-
-## Project Materials
+## Workshop Materials
 **Link to Resources page
 
 ## Upcoming Events
