@@ -111,25 +111,49 @@ The project will build partnerships with local universities, government, NGOs an
 
 ## Partners
 
-- [Kharkiv City Government](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
+#### Local Partners
+- [Kharkiv City Government & Information Center](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
+Kharkiv City Council
+Kharkiv Oblast Government
+ 
+#### National/Regional
+National agencies Kiev – informational meetings
+State Service for Emergencies in Kharkiv Oblast
+ 
+#### Universities
 - [V.N. Karazin Kharkiv National University](http://www.univer.kharkov.ua/en)
 - [Kharkiv University of Urban Economics](http://abit.kname.edu.ua/index.php/en/home)
 - [Kharkiv National University of Radio Electronics](http://nure.ua/en/)
 - [National University of Civil Protection of Ukraine](http://nuczu.edu.ua/eng/)
 - [Kharkiv National Aerospace University](http://www.khai.edu/efc/)
+ 
+#### United Nations
+UN World Food Program
+UN High Commissioner for Refugees
+ 
+#### Private
+SpaeroGIS
+
+ESRI Ukraine
+
+Kharkiv IT Cluster
+ 
+#### Non-profit
 - [Association of American Geographers](http://www.aag.org/)
+
+SPALAH - Center for Young People
+Kharkiv Station
+Kharkiv Human Rights Protection Group
+
+Kharkiv Going Global
+ 
+#### US Embassy
 
 ## Project Materials
 **Link to Resources page
 
 ## Upcoming Events
 
-- Scoping trip: January 31-February 6, 2016 @ various organizations in Kiev & Kharkiv
-
-- GeoForum: March 17-18, 2016 @ Karazin University
-
-- Workshop: May 10-14, 2016 @ Karazin University
-
-- Workshop: September, 2016 @ National University of Urban Economics
+- Workshop: 19-23 September, 2016 @ National University of Urban Economics
 
 
