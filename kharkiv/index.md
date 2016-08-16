@@ -146,7 +146,12 @@ The project will build partnerships with local universities, government, NGOs an
 - Kharkiv Going Global
 
 ### Workshop Materials
-**Link to Resources page
+- [Accessing Existing Geospatial Data for Kharkiv](http://secondarycities.geonode.state.gov/documents/425)
+- [Kharkiv Workshop Data Collection Features & Attributes](http://secondarycities.geonode.state.gov/documents/424)
+- [Using Survey123 1-pager](http://secondarycities.geonode.state.gov/documents/427)
+- [Survey123 Frequently Asked Questions](http://secondarycities.geonode.state.gov/documents/426)
+- [Field Papers One Pager](http://secondarycities.geonode.state.gov/documents/423)
+- [Field Data Collection Training](http://secondarycities.geonode.state.gov/documents/422)
 
 ### Upcoming Events
 
