@@ -10,7 +10,7 @@ previous-page-url: "/SecondaryCities2/events/dynamic-map-symp-page-5.html"
 tags:
   - event
 sections: 
-  - title: "Panel 2: Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing
+  - title: "Panel II: Case Studies on Dynamic Data Collection and Mapping Projects for Urban Developing
     Communities"
     banner_image: 
     banner_image_caption: 
