@@ -45,8 +45,8 @@ sections:
     banner_image: 
     banner_image_caption: 
     banner_image_source:
-    banner_video_caption: Dr. Zachary Patterson, Associate Professor, Department of Geography, Planning and Environment, Concordia
-    University, Montreal, Canada
+    banner_video_caption: 'Dr. Zachary Patterson, Associate Professor of Geography, Planning and Environment, Concordia
+    University, Montreal, Canada'
     banner_video: '<iframe width="640" height="360" src="https://www.youtube.com/embed/BKEPAm01L8s" frameborder="0" allowfullscreen></iframe>'
     banner_slides: '<script async class="speakerdeck-embed" data-id="bda32299a65f4d07b4ac7655a8891083" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>'
     latlng: [28.232, 83.969]
