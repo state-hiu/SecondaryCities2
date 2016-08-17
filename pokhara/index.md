@@ -1,5 +1,5 @@
 ---
-layout: report2
+layout: report3
 title: Pokhara, Nepal
 author: Tom G of HIU
 date: January 20, 2015
