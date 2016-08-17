@@ -10,7 +10,7 @@ previous-page-url: "/SecondaryCities2/events/dynamic-map-symp-page-5.html"
 tags:
   - event
 sections: 
-  - title: "Panel II: Solutions, Lessons Learned, and Next Steps for Secondary Cities"
+  - title: "Panel III: Solutions, Lessons Learned, and Next Steps for Secondary Cities"
     banner_image: 
     banner_image_caption: 
     banner_image_source:
