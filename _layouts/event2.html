@@ -18,19 +18,43 @@ layout: basic
         <div class="row">
           <div class="col-lg-12 text-center">
               {% if forloop.first %}
-              <h3> {{page.title}} </h3>
-              <div class="mvs">
-                {% if page.author %}
-                  <div class="small"><strong>By {{page.author}}</strong></div>
-                {% endif %}
-                {% if page.date %}
-                  <div class="small serif">{{page.date | date: '%B %d, %Y' }}</div>
+                <h3> {{page.title}} </h3>
+                <div class="mvs">
+                  {% if page.author %}
+                    <div class="small"><strong>By {{page.author}}</strong></div>
+                  {% endif %}
+                  {% if page.date %}
+                    <div class="small serif" style="font-size:18px">{{page.date | date: '%B %d, %Y' }}</div>
+                  {% endif %}
+
+                    </div>
+
+                    <div class="col-lg-12 text-center" style="padding-top: 55px">
+
+                      {% if page.page-num  > 1 %}
+
+                            <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-left"></i> Previous Page</button></a>
+
+                            {% if page.final-page == false %}
+
+                              <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+
+                            {% endif %}
+
+                      {% endif %}
+
+                      {% if page.page-num  == 1 %}
+                        {% if page.final-page == false %}
+                          
+
+                            <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+
+                        {% endif %}
+                      {% endif %}
+                    </div>
                 {% endif %}
               </div>
-            {% endif %}
-          </div>
-        </div>
-
+            </div>
         <br>
 
         <div class="container">
@@ -102,30 +126,36 @@ layout: basic
 
 {% if page.page-num  > 1 %}
 
-      <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-arrow-left"></i> Previous</button></a>
+      <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-left"></i> Previous Page</button></a>
 
       {% if page.final-page == false %}
 
-      <a id="nextlink"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-arrow-right"></i> Next</button></a>
+        <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
 
-      <script type="text/javascript">
+        <script type="text/javascript">
 
-        var str = "{{ site.baseurl }}{{ page.url}}";
+            var str = "{{ site.baseurl }}{{ page.url}}";
 
-        //http://stackoverflow.com/questions/9781245/how-to-increment-number-in-string-using-javascript-or-jquery
-        var nextPageURL = str.replace(/(\d+)(?!.*(\d+))/, function(match, number) {
-         return parseInt(number)+1;
-        });
+            //http://stackoverflow.com/questions/9781245/how-to-increment-number-in-string-using-javascript-or-jquery
+            var nextPageURL = str.replace(/(\d+)(?!.*(\d+))/, function(match, number) {
+             return parseInt(number)+1;
+            });
 
-        console.log(str);
+            console.log(str);
 
-        console.log("{{ page.page-num }}");
+            console.log("{{ page.page-num }}");
 
-        console.log(nextPageURL);
+            console.log(nextPageURL);
 
-        document.getElementById("nextlink").setAttribute("href",nextPageURL);
+            //document.getElementById("nextlink").setAttribute("href",nextPageURL);
 
-      </script>
+            var list, index;
+            list = document.getElementsByClassName("nextlink");
+            for (index = 0; index < list.length; ++index) {
+                list[index].setAttribute("href",nextPageURL);
+            }
+
+        </script>
 
       {% endif %}
 
@@ -137,7 +167,7 @@ layout: basic
 {% if page.final-page == false %}
   
 
-    <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:22px"><i class="fa fa-arrow-right"></i> Next</button></a>
+    <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
 
 {% endif %}
 {% endif %}
