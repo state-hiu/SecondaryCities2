@@ -37,7 +37,7 @@ layout: basic
 
                             {% if page.final-page == false %}
 
-                              <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+                              <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
 
                             {% endif %}
 
@@ -47,7 +47,7 @@ layout: basic
                         {% if page.final-page == false %}
                           
 
-                            <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+                            <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
 
                         {% endif %}
                       {% endif %}
@@ -130,7 +130,7 @@ layout: basic
 
       {% if page.final-page == false %}
 
-        <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+        <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
 
         <script type="text/javascript">
 
@@ -167,7 +167,7 @@ layout: basic
 {% if page.final-page == false %}
   
 
-    <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-right"></i> Next Page</button></a>
+    <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
 
 {% endif %}
 {% endif %}
