@@ -50,7 +50,7 @@ $(document).foundation();
         });
         var fbButton = $('<a>',{
           class: 'mapbox-icon mapbox-icon-facebook',
-          href: 'http://www.facebook.com/sharer/sharer.php?u=' + pageConfig.fb_site
+          href: 'https://www.facebook.com/sharer/sharer.php?u=' + pageConfig.fb_site
         })
         var twitterButton = $('<a>',{
           class: 'mapbox-icon mapbox-icon-twitter twitter-share-button',
