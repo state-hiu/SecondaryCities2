@@ -79,3 +79,4 @@ Secondary Cities in the developing world are rapidly growing urban areas that ar
         <a href="{{ site.baseurl }}/events/dynamic-map-symp-page-10.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 10: Panel III – Solutions, Lessons Learned and Next Steps</button></a>
     </div>
 </div>
+<br>
