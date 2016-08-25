@@ -48,7 +48,13 @@ sections:
  
 ---
 
-Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.&nbsp;&nbsp;&nbsp;<a href="{{ site.baseurl }}/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px"><i class="fa"></i>Symposium Program</button></a>
+<div style="text-align:center;">
+    <a href="{{ site.baseurl }}/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Symposium Program</button></a>
+</div>
+<br>
+<div>
+Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.
+</div>
 <br>
 <div style="text-align:center;">
     <div style="display: inline-block; text-align: left">
