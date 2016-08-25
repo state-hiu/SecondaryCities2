@@ -1,7 +1,8 @@
 ---
 layout: event2
 category: events
-title: AAG Mapathon, 30 March–1 April 2016
+title: AAG Mapathon 
+subtitle: 30 March–1 April 2016
 ref: aag-mapathon
 status: past
 date: 20160330
