@@ -47,5 +47,26 @@ sections:
  
 ---
 
-Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.&nbsp;&nbsp;&nbsp;<a href="{{ site.baseurl }}/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf"><button type="button" class="btn btn-default2" style="font-size:16px"><i class="fa"></i>Symposium Program</button></a>
-
+Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.&nbsp;&nbsp;&nbsp;<a href="{{ site.baseurl }}/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px"><i class="fa"></i>Symposium Program</button></a>
+<br>
+<div style="text-align:center;">
+<a href="{{ site.baseurl }}/events/dynamic-map-symp.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 1: Welcome Address and Dr. Sandy Pentland Keynote</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-2.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 2: Tools & Technologies: ikeGPS and CartoDB</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-3.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 3:  Tools & Technologies: GeoNode and KoBo Toolbox</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-4.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 4: Tools & Technologies: Esri and Geographic Futures</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-5.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 5:  Tools & Technologies: WorldMap and Field Papers</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-6.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 6: Overview & Orientation and Dr. Lee Schwartz Keynote</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-7.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 7: Panel I – Why map secondary cities?</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-8.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 8: Panel II – Case Studies</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-9.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 9: Tools & Technologies Applied in Humanitarian Aid, India, and Africa</button></a>
+<br>
+<a href="{{ site.baseurl }}/events/dynamic-map-symp-page-10.html"><button type="button" class="btn btn-default3" style="font-size:16px;padding:5px;margin-bottom:4px"><i class="fa"></i>Page 10: Panel III – Solutions, Lessons Learned and Next Steps</button></a>
+</div>
