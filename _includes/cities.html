@@ -11,14 +11,16 @@
                 {% for city in site.categories.cities reversed%}
                     <div class="col-sm-4 portfolio-item">
                         {% if city.external_url %}
-                        <a href="{{ site.baseurl }}/{{ city.external_url }}" target=_blank" class="portfolio-link">
+                            <a href="{{ city.external_url }}" target=_blank" class="portfolio-link">
+                        {% elsif city.internal_url %}
+                            <a href="{{ site.baseurl }}/{{ city.internal_url }}" target=_blank" class="portfolio-link">
                         {% else %}
-                        <a href="#{{ city.modalID }}" class="portfolio-link" data-toggle="modal">
+                            <a href="#{{ city.modalID }}" class="portfolio-link" data-toggle="modal">
                         {% endif %}
                             <div class="caption">
                                 <div class="caption-content">
                                     <!--<i class="fa fa-search-plus fa-3x"></i>-->
-				                    <i class=""><h3>{{ city.title }}</h3></i>
+                                    <i class=""><h3>{{ city.title }}</h3></i>
                                 </div>
                             </div>
                             <img src="{{ site.baseurl }}/{{ city.img }}" class="img-responsive" alt="{{ city.title }}">

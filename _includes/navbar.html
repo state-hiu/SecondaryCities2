@@ -1,4 +1,16 @@
 <!-- Navigation -->
+
+<!--css fixes navbar from shifting when user clicks on a modal-->
+<!--https://github.com/twbs/bootstrap/issues/14040-->
+<style>
+body.modal-open{
+width:100%!important;
+padding-right:0!important;
+overflow-y:scroll!important;
+position:fixed!important;
+}
+</style>
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
