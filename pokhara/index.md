@@ -99,25 +99,29 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
 
-![kharkiv](http://www.teaminternational.com/wp-content/uploads/2013/06/kharkov3_b.jpg)
+![Pokhara](https://c1.staticflickr.com/9/8349/28953326600_d80d1cd82f_z.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+Pokhara Sub-metropolitan city is the second largest city of Nepal. The city currently acts as the Western Development Regional capital and is set to be one of only seven new provincial capitals of Nepal. Between 2001 and 2011 the city grew at an annual rate of 6.952 percent with its population in 2011 standing at 264,991 (Nepal Census 2011). If the same growth rate held then the city currently has an approximate population of 369,253 people. In the same time period the annual growth rate of the national population was only 1.35 percent.
 
-## Participatory Data Generation
+Beyond the rapid urban growth and administrative importance to the region, Pokhara is also the preeminent tourist (both domestic and international) destination of Nepal. Its karst topography and sharp elevation rise has meant that Pokhara is bejeweled with lakes, caves, waterfalls, and gorges. Just a mere 30 km north as the crow flies lies the Dhaulagiri massif, a mountain range that includes the seventh and tenth highest mountains in the world.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+### Goals
 
-### Urban Flow Mapping
+The 2C Pokhara project focuses on the development of disaster resilience and emergency management. Kathmandu Living Labs (KLL) is the local implementing partner of this project and works in cooperation with the American Association of Geographers and the United States Department of State.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+The development of disaster resilience and emergency management is done by helping the local communities within the city of Pokhara to create a robust OSM data of their city and develop a community which is able to update and maintain the collected data. Long term, the 2C Pokhara team envisions the formation of a geographic information sensitized community that is able to use the collected OSM data to mobilise strategically, create applications and use tools such as Quakemap.org in the advent of a major disaster. 
 
-## Partners
+### Partners
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-
+- [TU Institute of Engineering Paschimanchal Campus](https://gesanwrc.wordpress.com/)
+- [Geomatics Engineering Students’ Association of Nepal](http://nrcskaski.org/)
+- [Nepal Red Cross Society Kaski District Chapter](http://nrcskaski.org/)
+- Nepal Scout Kaski
+- Learning House
+- Big Foot Software
+- Rotoract Club of New Road, Pokhara
 
 
 
