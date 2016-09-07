@@ -9,5 +9,3 @@ tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: true
 ---
 
-
-
