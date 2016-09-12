@@ -119,21 +119,133 @@ position:fixed!important;
     font-size:20px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+.my-div-icon {
+  padding: 6px 8px;
+  font: 20px/24px Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+.my-div-icon h4 {
+  margin: 0 0 5px;
+  color: #202d3b;
+}
+
+.region_label {
+    width: 700px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.leaflet-horizontalcenter {
+   margin-left: 27.5%;
+   margin-bottom: 5px;
+}
+
+.leaflet-horizontalcenter .leaflet-control {
+    margin-bottom: 0px;
+}
+
+.info {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
 </style>
 
-<header style="margin-top: 30px;">
-<iframe style=“border: 2px solid #111111;” frameborder="1" height="600px" width="100%" scrolling="no" 
-
-src="     
-     
-http://csurams.maps.arcgis.com/apps/webappviewer/index.html?id=ebc807d2f738412b93db5b4575b5be39" 
-
-width="100%">You need a Frames Capable browser to view this content.</iframe>
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 
 
-                    <span class="skills">Resiliency - Human Security - Emergency Preparedness
+<header style="margin-top: 75px;">
+
+
+
+
+<div id="map" style="top:0px;left:0px;width:100%;height:500px;"></div>
+
+
+                    <!--<span class="skills">Resiliency - Human Security - Emergency Preparedness
 </span>
-</header>
+</header>-->
+
+<script type="text/javascript">
+
+ L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: false,
+    zoomControl:false,
+    scrollWheelZoom: false
+  }).setView([14, 29], 3);
+
+/*
+    var map = L.mapbox.map('map')
+    .setView([38.97416, -95.23252], 15);
+*/
+
+// Use styleLayer to add a Mapbox style created in Mapbox Studio
+  var baseLayer = L.mapbox.styleLayer('mapbox://styles/hiu/cipse716l000lcbnk2l6sgbz8',{
+    minZoom: 1,
+    maxZoom: 16,
+    scrollWheelZoom: true,
+    zoomControl: false // we'll add later
+  }).addTo(map);
+
+
+
+
+
+var bottomText = L.divIcon({  
+  className: "my-div-icon",
+  html: "<div class='region_label'>Resiliency - Human Security - Emergency Preparedness</div>"
+});
+
+
+// you can set .my-div-icon styles in CSS
+//L.marker([-20, -29], {icon: bottomText}).addTo(map);
+
+
+// http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
+// Create additional Control placeholders
+function addControlPlaceholders(map) {
+    var corners = map._controlCorners,
+        l = 'leaflet-',
+        container = map._controlContainer;
+
+    function createCorner(vSide, hSide) {
+        var className = l + vSide + ' ' + l + hSide;
+
+        corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+    }
+
+    createCorner('horizontalcenter', 'top');
+    createCorner('horizontalcenter', 'bottom');
+}
+addControlPlaceholders(map);
+
+// Change the position of the Zoom Control to a newly created placeholder.
+//map.zoomControl.setPosition('verticalcenterright');
+
+var info = L.control({position: 'horizontalcenterbottom'});
+
+            info.onAdd = function (map) {
+              this._div = L.DomUtil.create('div', 'info');
+              this._div.innerHTML = '<div>Resiliency - Human Security - Emergency Preparedness</div>';
+              return this._div;
+            };
+
+            info.addTo(map);
+
+
+// You can also put other controls in the same placeholder.
+//L.control.scale({position: 'verticalcenterright'}).addTo(map);
+
+
+</script>
 
 
     <!-- About Section -->
