@@ -137,8 +137,9 @@ position:fixed!important;
 }
 
 .leaflet-horizontalcenter {
-   margin-left: 27.5%;
-   margin-bottom: 5px;
+   padding-top: 460px;
+   margin: 0 auto;
+   width: 700px;
 }
 
 .leaflet-horizontalcenter .leaflet-control {
@@ -216,21 +217,21 @@ function addControlPlaceholders(map) {
         l = 'leaflet-',
         container = map._controlContainer;
 
-    function createCorner(vSide, hSide) {
-        var className = l + vSide + ' ' + l + hSide;
+    function createCorner(hSide) {
+        var className = l + hSide;
 
-        corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+        corners[hSide] = L.DomUtil.create('div', className, container);
     }
 
-    createCorner('horizontalcenter', 'top');
-    createCorner('horizontalcenter', 'bottom');
+    //createCorner('horizontalcenter', 'top');
+    createCorner('horizontalcenter');
 }
 addControlPlaceholders(map);
 
 // Change the position of the Zoom Control to a newly created placeholder.
 //map.zoomControl.setPosition('verticalcenterright');
 
-var info = L.control({position: 'horizontalcenterbottom'});
+var info = L.control({position: 'horizontalcenter'});
 
             info.onAdd = function (map) {
               this._div = L.DomUtil.create('div', 'info');
