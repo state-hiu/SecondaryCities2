@@ -89,9 +89,11 @@ position:fixed!important;
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
+                    <!--
                     <li class="page-scroll">
                         <a href="#portfolio">Cities</a>
                     </li>
+                -->
 				<li class="page-scroll">
                         <a href="#partners">Partners</a>
                     </li>
@@ -153,6 +155,23 @@ position:fixed!important;
   font-size: 20px;
   color: #2c3e50;
 }
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.type1 {
+    width: 22px;
+    height: 22px;
+    background: #18bc9c;
+    border: 2px solid white;
+}
+.label-span{
+    font-size: 15px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:rgba(0,0,0,.75);
+}
+
 
 </style>
 
@@ -181,7 +200,7 @@ var map = L.mapbox.map('map', '', {
     attributionControl: false,
     zoomControl:false,
     scrollWheelZoom: false
-  }).setView([14, 29], 3);
+  }).setView([18, 29], 3);
 
 /*
     var map = L.mapbox.map('map')
@@ -206,8 +225,68 @@ var bottomText = L.divIcon({
 });
 
 
+
+var CuscoIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span">Cusco</span>'
+});
 // you can set .my-div-icon styles in CSS
-//L.marker([-20, -29], {icon: bottomText}).addTo(map);
+
+cuscoMarker = L.marker([-13.529, -72.009], {icon: CuscoIcon}).addTo(map);
+
+cuscoMarker.bindPopup("Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters.  It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.  From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site.  It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination.  In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo.  These locations are particularly susceptible to earthquakes, landslides, and flooding.");
+
+var DenpasarIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1"></div>'+
+              '<span class="label-span">Denpasar</span></a>'
+});
+// you can set .my-div-icon styles in CSS
+
+denpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
+
+var KharkivIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<a href="/SecondaryCities2/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
+              '<span class="label-span">Kharkiv</span></a>'
+});
+// you can set .my-div-icon styles in CSS
+
+L.marker([49.99, 36.145], {icon: KharkivIcon}).addTo(map);
+
+var MedellinIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span">Medellin</span>'
+});
+// you can set .my-div-icon styles in CSS
+
+MedellinMarker = L.marker([6.26, -75.666], {icon: MedellinIcon}).addTo(map);
+
+MedellinMarker.bindPopup("Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.");
+
+var MekelleIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span">Mekelle</span>'
+});
+// you can set .my-div-icon styles in CSS
+
+mekelleMarker = L.marker([13.474, 39.385], {icon: MekelleIcon}).addTo(map);
+
+mekelleMarker.bindPopup("Mekelle is the capital city of the Tigray Regional State of Ethiopia. It is one of the principal economic, cultural, political, and educational centers of the country. Mekelle is known for the cultural landmarks that include Ethiopian Orthodox churches and historic castles. Climate extremes are characteristic of the region. Mekelle is experiencing severe water problems that include lack of an adequate supply and quality issues.");
+
+var PokharaIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<a href="/SecondaryCities2/pokhara" target=_blank" ><div class="circleBase type1"></div>'+
+              '<span class="label-span">Pokhara</span></a>'
+});
+// you can set .my-div-icon styles in CSS
+
+L.marker([28.23, 83.877], {icon: PokharaIcon}).addTo(map);
+
+
 
 
 // http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
@@ -275,117 +354,10 @@ var info = L.control({position: 'horizontalcenter'});
     </section>
 
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Cities</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalSafe" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Cusco,           Peru</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Cusco2.png" class="img-responsive" alt="Cusco,           Peru">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="http://2cdenpasar.com/" target=_blank" class="portfolio-link">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Denpasar, Indonesia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Denpasar2.png" class="img-responsive" alt="Denpasar, Indonesia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="/SecondaryCities2/kharkiv" target=_blank" class="portfolio-link">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Kharkiv, Ukraine</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Kharkiv2.jpg" class="img-responsive" alt="Kharkiv, Ukraine">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalGame" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Medellin, Colombia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Medellin2.png" class="img-responsive" alt="Medellin, Colombia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalCake" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Mekelle, Ethiopia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Mekelle4.png" class="img-responsive" alt="Mekelle, Ethiopia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalCircus" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Pokhara, Nepal</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/Pokhara2.png" class="img-responsive" alt="Pokhara, Nepal">
-                        </a>
-                    </div>
-
-                
-            </div>
-        </div>
-    </section>
-
-
-    
 
 
     <!-- Partners Section -->
-<section class="success" id="partners">
+<section class="data" id="partners">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -424,7 +396,7 @@ and non-governmental organizations.</p>
 
 
     <!-- Data -->
-    <section class="data" id="data">
+    <section class="success" id="data">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
