@@ -1,5 +1,5 @@
 ---
-layout: report3
+layout: report3-pokhara
 title: Pokhara, Nepal
 author: Tom G of HIU
 date: January 20, 2015
@@ -38,8 +38,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [28.22, 84.00]
-    zoom: 12
+    latlng: [28.219, 83.99]
+    zoom: 14
     tile_layers:
     vector_data:
     body: |
@@ -92,7 +92,7 @@ sections:
     banner_image_caption:
     banner_image_source:
     latlng: [8.468285, -13.242686]
-    zoom: 13
+    zoom: 14
     tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
     vector_data:
     body: |
@@ -101,7 +101,7 @@ sections:
 
 ### Summary
 
-![Pokhara](https://c1.staticflickr.com/9/8349/28953326600_d80d1cd82f_z.jpg)
+![Pokhara]({{ site.baseurl }}/img/pokhara/mountains.jpg)
 
 Pokhara Sub-metropolitan city is the second largest city of Nepal. The city currently acts as the Western Development Regional capital and is set to be one of only seven new provincial capitals of Nepal. Between 2001 and 2011 the city grew at an annual rate of 6.952 percent with its population in 2011 standing at 264,991 (Nepal Census 2011). If the same growth rate held then the city currently has an approximate population of 369,253 people. In the same time period the annual growth rate of the national population was only 1.35 percent.
 

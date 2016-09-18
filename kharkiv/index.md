@@ -112,6 +112,8 @@ The project will build partnerships with local universities, government, NGOs an
 ### Partners
 
 - [U.S. Embassy](http://www.usembassy.gov/)
+- [Esri](http://www.esri.com/)
+- [MapBox](http://www.mapbox.com/)
 
 #### Local Partners
 - [Kharkiv City Government & Information Center](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
