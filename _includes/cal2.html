@@ -1,0 +1,80 @@
+<!-- Header -->
+<header>
+
+<link rel='stylesheet' href="{{site.baseurl}}/assets/fullcalendar/dist/fullcalendar.min.css" />
+
+<link rel='stylesheet' href="{{site.baseurl}}/assets/js/libs/jquery-ui-1.12.1/jquery-ui.min.css">
+
+<script src="{{site.baseurl}}/assets/js/libs/jquery.js"></script>
+
+<script src="{{site.baseurl}}/assets/js/libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+<script src="{{site.baseurl}}/assets/fullcalendar/dist/moment.js"></script>
+<script src="{{site.baseurl}}/assets/fullcalendar/dist/fullcalendar.js"></script>
+
+<script src="{{site.baseurl}}/assets/fullcalendar/dist/gcal.js"></script>
+
+
+    <div class="container" style="padding-top:120px;padding-bottom:80px;">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="intro-text">
+                    <!--<span class="name">{{ site.title }}</span>
+                    <hr class="star-light">-->
+                    <H2 class="skills">Secondary Cities Calendar</H2>
+
+                </div>
+
+                <br><br>
+
+                <div id='calendar'></div>
+                
+                </div>
+        </div>
+    </div>
+</header>
+
+<div id="eventContent" title="Event Details" style="display: none;">
+    Start: <span id="startTime"></span><br>
+    End: <span id="endTime"></span><br><br>
+    <div id="eventInfo"></div>
+    </br>
+    <p><strong><a id="eventLink" target="_blank">Read More</a></strong></p>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyBPJJ7VIyVSY6gc6wtYtS2XLWJmoBttEG8',
+        events: {
+            googleCalendarId: 'qj09h89scmae2gjb13297a16rc@group.calendar.google.com',
+            color: '#2c3e50',   // an option!
+            textColor: 'white' // an option!
+        },
+        header: {
+    left:   'title',
+    center: '',
+    right:  'today prev,next'
+},
+aspectRatio: 2,
+    eventClick:  function(event, jsEvent, view) {
+        //set the values and open the modal
+        $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+        $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+        $("#eventInfo").html(event.description);
+        $("#eventLink").attr('href', event.url);
+        $("#eventContent").dialog({ modal: true, title: event.title });
+        $("#eventContent").dialog( "option", "width", 660 );
+        if (event.url) {
+            window.close(event.url);
+            return false;
+        }
+    }
+        
+    });
+});
+
+
+
+</script>
