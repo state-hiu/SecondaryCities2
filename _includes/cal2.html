@@ -53,6 +53,16 @@ $(document).ready(function() {
             color: '#2c3e50',   // an option!
             textColor: 'white' // an option!
         },
+        eventAfterRender: function (event, element, view) {
+        console.log(event.description);
+// http://stackoverflow.com/questions/18619903/jquery-full-calendar-set-a-different-color-to-each-event-from-front-end
+/*
+        if (event.title ===  "2C Kharkiv workshop") {
+            //event.color = "#FFB347"; //Em andamento
+            element.css('background-color', '#FFB347');
+        }
+*/
+    },
         header: {
     left:   'title',
     center: '',
