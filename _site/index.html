@@ -279,14 +279,14 @@ mekelleMarker.bindPopup("Mekelle is the capital city of the Tigray Regional Stat
 
 var PokharaIcon = L.divIcon({
     className: 'city-icon',
-    html: '<a href="/SecondaryCities2/pokhara" target=_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span">Pokhara</span></a>'
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span">Pokhara</span>'
 });
 // you can set .my-div-icon styles in CSS
 
-L.marker([28.23, 83.877], {icon: PokharaIcon}).addTo(map);
+pokharaMarker = L.marker([28.23, 83.877], {icon: PokharaIcon}).addTo(map);
 
-
+pokharaMarker.bindPopup("Considered Nepal’s most picturesque destination, Pokhara is located in a tectonically active valley surrounded by the Himalayan and Mahabharat Mountain Ranges. The Seti River and tributaries flow from these mountains and freshwater lakes are located throughout the city. The same geological features that contribute to Pokhara’s natural beauty cause its volatility. The United Nations Development Programme ranks Nepal 11th in the world for its susceptibility to natural disasters that include earthquakes, floods, landslides, drought, and sinkholes.");
 
 
 // http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
