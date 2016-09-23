@@ -22,10 +22,11 @@
     font-weight: 700;
 }
 
+/*This sets the height of the bottom map label */
 .leaflet-horizontalcenter {
-   padding-top: 460px;
+   padding-top: 510px;
    margin: 0 auto;
-   width: 700px;
+   width: 660px;
 }
 
 .leaflet-horizontalcenter .leaflet-control {
@@ -78,7 +79,7 @@
 
 
 
-<div id="map" style="top:0px;left:0px;width:100%;height:500px;"></div>
+<div id="map" style="top:0px;left:0px;width:100%;height:550px;"></div>
 
 
                     <!--<span class="skills">{{ site.description }}</span>
@@ -86,14 +87,35 @@
 
 <script type="text/javascript">
 
- L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+var txt = "";
+txt += "<p>innerWidth: " + window.innerWidth + "</p>";
+txt += "<p>innerHeight: " + window.innerHeight + "</p>";
+txt += "<p>outerWidth: " + window.outerWidth + "</p>";
+txt += "<p>outerHeight: " + window.outerHeight + "</p>";
 
+console.log(txt);
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+
+if (window.innerWidth < 1200) {
 
 var map = L.mapbox.map('map', '', {
     attributionControl: false,
     zoomControl:false,
     scrollWheelZoom: false
-  }).setView([18, 29], 3);
+  }).setView([18, 24], 2);
+
+} else {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: false,
+    zoomControl:false,
+    scrollWheelZoom: false
+  }).setView([18, 24], 3);
+
+}
+
 
 /*
     var map = L.mapbox.map('map')
@@ -107,8 +129,6 @@ var map = L.mapbox.map('map', '', {
     scrollWheelZoom: true,
     zoomControl: false // we'll add later
   }).addTo(map);
-
-
 
 
 
@@ -162,7 +182,6 @@ var KharkivIcon = L.divIcon({
     html: '<a href="{{ site.baseurl }}/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
               '<span class="label-span">Kharkiv, Ukraine</span></a>'
 });
-// you can set .my-div-icon styles in CSS
 
 L.marker([49.99, 36.145], {icon: KharkivIcon}).addTo(map);
 
@@ -171,7 +190,6 @@ var MedellinIcon = L.divIcon({
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Medellin, Colombia</span>'
 });
-// you can set .my-div-icon styles in CSS
 
 MedellinMarker = L.marker([6.26, -75.666], {icon: MedellinIcon}).addTo(map);
 
@@ -182,7 +200,6 @@ var MekelleIcon = L.divIcon({
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Mekelle, Ethiopia</span>'
 });
-// you can set .my-div-icon styles in CSS
 
 mekelleMarker = L.marker([13.474, 39.385], {icon: MekelleIcon}).addTo(map);
 
@@ -193,7 +210,6 @@ var PokharaIcon = L.divIcon({
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Pokhara, Nepal</span>'
 });
-// you can set .my-div-icon styles in CSS
 
 pokharaMarker = L.marker([28.23, 83.877], {icon: PokharaIcon}).addTo(map);
 
