@@ -172,6 +172,16 @@ position:fixed!important;
     color:rgba(0,0,0,.75);
 }
 
+.img-popup {
+  width: 150px;
+}
+
+
+/*
+#DenpasarPopup:hover:before {
+    content: url("/SecondaryCities2/img/portfolio/denpasar2.png"); 
+}
+*/
 
 </style>
 
@@ -229,7 +239,7 @@ var bottomText = L.divIcon({
 var CuscoIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Cusco</span>'
+              '<span class="label-span">Cusco, Peru</span>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -239,17 +249,35 @@ cuscoMarker.bindPopup("Cusco is located in the highlands of southeastern Peru at
 
 var DenpasarIcon = L.divIcon({
     className: 'city-icon',
-    html: '<a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1"></div>'+
-              '<span class="label-span">Denpasar</span></a>'
+    html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
+              '<span class="label-span">Denpasar, Indonesia</span></a></div>'
 });
 // you can set .my-div-icon styles in CSS
 
-denpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
+DenpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
+
+/*
+DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
+*/
+
+DenpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
+
+DenpasarMarker.on('mouseover', function (e) {
+            console.log('before popup');
+            this.openPopup();
+            //debugger;
+            console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+DenpasarMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 var KharkivIcon = L.divIcon({
     className: 'city-icon',
     html: '<a href="/SecondaryCities2/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span">Kharkiv</span></a>'
+              '<span class="label-span">Kharkiv, Ukraine</span></a>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -258,7 +286,7 @@ L.marker([49.99, 36.145], {icon: KharkivIcon}).addTo(map);
 var MedellinIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Medellin</span>'
+              '<span class="label-span">Medellin, Colombia</span>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -269,7 +297,7 @@ MedellinMarker.bindPopup("Medellin is the capital of the mountainous Antioquia p
 var MekelleIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Mekelle</span>'
+              '<span class="label-span">Mekelle, Ethiopia</span>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -280,7 +308,7 @@ mekelleMarker.bindPopup("Mekelle is the capital city of the Tigray Regional Stat
 var PokharaIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Pokhara</span>'
+              '<span class="label-span">Pokhara, Nepal</span>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -347,7 +375,9 @@ var info = L.control({position: 'horizontalcenter'});
             </div>
             </br>
             <div class="col-lg-12 text-center main-hyperlink" style="line-height:30px;">
+                <!--
                 <a href="#secondary_cities_map" data-toggle="modal">Map of Secondary Cities</a><br>
+            -->
                 <a href="/SecondaryCities2/story/">2C Story Map</a><br>
                 <a href="/SecondaryCities2/faq/">Frequently Asked Questions</a><br>
             </div>
@@ -517,6 +547,7 @@ and non-governmental organizations.</p>
                             Human Geography data collected during each <br>Secondary City project are freely available via the <a class="main-hyperlink" href="http://secondarycities.geonode.state.gov/" target="_blank">Secondary Cities GeoNode</a> 
                         </p> 
                     <center>
+                    <!--
                     <center><p>additional data are also available:
 </br>
             <div class="col-lg-12 text-center main-hyperlink" style="line-height:30px;">
@@ -524,6 +555,7 @@ and non-governmental organizations.</p>
                 <a href="http://medellin.urbinsight.com/" target="_blank">Medellin GeoNode</a><br>
                 <a href="http://139.59.243.79/" target="_blank">Pokhara GeoNode</a><br>
             </div>
+        -->
 
                     <!--<p><a href="http://secondarycities.geonode.state.gov/layers/"> Data Layers</a>&nbsp;&nbsp;<a href="http://secondarycities.geonode.state.gov/layers/"><img border="0" alt="geonode" src="img/layers-icon.png" height="35" width="35"><br></p></center>-->
 			<!--	<center><p><a href="http://secondarycities.geonode.state.gov/layers/"> Map Layers</a>&nbsp;&nbsp;<a href="http://secondarycities.geonode.state.gov/layers/"><img border="0" alt="geonode" src="img/map_icon.png" height="35" width="35"><br></p></center>
