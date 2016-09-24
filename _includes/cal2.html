@@ -14,6 +14,49 @@
 
 <script src="{{site.baseurl}}/assets/fullcalendar/dist/gcal.js"></script>
 
+<style>
+
+     dl
+     {
+         width: 600px;
+         background: #fff;
+         border: 1px solid #2c3e50;
+         padding: 5px 15px;
+         margin: auto;
+      }
+
+      dt, dd
+      {
+         display: inline;
+      }  
+
+      dd
+      {
+         padding-right: 20px;
+      } 
+
+      .legend_color {
+        width: 55px;
+        height: 20px;
+        display: inline-block;
+        margin-left: 15px;
+        margin-bottom: -4px;
+      }
+
+      #blue{
+        background-color: blue;
+      }
+
+      #red{
+        background-color: red;
+      }  
+
+      #green{
+        background-color: green;
+      }
+
+</style>
+
 
     <div class="container" style="padding-top:120px;padding-bottom:80px;">
         <div class="row">
@@ -26,7 +69,20 @@
 
                 </div>
 
-                <br><br>
+                <br>
+
+                <dl>
+                    <dt>blue:</dt>
+                    <dd> <div class="legend_color" id="blue"></div> </dd>
+
+                    <dt>red:</dt>
+                    <dd> <div class="legend_color" id="red"></div> </dd>
+
+                    <dt>green:</dt>
+                    <dd> <div class="legend_color" id="green"></div> </dd>
+                </dl>
+
+                <br>
 
                 <div id='calendar'></div>
                 
@@ -34,6 +90,7 @@
         </div>
     </div>
 </header>
+
 
 <!--   http://www.mikesmithdev.com/blog/jquery-full-calendar-with-ui-modal-dialog/   -->
 <div id="eventContent" title="Event Details" style="display: none;">

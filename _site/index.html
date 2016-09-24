@@ -32,8 +32,14 @@
 
     <link href="/SecondaryCities2/assets/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<!--
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+-->
+
+<!-- downloaded local google fonts from https://google-webfonts-helper.herokuapp.com/fonts -->
+    <link href="/SecondaryCities2/assets/css/fonts.css" rel="stylesheet" type="text/css">
+
 
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
     
@@ -283,10 +289,10 @@ DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i c
 DenpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 
 DenpasarMarker.on('mouseover', function (e) {
-            console.log('before popup');
+            //console.log('before popup');
             this.openPopup();
             //debugger;
-            console.log('after popup');
+            //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
         });
 DenpasarMarker.on('mouseout', function (e) {

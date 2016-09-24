@@ -166,10 +166,10 @@ DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i c
 DenpasarMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 
 DenpasarMarker.on('mouseover', function (e) {
-            console.log('before popup');
+            //console.log('before popup');
             this.openPopup();
             //debugger;
-            console.log('after popup');
+            //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
         });
 DenpasarMarker.on('mouseout', function (e) {
