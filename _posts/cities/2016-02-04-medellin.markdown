@@ -3,7 +3,7 @@ layout: post
 category: cities
 title:  "Medellin, Colombia"
 date:   2016-02-04 15:08:10 -0500
-img: img/portfolio/Medellin2.png
+img: img/portfolio/medellin2.png
 modalID: modalGame
 ---
 Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.

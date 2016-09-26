@@ -3,7 +3,7 @@ layout: post
 category: cities
 title:  "Pokhara, Nepal"
 date:   2016-02-06 15:08:10 -0500
-img: img/portfolio/Pokhara2.png
+img: img/portfolio/pokhara2.png
 modalID: modalCircus
 ---
 Considered Nepal’s most picturesque destination, Pokhara is located in a tectonically active valley surrounded by the Himalayan and Mahabharat Mountain Ranges.  The Seti River and tributaries flow from these mountains and freshwater lakes are located throughout the city.  The same geological features that contribute to Pokhara’s natural beauty cause its volatility.  The United Nations Development Programme ranks Nepal 11th in the world for its susceptibility to natural disasters that include earthquakes, floods, landslides, drought, and sinkholes.

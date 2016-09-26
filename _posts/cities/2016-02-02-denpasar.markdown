@@ -3,7 +3,7 @@ layout: post
 category: cities
 title:  "Denpasar, Indonesia"
 date:   2016-02-02 15:08:10 -0500
-img: img/portfolio/Denpasar2.png
+img: img/portfolio/denpasar2.png
 modalID: modalCabin
 external_url: http://2cdenpasar.com/
 ---
