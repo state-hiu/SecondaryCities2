@@ -271,7 +271,16 @@ var CuscoIcon = L.divIcon({
 
 cuscoMarker = L.marker([-13.529, -72.009], {icon: CuscoIcon}).addTo(map);
 
-cuscoMarker.bindPopup("Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters.  It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.  From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site.  It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination.  In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo.  These locations are particularly susceptible to earthquakes, landslides, and flooding.");
+cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br><p>Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters. It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.</p>');
+
+cuscoMarker.on('mouseover', function (e) {
+            this.openPopup();
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+cuscoMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 var DenpasarIcon = L.divIcon({
     className: 'city-icon',
@@ -280,22 +289,22 @@ var DenpasarIcon = L.divIcon({
 });
 // you can set .my-div-icon styles in CSS
 
-DenpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
+denpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
 
 /*
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-DenpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 
-DenpasarMarker.on('mouseover', function (e) {
+denpasarMarker.on('mouseover', function (e) {
             //console.log('before popup');
             this.openPopup();
             //debugger;
             //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
         });
-DenpasarMarker.on('mouseout', function (e) {
+denpasarMarker.on('mouseout', function (e) {
             this.closePopup();
             $( ".leaflet-popup-close-button" ).show();
         });
