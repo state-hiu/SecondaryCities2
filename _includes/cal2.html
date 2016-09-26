@@ -16,13 +16,22 @@
 
 <style>
 
-     dl
+     #content
      {
-         width: 600px;
+         width: 1000px;
          background: #fff;
          border: 1px solid #2c3e50;
          padding: 5px 15px;
          margin: auto;
+      }
+
+      .titlebox
+      {
+        float:left;
+        padding:0 5px;
+        margin:-20px 0 0 30px;
+        background:#fff;
+        font-weight: 700;
       }
 
       dt, dd
@@ -34,24 +43,42 @@
       {
          padding-right: 20px;
       } 
+      dl
+      {
+         margin-top: 10px;
+         margin-bottom:10px;
+      } 
 
       .legend_color {
         width: 55px;
         height: 20px;
         display: inline-block;
-        margin-left: 15px;
+        margin-left: 5px;
         margin-bottom: -4px;
+        border:2px solid darkOrange;
       }
 
-      #blue{
-        background-color: blue;
+      #cusco-color{
+        background-color: lightBlue;
       }
 
-      #red{
+      #denpasar-color{
         background-color: red;
       }  
 
-      #green{
+      #kharkiv-color{
+        background-color: yellow;
+      }
+
+      #medellin-color{
+        background-color: turquoise;
+      }
+
+      #mekelle-color{
+        background-color: pink;
+      }
+
+      #pokhara-color{
         background-color: green;
       }
 
@@ -71,16 +98,29 @@
 
                 <br>
 
+<div id="content">
+    <div class="titlebox">Events</div>
                 <dl>
-                    <dt>blue:</dt>
-                    <dd> <div class="legend_color" id="blue"></div> </dd>
+                    <dt>Cusco:</dt>
+                    <dd> <div class="legend_color" id="cusco-color"></div> </dd>
 
-                    <dt>red:</dt>
-                    <dd> <div class="legend_color" id="red"></div> </dd>
+                    <dt>Denpasar:</dt>
+                    <dd> <div class="legend_color" id="denpasar-color"></div> </dd>
 
-                    <dt>green:</dt>
-                    <dd> <div class="legend_color" id="green"></div> </dd>
+                    <dt>Kharkiv:</dt>
+                    <dd> <div class="legend_color" id="kharkiv-color"></div> </dd>
+
+                    <dt>Medellin:</dt>
+                    <dd> <div class="legend_color" id="medellin-color"></div> </dd>
+
+                    <dt>Mekelle:</dt>
+                    <dd> <div class="legend_color" id="mekelle-color"></div> </dd>
+
+                    <dt>Pokhara:</dt>
+                    <dd> <div class="legend_color" id="pokhara-color"></div> </dd>
+
                 </dl>
+</div>
 
                 <br>
 
@@ -119,6 +159,33 @@ $(document).ready(function() {
             element.css('background-color', '#FFB347');
         }
 */
+        console.log('printing event location: ');
+        console.log(event.location);
+        console.log(String(event.location));
+        var locationString = String(event.location);
+        if (locationString.toLowerCase().indexOf("cusco") >= 0) {
+            element.css('background-color', 'lightBlue');
+            element.css('color', 'black');
+        }
+        if (locationString.toLowerCase().indexOf("denpasar") >= 0) {
+            element.css('background-color', 'red');
+        }
+        if (locationString.toLowerCase().indexOf("kharkiv") >= 0) {
+            element.css('background-color', 'yellow');
+            element.css('border', '2px solid darkOrange');
+            element.css('color', 'black');
+        }
+        if (locationString.toLowerCase().indexOf("medellin") >= 0) {
+            element.css('background-color', 'turquoise');
+            element.css('color', 'black');
+        }
+        if (locationString.toLowerCase().indexOf("mekelle") >= 0) {
+            element.css('background-color', 'pink');
+            element.css('color', 'black');
+        }
+        if (locationString.toLowerCase().indexOf("pokhara") >= 0) {
+            element.css('background-color', 'green');
+        }
     },
         header: {
     left:   'title',
