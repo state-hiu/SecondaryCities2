@@ -139,14 +139,14 @@ var bottomText = L.divIcon({
 
 
 
-var CuscoIcon = L.divIcon({
+var cuscoIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Cusco, Peru</span>'
 });
 // you can set .my-div-icon styles in CSS
 
-cuscoMarker = L.marker([-13.529, -72.009], {icon: CuscoIcon}).addTo(map);
+cuscoMarker = L.marker([-13.51845,-71.97752], {icon: cuscoIcon}).addTo(map);
 
 cuscoMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br><p>Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters. It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.</p>');
 
@@ -159,14 +159,14 @@ cuscoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-var DenpasarIcon = L.divIcon({
+var denpasarIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
               '<span class="label-span">Denpasar, Indonesia</span></a></div>'
 });
 // you can set .my-div-icon styles in CSS
 
-denpasarMarker = L.marker([-8.672, 115.154], {icon: DenpasarIcon}).addTo(map);
+denpasarMarker = L.marker([-8.6493,115.2169], {icon: denpasarIcon}).addTo(map);
 
 /*
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
@@ -181,46 +181,47 @@ denpasarMarker.on('mouseover', function (e) {
             //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
         });
+
 denpasarMarker.on('mouseout', function (e) {
             this.closePopup();
             $( ".leaflet-popup-close-button" ).show();
         });
 
-var KharkivIcon = L.divIcon({
+var kharkivIcon = L.divIcon({
     className: 'city-icon',
     html: '<a href="{{ site.baseurl }}/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
               '<span class="label-span">Kharkiv, Ukraine</span></a>'
 });
 
-L.marker([49.99, 36.145], {icon: KharkivIcon}).addTo(map);
+kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
 
-var MedellinIcon = L.divIcon({
+var medellinIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Medellin, Colombia</span>'
 });
 
-MedellinMarker = L.marker([6.26, -75.666], {icon: MedellinIcon}).addTo(map);
+medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
 
-MedellinMarker.bindPopup("Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.");
+medellinMarker.bindPopup("Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.");
 
-var MekelleIcon = L.divIcon({
+var mekelleIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Mekelle, Ethiopia</span>'
 });
 
-mekelleMarker = L.marker([13.474, 39.385], {icon: MekelleIcon}).addTo(map);
+mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
 mekelleMarker.bindPopup("Mekelle is the capital city of the Tigray Regional State of Ethiopia. It is one of the principal economic, cultural, political, and educational centers of the country. Mekelle is known for the cultural landmarks that include Ethiopian Orthodox churches and historic castles. Climate extremes are characteristic of the region. Mekelle is experiencing severe water problems that include lack of an adequate supply and quality issues.");
 
-var PokharaIcon = L.divIcon({
+var pokharaIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span">Pokhara, Nepal</span>'
 });
 
-pokharaMarker = L.marker([28.23, 83.877], {icon: PokharaIcon}).addTo(map);
+pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
 
 pokharaMarker.bindPopup("Considered Nepal’s most picturesque destination, Pokhara is located in a tectonically active valley surrounded by the Himalayan and Mahabharat Mountain Ranges. The Seti River and tributaries flow from these mountains and freshwater lakes are located throughout the city. The same geological features that contribute to Pokhara’s natural beauty cause its volatility. The United Nations Development Programme ranks Nepal 11th in the world for its susceptibility to natural disasters that include earthquakes, floods, landslides, drought, and sinkholes.");
 

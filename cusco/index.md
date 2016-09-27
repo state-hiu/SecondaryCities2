@@ -1,5 +1,5 @@
 ---
-layout: report2
+layout: report3
 title: Cusco, Peru
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
@@ -10,7 +10,8 @@ banner_image_caption: Small-scale mining operations by a subsidiary of the minin
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=cusco'
 tweet_text: 'sample tweet text %23SecondaryCities'
-esri_story: false
+esri_story: true
+esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=32901d0be6fa4afb8dab5dba01b8d4ff'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.
@@ -96,30 +97,22 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
 
-![cusco rooftop]({{ site.baseurl }}/img/cusco/rooftop.jpg)
+[insert image]
 
+[insert summary]
 
-Cusco is located in the highlands for southeastern Peru at an elevation of 3,400 meters (11,200 feet). It is the capital of the Cusco region and province, and has an estimated population of more than 435,000. From the 13th – 16th C, the city was capital of the Incan Empire, which led to its designation as a UNESCO World Heritage Site. It serves as a gateway to the famous ruins of Machu Picchu, making it a renowned global tourist destination. In recent decades, Cusco has experienced rapid urban growth and land use displacement, especially in the higher elevation districts of Santiago, San Sebastian and San Jeronimo. These locations are particularly susceptible to earthquakes, landslides, and flooding.
+[insert other sections]
 
-## Participatory Data Generation
+### Partners
 
-*Local-level data generation is key for addressing the linkages between increased unplanned growth and the high potential for natural disaster.*
-
-In June 2015 a Secondary Cities pilot project was launched in Cusco, Peru. Local participants (25) learned the power of integrating state-of-the art, open source geospatial tools with field-based data collection. Participants used high-resolution satellite imagery provided by the National Geospatial-Intelligence Agency, hand-drawn maps, and smart phone apps to generate hundreds of spatial layers on Cusco's high-risk neighborhoods.
-
-### Urban Flow Mapping
-
-This workshop laid the groundwork for a partnership with our non-profit partner Ecocity Builders to conduct training and workshops on ecocity assessments and mapping urban flows. This capacity building activity will support emergency preparedness, human security, and resilience to address urban growth.
-
-## Partners
-
-[EcoCity Builders](http://www.ecocitybuilders.org/)
-
-Founded in 1992, Ecocity Builders is a nonprofit organization dedicated to reshaping cities for the long-term health of human and natural systems.
-
-[Universidad Nacional de San Antonio Abad del Cusco](http://www.unsaac.edu.pe/)
+- [Universidad Alas Peruanas](http://www.uap.edu.pe/)
+- [Cusco Bureau of Land Management](http://www.regioncusco.gob.pe/)
+- [MINAM](http://www.minam.gob.pe/)
+- [PREDES](http://www.predes.org.pe/)
+- [Field Papers](http://fieldpapers.org/)
+- [British Columbia Institute of Technology](http://www.bcit.ca/)
 
 
 

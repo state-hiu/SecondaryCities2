@@ -11,6 +11,7 @@ banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=kharkiv'
 tweet_text: 'Check out the new 2C Kharkiv map data collected to help vulnerable populations %23Kharkiv %232CKharkiv %23SecondaryCities http://secondarycities.state.gov/kharkiv'
 esri_story: true
+esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f06c1ad728e4447c841f1def56ae3c91'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.

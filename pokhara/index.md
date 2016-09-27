@@ -10,7 +10,8 @@ banner_image_caption: Small-scale mining operations by a subsidiary of the minin
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara'
 tweet_text: 'sample tweet text %23SecondaryCities'
-esri_story: false
+esri_story: true
+esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f10d43bc53dd4fe594c65ae10072dce2'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.

@@ -1,5 +1,5 @@
 ---
-layout: report2
+layout: report3
 title: Medellin, Colombia
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
@@ -10,7 +10,8 @@ banner_image_caption: Small-scale mining operations by a subsidiary of the minin
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=medellin'
 tweet_text: 'sample tweet text %23SecondaryCities'
-esri_story: false
+esri_story: true
+esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=28634f58a83e487591e52af1ffaf3937'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.
@@ -96,23 +97,21 @@ sections:
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
 
-![kharkiv](http://www.teaminternational.com/wp-content/uploads/2013/06/kharkov3_b.jpg)
+[insert image]
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+[insert summary]
 
-## Participatory Data Generation
+[insert other sections]
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
+### Partners
 
-### Urban Flow Mapping
+- [UNAL](http://unal.edu.co/en.html)
+- [E2E Foundation](http://www.e2efundacion.org/)
+- [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
+- [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-## Partners
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 
 
 

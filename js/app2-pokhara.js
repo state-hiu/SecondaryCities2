@@ -136,7 +136,7 @@ $(document).foundation();
             $( "#sidebar" ).hide();
             $( "#map" ).hide();
             //insert esri story map iframe
-            $( "body").append( '<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="margin-top:74px;" src="http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f06c1ad728e4447c841f1def56ae3c91"></iframe>');
+            $( "body").append( '<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="margin-top:74px;" src='+pageConfig.esri_story_url+'></iframe>');
             flag=1;
             return;
           }
