@@ -3,7 +3,7 @@ layout: post
 category: cities
 title:  "Kharkiv, Ukraine"
 date:   2016-02-03 15:08:10 -0500
-img: img/portfolio/kharkiv2.jpg
+img: img/portfolio/kharkiv2.png
 modalID: modalSubmarine
 internal_url: kharkiv
 ---

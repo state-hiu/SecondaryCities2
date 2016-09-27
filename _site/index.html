@@ -196,6 +196,10 @@ position:fixed!important;
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 
 
+<script src='/SecondaryCities2/assets/js/libs/leaflet.rrose-src.js'></script>
+<link href='/SecondaryCities2/assets/css/leaflet.rrose.css' rel='stylesheet' />
+
+
 <header style="margin-top: 75px;">
 
 
@@ -271,7 +275,7 @@ var cuscoIcon = L.divIcon({
 
 cuscoMarker = L.marker([-13.51845,-71.97752], {icon: cuscoIcon}).addTo(map);
 
-cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br><p>Cusco is located in the highlands of southeastern Peru at an elevation of 3,400 meters. It is the capital of the Cusco region and province, and has an estimated population of more than 435,000.</p>');
+cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br><p>Cusco city page is coming soon</p>');
 
 cuscoMarker.on('mouseover', function (e) {
             this.openPopup();
@@ -295,7 +299,7 @@ denpasarMarker = L.marker([-8.6493,115.2169], {icon: denpasarIcon}).addTo(map);
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br><p>Denpasar city page is coming soon</p>');
 
 denpasarMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -318,6 +322,71 @@ var kharkivIcon = L.divIcon({
 
 kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
 
+// https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
+kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-popup" alt="Kharkiv">', {offset: new L.Point(-105, 120)});
+
+kharkivMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+            //turn off popup indicator on bottom
+            $( ".leaflet-popup-tip" ).hide();
+        });
+
+kharkivMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+/*
+
+var kharkivMarker = new L.Rrose({ offset: new L.Point(0,-10), icon: kharkivIcon, autoPan: false })
+      .setContent('test')
+      .setLatLng([49.9811,36.2533])
+      .openOn(map);
+
+kharkivMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openOn(rrose_map);
+            //debugger;
+            //console.log('after popup');
+            //$( ".leaflet-popup-close-button" ).hide();
+        });
+
+kharkivMarker.on('mouseout', function (e) {
+            rrose_map.closePopup()
+            //$( ".leaflet-popup-close-button" ).show();
+        });
+
+
+/*
+var kharkivMarker = L.marker([49.9811,36.2533]);
+//marker1 = L.marker([49.9811,36.2533]);
+var rrose1 = new L.Rrose({ offset: new L.Point(-20,-70), closeButton: false, autoPan: false }).setLatLng([41.4, 2.1]).setContent('</br><p>Medellin city page is coming soon</p>');
+kharkivMarker.bindPopup(rrose1);
+kharkivMarker.on('mouseover', function(e) {
+    this.openPopup();
+});
+kharkivMarker.on('mouseout', function(e) {
+    this.closePopup();
+});
+map.addLayer(kharkivMarker);
+
+var marker2 = L.marker([50.846667, 4.354722]);
+var rrose2 = new L.Rrose({ offset: new L.Point(0,-50), autoPan: false }).setContent('This Is OK');
+marker2.bindPopup(rrose2);
+marker2.on('mouseover', function(e) {
+    e.target.openPopup();
+});
+map.addLayer(marker2);
+
+
+
+
+*/
+
 var medellinIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
@@ -326,7 +395,22 @@ var medellinIcon = L.divIcon({
 
 medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
 
-medellinMarker.bindPopup("Medellin is the capital of the mountainous Antioquia province of Colombia.  The metropolitan area of Medellin includes nine other cities and is the second largest urban agglomeration in the country.  Medellin is a hub of economic, education and cultural activity and at the forefront of urban development for innovation, livability, and urban sustainability.  Rapid urban growth and migration have created challenges for future planning.");
+medellinMarker.bindPopup("Medellin city page is coming soon");
+
+medellinMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/medellin2.png" class="img-popup" alt="Medellin"></br><p>Medellin city page is coming soon</p>');
+
+medellinMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+medellinMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 var mekelleIcon = L.divIcon({
     className: 'city-icon',
@@ -336,7 +420,20 @@ var mekelleIcon = L.divIcon({
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
-mekelleMarker.bindPopup("Mekelle is the capital city of the Tigray Regional State of Ethiopia. It is one of the principal economic, cultural, political, and educational centers of the country. Mekelle is known for the cultural landmarks that include Ethiopian Orthodox churches and historic castles. Climate extremes are characteristic of the region. Mekelle is experiencing severe water problems that include lack of an adequate supply and quality issues.");
+mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br><p>Mekelle city page is coming soon</p>');
+
+mekelleMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+mekelleMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 var pokharaIcon = L.divIcon({
     className: 'city-icon',
@@ -346,7 +443,20 @@ var pokharaIcon = L.divIcon({
 
 pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
 
-pokharaMarker.bindPopup("Considered Nepal’s most picturesque destination, Pokhara is located in a tectonically active valley surrounded by the Himalayan and Mahabharat Mountain Ranges. The Seti River and tributaries flow from these mountains and freshwater lakes are located throughout the city. The same geological features that contribute to Pokhara’s natural beauty cause its volatility. The United Nations Development Programme ranks Nepal 11th in the world for its susceptibility to natural disasters that include earthquakes, floods, landslides, drought, and sinkholes.");
+pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/pokhara2.png" class="img-popup" alt="Pokhara"></br><p>Pokhara city page is coming soon</p>');
+
+pokharaMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+pokharaMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 
 // http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
@@ -539,7 +649,7 @@ hr#story-underline {
                                     <i class=""><h3>Kharkiv, Ukraine</h3></i>
                                 </div>
                             </div>
-                            <img src="/SecondaryCities2/img/portfolio/kharkiv2.jpg" class="img-responsive" alt="Kharkiv, Ukraine">
+                            <img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-responsive" alt="Kharkiv, Ukraine">
                         </a>
                     </div>
 
@@ -878,7 +988,7 @@ and non-governmental organizations.</p>
                     <div class="modal-body">
                         <h2>Kharkiv, Ukraine</h2>
                         <hr class="star-primary">
-                        <img src="/SecondaryCities2/img/portfolio/kharkiv2.jpg" class="img-responsive img-centered" width="500px" alt="Kharkiv, Ukraine"
+                        <img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-responsive img-centered" width="500px" alt="Kharkiv, Ukraine"
                         <p>Kharkiv was founded in 1654 as a small fortress that grew to become a major center of Ukrainian culture within the Russian Empire.  The city functioned as the first capital of the Ukrainian Soviet Socialist Republic until 1935, after which the capital was relocated to Kiev. Kharkiv is the administrative center of Kharkiv Oblast and of the surrounding Kharkiv district.  The city’s population is the second largest in Ukraine.  Although the majority of the population is Ukrainian both in nationality and ethnicity, Kharkiv’s largest minority is of Russian descent due to its history and proximity to Russia.</p>
 
 
