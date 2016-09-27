@@ -95,11 +95,11 @@ position:fixed!important;
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
-
+<!--
                     <li class="page-scroll">
                         <a href="#portfolio">Cities</a>
                     </li>
-
+-->
 				<li class="page-scroll">
                         <a href="#partners">Partners</a>
                     </li>
@@ -299,7 +299,7 @@ denpasarMarker = L.marker([-8.6493,115.2169], {icon: denpasarIcon}).addTo(map);
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br><p>Denpasar city page is coming soon</p>');
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>');
 
 denpasarMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -406,8 +406,6 @@ var medellinIcon = L.divIcon({
 
 medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
 
-medellinMarker.bindPopup("Medellin city page is coming soon");
-
 medellinMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/medellin2.png" class="img-popup" alt="Medellin"></br><p>Medellin city page is coming soon</p>');
 
 medellinMarker.on('mouseover', function (e) {
@@ -431,7 +429,7 @@ var mekelleIcon = L.divIcon({
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
-mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br><p>Mekelle city page is coming soon</p>');
+mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br>');
 
 mekelleMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -607,112 +605,6 @@ hr#story-underline {
 </div>
 
 
-
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Cities</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalSafe" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Cusco,           Peru</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-responsive" alt="Cusco,           Peru">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="http://2cdenpasar.com/" target=_blank" class="portfolio-link">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Denpasar, Indonesia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-responsive" alt="Denpasar, Indonesia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="/SecondaryCities2/kharkiv" target=_blank" class="portfolio-link">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Kharkiv, Ukraine</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-responsive" alt="Kharkiv, Ukraine">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalGame" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Medellin, Colombia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/medellin2.png" class="img-responsive" alt="Medellin, Colombia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalCake" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Mekelle, Ethiopia</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/mekelle4.png" class="img-responsive" alt="Mekelle, Ethiopia">
-                        </a>
-                    </div>
-
-                
-                    <div class="col-sm-4 portfolio-item">
-                        
-                            <a href="#modalCircus" class="portfolio-link" data-toggle="modal">
-                        
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <!--<i class="fa fa-search-plus fa-3x"></i>-->
-                                    <i class=""><h3>Pokhara, Nepal</h3></i>
-                                </div>
-                            </div>
-                            <img src="/SecondaryCities2/img/portfolio/pokhara2.png" class="img-responsive" alt="Pokhara, Nepal">
-                        </a>
-                    </div>
-
-                
-            </div>
-        </div>
-    </section>
 
 
 
