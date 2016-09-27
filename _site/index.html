@@ -95,6 +95,12 @@ position:fixed!important;
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href="/SecondaryCities2/faq/">FAQ</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#2Cstory">Story</a>
+                    </li>
 <!--
                     <li class="page-scroll">
                         <a href="#portfolio">Cities</a>
@@ -195,15 +201,10 @@ position:fixed!important;
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 
-
 <script src='/SecondaryCities2/assets/js/libs/leaflet.rrose-src.js'></script>
 <link href='/SecondaryCities2/assets/css/leaflet.rrose.css' rel='stylesheet' />
 
-
 <header style="margin-top: 75px;">
-
-
-
 
 <div id="map" style="top:0px;left:0px;width:100%;height:550px;"></div>
 
@@ -529,8 +530,9 @@ var info = L.control({position: 'horizontalcenter'});
                 <!--
                 <a href="#secondary_cities_map" data-toggle="modal">Map of Secondary Cities</a><br>
             
-                <a href="/SecondaryCities2/story/">2C Story Map</a><br>-->
+                <a href="/SecondaryCities2/story/">2C Story Map</a><br>
                 <a href="/SecondaryCities2/faq/">Frequently Asked Questions</a><br>
+-->
             </div>
     </section>
 
@@ -550,7 +552,7 @@ var info = L.control({position: 'horizontalcenter'});
     background-position: 50% 70% !important;
 }
 
-#story-map-div {
+#2Cstory {
     margin: 0;
     position: relative;
 }
@@ -585,24 +587,33 @@ hr#story-underline {
     font-size: 12px;
 }
 
+.anchor{
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
 </style>
 
-<div class="navigation-bar" id="story-map-div">
+<div class="anchor" id="2Cstory">
 
-    <a href="/SecondaryCities2/story/" >
+    <div class="navigation-bar" >
 
-        <div class="col-lg-12 text-center" >
+        <a href="/SecondaryCities2/story/" >
 
-            <h2 id="story-map-title" onmouseover="document.getElementById('story-underline').style.display = 'block'" onmouseout="document.getElementById('story-underline').style.display = 'none';">2C Story Map</h2>
+            <div class="col-lg-12 text-center" >
 
-            <hr id="story-underline" style="display: none;">
+                <h2 id="story-map-title" onmouseover="document.getElementById('story-underline').style.display = 'block'" onmouseout="document.getElementById('story-underline').style.display = 'none';">2C Story Map</h2>
 
-        </div>
+                <hr id="story-underline" style="display: none;">
 
-    </a>
+            </div>
 
-    
-    <div class="inside">Photo Credit: Melinda Laituri</div>
+        </a>
+
+        
+        <div class="inside">Photo Credit: Melinda Laituri</div>
+
+    </div>
 
 </div>
 
