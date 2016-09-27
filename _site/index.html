@@ -323,16 +323,27 @@ var kharkivIcon = L.divIcon({
 kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
-kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-popup" alt="Kharkiv">', {offset: new L.Point(-105, 120)});
+kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/kharkiv2.png" class="img-popup" alt="Kharkiv">', {offset: new L.Point(-100, 120)});
 
 kharkivMarker.on('mouseover', function (e) {
             //console.log('before popup');
             this.openPopup();
-            debugger;
+            //debugger;
             //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
             //turn off popup indicator on bottom
-            $( ".leaflet-popup-tip" ).hide();
+            //$( ".leaflet-popup-tip" ).hide();
+            /*
+            notes: need to modify pop-up for indicator pointer to point left instead of pointing down from the bottom
+            adding float-left to leaflet-popup-content-wrapper and leaflet-popup-tip-container divs
+            need to disable the width of the leaflet-popup-content-wrapper child div leaflet-popup-content
+            need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
+            */
+            $( ".leaflet-popup-content-wrapper" ).css("float", "left");
+            $( ".leaflet-popup-tip-container" ).css("float", "left");
+            $( ".leaflet-popup-content" ).css("width", "none");
+            $( ".leaflet-popup-tip" ).css("margin-top", "22px");
+            $( ".leaflet-popup-tip" ).css("border-left", "none");
         });
 
 kharkivMarker.on('mouseout', function (e) {
