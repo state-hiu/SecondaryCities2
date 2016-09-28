@@ -59,26 +59,32 @@
 
       #cusco-color{
         background-color: lightBlue;
+        border: 2px solid #72bcd4;
       }
 
       #denpasar-color{
         background-color: red;
+        border: 2px solid darkred;
       }  
 
       #kharkiv-color{
         background-color: #ffff99;
+        border: 2px solid #e7e700;
       }
 
       #medellin-color{
         background-color: turquoise;
+        border: 2px solid #1eb6a7;
       }
 
       #mekelle-color{
         background-color: pink;
+        border: 2px solid #ff5e7a;
       }
 
       #pokhara-color{
         background-color: green;
+        border: 2px solid #004d00;
       }
 
 </style>
@@ -146,7 +152,7 @@ $(document).ready(function() {
         googleCalendarApiKey: 'AIzaSyBPJJ7VIyVSY6gc6wtYtS2XLWJmoBttEG8',
         events: {
             googleCalendarId: 'qj09h89scmae2gjb13297a16rc@group.calendar.google.com',
-            color: '#2c3e50',   // an option!
+            color: 'none',   // an option!
             textColor: 'white' // an option!
         },
         eventAfterRender: function (event, element, view) {
@@ -165,25 +171,30 @@ $(document).ready(function() {
         if (locationString.toLowerCase().indexOf("cusco") >= 0) {
             element.css('background-color', 'lightBlue');
             element.css('color', 'black');
+            element.css('border', '2px solid #72bcd4');
         }
         if (locationString.toLowerCase().indexOf("denpasar") >= 0) {
             element.css('background-color', 'red');
+            element.css('border', '2px solid darkred');
         }
         if (locationString.toLowerCase().indexOf("kharkiv") >= 0) {
             element.css('background-color', '#ffff99');
-            element.css('border', '2px solid #2c3e50');
             element.css('color', 'black');
+            element.css('border', '2px solid #e7e700');
         }
         if (locationString.toLowerCase().indexOf("medellin") >= 0) {
             element.css('background-color', 'turquoise');
             element.css('color', 'black');
+            element.css('border', '2px solid #1eb6a7');
         }
         if (locationString.toLowerCase().indexOf("mekelle") >= 0) {
             element.css('background-color', 'pink');
             element.css('color', 'black');
+            element.css('border', '2px solid #ff5e7a');
         }
         if (locationString.toLowerCase().indexOf("pokhara") >= 0) {
             element.css('background-color', 'green');
+            element.css('border', '2px solid #004d00');
         }
     },
         header: {
