@@ -105,6 +105,10 @@ sections:
 
 [insert other sections]
 
+### Goals
+
+[insert text]
+
 ### Partners
 
 - [Universidad Alas Peruanas](http://www.uap.edu.pe/)
