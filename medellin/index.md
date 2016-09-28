@@ -36,8 +36,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [6.249, -75.586]
-    zoom: 6
+    latlng: [6.2438, -75.5624]
+    zoom: 12
     tile_layers:
     vector_data:
     body: |
@@ -103,7 +103,9 @@ sections:
 
 [insert summary]
 
-[insert other sections]
+### Goals
+
+[insert text]
 
 ### Partners
 
@@ -112,10 +114,12 @@ sections:
 - [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
 - [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
 
+### Workshop Materials
 
+[insert text]
 
+### Upcoming Events
 
-
-
+[insert text]
 
 

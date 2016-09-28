@@ -36,8 +36,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [-13.5, -72]
-    zoom: 5
+    latlng: [-13.5259, -71.9399]
+    zoom: 13
     tile_layers:
     vector_data:
     body: |
@@ -114,7 +114,13 @@ sections:
 - [Field Papers](http://fieldpapers.org/)
 - [British Columbia Institute of Technology](http://www.bcit.ca/)
 
+### Workshop Materials
 
+[insert text]
+
+### Upcoming Events
+
+[insert text]
 
 
 

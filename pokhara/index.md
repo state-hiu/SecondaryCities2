@@ -124,6 +124,19 @@ The development of disaster resilience and emergency management is done by helpi
 - Big Foot Software
 - Rotoract Club of New Road, Pokhara
 
+### Workshop Materials
+
+[insert text]
+
+### Upcoming Events
+
+[insert text]
+
+
+
+
+
+
 
 
 
