@@ -353,6 +353,13 @@ figcaption {
     bottom: 75px;
 }
 
+@media (max-width: 1332px){
+#map, #sidebar {
+    position: absolute;
+    top: 120px;
+	}
+}
+
 #map.no-footer, #sidebar.no-footer {
     bottom: 0;
 }
