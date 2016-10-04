@@ -27,7 +27,7 @@ $(document).foundation();
       var PokharaIcon = L.divIcon({
           className: 'city-icon',
           html: '<div class="circleBase type1"></div>'+
-                    '<div style="width: 300px;"><span class="label-span">Kathmandu Living Labs</span></div>'
+                    '<div style="width: 300px;"><span class="label-span" id="label-pokhara">Kathmandu Living Labs</span></div>'
       });
 
       marker = new L.marker([28.20907, 83.99585], {icon: PokharaIcon});
