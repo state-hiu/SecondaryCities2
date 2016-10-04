@@ -9,7 +9,7 @@ banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara'
-tweet_text: 'sample tweet text %23SecondaryCities'
+tweet_text: '2C Pokhara City Page %23SecondaryCities'
 esri_story: true
 esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f10d43bc53dd4fe594c65ae10072dce2'
 
@@ -124,15 +124,15 @@ The development of disaster resilience and emergency management is done by helpi
 - Big Foot Software
 - Rotoract Club of New Road, Pokhara
 
-### Workshop Materials
+### Event Timeline
 
-[insert text]
+- [2C Pokhara Events by KLL](http://timemapper.okfnlabs.org/ktmlivinglabs/pokhara-events)
 
 ### Upcoming Events
 
-[insert text]
+- KLL Open Data Challenge 2016 — 10th and 11th November
 
-
+- 2C in Action Workshop — 13th through 15th November 
 
 
 

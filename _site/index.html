@@ -154,7 +154,7 @@ position:fixed!important;
 .leaflet-horizontalcenter {
    padding-top: 510px;
    margin: 0 auto;
-   width: 660px;
+   width: 657px;
 }
 
 .leaflet-horizontalcenter .leaflet-control {
@@ -174,21 +174,52 @@ position:fixed!important;
 }
 
 .type1 {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     background: #18bc9c;
     border: 2px solid white;
 }
 .label-span{
-    font-size: 15px;
+    font-size: 18px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
+    display: block;
+    text-align: left;
 }
 
 .img-popup {
   width: 150px;
 }
 
+#label-medellin {
+    margin-left: 19px;
+    margin-top: -2px;
+}
+
+#label-cusco {
+    margin-left: -59px;
+    margin-top: -17px;
+}
+
+#label-mekelle {
+    margin-left: -76px;
+    margin-top: -16px;
+}
+
+#label-kharkiv {
+    margin-left: 19px;
+    margin-top: -2px;
+}
+
+#label-pokhara {
+    margin-left: 20px;
+    margin-top: -56px;
+}
+
+#label-denpasar {
+    margin-left: -90px;
+    margin-top: -17px;
+}
 
 /*
 #DenpasarPopup:hover:before {
@@ -262,15 +293,15 @@ var map = L.mapbox.map('map', '', {
 
 var bottomText = L.divIcon({  
   className: "my-div-icon",
-  html: "<div class='region_label'>Resiliency - Human Security - Emergency Preparedness</div>"
+  html: "<div class='region_label'>Resiliency · Human Security · Emergency Preparedness</div>"
 });
 
 
 
 var cuscoIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Cusco, Peru</span>'
+    html: '<div class="img-div"><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-cusco">Cusco Peru</span></div>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -290,7 +321,7 @@ cuscoMarker.on('mouseout', function (e) {
 var denpasarIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
-              '<span class="label-span">Denpasar, Indonesia</span></a></div>'
+              '<span class="label-span" id="label-denpasar">Denpasar Indonesia</span></a></div>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -318,7 +349,7 @@ denpasarMarker.on('mouseout', function (e) {
 var kharkivIcon = L.divIcon({
     className: 'city-icon',
     html: '<a href="/SecondaryCities2/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span">Kharkiv, Ukraine</span></a>'
+              '<span class="label-span" id="label-kharkiv">Kharkiv Ukraine</span></a>'
 });
 
 kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
@@ -402,7 +433,7 @@ map.addLayer(marker2);
 var medellinIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Medellin, Colombia</span>'
+              '<span class="label-span" id="label-medellin">Medellín Colombia</span>'
 });
 
 medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
@@ -425,7 +456,7 @@ medellinMarker.on('mouseout', function (e) {
 var mekelleIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Mekelle, Ethiopia</span>'
+              '<span class="label-span" id="label-mekelle" >Mekelle Ethiopia</span>'
 });
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
@@ -448,7 +479,7 @@ mekelleMarker.on('mouseout', function (e) {
 var pokharaIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span">Pokhara, Nepal</span>'
+              '<span class="label-span" id="label-pokhara">Pokhara Nepal</span>'
 });
 
 pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
@@ -494,7 +525,7 @@ var info = L.control({position: 'horizontalcenter'});
 
             info.onAdd = function (map) {
               this._div = L.DomUtil.create('div', 'info');
-              this._div.innerHTML = '<div>Resiliency - Human Security - Emergency Preparedness</div>';
+              this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
               return this._div;
             };
 

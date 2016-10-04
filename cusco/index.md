@@ -58,56 +58,17 @@ sections:
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
 
-
-  - title: Slide 3
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [5.2, -9.2]
-    zoom: 7
-    tile_layers: ['egn:lbr_rdsl_unmil', 'egn:lbr_hltfacp_undp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: Slide 4
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [6.9, -11.4]
-    zoom: 9
-    tile_layers: ['egn:lbr_lakeresa_lake_unmil']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: "Slide 5: Freetown"
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [8.468285, -13.242686]
-    zoom: 13
-    tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
 ### Summary
 
 [insert image]
 
-[insert summary]
-
-[insert other sections]
+Cusco, Peru is the first 2C project launched in June 2015.  A preliminary workshop at the National University of St. Anthony the Abbot introduced geospatial technologies for mapping neighborhoods adjacent to the university.  With the official launch of the 2C project, EcoCity Builders built local partnerships to implement the EcoCompass curriculum that emphasizes participatory training of geospatial skills.  The project focuses on community-driven mapping and data collection at the neighborhood scale.
 
 ### Goals
 
-[insert text]
+The goals of this project are increase local understanding of the urban environment.  Using local knowledge, participants learned to map critical issues in their neighborhood – in this instance, waste management.  Geospatial tools are used to map the waste stream of one neighborhood and conduct analysis on the data collected.  The project partcipants are facilitating the establishment of composting programs and identifying composing sites in the neighborhood.  This process can be implemented across the city to address the problem of waste management.
 
 ### Partners
 

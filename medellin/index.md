@@ -1,6 +1,6 @@
 ---
 layout: report3
-title: Medellin, Colombia
+title: Medellín, Colombia
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
 data_source_name: Secondary Cities
@@ -58,54 +58,15 @@ sections:
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
 
-
-  - title: Slide 3
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [5.2, -9.2]
-    zoom: 7
-    tile_layers: ['egn:lbr_rdsl_unmil', 'egn:lbr_hltfacp_undp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: Slide 4
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [6.9, -11.4]
-    zoom: 9
-    tile_layers: ['egn:lbr_lakeresa_lake_unmil']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: "Slide 5: Freetown"
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [8.468285, -13.242686]
-    zoom: 13
-    tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
 ### Summary
 
-[insert image]
-
-[insert summary]
+Medellín, Columbia is undergoing rapid change.  As a secondary city, Medellín exhibits many characteristics of a secondary city – rapid change, increasing population, and unplanned development.  Similar to 2C Cusco, the 2C Medellín project focuses on the local community by mapping critical issues in neighborhoods.  Focusing on one neighborhood, a process for mapping and analysis is introduced examining waste management and recycling.
 
 ### Goals
 
-[insert text]
+The goals for the 2C Medellín project are to develop methods for mapping local knowledge of the community.  Mapping issues related to waste using a suite of tools developed by EcoCityBuilders resulted in increased community engagement to address the critical issues of waste management.  Additionally, this approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
 
 ### Partners
 
