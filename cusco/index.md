@@ -62,7 +62,7 @@ sections:
 
 ### Summary
 
-[insert image]
+![Cusco]({{ site.baseurl }}/img/cusco/cusco_plaza_de_armas.png)
 
 Cusco, Peru is the first 2C project launched in June 2015.  A preliminary workshop at the National University of St. Anthony the Abbot introduced geospatial technologies for mapping neighborhoods adjacent to the university.  With the official launch of the 2C project, EcoCity Builders built local partnerships to implement the EcoCompass curriculum that emphasizes participatory training of geospatial skills.  The project focuses on community-driven mapping and data collection at the neighborhood scale.
 
@@ -85,7 +85,8 @@ The goals of this project are increase local understanding of the urban environm
 
 ### Upcoming Events
 
-[insert text]
+##### Ecocity Focus Lab, November 7, Vancouver
+2C Cusco will share their findings and conclusions from data and assessments on San Pedro's ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Santos Mera and the 2C interns from Universidad Alas Peruanas will make the presentation. (location: British Colombia Institute of Technology, City of Vancouver) 
 
 
 

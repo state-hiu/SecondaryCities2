@@ -62,6 +62,8 @@ sections:
 
 ### Summary
 
+![Medellín]({{ site.baseurl }}/img/medellin/medellin_hillside.png)
+
 Medellín, Columbia is undergoing rapid change.  As a secondary city, Medellín exhibits many characteristics of a secondary city – rapid change, increasing population, and unplanned development.  Similar to 2C Cusco, the 2C Medellín project focuses on the local community by mapping critical issues in neighborhoods.  Focusing on one neighborhood, a process for mapping and analysis is introduced examining waste management and recycling.
 
 ### Goals
@@ -81,6 +83,13 @@ The goals for the 2C Medellín project are to develop methods for mapping local 
 
 ### Upcoming Events
 
-[insert text]
+##### Low Carbon City, October 11, Medellin
+Kirstin Miller, 2C Medellin lead and Executive Director, Ecocity Builders, will participate on a panel entitled: [Urbanism to Tackle Climate Challenges](http://lowcarbon.city/es/)
+
+##### U.S. Habitat: Quito Comes to You at Low Carbon City, October 12, Medellin 
+Ian Klaus, U.S. Department of State, Senior Advisor for Global Cities and Kirstin Miller, 2C Medellin lead and Executive Director, Ecocity Builders, will lead a [workshop](http://lowcarbon.city/es/) and dialogue on what makes an environmentally and socially healthy city. 
+
+##### Ecocity Focus Lab, November 7, Vancouver
+2C Medellin will share their findings and conclusions from data and assessments on Medellin’s ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Diana Marce from the Medellin Planning Department is invited to make the presentation. (Host: British Colombia Institute of Technology, City of Vancouver, Ecocity Builders )
 
 
