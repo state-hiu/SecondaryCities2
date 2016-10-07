@@ -176,7 +176,7 @@ position:fixed!important;
 .type1 {
     width: 20px;
     height: 20px;
-    background: #18bc9c;
+    background: #7B533F;
     border: 2px solid white;
 }
 .label-span{
@@ -192,8 +192,8 @@ position:fixed!important;
 }
 
 #label-medellin {
-    margin-left: 19px;
-    margin-top: -2px;
+    margin-left: 20px;
+    margin-top: -56px;
 }
 
 #label-cusco {
@@ -207,6 +207,11 @@ position:fixed!important;
 }
 
 #label-kharkiv {
+    margin-left: 19px;
+    margin-top: -2px;
+}
+
+#label-esmeraldas {
     margin-left: 19px;
     margin-top: -2px;
 }
@@ -271,7 +276,7 @@ var map = L.mapbox.map('map', '', {
     attributionControl: false,
     zoomControl:false,
     scrollWheelZoom: false
-  }).setView([18, 24], 3);
+  }).setView([18, 22], 3);
 
 }
 
@@ -499,6 +504,28 @@ pokharaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+var esmeraldasIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-esmeraldas">Esmeraldas Ecuador</span>'
+});
+
+esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);
+
+esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>');
+
+esmeraldasMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+esmeraldasMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
 
 // http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
 // Create additional Control placeholders
