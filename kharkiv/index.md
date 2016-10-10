@@ -104,11 +104,17 @@ sections:
 
 ![kharkiv]( {{ site.baseurl }}/img/kharkiv/LopanStrelkaKharkov.jpg)
 
-The Kharkiv Secondary City (2C) project focuses on development of geospatial data for the human geography theme of Emergency Preparedness. Data is being collected for vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.
+Kharkiv is the administrative capital of Kharkiv Oblast and has a population of 1.451 million people (2014), the second largest city in Ukraine. It is a center of excellence for educational and scientific advancement.  Located approximately 40 kilometers from the Russian border, Kharkiv continues to be influenced by its proximity to Russia.  The ongoing border conflict provides the context from which to examine human geography data needs focusing on vulnerable populations. 
+
+The 2C Kharkiv project focuses on the development of geospatial data related to safety and access. Data are being collected for vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.  A series of workshops have utilized open source tools for data generation and the Esri ArcGIS Online platform for data dissemination and analysis.
 
 ### Goals
 
-The project will build partnerships with local universities, government, NGOs and the private sector to create geospatial data on Kharkiv; enhance the understanding and management of the city through better data and mapping; build resiliency and develop local capacity in geospatial science-based decision making; provide open geospatial data solutions; and empower the community and facilitate the creation of long-term partnerships and networks.
+The project builds partnerships with local universities, government, NGOs and the private sector to create geospatial data for Kharkiv.
+
+- &bull;  The project has strengthened collaboration between Kharkiv universities as well as the municipality.
+- &bull;  Data generated on vulnerable populations provide the basis to enhance city response to community needs.
+- &bull;  Improving communication between project partners has led to new geospatial projects based upon identification of data gaps and community needs.
 
 ### Partners
 

@@ -67,11 +67,18 @@ sections:
 
 ![Cusco]({{ site.baseurl }}/img/cusco/cusco_plaza_de_armas.png)
 
-Cusco, Peru is the first 2C project launched in June 2015.  A preliminary workshop at the National University of St. Anthony the Abbot introduced geospatial technologies for mapping neighborhoods adjacent to the university.  With the official launch of the 2C project, EcoCity Builders built local partnerships to implement the EcoCompass curriculum that emphasizes participatory training of geospatial skills.  The project focuses on community-driven mapping and data collection at the neighborhood scale.
+Cusco is the capital of the Cusco region in southern Peru.  It has a population of 350,000 (2007) with informal community developments on the city periphery.  As the ancient Incan capital and a UNESCO World Heritage Site, the city experiences a high volume of tourist visitation.  Its topographic setting makes Cusco prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.
+
+2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on waste management. An initial workshop at the National University of St. Anthony the Abbot introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
 
 ### Goals
 
-The goals of this project are increase local understanding of the urban environment.  Using local knowledge, participants learned to map critical issues in their neighborhood – in this instance, waste management.  Geospatial tools are used to map the waste stream of one neighborhood and conduct analysis on the data collected.  The project partcipants are facilitating the establishment of composting programs and identifying composing sites in the neighborhood.  This process can be implemented across the city to address the problem of waste management.
+The goal of this project is to map waste management issues and identify solutions for improving waste disposal.
+
+- &bull;  Participants use multiple tools including surveys, field mapping techniques, and analysis.  
+- &bull;  The project facilitates the establishment of composting sites and programs in the neighborhood.  
+- &bull;  This base line information provides the basis for conducting analysis on urban flows for improved city design and management.
+
 
 ### Partners
 

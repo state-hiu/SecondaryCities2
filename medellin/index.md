@@ -67,11 +67,17 @@ sections:
 
 ![Medellín]({{ site.baseurl }}/img/medellin/medellin_hillside.png)
 
-Medellín, Columbia is undergoing rapid change.  As a secondary city, Medellín exhibits many characteristics of a secondary city – rapid change, increasing population, and unplanned development.  Similar to 2C Cusco, the 2C Medellín project focuses on the local community by mapping critical issues in neighborhoods.  Focusing on one neighborhood, a process for mapping and analysis is introduced examining waste management and recycling.
+Medellín is the second-largest city in Colombia (2.44 million, 2014) and is the capital of the department of Antioquia.  Surrounded by 9 other major cities, Medellín is part of the second-largest urban agglomeration in Colombia in terms of both population and economy.  It is experiencing rapid change, increasing population, and unplanned development.
+
+The 2C Medellín project is similar to 2C Cusco, focusing on mapping critical issues in neighborhoods.  Focusing on one neighborhood, 2C partner Ecocity Builders has introduced a process for mapping and analysis examining waste management and recycling. This approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
 
 ### Goals
 
-The goals for the 2C Medellín project are to develop methods for mapping local knowledge of the community.  Mapping issues related to waste using a suite of tools developed by EcoCityBuilders resulted in increased community engagement to address the critical issues of waste management.  Additionally, this approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
+The 2C Medellín project is developing methods for mapping local geospatial knowledge of the community.
+
+- &bull;  Build local capacity in geospatial technology and sustainable urban design
+- &bull;  Compile and disseminate existing geospatial data sets about the city
+- &bull;  Implement ground-up, scalable approaches for mapping neighborhood waste flows.
 
 ### Partners
 

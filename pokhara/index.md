@@ -104,15 +104,15 @@ sections:
 
 ![Pokhara]({{ site.baseurl }}/img/pokhara/mountains.jpg)
 
-Pokhara Sub-metropolitan city is the second largest city of Nepal. The city currently acts as the Western Development Regional capital and is set to be one of only seven new provincial capitals of Nepal. Between 2001 and 2011 the city grew at an annual rate of 6.952 percent with its population in 2011 standing at 264,991 (Nepal Census 2011). If the same growth rate held then the city currently has an approximate population of 369,253 people. In the same time period the annual growth rate of the national population was only 1.35 percent.
+Pokhara is the second largest city in Nepal.  It is the seat of governance for the western extent of the country and through the 2C Pokhara project aims to be the center for emergency preparedness across the region.  Pokhara is a major tourist destination situated amidst the Himalayan mountain range. The population is 264,991 (2011) and annual growth rate between 2001 and 2011 was 6.952% (Nepal Census 2011).  
 
-Beyond the rapid urban growth and administrative importance to the region, Pokhara is also the preeminent tourist (both domestic and international) destination of Nepal. Its karst topography and sharp elevation rise has meant that Pokhara is bejeweled with lakes, caves, waterfalls, and gorges. Just a mere 30 km north as the crow flies lies the Dhaulagiri massif, a mountain range that includes the seventh and tenth highest mountains in the world.
+Following the April 2015 Nepal earthquake devastated central Nepal, the Pokhara team carried out a number of participatory mapping efforts to address community needs.  2C Pokhara is devising methods for comprehensive data generation that identify city services, community needs, and evacuation plans, focusing on emergency preparedness. 
 
 ### Goals
 
-The 2C Pokhara project focuses on the development of disaster resilience and emergency management. Kathmandu Living Labs (KLL) is the local implementing partner of this project and works in cooperation with the American Association of Geographers and the United States Department of State.
-
-The development of disaster resilience and emergency management is done by helping the local communities within the city of Pokhara to create a robust OSM data of their city and develop a community which is able to update and maintain the collected data. Long term, the 2C Pokhara team envisions the formation of a geographic information sensitized community that is able to use the collected OSM data to mobilise strategically, create applications and use tools such as Quakemap.org in the advent of a major disaster. 
+- &bull;  2C Pokhara uses open source tools for data generation, emphasizing OpenStreeMap (OSM) approaches.  The 2C project enhances the detail and coverage of data in Pokhara.
+- &bull;  Multiple workshops and training sessions build local capacity in geospatial training with local schools, universities and community partners.  
+- &bull;  2C Pokhara is poised to become a hub of geospatial expertise, providing support to other cities in creating robust disaster resilience approaches across the region.
 
 ### Partners
 

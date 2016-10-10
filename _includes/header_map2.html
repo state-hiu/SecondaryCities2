@@ -52,6 +52,7 @@
     border: 1.5px solid white;
     opacity: 0.85;
 }
+
 .label-span{
     font-size: 18px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -387,8 +388,8 @@ pokharaMarker.on('mouseout', function (e) {
 
 var esmeraldasIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-esmeraldas">Esmeraldas Ecuador</span>'
+    html: '<div class="img-div"><a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-esmeraldas">Esmeraldas Ecuador</span></a></div>'
 });
 
 esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);
