@@ -276,17 +276,23 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT
 if (window.innerWidth < 1200) {
 
 var map = L.mapbox.map('map', '', {
-    attributionControl: false,
+    attributionControl: {compact: true},
     zoomControl:false,
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false
   }).setView([18, 24], 2);
 
 } else {
 
 var map = L.mapbox.map('map', '', {
-    attributionControl: false,
+    attributionControl: {compact: true},
     zoomControl:false,
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false
   }).setView([18, 22], 3);
 
 }
@@ -302,10 +308,14 @@ var map = L.mapbox.map('map', '', {
     minZoom: 1,
     maxZoom: 16,
     scrollWheelZoom: true,
-    zoomControl: false // we'll add later
+    zoomControl: false,
+    attribution: 'Names and boundary representation are not necessarily authoritative'
   }).addTo(map);
 
-
+/* not doing it this way because choosing the compact attribution control display
+var credits = L.control.attribution().addTo(map);
+credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
+*/
 
 var bottomText = L.divIcon({  
   className: "my-div-icon",
