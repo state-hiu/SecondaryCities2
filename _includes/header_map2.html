@@ -109,6 +109,11 @@
     text-align: right;
 }
 
+#country {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 /*
 #DenpasarPopup:hover:before {
     content: url("{{ site.baseurl }}/img/portfolio/denpasar2.png"); 
@@ -198,7 +203,7 @@ var bottomText = L.divIcon({
 var cuscoIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="img-div"><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-cusco">Cusco Peru</span></div>'
+              '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></div>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -218,7 +223,7 @@ cuscoMarker.on('mouseout', function (e) {
 var denpasarIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
-              '<span class="label-span" id="label-denpasar">Denpasar Indonesia</span></a></div>'
+              '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
 });
 // you can set .my-div-icon styles in CSS
 
@@ -246,7 +251,7 @@ denpasarMarker.on('mouseout', function (e) {
 var kharkivIcon = L.divIcon({
     className: 'city-icon',
     html: '<a href="{{ site.baseurl }}/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-kharkiv">Kharkiv Ukraine</span></a>'
+              '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
 });
 
 kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
@@ -330,7 +335,7 @@ map.addLayer(marker2);
 var medellinIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-medellin">Medellín Colombia</span>'
+              '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span>'
 });
 
 medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
@@ -353,7 +358,7 @@ medellinMarker.on('mouseout', function (e) {
 var mekelleIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-mekelle" >Mekelle Ethiopia</span>'
+              '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
 });
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
@@ -376,7 +381,7 @@ mekelleMarker.on('mouseout', function (e) {
 var pokharaIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-pokhara">Pokhara Nepal</span>'
+              '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span>'
 });
 
 pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
@@ -399,7 +404,7 @@ pokharaMarker.on('mouseout', function (e) {
 var esmeraldasIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="img-div"><a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-esmeraldas">Esmeraldas Ecuador</span></a></div>'
+              '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a></div>'
 });
 
 esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);
@@ -411,7 +416,7 @@ esmeraldasMarker.on('mouseover', function (e) {
             this.openPopup();
             //debugger;
             //console.log('after popup');
-            $( ".leaflet-popup-close-button" ).hide();
+            $( ".leaflet-popup-close-button" ).hide();fperu
         });
 
 esmeraldasMarker.on('mouseout', function (e) {
