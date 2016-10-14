@@ -250,7 +250,7 @@ denpasarMarker.on('mouseout', function (e) {
 
 var kharkivIcon = L.divIcon({
     className: 'city-icon',
-    html: '<a href="{{ site.baseurl }}/kharkiv" target="_blank" ><div class="circleBase type1"></div>'+
+    html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
               '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
 });
 
@@ -334,13 +334,15 @@ map.addLayer(marker2);
 
 var medellinIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span>'
+    html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
 });
+
+
 
 medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
 
-medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/medellin2.png" class="img-popup" alt="Medellin"></br><p>Medellin city page is coming soon</p>');
+medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/medellin2.png" class="img-popup" alt="Medellin">');
 
 medellinMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -361,6 +363,8 @@ var mekelleIcon = L.divIcon({
               '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
 });
 
+
+
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
 mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br>');
@@ -380,13 +384,14 @@ mekelleMarker.on('mouseout', function (e) {
 
 var pokharaIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span>'
+    html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
 });
+
 
 pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
 
-pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/pokhara2.png" class="img-popup" alt="Pokhara"></br><p>Pokhara city page is coming soon</p>');
+pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/pokhara2.png" class="img-popup" alt="Pokhara">');
 
 pokharaMarker.on('mouseover', function (e) {
             //console.log('before popup');
