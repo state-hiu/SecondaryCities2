@@ -317,8 +317,8 @@ $(document).foundation();
       e.preventDefault();
       e.stopPropagation();
 
-      //console.log('display layer info: ');
-      //console.log(e.data);
+      console.log('layerButtonClick activated ');
+
 
       //get all layers
 
@@ -331,7 +331,10 @@ $(document).foundation();
       report.removeAllLayers();
 
       for(var y in e.data){
-        //console.log(e.data[y].category);
+        console.log('display e.data[y].category: ');
+        console.log(e.data[y].category);
+        console.log('display e.data: ');
+        console.log(e.data);
         if (e.data[y].category == $(this).parent('li').data('id')) {
           report.changeLayer(e.data[y].mapID,e.data);
           }
@@ -555,11 +558,8 @@ $(document).foundation();
 
         var tileUrl = tileOrigin.replace('{layerId}', layerName);
 
-        console.log('layerId: ');
+        console.log('TileLayer created, layerId named: ');
         console.log(layerId);
-
-        console.log('TileLayer created, named');
-        console.log(report.map.reportLayers[layerId]);
 
         report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {tms: true});
 
@@ -582,9 +582,7 @@ $(document).foundation();
           // if 1+ more layers on map, add grid of the new top layer
           if(layers.length > 1){
             var nextLayerId = layers[layers.length -2];
-
             if(layersList != 'none') {
-
               this.getLayerJSON(nextLayerId,layersList).done(function(nextLayerJSON){
                 report.addGrid(nextLayerId, nextLayerJSON);
                 });
@@ -674,8 +672,6 @@ $(document).foundation();
         JSONPromise.resolve(report.map.reportLayers[inputMapId].layerJSON);
       }
 
-      console.log('what is JSONPromise?: ');
-      console.log(JSONPromise);
       return JSONPromise;
 
     },
@@ -765,7 +761,17 @@ $(document).foundation();
     showLayerButton: function(layerId,layersList){
       // move layerButton from .not-displayed to .displayed
       //var layerButton = report.getNotDisplayedLayersButtons().filter('[data-id="' + layerId + '"]');
-      
+
+/*
+      console.log('showLayerButton called');
+
+      console.log('layerId: ');
+      console.log(layerId);
+
+      console.log('layersList');
+      console.log(layersList);
+*/
+
       for (var i = 0; i < layersList.length; i++) {
 
               if (layersList[i].mapID == layerId) {
@@ -786,7 +792,8 @@ $(document).foundation();
                   '</li>'
                   ].join("\n");
 
-                  $('.displayed').append(html);
+                  //prepend orders the layers in the order the layers are drawn
+                  $('.displayed').prepend(html);
 
               }
             }
