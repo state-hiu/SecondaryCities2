@@ -171,8 +171,51 @@ $(document).foundation();
         //console.log('testing pageConfig.about_tab_tile_layers: ');
 
         if(pageConfig.about_tab_tile_layers) {
-          console.log(pageConfig.about_tab_tile_layers);
-          report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+            console.log(pageConfig.about_tab_tile_layers);
+
+            //https://www.mapbox.com/mapbox.js/api/v2.4.0/l-mapbox-legendcontrol/
+            //report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+            /*
+            var legend = L.control({position: 'bottomright'});
+            
+            legend.onAdd = function (map) {
+
+                var div = '<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>'
+
+                return div;
+            };
+
+            legend.addTo(report.map);
+            */
+
+
+            /*
+            var legendInfoControl = L.Control.extend({
+                options: {
+                  position: 'bottomright'
+                },
+                onAdd: function(map) {
+                  this._container = L.DomUtil.create('div', 'info');
+                  if (!L.Browser.touch) {
+                      L.DomEvent.disableClickPropagation(this._container);
+                      L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
+                      L.DomEvent.on(this._container, 'MozMousePixelScroll', L.DomEvent.stopPropagation);
+                  } else {
+                      L.DomEvent.on(this._container, 'click', L.DomEvent.stopPropagation);
+                  }
+                  this.update();
+                  return this._container;
+                },
+                update: function(d) {
+                    this._container.innerHTML = '<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>';
+                }
+
+            });
+
+            var legend = new legendInfoControl().addTo(report.map);
+            */
+            
         }
 
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
@@ -916,7 +959,39 @@ $(document).foundation();
         console.log('legend exists');
       } else {
         console.log('legend does not exist');
-        report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+        //old way, but it didn't stop mouse scroll propagation so map zoomed in 
+        //instead of using the scroll bar
+        //report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+        //new way
+        //http://stackoverflow.com/questions/37628635/stop-interactions-click-drag-from-propagating-on-control-leaflet
+        //also looked at this code to figure out to stop the propagation
+        //http://map.hotosm.org/Leaflet.TileLegend/Leaflet.TileLegend.js
+        var legendInfoControl = L.Control.extend({
+                options: {
+                  position: 'bottomright'
+                },
+                onAdd: function(map) {
+                  this._container = L.DomUtil.create('div', 'map-legends');
+                  if (!L.Browser.touch) {
+                      L.DomEvent.disableClickPropagation(this._container);
+                      L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
+                      L.DomEvent.on(this._container, 'MozMousePixelScroll', L.DomEvent.stopPropagation);
+                  } else {
+                      L.DomEvent.on(this._container, 'click', L.DomEvent.stopPropagation);
+                  }
+                  this.update();
+                  return this._container;
+                },
+                update: function(d) {
+                    this._container.innerHTML = '<div class="map-legend"><h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div></div>';
+                }
+
+            });
+
+        var legend = new legendInfoControl().addTo(report.map);
+
       }
 
       var myRegexp = /:(.*)/;
@@ -930,7 +1005,7 @@ $(document).foundation();
 
       var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
-      var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" >' + layerJSON.title + '</div>';
+      var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ><span id="legend-text">' + layerJSON.title + '</span></div>';
 
       $( ".legend-contents").prepend(html_string);
 
