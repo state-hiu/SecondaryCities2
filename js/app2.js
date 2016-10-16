@@ -596,7 +596,9 @@ $(document).foundation();
         this.map.removeLayer(tileLayer);
 
         this.removeLayerButton(layerId);
+
         this.removeLegend(layerId);
+
         this.removeSummary();
 
         // if removed layer was highest layer, clear grids
@@ -618,53 +620,54 @@ $(document).foundation();
         // show description summary; add grid; update hash
 
 
-        console.log('testing if LayerButton exists');
-        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length);
+          console.log('testing if LayerButton exists');
+          console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length);
 
-        console.log('layer Id of layer that is already on the available map layers list');
-        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]'));
+          console.log('layer Id of layer that is already on the available map layers list');
+          console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]'));
 
-        console.log('layer below it');
-        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id'));
+          console.log('layer below it');
+          console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id'));
 
-        //if LayerButton exists, don't add it
-        if (report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length > 0){
-          console.log('LayerButton exists already, do not add');
+          //if LayerButton exists, don't add it
+          if (report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length > 0){
+            console.log('LayerButton exists already, do not add');
 
-          //find the layer below it and insert it one ZIndex above
-          //therefore it will get drawn in the same order as before
-          var previousLayer = report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id');
+            //find the layer below it and insert it one ZIndex above
+            //therefore it will get drawn in the same order as before
+            var previousLayer = report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id');
 
-          var previousLayerZIndex = this.getLayerZIndex(previousLayer);
+            var previousLayerZIndex = this.getLayerZIndex(previousLayer);
 
-          this.map.addLayer(tileLayer);
+            this.map.addLayer(tileLayer);
 
-          tileLayer.setZIndex(previousLayerZIndex + 1);
+            tileLayer.setZIndex(previousLayerZIndex + 1);
 
-        } else {
-          this.showLayerButton(layerId,layersList);
+          } else {
+            this.showLayerButton(layerId,layersList);
 
-          // find zIndex of current top layer, or -1 if no current layers
-          var layers = this.getLayers(),
-              topLayerZIndex = this.getLayerZIndex(layers[layers.length -1]);
+            // find zIndex of current top layer, or -1 if no current layers
+            var layers = this.getLayers(),
+                topLayerZIndex = this.getLayerZIndex(layers[layers.length -1]);
 
-          this.map.addLayer(tileLayer);
+            this.map.addLayer(tileLayer);
 
-          tileLayer.setZIndex(topLayerZIndex + 2);
-        }
+            tileLayer.setZIndex(topLayerZIndex + 2);
+          }
 
 
-        if(layersList != 'none') {
-            this.getLayerJSON(layerId,layersList).done(function(layerJSON){
-              report.showLegend(layerId, layerJSON);
-              report.showSummary(layerId, layerJSON);
-              // not very smart: simply remove all grids and add for the new layer
-              report.clearGrids();
-              report.addGrid(layerId, layerJSON);
-            });
-        }
+          if(layersList != 'none') {
+              console.log('there is a layerslist, lets add legend');
+              this.getLayerJSON(layerId,layersList).done(function(layerJSON){
+                report.showLegend(layerId, layerJSON);
+                report.showSummary(layerId, layerJSON);
+                // not very smart: simply remove all grids and add for the new layer
+                report.clearGrids();
+                report.addGrid(layerId, layerJSON);
+              });
+          }
         
-      }
+        }
 
       this.leaflet_hash.trigger('move');
     },
@@ -894,13 +897,20 @@ $(document).foundation();
 
       //('<img src="http://icons.iconarchive.com/icons/rokey/smooth/128/apple-icon.png">').prependTo('.map-legend .legend-contents');
 
+      console.log('map id legend:');
+      console.log(mapId);
+
+      console.log('map id title:');
+      console.log(layerJSON.title);
+
+
       //if legend does not exist
-      if ($("legend-contents").length == 0) {
+      if ( $(".legend-contents").length ) {
+        console.log('legend exists');
+      } else {
+        console.log('legend does not exist');
         report.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
       }
-
-      //console.log('map id legend:');
-      //console.log(mapId);
 
       var myRegexp = /:(.*)/;
 
@@ -913,9 +923,10 @@ $(document).foundation();
 
       var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
-      var html_string = '<img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ">';
+      var html_string = '<img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ">' + layerJSON.title + '</br>';
 
-      $( ".map-legend").append(html_string);
+      $( ".legend-contents").prepend(html_string);
+
 
 
       /*
@@ -957,7 +968,8 @@ $(document).foundation();
     },
 
     removeLegend: function(mapId){
-      $('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
+      //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
+      $(".legend-contents").empty();
     },
 
 
