@@ -597,7 +597,7 @@ $(document).foundation();
 
         this.removeLayerButton(layerId);
 
-        this.removeLegend(layerId);
+        this.removeLegendItem(layerId);
 
         this.removeSummary();
 
@@ -923,10 +923,9 @@ $(document).foundation();
 
       var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
-      var html_string = '<img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ">' + layerJSON.title + '</br>';
+      var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" >' + layerJSON.title + '</div></br>';
 
       $( ".legend-contents").prepend(html_string);
-
 
 
       /*
@@ -970,6 +969,11 @@ $(document).foundation();
     removeLegend: function(mapId){
       //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
       $(".legend-contents").empty();
+    },
+
+    removeLegendItem: function(mapId){
+      //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
+      $('.map-legend .legend-item[data-id="' + mapId + '"]').remove();
     },
 
 

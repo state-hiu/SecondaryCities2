@@ -488,3 +488,12 @@ figcaption {
 .layer-toggle {
   overflow: auto;
 }
+
+.map-legend {
+  max-height: 665px;
+  overflow: scroll;
+}
+
+.report-legend {
+  max-height: 600px;
+}
