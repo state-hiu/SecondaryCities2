@@ -28,7 +28,7 @@ $(document).foundation();
 
       function switchLayer(layer) {
           //L.mapbox.tileLayer('mapbox.light').addTo(report.map);
-          L.mapbox.styleLayer('mapbox://styles/mapbox/' + layer + '-v9').addTo(report.map);
+          baseLayer = L.mapbox.styleLayer('mapbox://styles/mapbox/' + layer + '-v9').addTo(report.map);
       }
 
       $("#data-tab").click(function() {
@@ -62,6 +62,27 @@ $(document).foundation();
         return controlHTML[0];
       }
 
+      //https://github.com/Norkart/Leaflet-MiniMap
+      //var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      //var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13});
+
+      // Use styleLayer to add a Mapbox style created in Mapbox Studio
+      var baseLayer2 = L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v9',{
+        center: pageConfig.latlng,
+        zoom: pageConfig.zoom,
+        minZoom: 0,
+        maxZoom: 13,
+        scrollWheelZoom: true,
+        attribution: '<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>',
+        zoomControl: false // we'll add later
+      });
+
+      //report.map.addLayer(osm2);
+      report.map.setView(new L.LatLng(59.92448055859924, 10.758276373601069),10);
+
+      var miniMap = new L.Control.MiniMap(baseLayer2, {position: 'bottomleft', zoomLevelOffset: -8}).addTo(report.map);
+
+
       $.extend(this.map, {
         // set baselayer z-index to -1, while you're at it
         reportLayers: {
@@ -70,7 +91,7 @@ $(document).foundation();
         },
         reportVectors: {},
         reportControls: {
-          scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
+          //scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
           share: shareControl.addTo(this.map)
         }
       });
