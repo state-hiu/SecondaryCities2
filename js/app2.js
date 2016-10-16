@@ -570,8 +570,10 @@ $(document).foundation();
       // if layer is present, run all remove layer actions
       if(this.map.hasLayer(tileLayer)){
         var layers = this.getLayers();
+
         // run all remove layer actions
         this.map.removeLayer(tileLayer);
+
         this.removeLayerButton(layerId);
         this.removeLegend(layerId);
         this.removeSummary();
@@ -594,23 +596,42 @@ $(document).foundation();
         // add layer to map; add legend; move layer-ui button
         // show description summary; add grid; update hash
 
-        // find zIndex of current top layer, or -1 if no current layers
-        var layers = this.getLayers(),
-            topLayerZIndex = this.getLayerZIndex(layers[layers.length -1]);
-
-        this.map.addLayer(tileLayer);
-        tileLayer.setZIndex(topLayerZIndex + 1);
-
-        //if LayerButton exists, don't add it 
 
         console.log('testing if LayerButton exists');
         console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length);
 
+        console.log('layer Id of layer that is already on the available map layers list');
+        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]'));
+
+        console.log('layer below it');
+        console.log(report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id'));
+
+        //if LayerButton exists, don't add it
         if (report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').length > 0){
           console.log('LayerButton exists already, do not add');
-        }else{
+
+          //find the layer below it and insert it one ZIndex above
+          //therefore it will get drawn in the same order as before
+          var previousLayer = report.getDisplayedLayersButtons().filter('[data-id="' + layerId + '"]').next().attr('data-id');
+
+          var previousLayerZIndex = this.getLayerZIndex(previousLayer);
+
+          this.map.addLayer(tileLayer);
+
+          tileLayer.setZIndex(previousLayerZIndex + 1);
+
+        } else {
           this.showLayerButton(layerId,layersList);
+
+          // find zIndex of current top layer, or -1 if no current layers
+          var layers = this.getLayers(),
+              topLayerZIndex = this.getLayerZIndex(layers[layers.length -1]);
+
+          this.map.addLayer(tileLayer);
+
+          tileLayer.setZIndex(topLayerZIndex + 2);
         }
+
 
         if(layersList != 'none') {
             this.getLayerJSON(layerId,layersList).done(function(layerJSON){
@@ -799,15 +820,18 @@ $(document).foundation();
             }
 
             $('.layer-ui ul.displayed li.layer-toggle').unbind("click").click(function() {
-              console.log('clicked!!!!!!');
-              mapID = $(this).attr('data-id');
-              console.log(mapID);
+                console.log('clicked!!!!!!');
+                mapID = $(this).attr('data-id');
+                console.log(mapID);
 
-              report.getLayerJSON(mapID,layersList).done(function(layerJSON){
+                report.getLayerJSON(mapID,layersList).done(function(layerJSON){
 
-                report.showSummary(mapID, layerJSON);
+                  console.log('show layerJSON');
+                  console.log(layerJSON);
 
-              });
+                  report.showSummary(mapID, layerJSON);
+
+                });
 
             });
 
@@ -823,6 +847,7 @@ $(document).foundation();
                 console.log(layerID);
 
                 if($( "input:checked" ).val()){
+
                   console.log($( "input" ).val() + " is checked!" );
 
                   report.changeLayer(layerID,layersList);
