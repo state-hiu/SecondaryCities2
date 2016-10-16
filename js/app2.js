@@ -10,8 +10,9 @@ $(document).foundation();
     init: function(){
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+
       report.map = L.mapbox.map('map', '', {
-        attributionControl: false
+        attributionControl: {compact: true}
       });
 
       // Use styleLayer to add a Mapbox style created in Mapbox Studio
@@ -21,8 +22,9 @@ $(document).foundation();
         minZoom: 4,
         maxZoom: 16,
         scrollWheelZoom: true,
+        attribution: '<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>',
         zoomControl: false // we'll add later
-      }).addTo(this.map);
+      }).addTo(report.map);
 
       function switchLayer(layer) {
           //L.mapbox.tileLayer('mapbox.light').addTo(report.map);
@@ -41,8 +43,8 @@ $(document).foundation();
         switchLayer('streets');
       });
 
-      // extend map object to contain reference to all layers
       var shareControl = L.control({position: 'topleft'});
+
       // https://developers.facebook.com/docs/sharing/reference/share-dialog
       shareControl.onAdd = function(){
         var controlHTML = $('<div>', {
@@ -60,14 +62,6 @@ $(document).foundation();
         return controlHTML[0];
       }
 
-      var infoControl = L.mapbox.infoControl().addInfo('<strong>Map Data</strong> &copy; <a href="//www.openstreetmap.org/">OpenStreetMap</a>');
-      if (pageConfig.source_name && pageConfig.source_url){
-        infoControl.addInfo('<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>');
-      }else if(pageConfig.source_name){
-        infoControl.addInfo(pageConfig.source_name);
-      }
-
-      // add additional object to map object to store references to layers
       $.extend(this.map, {
         // set baselayer z-index to -1, while you're at it
         reportLayers: {
@@ -76,9 +70,7 @@ $(document).foundation();
         },
         reportVectors: {},
         reportControls: {
-          //zoom: L.control.zoom({position: 'topleft'}).addTo(this.map),
           scale: L.control.scale({position: 'bottomleft'}).addTo(this.map),
-          infoControl: infoControl.addTo(this.map),
           share: shareControl.addTo(this.map)
         }
       });
@@ -146,13 +138,6 @@ $(document).foundation();
           }
       });
 
-/*
-      report.getAPIJSON(api_url).done(function(result) {
-        console.log('API Returned: ');
-        console.log(result);
-      });
-*/
-
       report.buildLayerJSON().done(function(layersListANDsortedCategoriesARRAY) {
         console.log('layersList Returned: ');
         console.log(layersListANDsortedCategoriesARRAY[0]);
@@ -171,12 +156,6 @@ $(document).foundation();
 
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
 
-/*
-        $('#report section').waypoint(report.reportScroll(), {
-          context: '#report',
-          offset: '70%'
-        });
-*/
 
         var waypointSection = $('#report section')
 
@@ -254,7 +233,6 @@ $(document).foundation();
 
             var categoryList = [];
 
-
             for (var i = 0; i < layersList.length; i++) {
 
               var obj = layersList[i];
@@ -266,7 +244,6 @@ $(document).foundation();
 
               //x will always be the array corresponding to the current DtmStamp. Push a value the current value to it.
               categoryList[obj.category].push(obj);
-
 
               dataIndex++;
             }
@@ -356,7 +333,6 @@ $(document).foundation();
       for(var y in e.data){
         //console.log(e.data[y].category);
         if (e.data[y].category == $(this).parent('li').data('id')) {
-          //console.log('wowowowow');
           report.changeLayer(e.data[y].mapID,e.data);
           }
 
@@ -478,37 +454,61 @@ $(document).foundation();
     },
 
     layerSortedUpdate: function(e, ui){
-      var displayedButtonContainer = $(this),
-          layers = report.getLayers(),
-          newTopButtonId = displayedButtonContainer.children('li:first').data('id');
 
+        var displayedButtonContainer = $(this),
+            layers = report.getLayers(),
+            newTopButtonId = displayedButtonContainer.children('li:first').data('id');
 
-      report.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
+            console.log('new top button');
+            console.log(newTopButtonId);
+
+/*
+        report.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
+
+            if(newTopButtonId !== layers[layers.length -1]){
+              report.clearGrids();
+              report.addGrid(newTopButtonId, topLayerJSON);
+              report.showSummary(newTopButtonId, topLayerJSON);
+            }
+
+            orderedButtonIds = $.map(report.getDisplayedLayersButtons(), function(button, index){
+              return $(button).data('id')
+            }).reverse();
+
+            report.map.setLayersZIndices(orderedButtonIds);
+            report.map.leaflet_hash.trigger('move');
+
+        });
+*/
+
+/*
         if(newTopButtonId !== layers[layers.length -1]){
-          report.map.clearGrids();
-          report.map.addGrid(newTopButtonId, topLayerJSON);
-          report.map.showSummary(newTopButtonId, topLayerJSON);
+          report.clearGrids();
+          report.addGrid(newTopButtonId, topLayerJSON);
+          report.showSummary(newTopButtonId, topLayerJSON);
         }
+*/
 
-      orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
-        return $(button).data('id')
-      }).reverse();
-      report.map.setLayersZIndices(orderedButtonIds);
-      report.map.leaflet_hash.trigger('move');
-    });
+        /*
+        displayedLayerIds = report.getLayers();
+
+      for(i=0; i<displayedLayerIds.length; i++){
+                //report.changeLayer(displayedLayerIds[i],layersList);
+                report.getDisplayedLayersButtons().filter('[data-id="' + displayedLayerIds[i] + '"]').remove();
+              }
+              */
 
 
-      if(newTopButtonId !== layers[layers.length -1]){
-        report.map.clearGrids();
-        report.map.addGrid(newTopButtonId, topLayerJSON);
-        report.map.showSummary(newTopButtonId, topLayerJSON);
-      }
 
-      orderedButtonIds = $.map(report.map.getDisplayedLayersButtons(), function(button, index){
-        return $(button).data('id')
-      }).reverse();
-      report.map.setLayersZIndices(orderedButtonIds);
-      report.map.leaflet_hash.trigger('move');
+        orderedButtonIds = $.map(report.getDisplayedLayersButtons(), function(button, index){
+          return $(button).data('id')
+        }).reverse();
+
+        console.log('orderedButtonIds');
+        console.log(orderedButtonIds);
+
+        report.setLayersZIndices(orderedButtonIds);
+        report.leaflet_hash.trigger('move');
 
     },
 
@@ -554,7 +554,15 @@ $(document).foundation();
         }
 
         var tileUrl = tileOrigin.replace('{layerId}', layerName);
+
+        console.log('layerId: ');
+        console.log(layerId);
+
+        console.log('TileLayer created, named');
+        console.log(report.map.reportLayers[layerId]);
+
         report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {tms: true});
+
       }
 
       var tileLayer = this.map.reportLayers[layerId];
@@ -583,7 +591,7 @@ $(document).foundation();
             }
           }
         }
-      }else{
+      } else {
         // run all add layer actions:
         // add layer to map; add legend; move layer-ui button
         // show description summary; add grid; update hash
@@ -623,6 +631,13 @@ $(document).foundation();
 
     getLayerJSON: function(inputMapId,layersList){
       // returns a promise object, that when resolved, contains JSON for mapId
+
+      console.log('get LayerJSON called');
+      console.log('inputMapId');
+      console.log(inputMapId);
+      console.log('layersList');
+      console.log(layersList);
+
       var JSONPromise = $.Deferred();
       if(! report.map.reportLayers[mapId].layerJSON){
 
@@ -667,7 +682,7 @@ $(document).foundation();
 
     getVector: function(){
       // return id of vector featureLayer
-        // currently, only one vector featureLayer can exist on the map
+      // currently, only one vector featureLayer can exist on the map
       reportVectors = report.map.reportVectors;
       for(mapId in reportVectors){
         if(report.map.hasLayer(reportVectors[mapId])){
@@ -689,6 +704,7 @@ $(document).foundation();
           layersSortedByZIndex[tileLayer.options.zIndex] = mapId;
         }
       }
+
       return layersSortedByZIndex.filter(function(n){
         return n != undefined;
       });
@@ -711,7 +727,7 @@ $(document).foundation();
 
       for(var i=0; i<mapIds.length; i++){
         // set zIndex for each mapId in array mapIds, arranged from lowest to highest
-        report.map.setLayerZIndex(mapIds[i], i);
+        report.setLayerZIndex(mapIds[i], i);
 
         // reorder legends
         legendContents.children('.report-legend[data-id="' + mapIds[i] + '"]')
@@ -999,9 +1015,8 @@ $(document).foundation();
         },
 
     showSummary: function(mapId, layerJSON){
+
       // remove existing summary, if exists
-
-
       report.removeSummary();
 
       var summary = ['<ul data-id="', mapId, '" class="layer-summary small keyline-all pad0x space-bottom2">',
@@ -1031,14 +1046,20 @@ $(document).foundation();
     },
 
     addGrid: function(mapId, layerJSON){
+
       if(! layerJSON.template){ return false; }
-      var tilejson = {
-        "tilejson":"2.1.0",
-        "grids":["http://grids.osm.report.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
-        "template":layerJSON.template
+        var tilejson = {
+          "tilejson":"2.1.0",
+          "grids":["http://grids.osm.report.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
+          "template":layerJSON.template
       };
-      report.gridLayer = L.mapbox.gridLayer(tilejson).addTo(report.map),
-      report.gridControl = L.mapbox.gridControl(report.gridLayer).addTo(report.map);
+
+      /*An L.mapbox.gridLayer loads UTFGrid tiles of interactivity into your map, 
+      which you can easily access with L.mapbox.gridControl.*/
+
+      //report.gridLayer = L.mapbox.gridLayer(tilejson).addTo(report.map),
+      //report.gridControl = L.mapbox.gridControl(report.gridLayer).addTo(report.map);
+
     },
 
     clearGrids: function(){
