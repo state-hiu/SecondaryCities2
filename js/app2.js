@@ -383,7 +383,6 @@ $(document).foundation();
 
       console.log('layerButtonClick activated ');
 
-
       //get all layers
 
       //console.log('display category: ');
@@ -405,7 +404,6 @@ $(document).foundation();
 
       }
 
-      //report.changeLayer($(this).parent('li').data('id'),e.data);
     },
 
     reportScroll: function(layersList,waypointSection) {
@@ -581,9 +579,6 @@ $(document).foundation();
 
     removeAllLayers: function() {
       console.log("removing all layers!");
-
-      //work on this
-      //this.removeLegend(layerId);
       
       displayedLayerIds = report.getLayers();
 
@@ -641,6 +636,32 @@ $(document).foundation();
         this.removeLayerButton(layerId);
 
         this.hideLegendItem(layerId);
+
+        console.log('layer already present ');
+
+        //if all legend items are hidden, remove the legend box 
+        //if legend exists
+        if ( $(".legend-contents").length ) {
+
+          console.log('legend exists 1');
+          var itemsVisible = 0;
+
+          $(".legend-item").each(function (index) {
+            console.log( index + ": " + $( this ).text() );
+
+            if($( this ).is(':visible')) {
+                console.log('is visible!');
+                itemsVisible = 1;
+            }
+
+          });
+          //if no items are visible in the legend
+          if (itemsVisible == 0){
+              report.removeLegend();
+          }
+        } else {
+          console.log('legend does not exist 1');
+        }
 
         this.removeSummary();
 
@@ -1049,7 +1070,7 @@ $(document).foundation();
 
     removeLegend: function(mapId){
       //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
-      $(".legend-contents").empty();
+      $(".map-legends").remove();
     },
 
     hideLegendItem: function(mapId){
