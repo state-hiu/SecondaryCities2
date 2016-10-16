@@ -597,7 +597,7 @@ $(document).foundation();
 
         this.removeLayerButton(layerId);
 
-        this.removeLegendItem(layerId);
+        this.hideLegendItem(layerId);
 
         this.removeSummary();
 
@@ -659,7 +659,14 @@ $(document).foundation();
           if(layersList != 'none') {
               console.log('there is a layerslist, lets add legend');
               this.getLayerJSON(layerId,layersList).done(function(layerJSON){
-                report.showLegend(layerId, layerJSON);
+
+                //if legend item exist but is hidden, show it
+                if ($('.map-legend .legend-item[data-id="' + layerId + '"]').length){
+                  $('.map-legend .legend-item[data-id="' + layerId + '"]').show();
+                } else {
+                  report.showLegend(layerId, layerJSON);
+                }
+
                 report.showSummary(layerId, layerJSON);
                 // not very smart: simply remove all grids and add for the new layer
                 report.clearGrids();
@@ -904,7 +911,7 @@ $(document).foundation();
       console.log(layerJSON.title);
 
 
-      //if legend does not exist
+      //if legend exists
       if ( $(".legend-contents").length ) {
         console.log('legend exists');
       } else {
@@ -923,10 +930,9 @@ $(document).foundation();
 
       var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
-      var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" >' + layerJSON.title + '</div></br>';
+      var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" >' + layerJSON.title + '</div>';
 
       $( ".legend-contents").prepend(html_string);
-
 
       /*
      * Replace all SVG images with inline SVG
@@ -971,9 +977,9 @@ $(document).foundation();
       $(".legend-contents").empty();
     },
 
-    removeLegendItem: function(mapId){
+    hideLegendItem: function(mapId){
       //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
-      $('.map-legend .legend-item[data-id="' + mapId + '"]').remove();
+      $('.map-legend .legend-item[data-id="' + mapId + '"]').hide();
     },
 
 
