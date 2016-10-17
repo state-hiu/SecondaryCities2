@@ -994,7 +994,7 @@ $(document).foundation();
                   position: 'bottomright'
                 },
                 onAdd: function(map) {
-                  this._container = L.DomUtil.create('div', 'map-legends');
+                  this._container = L.DomUtil.create('div', 'map-legends-container');
                   if (!L.Browser.touch) {
                       L.DomEvent.disableClickPropagation(this._container);
                       L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
@@ -1012,6 +1012,10 @@ $(document).foundation();
             });
 
         var legend = new legendInfoControl().addTo(report.map);
+
+        //adding out div
+
+        $(".map-legend").wrap("<div class=legend-div></div>");
 
       }
 
