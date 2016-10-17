@@ -18,7 +18,6 @@
 
      #content
      {
-         width: 1000px;
          background: #fff;
          border: 1px solid #2c3e50;
          padding: 5px 15px;
@@ -87,6 +86,15 @@
         border: 2px solid #004d00;
       }
 
+      #content li {
+        list-style: none;
+        display: inline-block;
+      }
+
+      #legend-list {
+        width: 100%;
+      }
+
 </style>
 
 
@@ -105,26 +113,32 @@
 
 <div id="content">
     <div class="titlebox">Events</div>
-                <dl>
+        <ul id="legend-list">
+            <li><dl>
                     <dt>Cusco:</dt>
                     <dd> <div class="legend_color" id="cusco-color"></div> </dd>
-
+                </dl></li>
+            <li><dl>
                     <dt>Denpasar:</dt>
                     <dd> <div class="legend_color" id="denpasar-color"></div> </dd>
-
+                </dl></li>
+            <li><dl>
                     <dt>Kharkiv:</dt>
                     <dd> <div class="legend_color" id="kharkiv-color"></div> </dd>
-
+                </dl></li>
+            <li><dl>
                     <dt>Medellin:</dt>
                     <dd> <div class="legend_color" id="medellin-color"></div> </dd>
-
+                </dl></li>
+            <li><dl>
                     <dt>Mekelle:</dt>
                     <dd> <div class="legend_color" id="mekelle-color"></div> </dd>
-
+                </dl></li>
+            <li><dl>
                     <dt>Pokhara:</dt>
                     <dd> <div class="legend_color" id="pokhara-color"></div> </dd>
-
-                </dl>
+                </dl></li>
+        </ul>
 </div>
 
                 <br>
