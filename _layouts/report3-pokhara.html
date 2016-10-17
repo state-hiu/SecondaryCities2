@@ -20,6 +20,9 @@ p {
 section {
     padding: 0px 0;
 }
+
+/* Pokhara added css */
+
 .circleBase {
     border-radius: 50%;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
@@ -197,8 +200,21 @@ section {
 <script src="{{site.baseurl}}/js/foundation.min.js"></script>
 <!-- version 0.2.1 on api.mapbox.com did not work -->
 <script src='{{site.baseurl}}/js/vendor/leaflet-hash.js'></script>
-<script src="{{site.baseurl}}/js/app2-pokhara.js"></script>
+<script src="{{site.baseurl}}/js/app2.js"></script>
 
+<!--extra Pokhara city page code -->
+<script>
+var PokharaIcon = L.divIcon({
+          className: 'city-icon',
+          html: '<div class="circleBase type1"></div>'+
+                    '<div style="width: 300px;"><span class="label-span" id="label-pokhara">Kathmandu Living Labs</span></div>'
+      });
+
+      marker = new L.marker([28.20907, 83.99585], {icon: PokharaIcon});
+
+      report.map.addLayer(marker);
+
+</script>
 
 </body>
 </html>
