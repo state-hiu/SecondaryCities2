@@ -519,4 +519,11 @@ figcaption {
   max-height: 100%;
 }
 
+.keyline-bottom.layer-count:hover {
+    text-decoration: none;
+}
+
+.layer-toggle.selected {
+    background-color: rgba(44, 62, 80, 0.25);
+}
 

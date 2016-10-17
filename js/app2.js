@@ -159,6 +159,7 @@ $(document).foundation();
           }
       });
 
+
       report.buildLayerJSON().done(function(layersListANDsortedCategoriesARRAY) {
         console.log('layersList Returned: ');
         console.log(layersListANDsortedCategoriesARRAY[0]);
@@ -219,7 +220,6 @@ $(document).foundation();
         }
 
         $('.layer-ui li.layer-toggle').on('click', 'a', layersList, report.layerButtonClick);
-
 
         var waypointSection = $('#report section')
 
@@ -348,13 +348,13 @@ $(document).foundation();
               var count = sortedCategories[i][1];
 
               var html = [
-              '<li id="double" class="layer-toggle"',
+              '<div class="cat-row"><li id="double" class="layer-toggle"',
               'data-id="' + category + '">',
               '<a class="keyline-bottom" href="#">' + category + '</a>',
               '</li>',
               '<li id="double-right" class="layer-toggle">', 
-              '<a class="keyline-bottom" >' + count + '</a>',
-              '</li>'
+              '<a class="keyline-bottom layer-count" >' + count + '</a>',
+              '</li></div>'
               ].join("\n");
 
               //console.log(html);
@@ -383,6 +383,16 @@ $(document).foundation();
 
       console.log('layerButtonClick activated ');
 
+      //highlight category when clicked
+      console.log('cat-row clicked');
+      console.log($(this).parent('li').parent('div'));
+      
+      //remove all highlights
+      $('.cat-row').find('li').removeClass('selected');
+
+      //highlight selected category row
+      $(this).parent('li').parent('div').find('li').addClass('selected');
+
       //get all layers
 
       //console.log('display category: ');
@@ -394,10 +404,10 @@ $(document).foundation();
       report.removeAllLayers();
 
       for(var y in e.data){
-        console.log('display e.data[y].category: ');
-        console.log(e.data[y].category);
-        console.log('display e.data: ');
-        console.log(e.data);
+        //console.log('display e.data[y].category: ');
+        //console.log(e.data[y].category);
+        //console.log('display e.data: ');
+        //console.log(e.data);
         if (e.data[y].category == $(this).parent('li').data('id')) {
           report.changeLayer(e.data[y].mapID,e.data);
           }
@@ -747,11 +757,11 @@ $(document).foundation();
     getLayerJSON: function(inputMapId,layersList){
       // returns a promise object, that when resolved, contains JSON for mapId
 
-      console.log('get LayerJSON called');
-      console.log('inputMapId');
-      console.log(inputMapId);
-      console.log('layersList');
-      console.log(layersList);
+      //console.log('get LayerJSON called');
+      //console.log('inputMapId');
+      //console.log(inputMapId);
+      //console.log('layersList');
+      //console.log(layersList);
 
       var JSONPromise = $.Deferred();
       if(! report.map.reportLayers[mapId].layerJSON){
@@ -916,14 +926,14 @@ $(document).foundation();
             }
 
             $('.layer-ui ul.displayed li.layer-toggle').unbind("click").click(function() {
-                console.log('clicked!!!!!!');
+                //console.log('clicked!!!!!!');
                 mapID = $(this).attr('data-id');
-                console.log(mapID);
+                //console.log(mapID);
 
                 report.getLayerJSON(mapID,layersList).done(function(layerJSON){
 
-                  console.log('show layerJSON');
-                  console.log(layerJSON);
+                  //console.log('show layerJSON');
+                  //console.log(layerJSON);
 
                   report.showSummary(mapID, layerJSON);
 
@@ -969,18 +979,18 @@ $(document).foundation();
 
       //('<img src="http://icons.iconarchive.com/icons/rokey/smooth/128/apple-icon.png">').prependTo('.map-legend .legend-contents');
 
-      console.log('map id legend:');
-      console.log(mapId);
+      //console.log('map id legend:');
+      //console.log(mapId);
 
-      console.log('map id title:');
-      console.log(layerJSON.title);
+      //console.log('map id title:');
+      //console.log(layerJSON.title);
 
 
       //if legend exists
       if ( $(".legend-contents").length ) {
-        console.log('legend exists');
+        //console.log('legend exists');
       } else {
-        console.log('legend does not exist');
+        //console.log('legend does not exist');
 
         //old way, but it didn't stop mouse scroll propagation so map zoomed in 
         //instead of using the scroll bar
