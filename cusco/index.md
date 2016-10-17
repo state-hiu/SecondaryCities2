@@ -67,9 +67,9 @@ sections:
 
 ![Cusco]({{ site.baseurl }}/img/cusco/cusco_plaza_de_armas.png)
 
-Cusco is the capital of the Cusco region in southern Peru.  It has a population of 350,000 (2007) with informal community developments on the city periphery.  As the ancient Incan capital and a UNESCO World Heritage Site, the city experiences a high volume of tourist visitation.  Its topographic setting makes Cusco prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.
+Cusco is the capital of the Cusco region in southern Peru.  The City of Cusco has a population of 118,000 (2015) with informal community developments on the city periphery.  As the ancient Incan capital and a UNESCO World Heritage Site, the city experiences a high volume of tourist visits.  Its topographic setting makes Cusco prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.
 
-2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on waste management. An initial workshop at the National University of St. Anthony the Abbot introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
+2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on waste management. An initial workshop at the Universidad Nacional San Antonio Abad (National University of St. Anthony the Abbot) introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
 
 ### Goals
 
@@ -79,24 +79,18 @@ The goal of this project is to map waste management issues and identify solution
 - &bull;  The project facilitates the establishment of composting sites and programs in the neighborhood.  
 - &bull;  This base line information provides the basis for conducting analysis on urban flows for improved city design and management.
 
-
 ### Partners
 
-- [Universidad Alas Peruanas](http://www.uap.edu.pe/)
 - [Cusco Bureau of Land Management](http://www.regioncusco.gob.pe/)
 - [MINAM](http://www.minam.gob.pe/)
 - [PREDES](http://www.predes.org.pe/)
 - [Field Papers](http://fieldpapers.org/)
 - [British Columbia Institute of Technology](http://www.bcit.ca/)
 
-### Workshop Materials
-
-[insert text]
-
 ### Upcoming Events
 
 ##### Ecocity Focus Lab, November 7, Vancouver
-2C Cusco will share their findings and conclusions from data and assessments on San Pedro's ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Santos Mera and the 2C interns from Universidad Alas Peruanas will make the presentation. (location: British Colombia Institute of Technology, City of Vancouver) 
+2C Cusco will share their findings and conclusions from data and assessments on San Pedro's ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Santos Mera and the 2C interns will make the presentation. (location: British Colombia Institute of Technology, City of Vancouver) 
 
 
 

@@ -331,14 +331,15 @@ var bottomText = L.divIcon({
 
 var cuscoIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="img-div"><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></div>'
+    html: '<a href="/SecondaryCities2/cusco"><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
 });
+    
 // you can set .my-div-icon styles in CSS
 
 cuscoMarker = L.marker([-13.51845,-71.97752], {icon: cuscoIcon}).addTo(map);
 
-cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br><p>Cusco city page is coming soon</p>');
+cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco">');
 
 cuscoMarker.on('mouseover', function (e) {
             this.openPopup();

@@ -86,10 +86,6 @@ The 2C Medellín project is developing methods for mapping local geospatial know
 - [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
 - [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
 
-### Workshop Materials
-
-[insert text]
-
 ### Upcoming Events
 
 ##### Low Carbon City, October 11, Medellin
