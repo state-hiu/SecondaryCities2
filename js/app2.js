@@ -657,6 +657,7 @@ $(document).foundation();
           });
           //if no items are visible in the legend
           if (itemsVisible == 0){
+              console.log("legend must be removed");
               report.removeLegend();
           }
         } else {
@@ -1074,7 +1075,7 @@ $(document).foundation();
 
     removeLegend: function(mapId){
       //$('.map-legend .report-legend[data-id="' + mapId + '"]').remove();
-      $(".map-legends").remove();
+      $(".map-legends-container").remove();
     },
 
     hideLegendItem: function(mapId){
