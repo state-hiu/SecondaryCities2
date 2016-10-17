@@ -365,6 +365,7 @@ figcaption {
 }
 #map.sidebarred {
     width: calc(100% - 450px);
+    height: 90%;
 }
 #map {
     background-color: #333;
@@ -490,7 +491,8 @@ figcaption {
 }
 
 .map-legends {
-  max-height: 665px;
+  max-height: 600px;
+  margin-top: 10px;
   overflow: scroll;
   background: #fff;
   border-radius: 3px;
@@ -509,4 +511,6 @@ figcaption {
 #legend-text {
   margin-left: 10px;
 }
+
+
 
