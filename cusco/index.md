@@ -69,7 +69,9 @@ sections:
 
 Cusco is the capital of the Cusco region in southern Peru.  The City of Cusco has a population of 118,000 (2015) with informal community developments on the city periphery.  As the ancient Incan capital and a UNESCO World Heritage Site, the city experiences a high volume of tourist visits.  Its topographic setting makes Cusco prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.
 
-2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on waste management. An initial workshop at the Universidad Nacional San Antonio Abad (National University of St. Anthony the Abbot) introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
+2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on waste management.  An initial workshop at the Universidad Nacional San Antonio Abad (National University of St. Anthony the Abbot) introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
+
+The US Embassy has facilitated partnerships between city, NGOs, and universities for the 2C projects.  The Embassy has been instrumental in laying the groundwork for the successful implementation of Secondary Cities projects.
 
 ### Goals
 
