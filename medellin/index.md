@@ -69,7 +69,7 @@ sections:
 
 Medellín is the second-largest city in Colombia (2.44 million, 2014) and is the capital of the department of Antioquia.  Surrounded by 9 other major cities, Medellín is part of the second-largest urban agglomeration in Colombia in terms of both population and economy.  It is experiencing rapid change, increasing population, and unplanned development.
 
-The 2C Medellín project is similar to 2C Cusco, focusing on mapping critical issues in neighborhoods.  Focusing on one neighborhood, 2C partner Ecocity Builders has introduced a process for mapping and analysis examining waste management and recycling. This approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
+The 2C Medellín project is similar to 2C Cusco, focusing on urban flow and waste management.  Focusing on one neighborhood, 2C partner Ecocity Builders has introduced a process for mapping and analysis examining waste management and recycling. This approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
 
 ### Goals
 

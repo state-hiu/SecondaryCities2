@@ -91,9 +91,10 @@
 }
 
 #label-esmeraldas {
-    margin-left: 15px;
-    margin-top: -2px;
-    text-align: left;
+    margin-left: -108px;
+    margin-top: -17px;
+    text-align: right;
+    width: 105px;
 }
 
 #label-pokhara {
@@ -158,7 +159,7 @@ var map = L.mapbox.map('map', '', {
     touchZoom: false,
     doubleClickZoom: false,
     boxZoom: false
-  }).setView([18, 24], 2);
+  }).setView([18, 18], 2);
 
 } else {
 
@@ -169,7 +170,7 @@ var map = L.mapbox.map('map', '', {
     touchZoom: false,
     doubleClickZoom: false,
     boxZoom: false
-  }).setView([18, 22], 3);
+  }).setView([18, 18], 3);
 
 }
 
@@ -368,7 +369,7 @@ var mekelleIcon = L.divIcon({
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
-mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br>');
+mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/mekelle2.png" class="img-popup" alt="Mekelle"></br>coming soon');
 
 mekelleMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -409,8 +410,8 @@ pokharaMarker.on('mouseout', function (e) {
 
 var esmeraldasIcon = L.divIcon({
     className: 'city-icon',
-    html: '<div class="img-div"><a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a></div>'
+    html: '<a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a>'
 });
 
 esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);

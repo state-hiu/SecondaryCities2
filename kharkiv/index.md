@@ -106,7 +106,7 @@ sections:
 
 Kharkiv is the administrative capital of Kharkiv Oblast and has a population of 1.451 million people (2014), the second largest city in Ukraine. It is a center of excellence for educational and scientific advancement.  Located approximately 40 kilometers from the Russian border, Kharkiv continues to be influenced by its proximity to Russia.  The ongoing border conflict provides the context from which to examine human geography data needs focusing on vulnerable populations. 
 
-The 2C Kharkiv project focuses on the development of geospatial data related to safety and access. Data are being collected for vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.  A series of workshops have utilized open source tools for data generation and the Esri ArcGIS Online platform for data dissemination and analysis.
+The 2C Kharkiv project focuses on the development of geospatial data related to safety and accessibility. Data are being collected for vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.  A series of workshops have utilized open source tools for data generation and the Esri ArcGIS Online platform for data dissemination and analysis.
 
 ### Goals
 
