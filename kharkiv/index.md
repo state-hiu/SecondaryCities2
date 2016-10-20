@@ -8,6 +8,7 @@ data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
+imageurl: '/img/kharkiv/LopanStrelkaKharkov.jpg'
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=kharkiv'
 tweet_text: 'Check out the new 2C Kharkiv map data collected to help vulnerable populations %23Kharkiv %232CKharkiv %23SecondaryCities http://secondarycities.state.gov/kharkiv'
 esri_story: true
