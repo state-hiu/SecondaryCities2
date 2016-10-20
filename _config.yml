@@ -17,6 +17,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: stateHIU
 github_username:  state-hiu
 #facebook_username: StartBootstrap
+imageurl: 'http://secondarycities.state.gov/img/logos/2C_LogoWhiteOnBlue_twitter2.png'
 e-mail_address: HIU_INFO@state.gov
 
 # Build settings
