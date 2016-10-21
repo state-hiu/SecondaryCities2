@@ -22,7 +22,7 @@ $(document).foundation();
         minZoom: 4,
         maxZoom: 16,
         scrollWheelZoom: true,
-        attribution: '<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>',
+        attribution: '<a href="' + pageConfig.source_url + '" target="_blank">' + pageConfig.source_name + '</a>' + ', Names and boundary representation are not necessarily authoritative',
         zoomControl: false // we'll add later
       }).addTo(report.map);
 
