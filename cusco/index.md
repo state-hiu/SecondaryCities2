@@ -9,7 +9,8 @@ banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=cusco'
-tweet_text: 'sample tweet text %23SecondaryCities'
+imageurl: '/img/cusco/cusco_plaza_de_armas.png'
+tweet_text: '2C Cusco works on community-driven mapping and data collection at the neighborhood scale. %23SecondaryCities'
 esri_story: true
 esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=32901d0be6fa4afb8dab5dba01b8d4ff'
 
