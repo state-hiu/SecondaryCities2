@@ -182,7 +182,7 @@ section {
                  {% if page.api_url %}api_url: '{{page.api_url}}',{% endif %}
                  {% if page.data_source_url %}esri_story_url: '{{page.esri_story_url}}',{% endif %}
                  {% if page.tweet_text %}tweet_text: '{{page.tweet_text}}',{% endif %}
-                 fb_site: '{{site.baseurl}}' + '{{page.url}}',
+                 fb_site: 'http://secondarycities.state.gov/{{page.url}}',
                  tileOrigins: {
                    {% for origin in page.tileOrigins %}
                      '{{origin.name}}':'{{origin.url}}'{% unless forloop.last %},{% endunless %}
