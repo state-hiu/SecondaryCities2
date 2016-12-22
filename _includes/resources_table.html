@@ -79,16 +79,13 @@ ul a, a.active, a:active, a:focus, a:hover {
                   </div>
 
                   <div id="bibliography" class="tab-pane ">
-                    {% for product in site.categories.resources %}
-                      {% if product.id == "bibliography" %}
-                        {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
-                        {% if thecycle == 'odd' %}
-                          {% include main/listitem_product.html odd=true %}
-                        {% else %}
-                          {% include main/listitem_product.html odd=false %}
-                        {% endif %}
-                      {% endif %}
-                    {% endfor %}
+
+                    
+
+                    <div style="text-align:center;">
+    <a href="https://www.zotero.org/groups/secondary_cities/items"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button></a>
+</div>
+
                   </div>
 
                 
