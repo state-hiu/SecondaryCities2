@@ -90,6 +90,12 @@
     text-align: left;
 }
 
+#label-douala {
+    margin-left: 16px;
+    margin-top: -2px;
+    text-align: left;
+}
+
 #label-esmeraldas {
     margin-left: -108px;
     margin-top: -17px;
@@ -97,8 +103,21 @@
     width: 105px;
 }
 
+#label-port_harcourt {
+    margin-left: -108px;
+    margin-top: -8px;
+    text-align: right;
+    width: 105px;
+}
+
 #label-pokhara {
     margin-left: 17px;
+    margin-top: -52px;
+    text-align: left;
+}
+
+#label-santiago {
+    margin-left: 18px;
     margin-top: -52px;
     text-align: left;
 }
@@ -359,13 +378,85 @@ medellinMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+
+
+var doualaIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-douala" >Douala <span id="country">Cameroon</span></span>'
+});
+
+doualaMarker = L.marker([4.0494,9.7342], {icon: doualaIcon}).addTo(map);
+
+doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>coming soon');
+
+doualaMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+doualaMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+var port_harcourtIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-port_harcourt" >Port Harcourt <span id="country">Nigeria</span></span>'
+});
+
+port_harcourtMarker = L.marker([4.8009,7.0278], {icon: port_harcourtIcon}).addTo(map);
+
+port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>coming soon');
+
+port_harcourtMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+port_harcourtMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+var santiagoIcon = L.divIcon({
+    className: 'city-icon',
+    html: '<div class="circleBase type1"></div>'+
+              '<span class="label-span" id="label-santiago" >Santiago <span id="country">Dominican Republic</span></span>'
+});
+
+santiagoMarker = L.marker([19.4523,-70.6888], {icon: santiagoIcon}).addTo(map);
+
+santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>coming soon');
+
+santiagoMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+
+santiagoMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
 var mekelleIcon = L.divIcon({
     className: 'city-icon',
     html: '<div class="circleBase type1"></div>'+
               '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
 });
-
-
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
@@ -383,6 +474,7 @@ mekelleMarker.on('mouseout', function (e) {
             this.closePopup();
             $( ".leaflet-popup-close-button" ).show();
         });
+
 
 var pokharaIcon = L.divIcon({
     className: 'city-icon',
