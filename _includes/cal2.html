@@ -218,6 +218,8 @@ $(document).ready(function() {
 },
 aspectRatio: 2,
     eventClick:  function(event, jsEvent, view) {
+        //clears any existing value
+        $("#eventInfo").empty();
         //set the values and open the modal
         $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
         $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
