@@ -1,0 +1,190 @@
+---
+layout: basic
+---
+
+{% for section in page.sections %}
+  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+
+  {% if thecycle == 'odd' %}
+    {% if forloop.first %}
+      <section class="data" id="about">
+    {% else %}
+      <section class="data" id="about" style="padding-top: 50px;">
+    {% endif %}
+  {% else %}
+  <section class="success" id="about" style="padding-top: 50px;">
+  {% endif %}
+
+        <div class="row">
+          <div class="col-lg-12 text-center">
+              {% if forloop.first %}
+                <h3> {{page.title}} </h3>
+                <div class="mvs">
+                  {% if page.author %}
+                    <div class="small"><strong>By {{page.author}}</strong></div>
+                  {% endif %}
+                  {% if page.date %}
+                    <div class="small serif" style="font-size:18px">{{page.date | date: '%B %d, %Y' }}</div>
+                  {% endif %}
+
+                    </div>
+
+                    <div class="col-lg-12 text-center" style="padding-top: 55px">
+
+                      {% if page.page-num  > 1 %}
+
+                            <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-left"></i> Previous Page</button></a>
+
+                            {% if page.final-page == false %}
+
+                              <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
+
+                            {% endif %}
+
+                      {% endif %}
+
+                      {% if page.page-num  == 1 %}
+                        {% if page.final-page == false %}
+                          
+
+                            <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
+
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                {% endif %}
+              </div>
+            </div>
+        <br>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                  {% if section.title %}<h4 style="text-transform: none;">{{ section.title }}</h4>{% endif %}
+                    <hr class="star-primary2" style="border-width:3px">
+                
+
+                    <!-- display section banner_image.
+                         If first section and there is no section banner_image specified, default to page banner_image -->
+                    {% if section.banner_image %}
+                      <figure>
+                        <figcaption style="text-transform: none;">{{section.banner_image_caption}}</figcaption>
+                        <img src="{{section.banner_image}}" alt="banner image">
+                        <figcaption><strong>Credit </strong>{{section.banner_image_source}}</figcaption>
+                      </figure>
+                      <br>
+
+                    {% endif %}
+
+                    {% if section.banner_video %}
+
+                    <div style="width:640px;margin:auto">
+                      <div style="text-align:left"><h6 style="text-transform: none;">{{ section.banner_video_caption }}</h6></div>
+                      {{ section.banner_video }}
+                      <br>
+                    </div>
+                    <br>
+
+                    {% endif %}
+
+                    {% if section.banner_slides %}
+
+                    <div style="width:640px;margin:auto">
+                      <div style="text-align:left"><h6 style="text-transform: none;">{{ section.banner_slides_caption }}</h6></div>
+                      {{ section.banner_slides }}
+                      <br>
+                    </div>
+
+                    {% endif %}
+
+                    {% if section.body_title %}
+
+                    <h5 style="width:640px;margin:auto">
+                      {{ section.body_title }}
+                      <br>
+                    </h5>
+
+                    {% endif %}
+
+                    {% if section.body %}
+
+                    <div style="text-align:justify;">
+
+                    {{ section.body | markdownify }}
+
+                    </div>
+
+                    {% endif %}
+
+              </div>
+            </div>
+
+    {% if forloop.last %}
+
+<div class="col-lg-12 text-center" style="padding-top: 55px">
+
+{% if page.page-num  > 1 %}
+
+      <a href="{{ page.previous-page-url }}"><button type="button" class="btn btn-default2" style="font-size:18px"><i class="fa fa-arrow-left"></i> Previous Page</button></a>
+
+      {% if page.final-page == false %}
+
+        <a class="nextlink" id="nextlink"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
+
+        <script type="text/javascript">
+
+            var str = "{{ site.baseurl }}{{ page.url}}";
+
+            //http://stackoverflow.com/questions/9781245/how-to-increment-number-in-string-using-javascript-or-jquery
+            var nextPageURL = str.replace(/(\d+)(?!.*(\d+))/, function(match, number) {
+             return parseInt(number)+1;
+            });
+
+            console.log(str);
+
+            console.log("{{ page.page-num }}");
+
+            console.log(nextPageURL);
+
+            //document.getElementById("nextlink").setAttribute("href",nextPageURL);
+
+            var list, index;
+            list = document.getElementsByClassName("nextlink");
+            for (index = 0; index < list.length; ++index) {
+                list[index].setAttribute("href",nextPageURL);
+            }
+
+        </script>
+
+      {% endif %}
+
+{% endif %}
+
+{% if page.page-num  == 1 %}
+
+
+{% if page.final-page == false %}
+  
+
+    <a href="{{ site.baseurl }}{{ page.url | replace: '.html', '-page-' }}{{ page.page-num | plus:1 }}.html"><button type="button" class="btn btn-default2" style="font-size:18px"> Next Page <i class="fa fa-arrow-right"></i></button></a>
+
+{% endif %}
+{% endif %}
+
+</div>
+
+  {% endif %}
+
+  </section>
+
+
+
+{% endfor %}
+
+
+
+
+
+
+

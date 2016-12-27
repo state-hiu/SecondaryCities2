@@ -46,7 +46,7 @@ ul a, a.active, a:active, a:focus, a:hover {
 
                 <ul class="nav nav-tabs" style="padding: 10px 10px 0px 10px;">
                   <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
-                  <li><a href="#events" data-toggle="tab">events</a></li>
+                  <li><a href="#products" data-toggle="tab">products</a></li>
                   <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
                   <li><a href="#ethics" data-toggle="tab">ethics</a></li>
                 </ul>
@@ -66,7 +66,7 @@ ul a, a.active, a:active, a:focus, a:hover {
                     {% endfor %}
                   </div>
 
-                  <div id="events" class="tab-pane ">
+                  <div id="products" class="tab-pane ">
                     {% for product in site.categories.resources %}
                       {% if product.id == "events" %}
                         {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
