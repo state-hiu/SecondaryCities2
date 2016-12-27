@@ -12,7 +12,7 @@ api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__i
 imageurl: '/img/cusco/cusco_plaza_de_armas.png'
 tweet_text: '2C Cusco works on community-driven mapping and data collection at the neighborhood scale. %23SecondaryCities'
 esri_story: true
-esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=32901d0be6fa4afb8dab5dba01b8d4ff'
+esri_story_url: 'https://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=32901d0be6fa4afb8dab5dba01b8d4ff'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.

@@ -12,7 +12,7 @@ api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__i
 imageurl: '/img/medellin/medellin_hillside.png'
 tweet_text: 'The 2C Medellín project focuses on urban flow and waste management %23SecondaryCities'
 esri_story: true
-esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=28634f58a83e487591e52af1ffaf3937'
+esri_story_url: 'https://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=28634f58a83e487591e52af1ffaf3937'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.

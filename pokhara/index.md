@@ -12,7 +12,7 @@ imageurl: '/img/pokhara/mountains.jpg'
 api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara'
 tweet_text: '2C Pokhara is devising methods for comprehensive data generation focusing on emergency preparedness %23SecondaryCities'
 esri_story: true
-esri_story_url: 'http://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f10d43bc53dd4fe594c65ae10072dce2'
+esri_story_url: 'https://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f10d43bc53dd4fe594c65ae10072dce2'
 
 footer: |
         This report is an entirely fictional example case study intended to demonstrate report editing capabilities.
