@@ -45,14 +45,15 @@ ul a, a.active, a:active, a:focus, a:hover {
                 <div><h4 class="page-title" style="text-transform: none;">The Resources page is broken down by resources found in workshops, events, and the bibliography</h4></div>
 
                 <ul class="nav nav-tabs" style="padding: 10px 10px 0px 10px;">
-                  <li class="active"><a href="#workshops" data-toggle="tab">workshops ({{ count_workshops }})</a></li>
-                  <li><a href="#events" data-toggle="tab">events ({{ count_events }})</a></li>
-                  <li><a href="#bibliography" data-toggle="tab">bibliography ({{ count_bibliography }})</a></li>
+                  <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
+                  <li><a href="#events" data-toggle="tab">events</a></li>
+                  <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
+                  <li><a href="#ethics" data-toggle="tab">ethics</a></li>
                 </ul>
 
                 <div class="tab-content" style="padding: 10px;">
 
-                   <div id="workshops" class="tab-pane ">
+                   <div id="workshop" class="tab-pane ">
                     {% for product in site.categories.resources %}
                       {% if product.id == "workshops" %}
                         {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
@@ -80,12 +81,21 @@ ul a, a.active, a:active, a:focus, a:hover {
 
                   <div id="bibliography" class="tab-pane ">
 
-                    
-
+<!--
                     <div style="text-align:center;">
-    <a href="https://www.zotero.org/groups/secondary_cities/items"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button></a>
-</div>
+                        <a href="https://www.zotero.org/groups/secondary_cities/items">
+                            <button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button>
+                        </a>
+                    </div>
+-->
+                    <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "95%">
+</iframe>
 
+                  </div>
+
+                  <div id="ethics" class="tab-pane ">
+                    GIS code of ethics from <a href="https://www.gisci.org/Portals/0/Ethics/CodeOfEthics_PR.pdf">GISCI</a> and <a href="http://www.urisa.org/clientuploads/directory/Documents/CodeofEthics.pdf">URISA</a>.
+This Code of Ethics is intended to provide guidelines for GIS (geographic information system) professionals. It should help professionals make appropriate and ethical choices. It should provide a basis for evaluating their work from an ethical point of view. By heeding this code, GIS professionals will help to preserve and enhance public trust in the discipline.
                   </div>
 
                 
