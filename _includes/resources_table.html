@@ -2,12 +2,39 @@
 
 <style>
 
-ul a, a.active, a:active, a:focus, a:hover {
+header ul a,header a.active,header a:active,header a:focus, header a:hover {
         color: #7B533F;
 }
 
 li {
   list-style-type: none;
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.post-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-size: 18px;
+    font-size: 2.1rem;
+    line-height: 1.33333;
+    margin-bottom: 0;
+}
+
+.post-list li:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.post-list a {
+    text-decoration: none;
+    color: #222;
 }
 
 .entry-tags {
@@ -24,36 +51,9 @@ li {
 .entry-tags a {
     padding: .2em .4em;
     margin: 0 .2em;
-    background-color: #9DAED5;
+    background-color: #202d3b;
     color: #fff;
     border-radius: 5px;
-}
-
-.post-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.post-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    font-size: 18px;
-    font-size: 1.125rem;
-    line-height: 1.33333;
-    margin-bottom: 0;
-}
-
-.post-list li:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.post-list a {
-    text-decoration: none;
-    color: #222;
 }
 
 @media screen and (min-width: 48em)
@@ -62,8 +62,8 @@ li {
 }
 
 .post-list .entry-date {
-    font-size: 14px;
-    font-size: .875rem;
+    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.71429;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -111,7 +111,7 @@ li {
 
 
 <header>
-    <div class="container" style="padding-top:120px;padding-bottom:80px;">
+    <div class="container" style="padding-top:120px;padding-bottom:10px;">
         <div class="row">
             <div class="col-lg-12">
 
@@ -120,7 +120,9 @@ li {
                     <hr class="star-primary2">
                 </div>
 
-                <div><h4 class="page-title" style="text-transform: none;">The Resources page is broken down by resources found in workshops, products, and the bibliography</h4></div>
+                <div>
+                    <h4 class="page-title" style="text-transform: none;">The Resources page is broken down by resources found in workshops, products, bibliography, and ethics</h4>
+                </div>
 
                 <ul class="nav nav-tabs" style="padding: 10px 10px 0px 10px;">
                   <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
@@ -128,8 +130,15 @@ li {
                   <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
                   <li><a href="#ethics" data-toggle="tab">ethics</a></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container" style="padding-top:10px;padding-bottom:80px;">
+    <div class="row">
+        <div class="col-lg-12">
 
-                <div class="tab-content" style="padding: 10px;">
+            <div class="tab-content" style="padding: 10px;">
 
                   <div id="workshops" class="tab-pane active">
                       <ul class="post-list" data-search-results>
@@ -170,17 +179,15 @@ li {
                   </div>
 
                   <div id="bibliography" class="tab-pane ">
-
-<!--
-                    <div style="text-align:center;">
-                        <a href="https://www.zotero.org/groups/secondary_cities/items">
-                            <button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button>
-                        </a>
-                    </div>
--->
-                    <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "95%">
+                        <!--
+                        <div style="text-align:center;">
+                            <a href="https://www.zotero.org/groups/secondary_cities/items">
+                                <button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button>
+                            </a>
+                        </div>
+                        -->
+                        <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "95%">
 </iframe>
-
                   </div>
 
                   <div id="ethics" class="tab-pane ">
@@ -188,8 +195,8 @@ li {
 This Code of Ethics is intended to provide guidelines for GIS (geographic information system) professionals. It should help professionals make appropriate and ethical choices. It should provide a basis for evaluating their work from an ethical point of view. By heeding this code, GIS professionals will help to preserve and enhance public trust in the discipline.
                   </div>
 
-                
-                </div>
+            
+            </div>
         </div>
     </div>
-</header>
+</div>
