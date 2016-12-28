@@ -150,7 +150,12 @@ li {
 
                            <li>
                             <article>
-                                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.abstract %} <span class="abstract">{{ post.abstract }}</span>{% endif %}</a>
+                                {% if post.external_url %}
+                                    <a href="{{ post.external_url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.abstract %} <span class="abstract">{{ post.abstract }}</span>{% endif %}</a>
+                                {% else %}
+                                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.abstract %} <span class="abstract">{{ post.abstract }}</span>{% endif %}</a>
+                                {% endif %}
+
                                 <span class="entry-tags">
                                     {% if post.tags %}
                                         {% for tag in post.tags %}
