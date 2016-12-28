@@ -4,19 +4,131 @@
     <title>Secondary Cities</title>
     <description>Resiliency - Human Security - Emergency Preparedness
 </description>
-    <link>http://yourdomain.com/SecondaryCities2/</link>
-    <atom:link href="http://yourdomain.com/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 20:52:25 +0100</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 20:52:25 +0100</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <link>http://localhost:4000/SecondaryCities2/</link>
+    <atom:link href="http://localhost:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 28 Dec 2016 01:34:43 -0500</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 01:34:43 -0500</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Field Data Collection Training</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        <category>field papers</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Field Papers One Pager</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        <category>field papers</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Survey123 Frequently Asked Questions</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        <category>data collection</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Using Survey123 1-pager</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/using_survey123.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/using_survey123.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        <category>data collection</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Kharkiv Workshop Data Collection Features &amp; Attributes</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/data-collection.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/data-collection.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        <category>data collection</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Accessing Existing Geospatial Data for Kharkiv</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/resources/accessing_geospatial_data.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/accessing_geospatial_data.html</guid>
+        
+        <category>kharkiv</category>
+        
+        <category>AAG</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
     
       <item>
         <title>Dynamic Mapping of Secondary Cities Symposium</title>
         <description>
 </description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-9.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-9.html</guid>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</guid>
         
         <category>event</category>
         
@@ -29,9 +141,9 @@
         <title>Dynamic Mapping of Secondary Cities Symposium</title>
         <description>
 </description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-8.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-8.html</guid>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-8.html</guid>
         
         <category>event</category>
         
@@ -44,9 +156,9 @@
         <title>Dynamic Mapping of Secondary Cities Symposium</title>
         <description>
 </description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-7.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-7.html</guid>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-7.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-7.html</guid>
         
         <category>event</category>
         
@@ -59,130 +171,9 @@
         <title>Dynamic Mapping of Secondary Cities Symposium</title>
         <description>
 </description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-6.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-6.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-10.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-10.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>&lt;div style=&quot;text-align:center;&quot;&gt;
-    &lt;a href=&quot;/SecondaryCities2/resources/events/dynamic_mapping_secondary_cities_symposium_program.pdf&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default2&quot; style=&quot;font-size:16px;padding:6px;margin-top:6px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Symposium Program&lt;/button&gt;&lt;/a&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div&gt;
-Secondary Cities in the developing world are rapidly growing urban areas that are regional hubs for commerce, services, and governance in developing countries that often do not have adequate planning mechanisms for future development and growth. This symposium will focus on the foremost data collection tools and technologies used to map urbanization in such cities. It is part of the Secondary Cities initiative, a global collaboration of universities and organizations supported by the Humanitarian Information Unit of the Office of the Geographer of the State Department.
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align:center;margin-left: 140px;&quot;&gt;
-    &lt;div style=&quot;display: inline-block; text-align: left&quot;&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 1: Welcome Address and Dr. Sandy Pentland Keynote&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-2.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 2: Tools &amp;amp; Technologies: ikeGPS and CartoDB&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-3.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 3:  Tools &amp;amp; Technologies: GeoNode and KoBo Toolbox&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-4.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 4: Tools &amp;amp; Technologies: Esri and Geographic Futures&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-5.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 5:  Tools &amp;amp; Technologies: WorldMap and Field Papers&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-6.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 6: Overview &amp;amp; Orientation and Dr. Lee Schwartz Keynote&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-7.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 7: Panel I – Why map secondary cities?&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-8.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 8: Panel II – Case Studies&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-9.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 9: Tools &amp;amp; Technologies Applied in Humanitarian Aid, India, and Africa&lt;/button&gt;&lt;/a&gt;
-        &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp-page-10.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 10: Panel III – Solutions, Lessons Learned and Next Steps&lt;/button&gt;&lt;/a&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-5.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-5.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-4.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-4.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-3.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-3.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-2.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/dynamic-map-symp-page-2.html</guid>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-6.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-6.html</guid>
         
         <category>event</category>
         
