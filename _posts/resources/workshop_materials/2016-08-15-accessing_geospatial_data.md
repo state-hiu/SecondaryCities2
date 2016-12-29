@@ -11,6 +11,9 @@ external_url: 'http://secondarycities.geonode.state.gov/documents/425'
 tags:
   - kharkiv
   - AAG
+  - 'data sharing'
+  - English
+  - slides
 sections:
 
 ---

@@ -309,7 +309,7 @@ for (var key in counts) {
     console.log('testing url encode: ');
     console.log(encodeURIComponent(key));
     tag_hash = encodeURIComponent(key);
-    tag_hash = tag_hash.replace("%20", "+");
+    tag_hash = tag_hash.replace(/%20/g, "+");
     console.log(tag_hash);
     $('.tag-box').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts[key]+"</span></a></li>");
 }

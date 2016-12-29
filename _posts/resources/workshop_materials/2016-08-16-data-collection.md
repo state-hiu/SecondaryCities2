@@ -11,7 +11,9 @@ external_url: 'http://secondarycities.geonode.state.gov/documents/424'
 tags:
   - kharkiv
   - AAG
-  - 'data collection'
+  - 'field data collection'
+  - English
+  - slides
 sections:
 
 ---
