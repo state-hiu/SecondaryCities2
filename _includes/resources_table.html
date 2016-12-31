@@ -198,6 +198,7 @@ li {
                 <ul class="nav nav-tabs" style="padding: 10px 10px 0px 10px;">
                   <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
                   <li><a href="#products" data-toggle="tab">products</a></li>
+                  <li><a href="#tools" data-toggle="tab">tools</a></li>
                   <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
                   <li><a href="#ethics" data-toggle="tab">ethics</a></li>
                 </ul>
@@ -266,8 +267,24 @@ li {
                     {% endfor %}
                   </div>
 
+                  <div id="tools" class="tab-pane ">
+                    {% for product in site.categories.resources %}
+                      {% if product.id == "events" %}
+                        {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
+                        {% if thecycle == 'odd' %}
+                          {% include main/listitem_product.html odd=true %}
+                        {% else %}
+                          {% include main/listitem_product.html odd=false %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+
+                    <iframe src="https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml?gid=531126027&single=true&widget=true&headers=false" align="center" height = "600px" width = "98%"></iframe>
+
+                  </div>
+
                   <div id="bibliography" class="tab-pane ">
-The Secondary Cities team manages their bibliography using the Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.
+<strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.</strong>
 </p>
 
 <!--
@@ -278,7 +295,7 @@ The Secondary Cities team manages their bibliography using the Zotero platfrom. 
                         </div>
 -->
 
-                        <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "95%">
+                        <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%">
 </iframe>
                   </div>
 
