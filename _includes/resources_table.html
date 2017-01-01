@@ -148,19 +148,23 @@ li {
 {% endfor %}
 
 <script>
+
+    //defining vars globally
+    var vars;
+
     $(window).on('hashchange',function(){ 
         console.log('printing hash slice');
         console.log(location.hash.slice(1));
         //console.log(location.hash.slice(2));
         //$('#tag-cloud').text(location.hash.slice(1));
 
-        var vars = location.hash.slice(1).split('#');
+        vars = location.hash.slice(1).split('#');
 
         //removing tab_workshops from array
         var index = vars.indexOf('tab_workshops');
         vars.splice(index, 1);
 
-        console.log('printing vars: ');
+        console.log('printing vars1: ');
         console.log(vars);
         
         $(".entry-tags a").removeAttr('style');
@@ -173,16 +177,16 @@ li {
             //in case double-clicking on a button reset list and changed the url hash to tab_workshops
             //you need to re-build all the correct hashes for the buttons
             $("a[href$='tab_workshops']").attr('href', function() {
-                console.log('testing returned href that need hash added back in: ');
-                console.log(this.href);
-                console.log(this.pathname);
+                //console.log('testing returned href that need hash added back in: ');
+                //console.log(this.href);
+                //console.log(this.pathname);
                 return this.pathname +'#tab_workshops#'+ this.id;
             });
         }
 
-        console.log('testing show');
+        //console.log('testing show');
         //http://api.jquery.com/attribute-ends-with-selector/
-        console.log($("a[href$='AAG']"));
+        //console.log($("a[href$='AAG']"));
 
         //shows any entry that has a tag matches
         //$("a[href$='"+location.hash.slice(1)+"']").parents('li').show();
@@ -194,28 +198,28 @@ li {
 
         //loop through each li parent in post-list
         $( ".post-list li" ).each(function() {
-            console.log('looping through parents: ');
+            //console.log('looping through parents: ');
             entry_tags_array = $( this ).find( ".entry-tags a" );
 
-            console.log('printing tag id array: ');
-            console.log(entry_tags_array);
+            //console.log('printing tag id array: ');
+            //console.log(entry_tags_array);
 
             var myTags = [];
             entry_tags_array.each(function(){
               myTags.push($(this).attr('id'));
             });
 
-            console.log('printing tag id array2: ');
-            console.log(myTags);
+            //console.log('printing tag id array2: ');
+            //console.log(myTags);
 
             var show_parent = true;
 
             for (var i = 0; i < vars.length; i++) {
-                console.log('vars val');
-                console.log(vars[i]);
+                //console.log('vars val');
+                //console.log(vars[i]);
                 if (myTags.indexOf(vars[i]) === -1) {
                   // element doesn't exist in array
-                  console.log('breaking array');
+                  //console.log('breaking array');
                   var show_parent = false;
                   break; 
                   //or else continue
@@ -227,14 +231,14 @@ li {
                 }
 */
             
-            console.log('show_parent val');
-            console.log(show_parent);
+            //console.log('show_parent val');
+            //console.log(show_parent);
             if (show_parent == true) {
 
                 //styling for the tags
                 for (var i = 0; i < vars.length; i++) {
-                    console.log('vars val2');
-                    console.log(vars[i]);
+                    //console.log('vars val2');
+                    //console.log(vars[i]);
                     $( this ).find( ".entry-tags a[id='"+vars[i]+"']" ).css( "background-color", "#202d3b" );
                     $( this ).find( ".entry-tags a[id='"+vars[i]+"']" ).css( "color", "#18bc9c" );
                 }
@@ -420,11 +424,12 @@ This Code of Ethics is intended to provide guidelines for GIS (geographic inform
         //console.log('hash! ');
         //console.log(hash);
 
+        //changes the href of each tab to be prefixed by tab_
         if (hash) {
           $('.nav-tabs a[href='+hash.replace(prefix,"")+']').tab('show');
         } 
 
-        // Change hash for page-reload
+        // Changes hash in the address bar for page-reload
         $('.nav-tabs a').on('shown.bs.tab', function (e) {
           window.location.hash = e.target.hash.replace("#", "#" + prefix);
         });
@@ -437,12 +442,64 @@ This Code of Ethics is intended to provide guidelines for GIS (geographic inform
         console.log( $( this ).attr("href") );
         console.log(window.location.pathname+window.location.hash);
 
+        console.log('can I still use the vars list?');
+        console.log(vars);
+
+        console.log('id in vars list?');
+        console.log( $( this ).attr("id") );
+
+        tag_id = $( this ).attr("id")
+
+        if (vars.indexOf(tag_id) > -1) {
+            console.log('tag selected twice');
+            //removing tab_workshops from array
+            var index = vars.indexOf('tag_id');
+            vars.splice(index, 1);
+
+            console.log('print window location hash');
+            console.log( window.location.hash );
+            window.location.hash = window.location.hash.replace("#"+tag_id, "");
+
+            console.log('print window location hash2');
+            console.log( window.location.hash );
+
+            //base_url = window.location.href;
+            //add to url depending on tag clicked
+            //new_url = base_url + window.location.href;
+            console.log('new url2: ');
+            console.log(new_url);
+
+            $( this ).attr("href", window.location.hash)
+
+        } else {
+            console.log('else was selected ');
+            base_url = window.location.href;
+            //add to url depending on tag clicked
+            new_url = base_url + '#' + $( this ).attr("id");
+            console.log('new url: ');
+            console.log(new_url);
+
+            $( this ).attr("href", new_url)
+        }
+
+        console.log('new vars');
+        console.log(vars);
+
+/*
         //if the same tag is clicked twice
         if ($( this ).attr("href") == window.location.pathname+window.location.hash) {
-            console.log('href matches!!');
+          //  console.log('href matches!!');
+
+          
+
+          //if ($( this ).attr("id") is in the hash
 
             //reset url to go back to orginal tab view
-            $( this ).attr("href", "{{ site.baseurl }}/resources/#tab_workshops")
+            //$( this ).attr("href", "{{ site.baseurl }}/resources/#tab_workshops")
+
+            //take away the hash from the url
+
+            window.location.hash = e.target.hash.replace("#", "#" + prefix);
 
             //window.location = '{{ site.baseurl }}/resources/#tab_workshops';
         } else {
@@ -453,8 +510,7 @@ This Code of Ethics is intended to provide guidelines for GIS (geographic inform
             console.log(new_url);
 
             $( this ).attr("href", new_url)
-        }
-
+        }*/
     });
         
 </script>
