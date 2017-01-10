@@ -1,9 +1,6 @@
-<!-- Header -->
-
-<link href="{{site.baseurl}}/assets/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <!-- DATATABLES BOOTSTRAP INTEGRATION CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css">
 
 <style>
 
@@ -130,7 +127,6 @@ li {
 
 </style>
 
-
 {% assign count_workshops = 0 %}
 {% for product in site.categories.resources %}
   {% if product.id == "workshops" %}
@@ -186,7 +182,6 @@ li {
             <div class="tab-content" style="padding: 10px;">
 
                 <div id="workshops" class="tab-pane active">
-
 
 
 <!--used to build site cloud-->
@@ -304,14 +299,6 @@ li {
                     <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.</strong>
 </p>
 
-<!--
-                        <div style="text-align:center;">
-                            <a href="https://www.zotero.org/groups/secondary_cities/items">
-                                <button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Visit the 2C Bibliography Page on <img src="https://www.zotero.org/static/images/theme/zotero.png" width="220px"></button>
-                            </a>
-                        </div>
--->
-
                     <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%"></iframe>
                   </div>
 
@@ -323,7 +310,6 @@ li {
                     <a class="main-hyperlink" href="http://www.urisa.org/clientuploads/directory/Documents/CodeofEthics.pdf">URISA  Ethics Document</a>
                   </div>
 
-            
             </div>
         </div>
     </div>
@@ -351,22 +337,6 @@ $( document ).ready(function() {
       window.location.hash = e.target.hash.replace("#", "#" + prefix);
     });
 
-
-    var table = $('#demo').DataTable( {
-        "scrollY": "200px",
-        "paging": false
-    } );
- 
-    $('a.toggle-vis').on( 'click', function (e) {
-        e.preventDefault();
- 
-        // Get the column API object
-        var column = table.column( $(this).attr('data-column') );
- 
-        // Toggle the visibility
-        column.visible( ! column.visible() );
-    } );
-
 });
 
     //building tag cloud
@@ -393,9 +363,6 @@ $( document ).ready(function() {
         console.log(tag_hash);
         $('.tag-box').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts[key]+"</span></a></li>");
     }
-
-
-    
 
 </script>
 
@@ -583,46 +550,33 @@ $( document ).ready(function() {
         
 </script>
 
-<!--<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+<!--Code for Tools Table-->
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<!--JS LIBRARIES-->
 
-<script src='{{site.baseurl}}/assets/js/libs/tabletop-min.js'></script>
+<!--JQUERY, already loaded
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>-->
 
-<script src='{{site.baseurl}}/assets/js/libs/tabletop-feed.js'></script>
+<!--BOOTSTRAP JS, already loaded
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
 
+<!-- DATATABLES -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
 
-<script src="{{site.baseurl}}/assets/js/libs/data-tables-bootstrap.js"></script>
+<!--BOOTSTRAP INTEGRATION JS -->
+<script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
-<script src="{{site.baseurl}}/assets/js/libs/bootstrap-dropdown.js"></script>-->
+<!-- TableTop -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
 
-
-    <!--JS LIBRARIES-->
-
-    <!--JQUERY, already loaded
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>-->
-
-    <!--BOOTSTRAP JS, already loaded
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
-
-    <!-- DATATABLES -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
-
-    <!--BOOTSTRAP INTEGRATION JS -->
-    <script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-
-    <!-- TableTop -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
-
-    <!-- Graphic js code -->
-
+<!-- Graphic js code -->
 
 
 <script type="text/javascript">
 
 //Edit 'key' and 'columns' to connect your spreadsheet
 
-//enter google sheets key here
+//enter google sheets key here, sheet can only have one tab
 var key =
   "https://docs.google.com/spreadsheets/d/1JjE4qiMAYnSaF6IquJZvpda6yGC67qO9RxqpV21SSB0/pubhtml";
 
@@ -708,36 +662,5 @@ $(document).ready(function() {
 });
 //end of writeTable
 
-
 </script>
 
-
-
-
-<!-- end of Graphic js code -->
-
-
-<!--
-<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
--->
-
-<!--
-<script type='text/javascript'>    
-  //var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml';
-
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml';
-
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
-
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
-
-  window.addEventListener('DOMContentLoaded', init)
-</script>
--->
