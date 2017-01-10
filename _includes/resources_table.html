@@ -726,14 +726,8 @@ $( document ).ready(function() {
         myHashChangefunction();
     }
 
-});
 
-    
-</script>
-
-
-<!-- http://stackoverflow.com/questions/7862233/twitter-bootstrap-tabs-go-to-specific-tab-on-page-reload-or-hyperlink -->
-<script>
+    //http://stackoverflow.com/questions/7862233/twitter-bootstrap-tabs-go-to-specific-tab-on-page-reload-or-hyperlink
 
     //when a tag is clicked for an entry
     $( '.entry-tags a,.tag-box a' ).on( "click", function() {
@@ -764,9 +758,9 @@ $( document ).ready(function() {
                 console.log('print window location hash2');
                 console.log( window.location.hash );
 
-                //base_url = window.location.href;
+                base_url = window.location.href;
                 //add to url depending on tag clicked
-                //new_url = base_url + window.location.href;
+                new_url = base_url + window.location.href;
                 console.log('new url2: ');
                 console.log(new_url);
 
@@ -790,7 +784,14 @@ $( document ).ready(function() {
 
     });
         
+
+});
+
+    
 </script>
+
+
+
 
 <!--Code for Tools Table-->
 
