@@ -1,5 +1,10 @@
 <!-- Header -->
 
+<link href="{{site.baseurl}}/assets/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- DATATABLES BOOTSTRAP INTEGRATION CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css">
+
 <style>
 
 header ul a,header a.active,header a:active,header a:focus, header a:hover {
@@ -157,10 +162,11 @@ li {
                     <hr class="star-primary2">
                 </div>
 
+<!--
                 <div>
                     <h4 class="page-title" style="text-transform: none;">The Resources page is broken down by resources found in workshops, products, bibliography, and ethics</h4>
                 </div>
-
+-->
                 <ul class="nav nav-tabs main-hyperlink" style="padding: 10px 10px 0px 10px;">
                   <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
                   <li><a href="#products" data-toggle="tab">maps</a></li>
@@ -259,7 +265,38 @@ li {
                   {% endif %}
                 {% endfor %}
 
+                    <div class="row">
+                        <div class="col-lg-12" style="overflow: scroll;">
+                            <div class="copper" style="cursor:pointer;padding-bottom:10px">
+                                Toggle column: 
+                                <a class="toggle-vis" data-column="0">Name</a> - 
+                                <a class="toggle-vis" data-column="1">Category</a> - 
+                                <a class="toggle-vis" data-column="2">Primary Focus</a> - 
+                                <a class="toggle-vis" data-column="3">Developer</a> - 
+                                <a class="toggle-vis" data-column="4">Licensing</a> - 
+                                <a class="toggle-vis" data-column="5">Cost</a> - 
+                                <a class="toggle-vis" data-column="6">GUI/Coding</a> - 
+                                <a class="toggle-vis" data-column="7">Notes</a> - 
+                                <a class="toggle-vis" data-column="8">Operating System</a> - 
+                                <a class="toggle-vis" data-column="9">Participatory Capabilities</a> - 
+                                <a class="toggle-vis" data-column="10">Platform</a> - 
+                                <a class="toggle-vis" data-column="11">Pricing</a> - 
+                                <a class="toggle-vis" data-column="12">Notes</a> - 
+                                <a class="toggle-vis" data-column="13">Sharing and Privacy</a> - 
+                                <a class="toggle-vis" data-column="14">Spatial Analysis</a> - 
+                                <a class="toggle-vis" data-column="15">Supported Data Types</a> - 
+                                <a class="toggle-vis" data-column="16">System Requirements</a> - 
+                                <a class="toggle-vis" data-column="17">Additional Links</a> - 
+                                <a class="toggle-vis" data-column="18">Usability</a>
+                            </div>
+                            <div id="graphic"></div>
+                        </div>
+                    </div>
+
+
+<!--
                     <iframe src="https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml?gid=531126027&single=true&widget=true&headers=false" align="center" height = "600px" width = "98%"></iframe>
+-->
 
                 </div>
 
@@ -313,6 +350,23 @@ $( document ).ready(function() {
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
       window.location.hash = e.target.hash.replace("#", "#" + prefix);
     });
+
+
+    var table = $('#demo').DataTable( {
+        "scrollY": "200px",
+        "paging": false
+    } );
+ 
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+
 });
 
     //building tag cloud
@@ -339,6 +393,10 @@ $( document ).ready(function() {
         console.log(tag_hash);
         $('.tag-box').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts[key]+"</span></a></li>");
     }
+
+
+    
+
 </script>
 
 <script>
@@ -524,3 +582,162 @@ $( document ).ready(function() {
     });
         
 </script>
+
+<!--<script src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+
+<script src='{{site.baseurl}}/assets/js/libs/tabletop-min.js'></script>
+
+<script src='{{site.baseurl}}/assets/js/libs/tabletop-feed.js'></script>
+
+
+<script src="{{site.baseurl}}/assets/js/libs/data-tables-bootstrap.js"></script>
+
+<script src="{{site.baseurl}}/assets/js/libs/bootstrap-dropdown.js"></script>-->
+
+
+    <!--JS LIBRARIES-->
+
+    <!--JQUERY, already loaded
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>-->
+
+    <!--BOOTSTRAP JS, already loaded
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+
+    <!-- DATATABLES -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <!--BOOTSTRAP INTEGRATION JS -->
+    <script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <!-- TableTop -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
+
+    <!-- Graphic js code -->
+
+
+
+<script type="text/javascript">
+
+//Edit 'key' and 'columns' to connect your spreadsheet
+
+//enter google sheets key here
+var key =
+  "https://docs.google.com/spreadsheets/d/1JjE4qiMAYnSaF6IquJZvpda6yGC67qO9RxqpV21SSB0/pubhtml";
+
+//"data" refers to the column name with no spaces and no capitals
+//punctuation or numbers in your column name
+//"title" is the column name you want to appear in the published table
+var columns = [{
+"data": "Software Tool (click for link)","title": "Name", "width":"80px"},
+{"data": "General Category","title": "Category", "width":"90px"},
+{"data": "Primary Focus","title": "Primary Focus", "width":"90px"},
+{"data": "Developer (click for link)","title": "Developer", "width":"80px"},
+{"data": "Licensing","title": "Licensing", "width":"65px"},
+{"data": "Cost","title": "Cost", "width":"80px"},
+{"data": "GUI/Coding","title": "GUI/Coding", "width":"80px"},
+{"data": "Notes","title": "Notes","width": "300px"},
+{"data": "Operating System","title": "Operating System", "width":"80px"},
+{"data": "Participatory Capabilities","title": "Participatory Capabilities", "width":"80px"},
+{"data": "Platform(s)","title": "Platform", "width":"80px"},
+{"data": "Pricing Details (click for link)","title": "Pricing", "width":"80px"},
+{"data": "RS Classification","title": "Notes", "width":"80px"},
+{"data": "Sharing and Privacy","title": "Sharing and Privacy", "width":"80px"},
+{"data": "Spatial Analysis","title": "Spatial Analysis", "width":"80px"},
+{"data": "Supported Data Types","title": "Supported Data Types", "width":"80px"},
+{"data": "System Requirements","title": "System Requirements", "width":"80px"},
+{"data": "Additional Links","title": "Additional Links", "width":"80px"},
+/*{"data": "Contact (Harvard Symposium)","title": "Contact"},*/
+{"data": "Usability","title": "Usability", "width":"80px"}];
+
+$(document).ready(function() {
+
+
+  function initializeTabletopObject() {
+    Tabletop.init({
+      key: key,
+      callback: function(data, tabletop) {
+        console.log('data: ');
+        console.log(data);
+        writeTable(data); //call up datatables function
+      },
+      simpleSheet: true,
+      debug: false
+    });
+  }
+
+  initializeTabletopObject();
+
+  function writeTable(data) {
+    //select main div and put a table there
+    //use bootstrap css to customize table style: http://getbootstrap.com/css/#tables
+    $('#graphic').html(
+      '<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed table-responsive" id="mySelection" style="table-layout:fixed;"></table>'
+    );
+
+    //initialize the DataTable object and put settings in
+    $("#mySelection").DataTable({
+      "data": data,
+      "autoWidth": false,
+      "columns": columns,
+      "order": [
+        [2, "desc"]
+      ], //order on second column
+      "pagingType": "simple" //no page numbers
+        //uncomment these options to simplify your table
+        //"paging": false,
+        //"searching": false,
+        //"info": false
+    });
+
+    //hides certian columns
+    var table = $('#mySelection').DataTable();
+    table.columns( [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( false, false );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+  }
+});
+//end of writeTable
+
+
+</script>
+
+
+
+
+<!-- end of Graphic js code -->
+
+
+<!--
+<script src='https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js'></script>
+-->
+
+<!--
+<script type='text/javascript'>    
+  //var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml';
+
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data, tabletop) {
+    alert('Successfully processed!')
+    console.log(data);
+  }
+
+  window.addEventListener('DOMContentLoaded', init)
+</script>
+-->
