@@ -354,74 +354,11 @@ li {
 
 <script>
 
-//document ready makes sure bootstrap is loaded first
-$( document ).ready(function() {
-    console.log('doc loc hash');
-    console.log(document.location.hash);
-    // Javascript to enable link to tab
-    var hash = document.location.hash;
-    var prefix = "tab_";
-
-    hash_no_tab = hash.replace(prefix,"");
-
-    if (hash) {
-      $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
-    } 
-
-    // Changes hash in the address bar for page-reload
-    $('.nav-tabs a').on('shown.bs.tab', function (e) {
-      window.location.hash = e.target.hash.replace("#", "#" + prefix);
-    });
-
-});
-
-    //building tag cloud
-    var counts_workshops = {};
-    var counts_products = {};
-
-    site_tags_array_workshops = [{{ site_tags_workshops }}];
-    site_tags_array_products = [{{ site_tags_products }}];
-
-    for (var i = 0; i < site_tags_array_workshops.length; i++) {
-        counts_workshops[site_tags_array_workshops[i]] = (counts_workshops[site_tags_array_workshops[i]] + 1) || 1;
-    }
-
-    for (var i = 0; i < site_tags_array_products.length; i++) {
-        counts_products[site_tags_array_products[i]] = (counts_products[site_tags_array_products[i]] + 1) || 1;
-    }
-
-    //console.log('does it work?');
-    //console.log(counts);
-    //console.log(counts.length);
-
-    for (var key in counts_workshops) { 
-        //text += cars[i] + "<br>";
-        //console.log(key);
-        //console.log(counts_workshops[key]);
-        //console.log('testing url encode: ');
-        //console.log(encodeURIComponent(key));
-        tag_hash = encodeURIComponent(key);
-        tag_hash = tag_hash.replace(/%20/g, "+");
-        console.log(tag_hash);
-        $('.tag-box-workshops').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_workshops[key]+"</span></a></li>");
-    }
-
-    for (var key in counts_products) { 
-        tag_hash = encodeURIComponent(key);
-        tag_hash = tag_hash.replace(/%20/g, "+");
-        $('.tag-box-products').append("<li><a href='{{ site.baseurl }}/resources/#tab_products#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_products[key]+"</span></a></li>");
-    }
-
-</script>
-
-<script>
-
     //defining vars globally
     var vars;
 
-    $(window).on('hashchange',function(){ 
-
-        
+    function myHashChangefunction() {
+        console.log('hashchange called');
         
         $(".entry-tags a").removeAttr('style');
         $(".tag-cloud a").removeAttr('style');
@@ -467,8 +404,8 @@ $( document ).ready(function() {
         console.log(vars);
 
         if (tab_selection == 'tab_workshops') {
-            console.log('finally');
-            console.log(vars[0]);
+            //console.log('finally');
+            //console.log(vars[0]);
 
                     //loop through each li parent in post-list
             //for each parent look to see if any of the vars variables
@@ -484,20 +421,20 @@ $( document ).ready(function() {
                 var myTags_workshops = [];
 
                 entry_tags_array_workshops.each(function(){
-                  console.log('testing entry tag ids: ');
-                  console.log($(this).attr('id'));
+                  //console.log('testing entry tag ids: ');
+                  //console.log($(this).attr('id'));
                   myTags_workshops.push($(this).attr('id'));
                 });
 
                 var show_parent = true;
 
-                console.log('show parent val1');
-                console.log(show_parent);
+                //console.log('show parent val1');
+                //console.log(show_parent);
 
                 //for each of vars variables in the vars array
                 for (var i = 0; i < vars.length; i++) {
-                    console.log('vars val');
-                    console.log(vars[i]);
+                    //console.log('vars val');
+                    //console.log(vars[i]);
                     if (myTags_workshops.indexOf(vars[i]) === -1) {
                       // element doesn't exist in array
                       //console.log('breaking array');
@@ -507,14 +444,14 @@ $( document ).ready(function() {
                     }
                 }
 
-                console.log('show parent val2');
-                console.log(show_parent);
+                //console.log('show parent val2');
+                //console.log(show_parent);
 
                 if (show_parent == true) {
                     //now you can show li
                     //styling for the tags
 
-                    console.log('show parent is true');
+                    //console.log('show parent is true');
                     for (var i = 0; i < vars.length; i++) {
                         //console.log('vars val2');
                         //console.log(vars[i]);
@@ -538,8 +475,8 @@ $( document ).ready(function() {
 
             });
 
-            console.log('show parent array: ');
-            console.log(show_parent_array_workshops);
+            //console.log('show parent array: ');
+            //console.log(show_parent_array_workshops);
 
             //have a list of parents that are being shown
             show_parent_entry_tags_array = show_parent_array_workshops.find(".entry-tags a");
@@ -549,12 +486,12 @@ $( document ).ready(function() {
               show_parent_array_tags.push($(this).attr('id'));
             });
 
-            console.log('show_parent_array_tags ');
-            console.log(show_parent_array_tags);
+            //console.log('show_parent_array_tags ');
+            //console.log(show_parent_array_tags);
 
         } else if (tab_selection == 'tab_products') {
 
-            console.log('finally products');
+            //console.log('finally products');
             //console.log(vars[0]);
 
                     //loop through each li parent in post-list
@@ -571,20 +508,20 @@ $( document ).ready(function() {
                 var myTags_products = [];
 
                 entry_tags_array_products.each(function(){
-                  console.log('testing entry tag ids: ');
-                  console.log($(this).attr('id'));
+                  //console.log('testing entry tag ids: ');
+                  //console.log($(this).attr('id'));
                   myTags_products.push($(this).attr('id'));
                 });
 
                 var show_parent = true;
 
-                console.log('show parent val1');
-                console.log(show_parent);
+                //console.log('show parent val1');
+                //console.log(show_parent);
 
                 //for each of vars variables in the vars array
                 for (var i = 0; i < vars.length; i++) {
-                    console.log('vars val');
-                    console.log(vars[i]);
+                    //console.log('vars val');
+                    //console.log(vars[i]);
                     if (myTags_products.indexOf(vars[i]) === -1) {
                       // element doesn't exist in array
                       //console.log('breaking array');
@@ -594,8 +531,8 @@ $( document ).ready(function() {
                     }
                 }
 
-                console.log('show parent val2');
-                console.log(show_parent);
+                //console.log('show parent val2');
+                //console.log(show_parent);
 
                 if (show_parent == true) {
                     //now you can show li
@@ -654,8 +591,8 @@ $( document ).ready(function() {
 
             //if tag does not show up in any of the shown parent's tags
             if (show_parent_array_tags.indexOf(tag_hash) === -1) {
-                console.log('make tag unclickable');
-                console.log(key);
+                //console.log('make tag unclickable');
+                //console.log(key);
 
                 //then make the tag in the tag cloud unclickable
                 $( ".tag-box a[id='"+tag_hash+"']" ).css( "pointer-events", "none" );
@@ -682,8 +619,89 @@ $( document ).ready(function() {
         }
 
 
+    }
+
+$(window).on('hashchange', function(){ 
+        myHashChangefunction();
     });
+
 </script>
+
+
+
+<script>
+
+//document ready makes sure bootstrap is loaded first
+//This code opens the right tab by reading the url hash.
+$( document ).ready(function() {
+    console.log('doc ready called');
+    console.log('doc loc hash');
+    console.log(document.location.hash);
+    // Javascript to enable link to tab
+    var hash = document.location.hash;
+    var prefix = "tab_";
+
+    hash_no_tab = hash.replace(prefix,"");
+
+    hash_no_tab = hash_no_tab.slice(1).split('#');
+    hash_no_tab = '#' + hash_no_tab[0];
+
+    console.log('hash_no_tab');
+    console.log(hash_no_tab);
+
+    if (hash) {
+      $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
+    } 
+
+    // Changes hash in the address bar for page-reload
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+      window.location.hash = e.target.hash.replace("#", "#" + prefix);
+    });
+
+    //call the hashchange function to display the correct entries based on all the tags located in the url hash
+    myHashChangefunction();
+
+});
+
+    //building tag cloud
+    var counts_workshops = {};
+    var counts_products = {};
+
+    site_tags_array_workshops = [{{ site_tags_workshops }}];
+    site_tags_array_products = [{{ site_tags_products }}];
+
+    for (var i = 0; i < site_tags_array_workshops.length; i++) {
+        counts_workshops[site_tags_array_workshops[i]] = (counts_workshops[site_tags_array_workshops[i]] + 1) || 1;
+    }
+
+    for (var i = 0; i < site_tags_array_products.length; i++) {
+        counts_products[site_tags_array_products[i]] = (counts_products[site_tags_array_products[i]] + 1) || 1;
+    }
+
+    //console.log('does it work?');
+    //console.log(counts);
+    //console.log(counts.length);
+
+    for (var key in counts_workshops) { 
+        //text += cars[i] + "<br>";
+        //console.log(key);
+        //console.log(counts_workshops[key]);
+        //console.log('testing url encode: ');
+        //console.log(encodeURIComponent(key));
+        tag_hash = encodeURIComponent(key);
+        tag_hash = tag_hash.replace(/%20/g, "+");
+        console.log(tag_hash);
+        $('.tag-box-workshops').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_workshops[key]+"</span></a></li>");
+    }
+
+    for (var key in counts_products) { 
+        tag_hash = encodeURIComponent(key);
+        tag_hash = tag_hash.replace(/%20/g, "+");
+        $('.tag-box-products').append("<li><a href='{{ site.baseurl }}/resources/#tab_products#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_products[key]+"</span></a></li>");
+    }
+
+</script>
+
 
 <!-- http://stackoverflow.com/questions/7862233/twitter-bootstrap-tabs-go-to-specific-tab-on-page-reload-or-hyperlink -->
 <script>
