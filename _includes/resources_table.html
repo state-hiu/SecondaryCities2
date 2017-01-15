@@ -125,6 +125,19 @@ li {
     margin-bottom: 1.5rem;
 }
 
+a.toggle-vis {
+    text-decoration: none;
+}
+
+a.selected-tag {
+    background-color: #202d3b;
+    color: #18bc9c;
+}
+
+#mySelection {
+    border: 1px solid #ddd;
+}
+
 </style>
 
 {% assign count_workshops = 0 %}
@@ -229,9 +242,9 @@ li {
                         </ul>
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" style="border-left: 1px solid #ddd;">
                         <div class="tag-cloud">
-                            <h3>Tags</h3>
+                            <h3 style="margin-top:8px">Tags</h3>
                             <ul class="tag-box tag-box-workshops inline">
                             </ul>
                         </div>
@@ -274,9 +287,9 @@ li {
                     </ul>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3" style="border-left: 1px solid #ddd;">
                     <div class="tag-cloud">
-                        <h3>Tags</h3>
+                        <h3 style="margin-top:8px">Tags</h3>
                         <ul class="tag-box tag-box-products inline">
                         </ul>
                     </div>
@@ -299,29 +312,31 @@ li {
                     <div class="row">
                         <div class="col-lg-12" style="overflow: auto;">
                           <div style="font-style: italic;">
-                            The Secondary Cities’ partners use an array of appropriate open source and proprietary mapping tools. Although this table is not an exhaustive list of the existing mapping tools, the table provides a number of available tools and enables a comparison of the functionalities and capabilities. The tools are organized in five general categories: 1) GIS platforms; 2) remote sensing analysis; 3) field data collection; 4) data management and dissemination; and 5) data visualization and communication. 2C project and partners support any one or combination of open source and proprietary geospatial tools in this table and beyond. Please contact <a href="mailto:secondarycities@state.gov" target="_top">secondarycities@state.gov</a> to include a mapping tool that is not listed in this table.
+                            The Secondary Cities’ partners use an array of appropriate open source and proprietary mapping tools. Although this table is not an exhaustive list of the existing mapping tools, the table provides a number of available tools and enables a comparison of the functionalities and capabilities. Click on the categories below to toggle columns on and off:
+
+                            <!--The tools are organized in five general categories: 1) GIS platforms; 2) remote sensing analysis; 3) field data collection; 4) data management and dissemination; and 5) data visualization and communication. 2C project and partners support any one or combination of open source and proprietary geospatial tools in this table and beyond. Please contact <a href="mailto:secondarycities@state.gov" target="_top">secondarycities@state.gov</a> to include a mapping tool that is not listed in this table.-->
                             </p>
                           </div>
-                            <div class="copper" style="cursor:pointer;padding-bottom:10px">
-                                Toggle column: 
-                                <a class="toggle-vis" data-column="0">Name</a> - 
-                                <a class="toggle-vis" data-column="1">Category</a> - 
-                                <a class="toggle-vis" data-column="2">Primary Focus</a> - 
-                                <a class="toggle-vis" data-column="3">Developer</a> - 
-                                <a class="toggle-vis" data-column="4">Licensing</a> - 
-                                <a class="toggle-vis" data-column="5">Cost</a> - 
-                                <a class="toggle-vis" data-column="6">GUI/Coding</a> - 
-                                <a class="toggle-vis" data-column="7">Notes</a> - 
-                                <a class="toggle-vis" data-column="8">Operating System</a> - 
-                                <a class="toggle-vis" data-column="9">Participatory Capabilities</a> - 
-                                <a class="toggle-vis" data-column="10">Platform</a> - 
-                                <a class="toggle-vis" data-column="11">Pricing</a> - 
-                                <a class="toggle-vis" data-column="12">Notes</a> - 
-                                <a class="toggle-vis" data-column="13">Sharing and Privacy</a> - 
-                                <a class="toggle-vis" data-column="14">Spatial Analysis</a> - 
-                                <a class="toggle-vis" data-column="15">Supported Data Types</a> - 
-                                <a class="toggle-vis" data-column="16">System Requirements</a> - 
-                                <a class="toggle-vis" data-column="17">Additional Links</a> - 
+                            <div class="entry-tags" style="cursor:pointer;padding-bottom:10px;">
+                                <!--Toggle column:--> 
+                                <a class="toggle-vis" data-column="0">Name</a>
+                                <a class="toggle-vis" data-column="1">Category</a>
+                                <a class="toggle-vis" data-column="2">Primary Focus</a>
+                                <a class="toggle-vis" data-column="3">Developer</a>
+                                <a class="toggle-vis" data-column="4">Licensing</a>
+                                <a class="toggle-vis" data-column="5">Cost</a>
+                                <a class="toggle-vis" data-column="6">GUI/Coding</a>
+                                <a class="toggle-vis" data-column="7">Notes</a>
+                                <a class="toggle-vis" data-column="8">Operating System</a>
+                                <a class="toggle-vis" data-column="9">Participatory Capabilities</a>
+                                <a class="toggle-vis" data-column="10">Platform</a>
+                                <a class="toggle-vis" data-column="11">Pricing</a>
+                                <a class="toggle-vis" data-column="12">Notes</a>
+                                <a class="toggle-vis" data-column="13">Sharing and Privacy</a>
+                                <a class="toggle-vis" data-column="14">Spatial Analysis</a>
+                                <a class="toggle-vis" data-column="15">Supported Data Types</a>
+                                <a class="toggle-vis" data-column="16">System Requirements</a>
+                                <a class="toggle-vis" data-column="17">Additional Links</a>
                                 <a class="toggle-vis" data-column="18">Usability</a>
                             </div>
                             <div id="graphic"></div>
@@ -892,6 +907,12 @@ $(document).ready(function() {
     var table = $('#mySelection').DataTable();
     table.columns( [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( false, false );
 
+
+    //Select default columns 0-5
+    for (var i = 0; i < 5; i++) {
+        $("a[data-column='"+i+"']").addClass('selected-tag');
+    };
+
     $('a.toggle-vis').on( 'click', function (e) {
         e.preventDefault();
  
@@ -900,6 +921,14 @@ $(document).ready(function() {
  
         // Toggle the visibility
         column.visible( ! column.visible() );
+
+
+        if ( $(this).hasClass('selected-tag') ) {
+            $( this ).removeClass('selected-tag');
+        } else {
+            $( this ).addClass('selected-tag');
+        }
+        
     } );
   }
 });
