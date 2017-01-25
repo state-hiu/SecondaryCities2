@@ -896,7 +896,42 @@ $(document).ready(function() {
       "order": [
         [2, "desc"]
       ], //order on second column
-      "pagingType": "simple" //no page numbers
+      "pagingType": "simple",
+      "columnDefs": [ {
+      "targets": 0,
+      "data": null,
+      "render": function ( data, type, full, meta ) {
+        //regex, http://stackoverflow.com/questions/32381742/js-regex-replace-contents-of-markdown-link
+
+        var re = /\[(.*?)\]\((.+?)\)/g;
+        var found = data.match(re);
+
+        console.log('data');
+        console.log(data);
+        console.log('pattern match');
+        console.log(found);
+
+        if(found) {
+            console.log('it exists');
+            var re1 = /\[(.*?)\]/g;
+            var title = data.match(re1);
+            var newTitle = title[0].replace(/[\[\]']/g,'' );
+            console.log('newTitle');
+            console.log(newTitle);
+            var re2 = /\((.+?)\)/g;
+            var url = data.match(re2);
+            var newUrl = url[0].slice(1,-1);
+            console.log('newUrl');
+            console.log(newUrl);
+
+            return '<a href="'+newUrl+'">'+newTitle+'</a>';
+        } else {
+            return data;
+        }
+
+    }
+  } ]
+        //no page numbers
         //uncomment these options to simplify your table
         //"paging": false,
         //"searching": false,
