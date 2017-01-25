@@ -6,7 +6,8 @@ subtitle: 'Esmeraldas, Ecuador'
 ref: wisnu
 status: past
 date: 20160330
-logo_img: 'http://ecuadoruniversitario.com/wp-content/uploads/2016/07/u-luis-vargas-torres.jpg'
+logo_img: '../img/logos/usfq_logo.png'
+logo_img2: '../img/logos/luis_vargas_logo.png'
 external_url: 'http://institutodegeografia.org/'
 tags:
   - partner
