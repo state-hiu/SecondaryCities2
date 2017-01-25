@@ -78,7 +78,9 @@ $(document).foundation();
       });
 
       //report.map.addLayer(osm2);
-      report.map.setView(new L.LatLng(59.92448055859924, 10.758276373601069),10);
+      //report.map.setView(new L.LatLng(59.92448055859924, 10.758276373601069),10);
+
+      report.map.setView(pageConfig.latlng,10);
 
       var miniMap = new L.Control.MiniMap(baseLayer2, {position: 'bottomleft', zoomLevelOffset: -8}).addTo(report.map);
 
