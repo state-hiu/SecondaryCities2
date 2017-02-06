@@ -127,7 +127,6 @@ li {
 
 a.toggle-vis {
     text-decoration: none;
-    white-space: nowrap;
 }
 
 a.selected-tag {
@@ -322,22 +321,31 @@ a.selected-tag {
                                 <!--Toggle column:--> 
                                 <a class="toggle-vis" data-column="0">Name</a>
                                 <a class="toggle-vis" data-column="1">Category</a>
-                                <a class="toggle-vis" data-column="2">Platform(s)</a>
-                                <a class="toggle-vis" data-column="3">Cost</a>
-                                <a class="toggle-vis" data-column="4">GIS Capabilities</a>
-                                <a class="toggle-vis" data-column="5">Licensing</a>
-                                <a class="toggle-vis" data-column="6">Notes</a>
-                                <a class="toggle-vis" data-column="7">Remote Sensing Capabilities</a>
-                                <a class="toggle-vis" data-column="8">Sharing and Privacy</a>
-                                <a class="toggle-vis" data-column="9">Supported Data Types</a>
-                                <a class="toggle-vis" data-column="10">System Requirements</a>
-                                <a class="toggle-vis" data-column="11">Usability</a>
+                                <a class="toggle-vis" data-column="2">Primary Focus</a>
+                                <a class="toggle-vis" data-column="3">Developer</a>
+                                <a class="toggle-vis" data-column="4">Licensing</a>
+                                <a class="toggle-vis" data-column="5">Cost</a>
+                                <a class="toggle-vis" data-column="6">GUI/Coding</a>
+                                <a class="toggle-vis" data-column="7">Notes</a>
+                                <a class="toggle-vis" data-column="8">Operating System</a>
+                                <a class="toggle-vis" data-column="9">Participatory Capabilities</a>
+                                <a class="toggle-vis" data-column="10">Platform</a>
+                                <a class="toggle-vis" data-column="11">Pricing</a>
+                                <a class="toggle-vis" data-column="12">Notes</a>
+                                <a class="toggle-vis" data-column="13">Sharing and Privacy</a>
+                                <a class="toggle-vis" data-column="14">Spatial Analysis</a>
+                                <a class="toggle-vis" data-column="15">Supported Data Types</a>
+                                <a class="toggle-vis" data-column="16">System Requirements</a>
+                                <a class="toggle-vis" data-column="17">Additional Links</a>
+                                <a class="toggle-vis" data-column="18">Usability</a>
                             </div>
                             <div id="graphic"></div>
                         </div>
                     </div>
 
-                    <!--<iframe src="https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml?gid=531126027&single=true&widget=true&headers=false" align="center" height = "600px" width = "98%"></iframe>
+
+<!--
+                    <iframe src="https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml?gid=531126027&single=true&widget=true&headers=false" align="center" height = "600px" width = "98%"></iframe>
 -->
 
                 </div>
@@ -826,23 +834,31 @@ $( document ).ready(function() {
 
 //enter google sheets key here, sheet can only have one tab
 var key =
-  "https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml";
+  "https://docs.google.com/spreadsheets/d/1JjE4qiMAYnSaF6IquJZvpda6yGC67qO9RxqpV21SSB0/pubhtml";
+  //"https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml";
 
 //"data" refers to the column name with no spaces and no capitals
 //punctuation or numbers in your column name
 //"title" is the column name you want to appear in the published table
 var columns = [{
-"data": "Tool Name","title": "Name", "width":"65px"},
-{"data": "Category","title": "Category", "width":"65px"},
-{"data": "Platform(s)","title": "Platform(s)", "width":"65px"},
-{"data": "Pricing","title": "Cost", "width":"65px"},
-{"data": "GIS Capabilities","title": "GIS Capabilities", "width":"90px"},
-{"data": "Licensing","title": "Licensing", "width":"90px"},
-{"data": "Notes","title": "Notes", "width":"80px"},
-{"data": "Remote Sensing Capabilities","title": "Remote Sensing Capabilities", "width":"80px"},
-{"data": "Sharing and Privacy","title": "Sharing and Privacy","width": "90px"},
+"data": "Software Tool (click for link)","title": "Name", "width":"80px"},
+{"data": "General Category","title": "Category", "width":"90px"},
+{"data": "Primary Focus","title": "Primary Focus", "width":"90px"},
+{"data": "Developer (click for link)","title": "Developer", "width":"80px"},
+{"data": "Licensing","title": "Licensing", "width":"65px"},
+{"data": "Cost","title": "Cost", "width":"80px"},
+{"data": "GUI/Coding","title": "GUI/Coding", "width":"80px"},
+{"data": "Notes","title": "Notes","width": "300px"},
+{"data": "Operating System","title": "Operating System", "width":"80px"},
+{"data": "Participatory Capabilities","title": "Participatory Capabilities", "width":"80px"},
+{"data": "Platform(s)","title": "Platform", "width":"80px"},
+{"data": "Pricing Details (click for link)","title": "Pricing", "width":"80px"},
+{"data": "RS Classification","title": "Notes", "width":"80px"},
+{"data": "Sharing and Privacy","title": "Sharing and Privacy", "width":"80px"},
+{"data": "Spatial Analysis","title": "Spatial Analysis", "width":"80px"},
 {"data": "Supported Data Types","title": "Supported Data Types", "width":"80px"},
 {"data": "System Requirements","title": "System Requirements", "width":"80px"},
+{"data": "Additional Links","title": "Additional Links", "width":"80px"},
 /*{"data": "Contact (Harvard Symposium)","title": "Contact"},*/
 {"data": "Usability","title": "Usability", "width":"80px"}];
 
@@ -881,7 +897,7 @@ $(document).ready(function() {
       ], //order on second column
       "pagingType": "simple",
       "columnDefs": [ {
-      "targets": [0,3,4,6,7,8,10],
+      "targets": 0,
       "data": null,
       //https://datatables.net/reference/option/columns.render
       "render": function ( data, type, full, meta ) {
@@ -890,23 +906,23 @@ $(document).ready(function() {
         var re = /\[(.*?)\]\((.+?)\)/g;
         var found = data.match(re);
 
-        //console.log('data');
-        //console.log(data);
-        //console.log('pattern match');
-        //console.log(found);
+        console.log('data');
+        console.log(data);
+        console.log('pattern match');
+        console.log(found);
 
         if(found) {
             console.log('it exists');
             var re1 = /\[(.*?)\]/g;
             var title = data.match(re1);
             var newTitle = title[0].replace(/[\[\]']/g,'' );
-            //console.log('newTitle');
-            //console.log(newTitle);
+            console.log('newTitle');
+            console.log(newTitle);
             var re2 = /\((.+?)\)/g;
             var url = data.match(re2);
             var newUrl = url[0].slice(1,-1);
-            //console.log('newUrl');
-            //console.log(newUrl);
+            console.log('newUrl');
+            console.log(newUrl);
 
             return '<a href="'+newUrl+'">'+newTitle+'</a>';
         } else {
@@ -924,11 +940,11 @@ $(document).ready(function() {
 
     //hides certian columns
     var table = $('#mySelection').DataTable();
-    table.columns( [ 4, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+    table.columns( [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ] ).visible( false, false );
 
 
-    //Select default columns 0-4
-    for (var i = 0; i < 4; i++) {
+    //Select default columns 0-5
+    for (var i = 0; i < 5; i++) {
         $("a[data-column='"+i+"']").addClass('selected-tag');
     };
 
