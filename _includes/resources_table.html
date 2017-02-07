@@ -137,6 +137,7 @@ a.selected-tag {
 
 #mySelection {
     border: 1px solid #ddd;
+    font-size: 14px;
 }
 
 </style>
@@ -832,19 +833,19 @@ var key =
 //punctuation or numbers in your column name
 //"title" is the column name you want to appear in the published table
 var columns = [{
-"data": "Tool Name","title": "Name", "width":"65px"},
-{"data": "Category","title": "Category", "width":"65px"},
-{"data": "Platform(s)","title": "Platform(s)", "width":"65px"},
-{"data": "Pricing","title": "Cost", "width":"65px"},
+"data": "Tool Name","title": "Name", "width":"40px"},
+{"data": "Category","title": "Category", "width":"55px"},
+{"data": "Platform(s)","title": "Platform(s)", "width":"55px"},
+{"data": "Pricing","title": "Cost", "width":"55px"},
 {"data": "GIS Capabilities","title": "GIS Capabilities", "width":"90px"},
-{"data": "Licensing","title": "Licensing", "width":"90px"},
-{"data": "Notes","title": "Notes", "width":"80px"},
-{"data": "Remote Sensing Capabilities","title": "Remote Sensing Capabilities", "width":"80px"},
-{"data": "Sharing and Privacy","title": "Sharing and Privacy","width": "90px"},
-{"data": "Supported Data Types","title": "Supported Data Types", "width":"80px"},
-{"data": "System Requirements","title": "System Requirements", "width":"80px"},
+{"data": "Licensing","title": "Licensing", "width":"55px"},
+{"data": "Notes","title": "Notes", "width":"90px"},
+{"data": "Remote Sensing Capabilities","title": "Remote Sensing Capabilities", "width":"65px"},
+{"data": "Sharing and Privacy","title": "Sharing and Privacy","width": "65px"},
+{"data": "Supported Data Types","title": "Supported Data Types", "width":"65px"},
+{"data": "System Requirements","title": "System Requirements", "width":"65px"},
 /*{"data": "Contact (Harvard Symposium)","title": "Contact"},*/
-{"data": "Usability","title": "Usability", "width":"80px"}];
+{"data": "Usability","title": "Usability", "width":"65px"}];
 
 $(document).ready(function() {
 
@@ -881,7 +882,7 @@ $(document).ready(function() {
       ], //order on second column
       "pagingType": "simple",
       "columnDefs": [ {
-      "targets": [0,3,4,6,7,8,10],
+      "targets": [0,3,4,6,7,8,9,10],
       "data": null,
       //https://datatables.net/reference/option/columns.render
       "render": function ( data, type, full, meta ) {
@@ -908,7 +909,7 @@ $(document).ready(function() {
             //console.log('newUrl');
             //console.log(newUrl);
 
-            return '<a href="'+newUrl+'">'+newTitle+'</a>';
+            return '<a href="'+newUrl+'" target="_blank" >'+newTitle+'</a>';
         } else {
             return data;
         }
@@ -924,7 +925,7 @@ $(document).ready(function() {
 
     //hides certian columns
     var table = $('#mySelection').DataTable();
-    table.columns( [ 4, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
+    table.columns( [ 4, 5, 6, 7, 8, 9, 10, 11 ] ).visible( false, false );
 
 
     //Select default columns 0-4
