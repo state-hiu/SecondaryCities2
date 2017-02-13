@@ -5,7 +5,7 @@
 <style>
 
 header ul a,header a.active,header a:active,header a:focus, header a:hover {
-        color: #7B533F;
+  color: #7B533F;
 }
 
 li {
@@ -164,7 +164,7 @@ a.selected-tag {
 {% endfor %}
 
 <header>
-    <div class="container" style="padding-top:120px;padding-bottom:10px;">
+    <div class="container" style="padding-top:100px;padding-bottom:10px;">
         <div class="row">
             <div class="col-lg-12">
 
@@ -230,7 +230,7 @@ a.selected-tag {
                                     <span class="entry-tags">
                                         {% if post.tags %}
                                             {% for tag in post.tags %}
-                                                <a href="{{ site.baseurl }}/resources/#tab_workshops#{{ tag | url_encode }}" title="Posts tagged {{ tag }}" id="{{ tag | url_encode }}">{{ tag }}</a>
+                                                <a href="{{ site.baseurl }}/resources/#tab_workshops&{{ tag | url_encode }}" title="Posts tagged {{ tag }}" id="{{ tag | url_encode }}">{{ tag }}</a>
                                                 {% unless forloop.last %}
                                                 {% endunless %}
                                             {% endfor %}
@@ -275,7 +275,7 @@ a.selected-tag {
                                     <span class="entry-tags">
                                         {% if post.tags %}
                                             {% for tag in post.tags %}
-                                                <a href="{{ site.baseurl }}/resources/#tab_workshops#{{ tag | url_encode }}" title="Posts tagged {{ tag }}" id="{{ tag | url_encode }}">{{ tag }}</a>
+                                                <a href="{{ site.baseurl }}/resources/#tab_workshops&{{ tag | url_encode }}" title="Posts tagged {{ tag }}" id="{{ tag | url_encode }}">{{ tag }}</a>
                                                 {% unless forloop.last %}
                                                 {% endunless %}
                                             {% endfor %}
@@ -371,6 +371,8 @@ a.selected-tag {
 
     function myHashChangefunction() {
         console.log('hashchange called');
+
+        console.log(location.hash);
         
         $(".entry-tags a").removeAttr('style');
         $(".tag-cloud a").removeAttr('style');
@@ -382,18 +384,18 @@ a.selected-tag {
             //in case double-clicking on a button reset list and changed the url hash to tab_workshops
             //you need to re-build all the correct hashes for the buttons
             $("a[href$='tab_workshops']").attr('href', function() {
-                return this.pathname +'#tab_workshops#'+ this.id;
+                return this.pathname +'#tab_workshops&'+ this.id;
             });
         } else if (location.hash.slice(1) == 'tab_products') {
             $('.tab-content li').show();
             //in case double-clicking on a button reset list and changed the url hash to tab_workshops
             //you need to re-build all the correct hashes for the buttons
             $("a[href$='tab_products']").attr('href', function() {
-                return this.pathname +'#tab_products#'+ this.id;
+                return this.pathname +'#tab_products&'+ this.id;
             });
         }
 
-        vars = location.hash.slice(1).split('#');
+        vars = location.hash.slice(1).split('&');
 
         console.log('printing vars1: ');
         console.log(vars);
@@ -650,6 +652,13 @@ $(window).on('hashchange', function(){
 //document ready makes sure bootstrap is loaded first
 //This code opens the right tab by reading the url hash.
 $( document ).ready(function() {
+
+/*
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 400);
+});
+*/
+
     console.log('doc ready called');
     console.log('doc loc hash');
     console.log(document.location.hash);
@@ -718,13 +727,13 @@ $( document ).ready(function() {
             tag_hash = encodeURIComponent(key);
             tag_hash = tag_hash.replace(/%20/g, "+");
             console.log(tag_hash);
-            $('.tag-box-workshops').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_workshops[key]+"</span></a></li>");
+            $('.tag-box-workshops').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops&"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_workshops[key]+"</span></a></li>");
         }
 
         for (var key in counts_products) { 
             tag_hash = encodeURIComponent(key);
             tag_hash = tag_hash.replace(/%20/g, "+");
-            $('.tag-box-products').append("<li><a href='{{ site.baseurl }}/resources/#tab_products#"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_products[key]+"</span></a></li>");
+            $('.tag-box-products').append("<li><a href='{{ site.baseurl }}/resources/#tab_products&"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_products[key]+"</span></a></li>");
         }
 
     //call the hashchange function to display the correct entries based on all the tags located in the url hash
@@ -759,7 +768,7 @@ $( document ).ready(function() {
 
                 console.log('print window location hash');
                 console.log( window.location.hash );
-                window.location.hash = window.location.hash.replace("#"+tag_id, "");
+                window.location.hash = window.location.hash.replace("&"+tag_id, "");
 
                 console.log('print window location hash2');
                 console.log( window.location.hash );
@@ -776,7 +785,7 @@ $( document ).ready(function() {
                 console.log('else was selected ');
                 base_url = window.location.href;
                 //add to url depending on tag clicked
-                new_url = base_url + '#' + $( this ).attr("id");
+                new_url = base_url + '&' + $( this ).attr("id");
                 console.log('new url: ');
                 console.log(new_url);
 
