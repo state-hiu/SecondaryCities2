@@ -53,8 +53,15 @@
     opacity: 0.85;
 }
 
-.label-span{
+.label-span {
     font-size: 18px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:rgba(0,0,0,.75);
+    display: block;
+}
+
+.label-span-small {
+    font-size: 14px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
     display: block;
@@ -70,6 +77,12 @@
     text-align: left;
 }
 
+#label-medellin-small {
+    margin-left: 17px;
+    margin-top: -25px;
+    text-align: left;
+}
+
 #label-cusco {
     margin-left: -92px;
     margin-top: -17px;
@@ -81,6 +94,12 @@
 #label-mekelle {
     margin-left: -76px;
     margin-top: -16px;
+    text-align: left;
+}
+
+#label-mekelle-small {
+    margin-left: -60px;
+    margin-top: -25px;
     text-align: left;
 }
 
@@ -130,7 +149,12 @@
 }
 
 #country {
-    font-size: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#country-small {
+    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -219,13 +243,24 @@ var bottomText = L.divIcon({
 });
 
 
+if (window.innerWidth < 1200) {
 
-var cuscoIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<a href="{{ site.baseurl }}/cusco"><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
-});
+    var cuscoIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/cusco"><div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-cusco">Cusco <span id="country-small">Peru</span></span></a>'
+    });
     
+} else {
+
+    var cuscoIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/cusco"><div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
+    });
+   
+} 
+
 // you can set .my-div-icon styles in CSS
 
 cuscoMarker = L.marker([-13.51845,-71.97752], {icon: cuscoIcon}).addTo(map);
@@ -241,11 +276,23 @@ cuscoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-var denpasarIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
-              '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
-});
+if (window.innerWidth < 1200) {
+
+    var denpasarIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
+                  '<span class="label-span-small" id="label-denpasar">Denpasar <span id="country-small">Indonesia</span></span></a></div>'
+    });
+
+} else {
+
+    var denpasarIcon = L.divIcon({
+            className: 'city-icon',
+            html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
+                      '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
+        });
+
+}
 // you can set .my-div-icon styles in CSS
 
 denpasarMarker = L.marker([-8.6493,115.2169], {icon: denpasarIcon}).addTo(map);
@@ -269,11 +316,24 @@ denpasarMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-var kharkivIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
-});
+if (window.innerWidth < 1200) {
+
+    var kharkivIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-kharkiv">Kharkiv <span id="country-small">Ukraine</span></span></a>'
+    });
+
+} else {
+
+    var kharkivIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
+    });
+
+
+}
 
 kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
 
@@ -353,11 +413,23 @@ map.addLayer(marker2);
 
 */
 
-var medellinIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
-});
+if (window.innerWidth < 1200) {
+
+    var medellinIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-medellin-small">Medellín <span id="country-small">Colombia</span></span></a>'
+    });
+
+} else {
+
+    var medellinIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
+    });
+
+}
 
 
 
@@ -379,12 +451,23 @@ medellinMarker.on('mouseout', function (e) {
         });
 
 
+if (window.innerWidth < 1200) {
 
-var doualaIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-douala" >Douala <span id="country">Cameroon</span></span>'
-});
+    var doualaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-douala" >Douala <span id="country-small">Cameroon</span></span>'
+    });
+
+} else {
+
+    var doualaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-douala" >Douala <span id="country">Cameroon</span></span>'
+    });
+
+}
 
 doualaMarker = L.marker([4.0494,9.8342], {icon: doualaIcon}).addTo(map);
 
@@ -404,11 +487,23 @@ doualaMarker.on('mouseout', function (e) {
         });
 
 
-var port_harcourtIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-port_harcourt" >Port Harcourt <span id="country">Nigeria</span></span>'
-});
+if (window.innerWidth < 1200) {
+
+    var port_harcourtIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-port_harcourt" >Port Harcourt <span id="country-small">Nigeria</span></span>'
+    });
+
+} else {
+
+    var port_harcourtIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-port_harcourt" >Port Harcourt <span id="country">Nigeria</span></span>'
+    });
+
+}
 
 port_harcourtMarker = L.marker([4.8009,6.95], {icon: port_harcourtIcon}).addTo(map);
 
@@ -427,12 +522,23 @@ port_harcourtMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+if (window.innerWidth < 1200) {
 
-var santiagoIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-santiago" >Santiago <span id="country">Dominican Republic</span></span>'
-});
+    var santiagoIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-santiago" >Santiago <span id="country-small">Dominican Republic</span></span>'
+    });
+
+} else {
+
+    var santiagoIcon = L.divIcon({
+            className: 'city-icon',
+            html: '<div class="circleBase type1"></div>'+
+                      '<span class="label-span" id="label-santiago" >Santiago <span id="country">Dominican Republic</span></span>'
+        });
+
+}
 
 santiagoMarker = L.marker([19.4523,-70.6888], {icon: santiagoIcon}).addTo(map);
 
@@ -451,12 +557,23 @@ santiagoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+if (window.innerWidth < 1200) {
 
-var mekelleIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
-});
+    var mekelleIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-mekelle-small" >Mekelle <span id="country-small">Ethiopia</span></span>'
+    });
+
+} else {
+
+    var mekelleIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
+    });
+
+}
 
 mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
 
@@ -476,11 +593,23 @@ mekelleMarker.on('mouseout', function (e) {
         });
 
 
-var pokharaIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
-});
+if (window.innerWidth < 1200) {
+
+    var pokharaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-pokhara">Pokhara <span id="country-small">Nepal</span></span></a>'
+    });
+
+} else {
+
+    var pokharaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
+    });
+
+}
 
 
 pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
@@ -500,11 +629,23 @@ pokharaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-var esmeraldasIcon = L.divIcon({
-    className: 'city-icon',
-    html: '<a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
-              '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a>'
-});
+if (window.innerWidth < 1200) {
+
+    var esmeraldasIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-esmeraldas">Esmeraldas <span id="country-small">Ecuador</span></span></a>'
+    });
+
+} else {
+
+    var esmeraldasIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a>'
+    });
+
+}
 
 esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);
 
