@@ -179,9 +179,10 @@ a.selected-tag {
                 </div>
 -->
                 <ul class="nav nav-tabs main-hyperlink" style="padding: 10px 10px 0px 10px;">
-                  <li class="active"><a href="#workshops" data-toggle="tab">workshop materials</a></li>
+                  <li class="active"><a href="#bibliography" data-toggle="tab">bibliography</a></li>
+
                   <li><a href="#tools" data-toggle="tab">tools</a></li>
-                  <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
+                  <li><a href="#workshops" data-toggle="tab">workshop materials</a></li>
                   <li><a href="#products" data-toggle="tab">maps</a></li>
                   <li><a href="#ethics" data-toggle="tab">ethics</a></li>
                 </ul>
@@ -196,7 +197,7 @@ a.selected-tag {
 
           <div class="tab-content" style="padding: 10px;">
 
-            <div id="workshops" class="tab-pane active">
+            <div id="workshops" class="tab-pane">
 
 
 <!--used to build site cloud-->
@@ -343,7 +344,7 @@ a.selected-tag {
 
                 </div>
 
-                  <div id="bibliography" class="tab-pane ">
+                  <div id="bibliography" class="tab-pane active">
                     <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.</strong>
 </p>
 
@@ -710,7 +711,7 @@ window.addEventListener("hashchange", function () {
       $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
     } else {
       console.log('else called');
-      $(".nav-tabs a[href='#workshops']").tab('show');
+      $(".nav-tabs a[href='#bibliography']").tab('show');
     }
 
     // Changes hash in the address bar for page-reload
