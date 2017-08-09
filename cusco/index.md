@@ -82,18 +82,16 @@ The goal of this project is to map waste management issues and identify solution
 - &bull;  The project facilitates the establishment of composting sites and programs in the neighborhood.  
 - &bull;  This base line information provides the basis for conducting analysis on urban flows for improved city design and management.
 
-### Partners
+### Lead Partner
+- [Ecocity Builders](https://www.ecocitybuilders.org/)
 
+#### Supporting Partners
 - [Cusco Bureau of Land Management](http://www.regioncusco.gob.pe/)
 - [MINAM](http://www.minam.gob.pe/)
 - [PREDES](http://www.predes.org.pe/)
 - [Field Papers](http://fieldpapers.org/)
 - [British Columbia Institute of Technology](http://www.bcit.ca/)
 
-### Upcoming Events
-
-##### Ecocity Focus Lab, November 7, Vancouver
-2C Cusco will share their findings and conclusions from data and assessments on San Pedro's ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Santos Mera and the 2C interns will make the presentation. (location: British Colombia Institute of Technology, City of Vancouver) 
 
 
 

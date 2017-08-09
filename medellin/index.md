@@ -80,22 +80,15 @@ The 2C Medellín project is developing methods for mapping local geospatial know
 - &bull;  Compile and disseminate existing geospatial data sets about the city
 - &bull;  Implement ground-up, scalable approaches for mapping neighborhood waste flows.
 
-### Partners
+### Lead Partner
+- [Ecocity Builders](https://www.ecocitybuilders.org/)
 
+#### Supporting Partners
 - [UNAL](http://unal.edu.co/en.html)
 - [E2E Foundation](http://www.e2efundacion.org/)
 - [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
 - [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
 
-### Upcoming Events
 
-##### Low Carbon City, October 11, Medellin
-Kirstin Miller, 2C Medellin lead and Executive Director, Ecocity Builders, will participate on a panel entitled: [Urbanism to Tackle Climate Challenges](http://lowcarbon.city/es/)
-
-##### U.S. Habitat: Quito Comes to You at Low Carbon City, October 12, Medellin 
-Ian Klaus, U.S. Department of State, Senior Advisor for Global Cities and Kirstin Miller, 2C Medellin lead and Executive Director, Ecocity Builders, will lead a [workshop](http://lowcarbon.city/es/) and dialogue on what makes an environmentally and socially healthy city. 
-
-##### Ecocity Focus Lab, November 7, Vancouver
-2C Medellin will share their findings and conclusions from data and assessments on Medellin’s ecological footprint, greenhouse gas emissions data and average consumption of energy, materials and food. Diana Marce from the Medellin Planning Department is invited to make the presentation. (Host: British Colombia Institute of Technology, City of Vancouver, Ecocity Builders )
 
 

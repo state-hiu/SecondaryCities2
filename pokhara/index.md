@@ -115,8 +115,10 @@ Following the April 2015 Nepal earthquake devastated central Nepal, the Pokhara 
 - &bull;  Multiple workshops and training sessions build local capacity in geospatial training with local schools, universities and community partners.  
 - &bull;  2C Pokhara is poised to become a hub of geospatial expertise, providing support to other cities in creating robust disaster resilience approaches across the region.
 
-### Partners
+### Lead Partner
+- [Kathmandu Living Labs](http://www.kathmandulivinglabs.org/)
 
+#### Supporting Partners
 - [TU Institute of Engineering Paschimanchal Campus](https://gesanwrc.wordpress.com/)
 - [Geomatics Engineering Students’ Association of Nepal](http://nrcskaski.org/)
 - [Nepal Red Cross Society Kaski District Chapter](http://nrcskaski.org/)
@@ -125,15 +127,6 @@ Following the April 2015 Nepal earthquake devastated central Nepal, the Pokhara 
 - Big Foot Software
 - Rotoract Club of New Road, Pokhara
 
-### Event Timeline
-
-- [2C Pokhara Events by KLL](http://timemapper.okfnlabs.org/ktmlivinglabs/pokhara-events)
-
-### Upcoming Events
-
-- KLL Open Data Challenge 2016 — 10th and 11th November
-
-- 2C in Action Workshop — 13th through 15th November 
 
 
 

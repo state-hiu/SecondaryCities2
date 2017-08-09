@@ -117,18 +117,35 @@ The project builds partnerships with local universities, government, NGOs and th
 - &bull;  Data generated on vulnerable populations provide the basis to enhance city response to community needs.
 - &bull;  Improving communication between project partners has led to new geospatial projects based upon identification of data gaps and community needs.
 
-### Lead Partner
-- [Association of American Geographers](http://www.aag.org/)
+### Partners
 
-#### Supporting Partners
 - [U.S. Embassy](http://www.usembassy.gov/)
 - [Esri](http://www.esri.com/)
 - [MapBox](http://www.mapbox.com/)
+
+#### Local Partners
 - [Kharkiv City Government & Information Center](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
+
+#### Universities
 - [V.N. Karazin Kharkiv National University](http://www.univer.kharkov.ua/en)
 - [Kharkiv University of Urban Economics](http://abit.kname.edu.ua/index.php/en/home)
 - [Kharkiv National University of Radio Electronics](http://nure.ua/en/)
 - [National University of Civil Protection of Ukraine](http://nuczu.edu.ua/eng/)
 - [Kharkiv National Aerospace University](http://www.khai.edu/efc/)
+ 
+#### Non-profit
+- [Association of American Geographers](http://www.aag.org/)
+
+### Workshop Materials
+- [Accessing Existing Geospatial Data for Kharkiv](http://secondarycities.geonode.state.gov/documents/425)
+- [Kharkiv Workshop Data Collection Features & Attributes](http://secondarycities.geonode.state.gov/documents/424)
+- [Using Survey123 1-pager](http://secondarycities.geonode.state.gov/documents/427)
+- [Survey123 Frequently Asked Questions](http://secondarycities.geonode.state.gov/documents/426)
+- [Field Papers One Pager](http://secondarycities.geonode.state.gov/documents/423)
+- [Field Data Collection Training](http://secondarycities.geonode.state.gov/documents/422)
+
+### Upcoming Events
+
+- Workshop: 19-23 September, 2016 @ National University of Urban Economics
 
 

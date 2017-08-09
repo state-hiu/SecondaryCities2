@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Aug 2017 20:56:57 +0200</pubDate>
-    <lastBuildDate>Wed, 09 Aug 2017 20:56:57 +0200</lastBuildDate>
+    <pubDate>Wed, 09 Aug 2017 21:26:46 +0200</pubDate>
+    <lastBuildDate>Wed, 09 Aug 2017 21:26:46 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -46,6 +46,23 @@
         <category>English</category>
         
         <category>slides</category>
+        
+        
+        <category>resources</category>
+        
+      </item>
+    
+      <item>
+        <title>Mapping Urbanization in Secondary Cities</title>
+        <description>
+</description>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</guid>
+        
+        <category>urbanization</category>
+        
+        <category>video</category>
         
         
         <category>resources</category>
@@ -186,23 +203,6 @@
         <category>English</category>
         
         <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Mapping Urbanization in Secondary Cities</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</guid>
-        
-        <category>urbanization</category>
-        
-        <category>video</category>
         
         
         <category>resources</category>
