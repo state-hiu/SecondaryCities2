@@ -5,22 +5,6 @@
     font-size:20px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-.my-div-icon {
-  padding: 6px 8px;
-  font: 20px/24px Arial, Helvetica, sans-serif;
-  border-radius: 5px;
-}
-.my-div-icon h4 {
-  margin: 0 0 5px;
-  color: #202d3b;
-}
-
-.region_label {
-    width: 700px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-}
 
 /*This sets the height of the bottom map label */
 .leaflet-horizontalcenter {
@@ -40,6 +24,17 @@
   font-size: 20px;
   color: #2c3e50;
 }
+
+.alert {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  color: #2c3e50;
+  padding: 6px;
+  background-color: white;
+}
+
 .circleBase {
     border-radius: 50%;
     behavior: url(PIE.htc); /* remove if you don't care about IE8 */
@@ -236,11 +231,6 @@ var map = L.mapbox.map('map', '', {
 var credits = L.control.attribution().addTo(map);
 credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
 */
-
-var bottomText = L.divIcon({  
-  className: "my-div-icon",
-  html: "<div class='region_label'>Resiliency · Human Security · Emergency Preparedness</div>"
-});
 
 
 if (window.innerWidth < 1200) {
@@ -687,14 +677,34 @@ addControlPlaceholders(map);
 
 var info = L.control({position: 'horizontalcenter'});
 
-            info.onAdd = function (map) {
-              this._div = L.DomUtil.create('div', 'info');
-              this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
-              return this._div;
-            };
+info.onAdd = function (map) {
+  this._div = L.DomUtil.create('div', 'info');
+  this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
+  return this._div;
+};
 
-            info.addTo(map);
+info.addTo(map);
 
+
+var alert = L.control({position: 'topleft'});
+
+alert.onAdd = function (map) {
+  this._div = L.DomUtil.create('div', 'alert');
+  this._div.innerHTML = "<div>Click on a city for more information</div>";
+  return this._div;
+};
+
+alert.addTo(map);
+
+$( document ).ready(function() {
+  $( ".alert" ).hide();
+  setTimeout(function () {
+      $( ".alert" ).fadeIn( "slow" );
+    }, 1500);
+  setTimeout(function () {
+      $( ".alert" ).fadeOut( "slow" );
+    }, 7500);
+});
 
 // You can also put other controls in the same placeholder.
 //L.control.scale({position: 'verticalcenterright'}).addTo(map);
