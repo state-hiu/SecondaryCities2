@@ -183,8 +183,8 @@ a.selected-tag {
 
                   <li><a href="#tools" data-toggle="tab">tools</a></li>
                   <li><a href="#workshops" data-toggle="tab">workshop materials</a></li>
-                  <!--<li><a href="#products" data-toggle="tab">maps</a></li>-->
-                  <li><a href="#ethics" data-toggle="tab">ethics</a></li>
+                  <!--<li><a href="#products" data-toggle="tab">maps</a></li>
+                  <li><a href="#ethics" data-toggle="tab">ethics</a></li>-->
                 </ul>
             </div>
         </div>
@@ -473,7 +473,6 @@ The 2C Ethics presentation introduces the following topics:
                       // element doesn't exist in array
                       //console.log('breaking array');
                       var show_parent = false;
-                      break; 
                       //or else continue
                     }
                 }
@@ -560,7 +559,6 @@ The 2C Ethics presentation introduces the following topics:
                       // element doesn't exist in array
                       //console.log('breaking array');
                       var show_parent = false;
-                      break; 
                       //or else continue
                     }
                 }
@@ -680,7 +678,7 @@ window.addEventListener("hashchange", function () {
 */
 
     console.log('doc ready called');
-    console.log('doc loc hash');
+    console.log('doc location hash');
     console.log(document.location.hash);
     // Javascript to enable link to tab
     var hash = document.location.hash;
@@ -695,11 +693,17 @@ window.addEventListener("hashchange", function () {
     console.log('hash_no_tab length');
     console.log(hash_no_tab.length);
 
+    
+
+    hash_no_tab = '#' + hash_no_tab[0];
+
+    hash_no_tab = hash_no_tab.slice(0).split('&');
+
     if (hash_no_tab.length > 1) {
         tags_in_url = 'true'
     }
 
-    hash_no_tab = '#' + hash_no_tab[0];
+    hash_no_tab = hash_no_tab[0];
 
     console.log('hash_no_tab');
     console.log(hash_no_tab);
@@ -708,6 +712,7 @@ window.addEventListener("hashchange", function () {
     console.log(hash_no_tab.length);
 
     if (hash_no_tab.length > 1) {
+
       $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
     } else {
       console.log('else called');
@@ -734,19 +739,19 @@ window.addEventListener("hashchange", function () {
         counts_products[site_tags_array_products[i]] = (counts_products[site_tags_array_products[i]] + 1) || 1;
     }
 
-    console.log('does it work?');
-    console.log(counts_workshops);
-    console.log(counts_workshops.length);
+    // console.log('does it work?');
+    // console.log(counts_workshops);
+    // console.log(counts_workshops.length);
 
         for (var key in counts_workshops) { 
             //text += cars[i] + "<br>";
-            console.log(key);
-            console.log(counts_workshops[key]);
-            console.log('testing url encode: ');
-            console.log(encodeURIComponent(key));
+            // console.log(key);
+            // console.log(counts_workshops[key]);
+            // console.log('testing url encode: ');
+            // console.log(encodeURIComponent(key));
             tag_hash = encodeURIComponent(key);
             tag_hash = tag_hash.replace(/%20/g, "+");
-            console.log(tag_hash);
+            // console.log(tag_hash);
             $('.tag-box-workshops').append("<li><a href='{{ site.baseurl }}/resources/#tab_workshops&"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_workshops[key]+"</span></a></li>");
         }
 
@@ -755,12 +760,13 @@ window.addEventListener("hashchange", function () {
             tag_hash = tag_hash.replace(/%20/g, "+");
             $('.tag-box-products').append("<li><a href='{{ site.baseurl }}/resources/#tab_products&"+tag_hash+"' id='"+tag_hash+"'>"+key+"<span>"+counts_products[key]+"</span></a></li>");
         }
-
+console.log('test2');
+console.log(tags_in_url);
     //call the hashchange function to display the correct entries based on all the tags located in the url hash
     if (tags_in_url == 'true') {
+        console.log('test3');
         myHashChangefunction();
     }
-
 
     //http://stackoverflow.com/questions/7862233/twitter-bootstrap-tabs-go-to-specific-tab-on-page-reload-or-hyperlink
 
@@ -822,10 +828,8 @@ window.addEventListener("hashchange", function () {
 
 });
 
-    
+
 </script>
-
-
 
 
 <!--Code for Tools Table-->
