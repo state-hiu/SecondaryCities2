@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Aug 2017 23:05:30 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Aug 2017 23:05:30 +0200</lastBuildDate>
+    <pubDate>Tue, 29 Aug 2017 00:07:38 +0200</pubDate>
+    <lastBuildDate>Tue, 29 Aug 2017 00:07:38 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -32,23 +32,22 @@
       </item>
     
       <item>
-        <title>Quality Assurance Quality Control and Metadata Procedures</title>
-        <description>
+        <title>2C South Africa Technical Exchange</title>
+        <description>&lt;p&gt;Africa EIS and Esri South Africa hosted the 2C South Africa Technical Exchange (2C-SATE) in Midrand, South Africa.  The 2C-SATE provided a venue for all 2C Africa projects to meet, share lessons learned, and create a network of geospatial experts.  2C Africa projects include:  2C Douala, Cameroon, 2C Mekelle, Ethiopia, and 2C Port Harcourt, Nigeria.  The technical exchange included hands on workshops using ArcGIS Online, geospatial data analysis, and data generation activities.&lt;/p&gt;
+
+&lt;p&gt;Each city presented on the current status of their project, providing an assessment of the 2C Initiative in Africa.  The 2C Mekelle project focuses on mapping urban growth and water resources in an arid region long subject to droughts and water shortages, and dependent on water conservation. The 2C Port Harcourt team chose to map informal residential developments and areas subjected to routine flooding, a ubiquitous problem in the watery Niger Delta region that strains the capacity of both governance and city services. The 2C Douala teams chose to focus on mapping lower-lying regions of the city subject to routine flooding, and help create responses to a routinely-occurring natural disaster. The 2C CSU team provided a change detection analysis for each city.  Each 2C city team assessed the change detection results in a participatory mapping activity to verify the outcomes.&lt;/p&gt;
+
+&lt;p&gt;Due to the success of this event, there are plans for a follow up 2C-SATE in 2018.&lt;/p&gt;
+
 </description>
-        <pubDate>Mon, 17 Jul 2017 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-presentation.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-presentation.html</guid>
+        <pubDate>Mon, 26 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</guid>
         
-        <category>QAQC</category>
-        
-        <category>metadata</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
+        <category>event</category>
         
         
-        <category>resources</category>
+        <category>events</category>
         
       </item>
     
