@@ -4,19 +4,19 @@
     <title>Secondary Cities</title>
     <description>Resiliency - Human Security - Emergency Preparedness
 </description>
-    <link>http://localhost:4000/SecondaryCities2/</link>
-    <atom:link href="http://localhost:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Aug 2017 23:08:22 -0400</pubDate>
-    <lastBuildDate>Wed, 09 Aug 2017 23:08:22 -0400</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <link>http://0.0.0.0:4000/SecondaryCities2/</link>
+    <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 28 Aug 2017 22:33:06 +0200</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 22:33:06 +0200</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>Quality Assurance Checklist</title>
         <description>
 </description>
-        <pubDate>Mon, 17 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/qaqc-checklist.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/qaqc-checklist.html</guid>
+        <pubDate>Mon, 17 Jul 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-checklist.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-checklist.html</guid>
         
         <category>QAQC</category>
         
@@ -35,9 +35,9 @@
         <title>Quality Assurance Quality Control and Metadata Procedures</title>
         <description>
 </description>
-        <pubDate>Mon, 17 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/qaqc-presentation.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/qaqc-presentation.html</guid>
+        <pubDate>Mon, 17 Jul 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-presentation.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/qaqc-presentation.html</guid>
         
         <category>QAQC</category>
         
@@ -56,9 +56,9 @@
         <title>Mapping Urbanization in Secondary Cities</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/before-after-video.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/before-after-video.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</guid>
         
         <category>urbanization</category>
         
@@ -73,9 +73,9 @@
         <title>Field Data Collection Training</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_collection.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_collection.html</guid>
         
         <category>kharkiv</category>
         
@@ -96,9 +96,9 @@
         <title>Field Papers One Pager</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
         
         <category>kharkiv</category>
         
@@ -119,9 +119,9 @@
         <title>Survey123 Frequently Asked Questions</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
         
         <category>kharkiv</category>
         
@@ -144,9 +144,9 @@
         <title>Using Survey123 1-pager</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/using_survey123.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/using_survey123.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/using_survey123.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/using_survey123.html</guid>
         
         <category>kharkiv</category>
         
@@ -167,9 +167,9 @@
         <title>Kharkiv Workshop Data Collection Features &amp; Attributes</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/data-collection.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/data-collection.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</guid>
         
         <category>kharkiv</category>
         
@@ -190,9 +190,9 @@
         <title>Accessing Existing Geospatial Data for Kharkiv</title>
         <description>
 </description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/resources/accessing_geospatial_data.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/accessing_geospatial_data.html</guid>
+        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</guid>
         
         <category>kharkiv</category>
         
@@ -213,9 +213,9 @@
         <title>Dynamic Mapping of Secondary Cities Symposium</title>
         <description>
 </description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</guid>
+        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</guid>
         
         <category>event</category>
         

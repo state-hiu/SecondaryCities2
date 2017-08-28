@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/SecondaryCities2/build/style.css">
     <link rel="stylesheet" href="/SecondaryCities2/build/freelancer.css">
 
-    <link rel="canonical" href="http://localhost:4000/SecondaryCities2/">
+    <link rel="canonical" href="http://0.0.0.0:4000/SecondaryCities2/">
 
-    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://localhost:4000/SecondaryCities2 /feed.xml ">
+    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://0.0.0.0:4000/SecondaryCities2 /feed.xml ">
 
     <!-- Custom Fonts 
     <link href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
@@ -203,6 +203,26 @@ position:fixed!important;
     opacity: 0.85;
 }
 
+.icon_2c {
+    background-image: url("/SecondaryCities2/assets/2c_pin.png");
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid white;
+}
+
+/*
+var 2c_icon = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_icon.png",
+    iconSize: [30, 45],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    //opacity: .5,
+    //fillOpacity: 0.7,
+    //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
+    className: "2c_icon"
+});
+*/
+
 .label-span {
     font-size: 18px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -316,8 +336,13 @@ position:fixed!important;
 
 </style>
 
+<!--
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+-->
+
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 
 <script src='/SecondaryCities2/assets/js/libs/leaflet.rrose-src.js'></script>
 <link href='/SecondaryCities2/assets/css/leaflet.rrose.css' rel='stylesheet' />
@@ -368,7 +393,6 @@ var map = L.mapbox.map('map', '', {
 
 }
 
-
 /*
     var map = L.mapbox.map('map')
     .setView([38.97416, -95.23252], 15);
@@ -383,6 +407,21 @@ var map = L.mapbox.map('map', '', {
     attribution: 'Names and boundary representation are not necessarily authoritative'
   }).addTo(map);
 
+
+//used Inkscape to save Secondary Cities icon: http://inkscapetutorials.org/2014/04/22/inkscape-faq-how-do-i-crop-in-inkscape/#document
+var SecondaryCitiesIcon = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin.png",
+    iconSize: [36, 52],
+    iconAnchor: [18, 40],
+    popupAnchor: [0, 0],
+      //opacity: .5,
+      //fillOpacity: 0.7,
+      //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
+      className: "SecondaryCitiesIcon"
+
+});
+
+
 /* not doing it this way because choosing the compact attribution control display
 var credits = L.control.attribution().addTo(map);
 credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
@@ -393,7 +432,7 @@ if (window.innerWidth < 1200) {
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/cusco"><div class="circleBase type1"></div>'+
+        html: '<a href="/SecondaryCities2/cusco"><div class="icon_2c"></div>'+
                   '<span class="label-span-small" id="label-cusco">Cusco <span id="country-small">Peru</span></span></a>'
     });
     
@@ -401,17 +440,27 @@ if (window.innerWidth < 1200) {
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/cusco"><div class="circleBase type1"></div>'+
+        html: '<a href="/SecondaryCities2/cusco"><div class="icon_2c"></div>'+
                   '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
     });
    
 } 
 
-// you can set .my-div-icon styles in CSS
+cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon}).addTo(map);
+//cuscoMarker = L.marker([-13.51845,-71.97752]).addTo(map);
 
-cuscoMarker = L.marker([-13.51845,-71.97752], {icon: cuscoIcon}).addTo(map);
+cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>2C Cusco details', {offset: new L.Point(0, -15)});
 
-cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>2C Cusco details');
+cuscoMarker.bindTooltip('<span class="label-span">Cusco <span id="country">Peru</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(10, 0),
+});
+
+
+cuscoMarker.on('click', function (e) {
+            window.open("/SecondaryCities2/cusco");
+        });
 
 cuscoMarker.on('mouseover', function (e) {
             this.openPopup();
@@ -441,13 +490,25 @@ if (window.innerWidth < 1200) {
 }
 // you can set .my-div-icon styles in CSS
 
-denpasarMarker = L.marker([-8.6493,115.2169], {icon: denpasarIcon}).addTo(map);
+denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon}).addTo(map);
 
 /*
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>2C Denpasar details');
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>2C Denpasar details', {offset: new L.Point(0, -15)});
+
+denpasarMarker.bindTooltip('<span class="label-span">Denpasar </br><span id="country">Indonesia</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-25, 0),
+});
+
+
+denpasarMarker.on('click', function (e) {
+            window.open("http://2cdenpasar.com/");
+        });
+
 
 denpasarMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -481,10 +542,20 @@ if (window.innerWidth < 1200) {
 
 }
 
-kharkivMarker = L.marker([49.9811,36.2533], {icon: kharkivIcon}).addTo(map);
+kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon}).addTo(map);
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
 kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br>2C Kharkiv details', {offset: new L.Point(-100, 150)});
+
+kharkivMarker.bindTooltip('<span class="label-span">Kharkiv </br><span id="country">Ukraine</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-25, 0),
+});
+
+kharkivMarker.on('click', function (e) {
+            window.open("/SecondaryCities2/kharkiv");
+        });
 
 kharkivMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -579,9 +650,19 @@ if (window.innerWidth < 1200) {
 
 
 
-medellinMarker = L.marker([6.25177,-75.56349], {icon: medellinIcon}).addTo(map);
+medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon}).addTo(map);
 
-medellinMarker.bindPopup('<img src="/SecondaryCities2/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>2C Medellin details');
+medellinMarker.bindPopup('<img src="/SecondaryCities2/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>2C Medellin details', {offset: new L.Point(0, -15)})
+
+medellinMarker.bindTooltip('<span class="label-span">Medellín </br><span id="country">Colombia</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
+medellinMarker.on('click', function (e) {
+            window.open("/SecondaryCities2/medellin");
+        });
 
 medellinMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -615,9 +696,17 @@ if (window.innerWidth < 1200) {
 
 }
 
-doualaMarker = L.marker([4.0494,9.8342], {icon: doualaIcon}).addTo(map);
+doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon}).addTo(map);
 
-doualaMarker.bindPopup('<img src="/SecondaryCities2/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>Coming soon');
+doualaMarker.bindPopup('<img src="/SecondaryCities2/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>Coming soon', {offset: new L.Point(0, -15)});
+
+doualaMarker.bindTooltip('<span class="label-span">Douala </br><span id="country">Cameroon</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
+
 
 doualaMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -651,9 +740,15 @@ if (window.innerWidth < 1200) {
 
 }
 
-port_harcourtMarker = L.marker([4.8009,6.95], {icon: port_harcourtIcon}).addTo(map);
+port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon}).addTo(map);
 
-port_harcourtMarker.bindPopup('<img src="/SecondaryCities2/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>Coming soon');
+port_harcourtMarker.bindPopup('<img src="/SecondaryCities2/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>Coming soon', {offset: new L.Point(0, -15)});
+
+port_harcourtMarker.bindTooltip('<span class="label-span">Port Harcourt </br><span id="country">Nigeria</span></span></a>', {
+    direction: 'left',
+    permanent: true,
+    offset: L.point(-30, 0),
+});
 
 port_harcourtMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -686,9 +781,15 @@ if (window.innerWidth < 1200) {
 
 }
 
-santiagoMarker = L.marker([19.4523,-70.6888], {icon: santiagoIcon}).addTo(map);
+santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon}).addTo(map);
 
-santiagoMarker.bindPopup('<img src="/SecondaryCities2/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>Coming soon');
+santiagoMarker.bindPopup('<img src="/SecondaryCities2/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>Coming soon', {offset: new L.Point(0, -15)});
+
+santiagoMarker.bindTooltip('<span class="label-span">Santiago </br><span id="country">Dominican Republic</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
 
 santiagoMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -721,9 +822,15 @@ if (window.innerWidth < 1200) {
 
 }
 
-mekelleMarker = L.marker([13.49640,39.47523], {icon: mekelleIcon}).addTo(map);
+mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon}).addTo(map);
 
-mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br>Coming soon');
+mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br>Coming soon', {offset: new L.Point(0, -15)});
+
+mekelleMarker.bindTooltip('<span class="label-span">Mekelle </br><span id="country">Ethiopia</span></span></a>', {
+    direction: 'right',
+    permanent: true,
+    offset: L.point(15, 0),
+});
 
 mekelleMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -758,9 +865,19 @@ if (window.innerWidth < 1200) {
 }
 
 
-pokharaMarker = L.marker([28.20907, 83.99585], {icon: pokharaIcon}).addTo(map);
+pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon}).addTo(map);
 
-pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>2C Pokhara details');
+pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>2C Pokhara details', {offset: new L.Point(0, -15)});
+
+pokharaMarker.bindTooltip('<span class="label-span">Pokhara </br><span id="country">Nepal</span></span></a>', {
+    direction: 'right',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
+pokharaMarker.on('click', function (e) {
+            window.open("/SecondaryCities2/pokhara");
+        });
 
 pokharaMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -793,15 +910,25 @@ if (window.innerWidth < 1200) {
 
 }
 
-esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: esmeraldasIcon}).addTo(map);
+esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon}).addTo(map);
 
-esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>2C Esmeraldas details');
+esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>2C Esmeraldas details', {offset: new L.Point(0, -15)});
+
+esmeraldasMarker.bindTooltip('<span class="label-span">Esmeraldas </br><span id="country">Ecuador</span></span></a>', {
+    direction: 'left',
+    permanent: true,
+    offset: L.point(-25, 0),
+});
+
+esmeraldasMarker.on('click', function (e) {
+            window.open("http://arcg.is/2dCZk2t");
+        });
 
 esmeraldasMarker.on('mouseover', function (e) {
             //console.log('before popup');
             this.openPopup();
             //debugger;
-            //console.log('after popup');
+            //console.log('after popup');f
             $( ".leaflet-popup-close-button" ).hide();fperu
         });
 
@@ -856,9 +983,11 @@ $( document ).ready(function() {
   setTimeout(function () {
       $( ".alert" ).fadeIn( "slow" );
     }, 1500);
+/* disable timeout
   setTimeout(function () {
       $( ".alert" ).fadeOut( "slow" );
     }, 7500);
+*/
 });
 
 // You can also put other controls in the same placeholder.
