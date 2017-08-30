@@ -170,7 +170,7 @@ var 2c_icon = L.icon({
 }
 
 #country-small {
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
 }
 
@@ -272,6 +272,8 @@ var credits = L.control.attribution().addTo(map);
 credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
 */
 
+cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon}).addTo(map);
+//cuscoMarker = L.marker([-13.51845,-71.97752]).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -281,6 +283,12 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-cusco">Cusco <span id="country-small">Peru</span></span></a>'
     });
     
+    cuscoMarker.bindTooltip('<span class="label-span-small">Cusco </br><span id="country-small">Peru</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
 } else {
 
     var cuscoIcon = L.divIcon({
@@ -288,20 +296,16 @@ if (window.innerWidth < 1200) {
         html: '<a href="{{ site.baseurl }}/cusco"><div class="icon_2c"></div>'+
                   '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
     });
+
+    cuscoMarker.bindTooltip('<span class="label-span">Cusco </br><span id="country">Peru</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
    
 } 
 
-cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon}).addTo(map);
-//cuscoMarker = L.marker([-13.51845,-71.97752]).addTo(map);
-
 cuscoMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>Cusco (2015-2017)', {offset: new L.Point(0, -15)});
-
-cuscoMarker.bindTooltip('<span class="label-span">Cusco <span id="country">Peru</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(10, 0),
-});
-
 
 cuscoMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/cusco");
@@ -316,6 +320,8 @@ cuscoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var denpasarIcon = L.divIcon({
@@ -323,6 +329,13 @@ if (window.innerWidth < 1200) {
         html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
                   '<span class="label-span-small" id="label-denpasar">Denpasar <span id="country-small">Indonesia</span></span></a></div>'
     });
+
+    denpasarMarker.bindTooltip('<span class="label-span-small">Denpasar </br><span id="country-small">Indonesia</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-20, 0),
+});
+
 
 } else {
 
@@ -332,10 +345,17 @@ if (window.innerWidth < 1200) {
                       '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
         });
 
+    denpasarMarker.bindTooltip('<span class="label-span">Denpasar </br><span id="country">Indonesia</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-20, 0),
+});
+
+
 }
 // you can set .my-div-icon styles in CSS
 
-denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon}).addTo(map);
+
 
 /*
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
@@ -343,11 +363,6 @@ DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i c
 
 denpasarMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>Denpasar (2015- 2017)', {offset: new L.Point(0, -15)});
 
-denpasarMarker.bindTooltip('<span class="label-span">Denpasar </br><span id="country">Indonesia</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-25, 0),
-});
 
 
 denpasarMarker.on('click', function (e) {
@@ -368,6 +383,8 @@ denpasarMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var kharkivIcon = L.divIcon({
@@ -375,6 +392,13 @@ if (window.innerWidth < 1200) {
         html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-kharkiv">Kharkiv <span id="country-small">Ukraine</span></span></a>'
     });
+
+    kharkivMarker.bindTooltip('<span class="label-span-small">Kharkiv </br><span id="country-small">Ukraine</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-20, 0),
+});
+
 
 } else {
 
@@ -384,19 +408,18 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
     });
 
+    kharkivMarker.bindTooltip('<span class="label-span">Kharkiv </br><span id="country">Ukraine</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(-20, 0),
+});
+
 
 }
-
-kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon}).addTo(map);
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
 kharkivMarker.bindPopup('<img src="{{ site.baseurl }}/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br>Kharkiv (2015-2017)', {offset: new L.Point(-100, 150)});
 
-kharkivMarker.bindTooltip('<span class="label-span">Kharkiv </br><span id="country">Ukraine</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-25, 0),
-});
 
 kharkivMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/kharkiv");
@@ -475,6 +498,8 @@ map.addLayer(marker2);
 
 */
 
+medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var medellinIcon = L.divIcon({
@@ -482,6 +507,12 @@ if (window.innerWidth < 1200) {
         html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-medellin-small">Medellín <span id="country-small">Colombia</span></span></a>'
     });
+
+    medellinMarker.bindTooltip('<span class="label-span-small">Medellín </br><span id="country-small">Colombia</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
 
 } else {
 
@@ -491,19 +522,18 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
     });
 
-}
-
-
-
-medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon}).addTo(map);
-
-medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>Medellin (2015-2017)', {offset: new L.Point(0, -15)})
-
-medellinMarker.bindTooltip('<span class="label-span">Medellín </br><span id="country">Colombia</span></span></a>', {
+    medellinMarker.bindTooltip('<span class="label-span">Medellín </br><span id="country">Colombia</span></span></a>', {
     direction: 'auto',
     permanent: true,
     offset: L.point(15, 0),
 });
+
+}
+
+
+medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>Medellin (2015-2017)', {offset: new L.Point(0, -15)})
+
+
 
 medellinMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/medellin");
@@ -522,6 +552,7 @@ medellinMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -531,6 +562,12 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-douala" >Douala <span id="country-small">Cameroon</span></span>'
     });
 
+    doualaMarker.bindTooltip('<span class="label-span-small">Douala </br><span id="country-small">Cameroon</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
 } else {
 
     var doualaIcon = L.divIcon({
@@ -539,19 +576,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-douala" >Douala <span id="country">Cameroon</span></span>'
     });
 
-}
-
-doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon}).addTo(map);
-
-doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>Coming soon', {offset: new L.Point(0, -15)});
-
-doualaMarker.bindTooltip('<span class="label-span">Douala </br><span id="country">Cameroon</span></span></a>', {
+    doualaMarker.bindTooltip('<span class="label-span">Douala </br><span id="country">Cameroon</span></span></a>', {
     direction: 'auto',
     permanent: true,
     offset: L.point(15, 0),
 });
 
+}
 
+
+doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>Coming soon', {offset: new L.Point(0, -15)});
 
 doualaMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -566,6 +600,7 @@ doualaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -575,6 +610,12 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-port_harcourt" >Port Harcourt <span id="country-small">Nigeria</span></span>'
     });
 
+    port_harcourtMarker.bindTooltip('<span class="label-span-small">Port Harcourt </br><span id="country-small">Nigeria</span></span></a>', {
+    direction: 'left',
+    permanent: true,
+    offset: L.point(-30, 0),
+});
+
 } else {
 
     var port_harcourtIcon = L.divIcon({
@@ -583,17 +624,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-port_harcourt" >Port Harcourt <span id="country">Nigeria</span></span>'
     });
 
-}
-
-port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon}).addTo(map);
-
-port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>Coming soon', {offset: new L.Point(0, -15)});
-
-port_harcourtMarker.bindTooltip('<span class="label-span">Port Harcourt </br><span id="country">Nigeria</span></span></a>', {
+    port_harcourtMarker.bindTooltip('<span class="label-span">Port Harcourt </br><span id="country">Nigeria</span></span></a>', {
     direction: 'left',
     permanent: true,
     offset: L.point(-30, 0),
 });
+
+}
+
+
+port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>Coming soon', {offset: new L.Point(0, -15)});
 
 port_harcourtMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -608,6 +648,10 @@ port_harcourtMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+
+santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon}).addTo(map);
+
+
 if (window.innerWidth < 1200) {
 
     var santiagoIcon = L.divIcon({
@@ -615,6 +659,12 @@ if (window.innerWidth < 1200) {
         html: '<div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-santiago" >Santiago <span id="country-small">Dominican Republic</span></span>'
     });
+
+    santiagoMarker.bindTooltip('<span class="label-span-small">Santiago </br><span id="country-small">Dominican Republic</span></span></a>', {
+    direction: 'auto',
+    permanent: true,
+    offset: L.point(15, -25),
+});
 
 } else {
 
@@ -624,17 +674,17 @@ if (window.innerWidth < 1200) {
                       '<span class="label-span" id="label-santiago" >Santiago <span id="country">Dominican Republic</span></span>'
         });
 
-}
-
-santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon}).addTo(map);
-
-santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>Coming soon', {offset: new L.Point(0, -15)});
-
-santiagoMarker.bindTooltip('<span class="label-span">Santiago </br><span id="country">Dominican Republic</span></span></a>', {
+    santiagoMarker.bindTooltip('<span class="label-span">Santiago </br><span id="country">Dominican Republic</span></span></a>', {
     direction: 'auto',
     permanent: true,
     offset: L.point(15, 0),
 });
+
+}
+
+santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>Coming soon', {offset: new L.Point(0, -15)});
+
+
 
 santiagoMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -649,6 +699,9 @@ santiagoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+
+mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var mekelleIcon = L.divIcon({
@@ -657,25 +710,30 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-mekelle-small" >Mekelle <span id="country-small">Ethiopia</span></span>'
     });
 
+    mekelleMarker.bindTooltip('<span class="label-span-small">Mekelle </br><span id="country-small">Ethiopia</span></span></a>', {
+    direction: 'right',
+    permanent: true,
+    offset: L.point(15, 0),
+});
+
 } else {
 
     var mekelleIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="circleBase type1"></div>'+
-                  '<span class="label-span" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
+                  '<span class="label-span-small" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
     });
 
-}
-
-mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon}).addTo(map);
-
-mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br>Coming soon', {offset: new L.Point(0, -15)});
-
-mekelleMarker.bindTooltip('<span class="label-span">Mekelle </br><span id="country">Ethiopia</span></span></a>', {
+    mekelleMarker.bindTooltip('<span class="label-span">Mekelle </br><span id="country">Ethiopia</span></span></a>', {
     direction: 'right',
     permanent: true,
     offset: L.point(15, 0),
 });
+
+}
+
+mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br>Coming soon', {offset: new L.Point(0, -15)});
+
 
 mekelleMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -691,6 +749,8 @@ mekelleMarker.on('mouseout', function (e) {
         });
 
 
+pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var pokharaIcon = L.divIcon({
@@ -698,6 +758,12 @@ if (window.innerWidth < 1200) {
         html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-pokhara">Pokhara <span id="country-small">Nepal</span></span></a>'
     });
+
+    pokharaMarker.bindTooltip('<span class="label-span-small">Pokhara </br><span id="country-small">Nepal</span></span></a>', {
+    direction: 'right',
+    permanent: true,
+    offset: L.point(15, 0),
+});
 
 } else {
 
@@ -707,18 +773,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
     });
 
-}
-
-
-pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon}).addTo(map);
-
-pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>Pokhara (2015-Ongoing)', {offset: new L.Point(0, -15)});
-
-pokharaMarker.bindTooltip('<span class="label-span">Pokhara </br><span id="country">Nepal</span></span></a>', {
+    pokharaMarker.bindTooltip('<span class="label-span">Pokhara </br><span id="country">Nepal</span></span></a>', {
     direction: 'right',
     permanent: true,
     offset: L.point(15, 0),
 });
+
+}
+
+
+pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>Pokhara (2015-Ongoing)', {offset: new L.Point(0, -15)});
 
 pokharaMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/pokhara");
@@ -737,6 +801,9 @@ pokharaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
+
+esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon}).addTo(map);
+
 if (window.innerWidth < 1200) {
 
     var esmeraldasIcon = L.divIcon({
@@ -744,6 +811,12 @@ if (window.innerWidth < 1200) {
         html: '<a href="http://arcg.is/2dCZk2t" target="_blank" ><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-esmeraldas">Esmeraldas <span id="country-small">Ecuador</span></span></a>'
     });
+
+    esmeraldasMarker.bindTooltip('<span class="label-span-small">Esmeraldas </br><span id="country-small">Ecuador</span></span></a>', {
+    direction: 'left',
+    permanent: true,
+    offset: L.point(-22, 0),
+});
 
 } else {
 
@@ -753,17 +826,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a>'
     });
 
-}
-
-esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon}).addTo(map);
-
-esmeraldasMarker.bindPopup('<img src="{{ site.baseurl }}/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>Esmeraldas (2016- Ongoing)', {offset: new L.Point(0, -15)});
-
-esmeraldasMarker.bindTooltip('<span class="label-span">Esmeraldas </br><span id="country">Ecuador</span></span></a>', {
+    esmeraldasMarker.bindTooltip('<span class="label-span">Esmeraldas </br><span id="country">Ecuador</span></span></a>', {
     direction: 'left',
     permanent: true,
-    offset: L.point(-25, 0),
+    offset: L.point(-22, 0),
 });
+
+}
+
+esmeraldasMarker.bindPopup('<img src="{{ site.baseurl }}/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>Esmeraldas (2016- Ongoing)', {offset: new L.Point(0, -15)});
 
 esmeraldasMarker.on('click', function (e) {
             window.open("http://arcg.is/2dCZk2t");
