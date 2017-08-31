@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/SecondaryCities2/build/style.css">
     <link rel="stylesheet" href="/SecondaryCities2/build/freelancer.css">
 
-    <link rel="canonical" href="http://localhost:4000/SecondaryCities2/">
+    <link rel="canonical" href="http://0.0.0.0:4000/SecondaryCities2/">
 
-    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://localhost:4000/SecondaryCities2 /feed.xml ">
+    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://0.0.0.0:4000/SecondaryCities2 /feed.xml ">
 
     <!-- Custom Fonts 
     <link href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
@@ -460,7 +460,7 @@ if (window.innerWidth < 1200) {
    
 } 
 
-cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>Cusco (2015-2017)', {offset: new L.Point(0, -15)});
+cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>Cusco (2015–2017)', {offset: new L.Point(0, -15)});
 
 cuscoMarker.on('click', function (e) {
             window.open("/SecondaryCities2/cusco");
@@ -516,7 +516,7 @@ if (window.innerWidth < 1200) {
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>Denpasar (2015- 2017)', {offset: new L.Point(0, -15)});
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>Denpasar (2015–2017)', {offset: new L.Point(0, -15)});
 
 
 
@@ -573,7 +573,7 @@ if (window.innerWidth < 1200) {
 }
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
-kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br>Kharkiv (2015-2017)', {offset: new L.Point(-100, 150)});
+kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br>Kharkiv (2015–2017)', {offset: new L.Point(-100, 150)});
 
 
 kharkivMarker.on('click', function (e) {
@@ -585,6 +585,7 @@ kharkivMarker.on('mouseover', function (e) {
             this.openPopup();
             //debugger;
             //console.log('after popup');
+
             $( ".leaflet-popup-close-button" ).hide();
             //turn off popup indicator on bottom
             //$( ".leaflet-popup-tip" ).hide();
@@ -595,8 +596,9 @@ kharkivMarker.on('mouseover', function (e) {
             need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
             */
             $( ".leaflet-popup-content-wrapper" ).css("float", "left");
-            $( ".leaflet-popup-tip-container" ).css("float", "left");
             $( ".leaflet-popup-content" ).css("width", "none");
+            $( ".leaflet-popup-tip-container" ).css("float", "left");
+            $( ".leaflet-popup-tip-container" ).css("width", "14px");
             $( ".leaflet-popup-tip" ).css("margin-top", "22px");
             $( ".leaflet-popup-tip" ).css("border-left", "none");
         });
@@ -686,7 +688,7 @@ if (window.innerWidth < 1200) {
 }
 
 
-medellinMarker.bindPopup('<img src="/SecondaryCities2/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>Medellin (2015-2017)', {offset: new L.Point(0, -15)})
+medellinMarker.bindPopup('<img src="/SecondaryCities2/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>Medellin (2015–2017)', {offset: new L.Point(0, -15)})
 
 
 
@@ -937,7 +939,7 @@ if (window.innerWidth < 1200) {
 }
 
 
-pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>Pokhara (2015-Ongoing)', {offset: new L.Point(0, -15)});
+pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>Pokhara (2015–Ongoing)', {offset: new L.Point(0, -15)});
 
 pokharaMarker.on('click', function (e) {
             window.open("/SecondaryCities2/pokhara");
@@ -989,7 +991,7 @@ if (window.innerWidth < 1200) {
 
 }
 
-esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>Esmeraldas (2016- Ongoing)', {offset: new L.Point(0, -15)});
+esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>Esmeraldas (2016–Ongoing)', {offset: new L.Point(0, -15)});
 
 esmeraldasMarker.on('click', function (e) {
             window.open("http://arcg.is/2dCZk2t");
