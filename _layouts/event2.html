@@ -61,10 +61,10 @@ layout: basic
 
             <div class="row">
                 <div class="col-lg-12 text-center">
-                  {% if section.title %}<h4 style="text-transform: none;">{{ section.title }}</h4>{% endif %}
+                  {% if section.title %}
+                    <h4 style="text-transform: none;">{{ section.title }}</h4>
                     <hr class="star-primary2" style="border-width:3px">
-                
-
+                  {% endif %}
                     <!-- display section banner_image.
                          If first section and there is no section banner_image specified, default to page banner_image -->
                     {% if section.banner_image %}
