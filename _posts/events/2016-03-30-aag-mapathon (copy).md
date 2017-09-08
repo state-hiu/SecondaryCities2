@@ -1,0 +1,19 @@
+---
+layout: event2
+category: events
+title: "AAG Mapathon 2017 – Secondary Cities: Mapping Human Geography Data"
+subtitle: Mapathon Lounge, Thursday 10:00am-11:40am
+ref: aag-mapathon
+status: past
+date: 20170405
+page-num: 1
+final-page: false
+previous-page-url: ""
+external_url: 'http://www.aag.org/cs/annualmeeting/schedule_and_program/special_events/mapathon'
+tags:
+  - event
+sections:
+
+---
+
+This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.

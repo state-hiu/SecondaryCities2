@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Sep 2017 19:23:44 +0200</pubDate>
-    <lastBuildDate>Fri, 08 Sep 2017 19:23:44 +0200</lastBuildDate>
+    <pubDate>Fri, 08 Sep 2017 19:37:16 +0200</pubDate>
+    <lastBuildDate>Fri, 08 Sep 2017 19:37:16 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -43,6 +43,21 @@
         <pubDate>Mon, 26 Jun 2017 00:00:00 +0200</pubDate>
         <link>http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>AAG Mapathon 2017 – Secondary Cities: Mapping Human Geography Data</title>
+        <description>&lt;p&gt;This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon-(copy).html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon-(copy).html</guid>
         
         <category>event</category>
         
@@ -205,21 +220,6 @@
         
         
         <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Dynamic Mapping of Secondary Cities Symposium</title>
-        <description>
-</description>
-        <pubDate>Wed, 15 Jun 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp-page-9.html</guid>
-        
-        <category>event</category>
-        
-        
-        <category>events</category>
         
       </item>
     
