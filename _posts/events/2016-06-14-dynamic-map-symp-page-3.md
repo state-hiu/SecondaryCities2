@@ -6,7 +6,7 @@ status: past
 date: 20160614
 page-num: 3
 final-page: false
-previous-page-url: "/SecondaryCities2/events/dynamic-map-symp-page-2.html"
+previous-page-url: "../events/dynamic-map-symp-page-2.html"
 tags:
   - event
 sections:
