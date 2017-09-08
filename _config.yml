@@ -29,3 +29,5 @@ exclude: [node_modules]
 
 # Outputting
 permalink: none
+
+future: true

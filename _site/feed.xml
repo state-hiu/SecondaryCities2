@@ -6,9 +6,24 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Sep 2017 19:37:16 +0200</pubDate>
-    <lastBuildDate>Fri, 08 Sep 2017 19:37:16 +0200</lastBuildDate>
+    <pubDate>Fri, 08 Sep 2017 19:53:59 +0200</pubDate>
+    <lastBuildDate>Fri, 08 Sep 2017 19:53:59 +0200</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>State of the Map Asia 2017</title>
+        <description>&lt;p&gt;Kathmandu Living Labs (KLL), a Secondary City Initiative partner, is hosting State of the Map (SOTM) Asia, September 23-24, 2017, two days of talks, discussions, workshops, and networking all around OpenStreetMap, the free and open map of the world. SOTM is an event for all mappers and OpenStreetMap users. Dr. Lee Schwartz, the Director of the Office of the Geographer and Global Issues will be giving a keynote.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/sotm-asia.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/sotm-asia.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
     
       <item>
         <title>Quality Assurance Checklist</title>
@@ -56,8 +71,8 @@
         <description>&lt;p&gt;This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Apr 2017 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon-(copy).html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon-(copy).html</guid>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</guid>
         
         <category>event</category>
         
@@ -190,29 +205,6 @@
         <category>AAG</category>
         
         <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Accessing Existing Geospatial Data for Kharkiv</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>data sharing</category>
         
         <category>English</category>
         
