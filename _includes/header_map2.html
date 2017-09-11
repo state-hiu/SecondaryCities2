@@ -240,6 +240,12 @@ var map = L.mapbox.map('map', '', {
 
 }
 
+if (window.innerWidth < 768) {
+
+    map.dragging.disable()
+
+}
+
 /*
     var map = L.mapbox.map('map')
     .setView([38.97416, -95.23252], 15);
