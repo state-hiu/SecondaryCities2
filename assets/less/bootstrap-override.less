@@ -13,11 +13,31 @@ hr {
     text-decoration: none;
 }
 
+.navbar {
+    margin-bottom: 0px;
+}
+
+.map-header {
+  margin-top: 75px;
+}
+
 @media (min-width: 768px){
     .navbar-right {
         float: right!important;
         margin-right: -15px;
         padding-top: 5px;
+    }
+}
+
+@media (max-width: 768px){
+    .map-header {
+      margin-top: 0px;
+    }
+    .navbar-toggle {
+        margin-right: 50px;
+    }
+    .navbar-fixed-bottom,.navbar-fixed-top {
+        position: inherit;
     }
 }
 
@@ -41,3 +61,4 @@ hr {
   padding: 9px;
   border-radius: 15px;
 }
+
