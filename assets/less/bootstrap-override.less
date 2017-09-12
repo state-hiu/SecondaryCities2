@@ -1,3 +1,6 @@
+html {
+    overflow-x: hidden;
+}
 hr {
     border-top: 1px solid #333;
 }
@@ -21,6 +24,47 @@ hr {
   margin-top: 75px;
 }
 
+#2Cstory {
+    margin: 0;
+    position: relative;
+}
+
+#story-map-title {
+    color:#7B533F;
+    font-size: 4em;
+    width: 700px;
+    margin: auto;
+    margin-top: 70px;
+}
+
+hr#story-underline {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color;
+    -moz-border-image: none;
+    -o-border-image: none;
+    border-image: none;
+    border-style: solid none none;
+    border-top: 5px solid #7B533F;
+    margin-top: 5px;
+    max-width: 560px;
+}
+
+.inside {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    font-size: 12px;
+}
+
+.anchor{
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+
 @media (min-width: 768px){
     .navbar-right {
         float: right!important;
@@ -38,6 +82,14 @@ hr {
     }
     .navbar-fixed-bottom,.navbar-fixed-top {
         position: inherit;
+    }
+    #story-map-title {
+        color: #7B533F;
+        font-size: 3em;
+        width: inherit;
+        margin: auto;
+        padding-top: 20px;
+        margin-top: 0px;
     }
 }
 

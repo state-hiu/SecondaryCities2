@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Secondary Cities</title>
 
@@ -162,6 +162,18 @@ position:fixed!important;
     width:100%;
     height:550px;
 }
+
+@media (max-width: 400px){
+        #map {
+            height:250px;
+        }
+    }
+
+@media (max-width: 768px){
+        #map {
+            height:300px;
+        }
+    }
 
 .main-hyperlink {
     font-size:20px;
@@ -392,7 +404,7 @@ console.log(txt);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
 
-if (window.innerWidth < 768) {
+if (window.innerWidth < 400) {
 
 var map = L.mapbox.map('map', '', {
     attributionControl: {compact: true},
@@ -403,9 +415,24 @@ var map = L.mapbox.map('map', '', {
     boxZoom: false,
     tap: false,
     dragging: false
-  }).setView([-60, 11], 1);
+  }).setView([10, 11], 1);
 
-  $('#map').css('height', '250px');
+  //$('#map').css('height', '250px');
+
+} else if (window.innerWidth < 768) {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:false,
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    tap: false,
+    dragging: false
+  }).setView([25, 11], 2);
+
+  //$('#map').css('height', '300px');
 
 } else if (window.innerWidth < 1200) {
 
@@ -1169,46 +1196,6 @@ $( document ).ready(function() {
     background-repeat: no-repeat;
     background-position: 50% 70% !important;
     position: relative;
-}
-
-#2Cstory {
-    margin: 0;
-    position: relative;
-}
-
-#story-map-title {
-    color:#7B533F;
-    font-size: 4em;
-    width: 700px;
-    margin: auto;
-    margin-top: 70px;
-}
-
-hr#story-underline {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: -moz-use-text-color;
-    -moz-border-image: none;
-    -o-border-image: none;
-    border-image: none;
-    border-style: solid none none;
-    border-top: 5px solid #7B533F;
-    margin-top: 5px;
-    max-width: 560px;
-}
-
-.inside {
-    position: absolute;
-    bottom: 2px;
-    right: 10px;
-    font-size: 12px;
-}
-
-.anchor{
-  padding-top: 50px;
-  margin-top: -50px;
 }
 
 </style>
