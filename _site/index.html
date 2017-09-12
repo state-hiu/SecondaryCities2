@@ -78,12 +78,18 @@
 <!--css fixes navbar from shifting when user clicks on a modal-->
 <!--https://github.com/twbs/bootstrap/issues/14040-->
 <style>
+
+html {
+    overflow-x: hidden;
+}
+
 body.modal-open{
 width:100%!important;
 padding-right:0!important;
 overflow-y:scroll!important;
 position:fixed!important;
 }
+
 </style>
 
 <nav class="navbar navbar-default navbar-fixed-top">
