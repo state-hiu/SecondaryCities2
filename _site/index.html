@@ -224,17 +224,31 @@ var 2c_icon = L.icon({
 */
 
 .label-span {
-    font-size: 18px;
+    font-size: 14px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
     display: block;
 }
 
 .label-span-small {
-    font-size: 14px;
+    font-size: 8px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
-    display: block;
+}
+
+#country {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#country-small {
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+.country-small {
+    font-size: 8px;
+    text-transform: uppercase;
 }
 
 .img-popup {
@@ -318,15 +332,7 @@ var 2c_icon = L.icon({
     text-align: right;
 }
 
-#country {
-    font-size: 12px;
-    text-transform: uppercase;
-}
 
-#country-small {
-    font-size: 10px;
-    text-transform: uppercase;
-}
 
 /*
 #DenpasarPopup:hover:before {
@@ -462,7 +468,7 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
     });
 
-//     cuscoMarker.bindTooltip('<span class="label-span">Cusco </br><span id="country">Peru</span></span></a>', {
+//     cuscoMarker.bindTooltip('<span class="label-span-small">Cusco </br><span id="country">Peru</span></span></a>', {
 //     direction: 'auto',
 //     permanent: true,
 //     offset: L.point(15, 0),
@@ -510,8 +516,8 @@ if (window.innerWidth < 1200) {
                       '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
         });
 
-//     denpasarMarker.bindTooltip('<span class="label-span">Denpasar </br><span id="country">Indonesia</span></span></a>', {
-//     direction: 'left',
+//     denpasarMarker.bindTooltip('<span class="label-span-small">Denpasar </span></br><span class="country">Indonesia</span>', {
+//     direction: 'auto',
 //     permanent: true,
 //     offset: L.point(0, 0),
 // });
