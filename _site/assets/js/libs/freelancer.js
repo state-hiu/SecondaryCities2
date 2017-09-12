@@ -13,8 +13,8 @@ if (window.innerWidth < 400) {
     $('body').on('click', '.page-scroll a', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 0, 'easeInOutExpo');
+            scrollTop: $($anchor.attr('href')).offset({ top: 300, left: 0 }).top
+        }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
 });
