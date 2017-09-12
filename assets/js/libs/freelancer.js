@@ -8,7 +8,7 @@
 
 //on mobile devices it was over-scrolling when clicking on menu items for anchor links
 //This is probably because the responsive menu push the items in the page down
-if (window.innerWidth < 400) {
+if (window.innerWidth < 768) {
     $(function() {
     $('body').on('click', '.page-scroll a', function(event) {
         var $anchor = $(this);
