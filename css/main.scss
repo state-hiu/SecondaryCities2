@@ -357,6 +357,12 @@ figcaption {
   margin-top: 74px;
 }
 
+.story-title {
+  font-style: none;
+  font-size: 24px;
+  color: #fff;
+}
+
 //this media query is to adjust either the sidebar and map
 //or the iframe lower if the navbar menue makes the navbar thicker
 @media (max-width: 1332px){
@@ -367,6 +373,19 @@ figcaption {
   .story-frame {
       margin-top: 120px;
   }
+}
+
+
+@media (max-width: 768px){
+  .story-frame {
+      margin-top: 0px;
+  }
+  .story-title {
+  font-style: none;
+  font-size: 24px;
+  color: #fff;
+  width: 375px;
+}
 }
 
 
