@@ -1,6 +1,14 @@
 <!-- Header -->
 
 <style>
+
+#map {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:550px;
+}
+
 .main-hyperlink {
     font-size:20px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -22,6 +30,14 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 20px;
+  color: #2c3e50;
+}
+
+.info-small {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 10px;
   color: #2c3e50;
 }
 
@@ -203,8 +219,7 @@ var 2c_icon = L.icon({
 
 <div style="background:#92ADBB;color:#7B533F;font-size: 20px;">Click on a city below for more information.</div>
 
-<div id="map" style="top:0px;left:0px;width:100%;height:550px;"></div>
-
+<div id="map"></div>
 
                     <!--<span class="skills">{{ site.description }}</span>
 </header>-->
@@ -222,7 +237,22 @@ console.log(txt);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
 
-if (window.innerWidth < 1200) {
+if (window.innerWidth < 768) {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:false,
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    tap: false,
+    dragging: false
+  }).setView([-60, 11], 1);
+
+  $('#map').css('height', '250px');
+
+} else if (window.innerWidth < 1200) {
 
 var map = L.mapbox.map('map', '', {
     attributionControl: {compact: true},
@@ -893,11 +923,19 @@ addControlPlaceholders(map);
 
 var info = L.control({position: 'horizontalcenter'});
 
-info.onAdd = function (map) {
-  this._div = L.DomUtil.create('div', 'info');
-  this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
-  return this._div;
-};
+if (window.innerWidth < 768) {
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info-small');
+      this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
+      return this._div;
+    };
+} else {
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
+      return this._div;
+    };
+}
 
 info.addTo(map);
 
