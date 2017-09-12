@@ -4,10 +4,10 @@
     <title>Secondary Cities</title>
     <description>Resiliency - Human Security - Emergency Preparedness
 </description>
-    <link>http://yourdomain.com/SecondaryCities2/</link>
-    <atom:link href="http://yourdomain.com/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Sep 2017 08:20:22 -0400</pubDate>
-    <lastBuildDate>Tue, 12 Sep 2017 08:20:22 -0400</lastBuildDate>
+    <link>http://localhost:4000/SecondaryCities2/</link>
+    <atom:link href="http://localhost:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 12 Sep 2017 08:35:08 -0400</pubDate>
+    <lastBuildDate>Tue, 12 Sep 2017 08:35:08 -0400</lastBuildDate>
     <generator>Jekyll v3.5.1</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>&lt;p&gt;Kathmandu Living Labs (KLL), a Secondary City Initiative partner, is hosting State of the Map (SOTM) Asia, September 23-24, 2017, two days of talks, discussions, workshops, and networking all around OpenStreetMap, the free and open map of the world. SOTM is an event for all mappers and OpenStreetMap users. Dr. Lee Schwartz, the Director of the Office of the Geographer and Global Issues will be giving a keynote.&lt;/p&gt;
 </description>
         <pubDate>Sat, 23 Sep 2017 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/sotm-asia.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/sotm-asia.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/events/sotm-asia.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/sotm-asia.html</guid>
         
         <category>event</category>
         
@@ -30,8 +30,8 @@
         <description>
 </description>
         <pubDate>Mon, 17 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/qaqc-checklist.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/qaqc-checklist.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/qaqc-checklist.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/qaqc-checklist.html</guid>
         
         <category>QAQC</category>
         
@@ -56,8 +56,8 @@
 
 </description>
         <pubDate>Mon, 26 Jun 2017 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/2c-SATE.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/2c-SATE.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/events/2c-SATE.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/2c-SATE.html</guid>
         
         <category>event</category>
         
@@ -71,8 +71,8 @@
         <description>&lt;p&gt;This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Apr 2017 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/events/aag-mapathon2017.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/events/aag-mapathon2017.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/events/aag-mapathon2017.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/events/aag-mapathon2017.html</guid>
         
         <category>event</category>
         
@@ -86,8 +86,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/before-after-video.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/before-after-video.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/before-after-video.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/before-after-video.html</guid>
         
         <category>urbanization</category>
         
@@ -103,8 +103,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/fieldpapers_collection.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/fieldpapers_collection.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_collection.html</guid>
         
         <category>kharkiv</category>
         
@@ -126,8 +126,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
         
         <category>kharkiv</category>
         
@@ -149,8 +149,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/survey123_faqs.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/survey123_faqs.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
         
         <category>kharkiv</category>
         
@@ -174,8 +174,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/using_survey123.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/using_survey123.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/using_survey123.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/using_survey123.html</guid>
         
         <category>kharkiv</category>
         
@@ -197,8 +197,8 @@
         <description>
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com/SecondaryCities2/resources/data-collection.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/SecondaryCities2/resources/data-collection.html</guid>
+        <link>http://localhost:4000/SecondaryCities2/resources/data-collection.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SecondaryCities2/resources/data-collection.html</guid>
         
         <category>kharkiv</category>
         
