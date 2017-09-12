@@ -11,9 +11,10 @@
 if (window.innerWidth < 768) {
     $(function() {
     $('body').on('click', '.page-scroll a', function(event) {
+        //$('.navbar-toggle').click();
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset({ top: 300, left: 0 }).top
+            scrollTop: $($anchor.attr('href')).offset().top
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
