@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/SecondaryCities2/build/style.css">
     <link rel="stylesheet" href="/SecondaryCities2/build/freelancer.css">
 
-    <link rel="canonical" href="http://localhost:4000/SecondaryCities2/">
+    <link rel="canonical" href="http://0.0.0.0:4000/SecondaryCities2/">
 
-    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://localhost:4000/SecondaryCities2 /feed.xml ">
+    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://0.0.0.0:4000/SecondaryCities2 /feed.xml ">
 
     <!-- Custom Fonts 
     <link href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
@@ -389,7 +389,7 @@ var 2c_icon = L.icon({
 
 <header class="map-header">
 
-<div style="background:#92ADBB;color:#7B533F;font-size: 20px;">ho Click on a city below for more information.</div>
+<div style="background:#92ADBB;color:#7B533F;font-size: 20px;">Click on a city below for more information.</div>
 
 <div id="map"></div>
 
@@ -501,12 +501,96 @@ var SecondaryCitiesIcon = L.icon({
 });
 
 
+// for these icons the png dimensions are 420 by 140. You can make the iconSize half the dimensions
+var SecondaryCitiesIcon_santiago = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_santiago.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+      //opacity: .5,
+      //fillOpacity: 0.7,
+      //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
+      className: "SecondaryCitiesIcon_santiago"
+});
+
+var SecondaryCitiesIcon_douala = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_douala.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_douala"
+});
+
+var SecondaryCitiesIcon_pokhara = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_pokhara.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_pokhara"
+});
+
+var SecondaryCitiesIcon_kharkiv = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_kharkiv.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_kharkiv"
+});
+
+var SecondaryCitiesIcon_medellin = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_medellin.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_medellin"
+});
+
+var SecondaryCitiesIcon_douala = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_douala.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_douala"
+});
+
+var SecondaryCitiesIcon_cusco = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_cusco.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_cusco"
+});
+
+var SecondaryCitiesIcon_denpasar = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_denpasar.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_denpasar"
+});
+
+var SecondaryCitiesIcon_portharcourt = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_portharcourt.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_portharcourt"
+});
+
+var SecondaryCitiesIcon_mekelle = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_mekelle.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_mekelle"
+});
+
 /* not doing it this way because choosing the compact attribution control display
 var credits = L.control.attribution().addTo(map);
 credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
 */
 
-cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon}).addTo(map);
+cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon_cusco}).addTo(map);
 //cuscoMarker = L.marker([-13.51845,-71.97752]).addTo(map);
 
 if (window.innerWidth < 1200) {
@@ -554,7 +638,7 @@ cuscoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon}).addTo(map);
+denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon_denpasar}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -617,7 +701,7 @@ denpasarMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon}).addTo(map);
+kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon_kharkiv}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -734,7 +818,7 @@ map.addLayer(marker2);
 
 */
 
-medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon}).addTo(map);
+medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon_medellin}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -788,7 +872,7 @@ medellinMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon}).addTo(map);
+doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon_douala}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -836,7 +920,7 @@ doualaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon}).addTo(map);
+port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon_portharcourt}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -885,7 +969,7 @@ port_harcourtMarker.on('mouseout', function (e) {
         });
 
 
-santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon}).addTo(map);
+santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon_santiago}).addTo(map);
 
 
 if (window.innerWidth < 1200) {
@@ -936,7 +1020,7 @@ santiagoMarker.on('mouseout', function (e) {
         });
 
 
-mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon}).addTo(map);
+mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon_mekelle}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -985,7 +1069,7 @@ mekelleMarker.on('mouseout', function (e) {
         });
 
 
-pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon}).addTo(map);
+pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon_pokhara}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
@@ -1038,7 +1122,7 @@ pokharaMarker.on('mouseout', function (e) {
         });
 
 
-esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon}).addTo(map);
+esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon_esmeraldas}).addTo(map);
 
 if (window.innerWidth < 1200) {
 
