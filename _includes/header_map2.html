@@ -224,7 +224,9 @@ var map = L.mapbox.map('map', '', {
     scrollWheelZoom: false,
     touchZoom: false,
     doubleClickZoom: false,
-    boxZoom: false
+    boxZoom: false,
+    tap: false
+    //dragging: false
   }).setView([18, 11], 2);
 
 } else {
@@ -235,16 +237,16 @@ var map = L.mapbox.map('map', '', {
     scrollWheelZoom: false,
     touchZoom: false,
     doubleClickZoom: false,
-    boxZoom: false
+    boxZoom: false,
   }).setView([19, 11], 3);
 
 }
 
-if (window.innerWidth < 768) {
+// if (window.innerWidth < 768) {
 
-    map.dragging.disable()
+//     map.dragging.disable()
 
-}
+// }
 
 /*
     var map = L.mapbox.map('map')
