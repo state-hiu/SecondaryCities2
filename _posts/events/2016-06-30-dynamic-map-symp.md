@@ -2,7 +2,7 @@
 layout: event2
 category: events
 title: Dynamic Mapping of Secondary Cities Symposium
-subtitle: 14–15 June 2016
+subtitle: "June 14–June 15 2016"
 ref: dynamic-map-symp
 status: past
 date: 20160614
