@@ -8,7 +8,7 @@ data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 banner_image_source: Lorem ipsum dolor sit amet
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=mekelle'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=mekelle'
 tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: false
 

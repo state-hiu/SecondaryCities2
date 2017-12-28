@@ -8,7 +8,7 @@ data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=medellin'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=medellin'
 imageurl: '/img/medellin/medellin_hillside.png'
 tweet_text: 'The 2C Medellín project focuses on urban flow and waste management %23SecondaryCities'
 esri_story: true

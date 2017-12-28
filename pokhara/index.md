@@ -9,7 +9,7 @@ banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
 imageurl: '/img/pokhara/mountains.jpg'
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=pokhara'
 tweet_text: '2C Pokhara is devising methods for comprehensive data generation focusing on emergency preparedness %23SecondaryCities'
 esri_story: true
 esri_story_url: 'https://csurams.maps.arcgis.com/apps/MapJournal/index.html?appid=f10d43bc53dd4fe594c65ae10072dce2'
