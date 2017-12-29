@@ -4,7 +4,7 @@ title: Kharkiv, Ukraine
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
 data_source_name: Secondary Cities
-data_source_url: http://secondarycities.geonode.state.gov/
+data_source_url: https://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
@@ -23,7 +23,7 @@ footer: |
 
 tileOrigins:
   - name: scgn
-    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+    url: https://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png

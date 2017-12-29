@@ -4,7 +4,7 @@ title: Denpasar, Indonesia
 author: Secondary Cities
 date: June 7, 2016
 data_source_name: Secondary Cities
-data_source_url: http://secondarycities.geonode.state.gov/
+data_source_url: https://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 banner_image_source: Lorem ipsum dolor sit amet
@@ -21,7 +21,7 @@ footer: |
 
 tileOrigins:
   - name: scgn
-    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+    url: https://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
