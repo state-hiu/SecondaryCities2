@@ -288,14 +288,14 @@ $(document).foundation();
 
             for (var i = 0; i < apiJSON.objects.length; i++) {
 
-              console.log("logging match!");
-              console.log(apiJSON.objects[i].detail_url);
+              //console.log("logging match!");
+              //console.log(apiJSON.objects[i].detail_url);
 
               var match = myRegexp.exec(apiJSON.objects[i].detail_url);
 
               if (!match) {
-                console.log('if is null!');
-                console.log(i);
+                //console.log('if is null!');
+                //console.log(i);
 
                 var match = myRegexp2.exec(apiJSON.objects[i].detail_url);
 
