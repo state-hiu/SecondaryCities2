@@ -33,11 +33,18 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <script src="{{site.baseurl}}/js/vendor/modernizr.js"></script>
 
+<!--
   <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+-->
 
+  <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+<!--not using mapbox-gl right now. If implemented later on, can also work on app-mapbox-gl.js and on including it
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
+-->
 
   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />

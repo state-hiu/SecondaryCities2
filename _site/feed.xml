@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Jan 2018 17:01:30 +0100</pubDate>
-    <lastBuildDate>Tue, 09 Jan 2018 17:01:30 +0100</lastBuildDate>
+    <pubDate>Tue, 16 Jan 2018 20:32:09 +0100</pubDate>
+    <lastBuildDate>Tue, 16 Jan 2018 20:32:09 +0100</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -73,6 +73,21 @@
         <pubDate>Wed, 05 Apr 2017 00:00:00 +0200</pubDate>
         <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Habitat III</title>
+        <description>&lt;p&gt;On October, 2016 at the Habitat III conference in Quito, the city of Esmeraldas, Ecuador was selected by the State Department as the newest city to join the 2C Initiative.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/H3.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/H3.html</guid>
         
         <category>event</category>
         
@@ -186,29 +201,6 @@
         <category>English</category>
         
         <category>doc</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Kharkiv Workshop Data Collection Features &amp; Attributes</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
         
         
         <category>resources</category>

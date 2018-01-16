@@ -674,7 +674,10 @@ $(document).foundation();
         console.log('TileLayer created, layerId named: ');
         console.log(layerId);
 
-        report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {tms: true});
+        console.log('tileUrl: ');
+        console.log(tileUrl);
+
+        report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {detectRetina: false});
 
       }
 
