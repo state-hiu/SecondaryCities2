@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/SecondaryCities2/build/style.css">
     <link rel="stylesheet" href="/SecondaryCities2/build/freelancer.css">
 
-    <link rel="canonical" href="http://0.0.0.0:4000/SecondaryCities2/">
+    <link rel="canonical" href="http://localhost:4000/SecondaryCities2/">
 
-    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://0.0.0.0:4000/SecondaryCities2 /feed.xml ">
+    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://localhost:4000/SecondaryCities2 /feed.xml ">
 
     <!-- Custom Fonts 
     <link href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
@@ -409,7 +409,7 @@ txt += "<p>outerHeight: " + window.outerHeight + "</p>";
 console.log(txt);
 
 
-L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
+L.mapbox.accessToken = 'pk.eyJ1IjoidGdlcnRpbiIsImEiOiJYTW5sTVhRIn0.X4B5APkxkWVaiSg3KqMCaQ';
 
 if (window.innerWidth < 400) {
 
@@ -479,7 +479,8 @@ var map = L.mapbox.map('map', '', {
 */
 
 // Use styleLayer to add a Mapbox style created in Mapbox Studio, using the LSIB_light2 layer
-  var baseLayer = L.mapbox.styleLayer('mapbox://styles/hiu/citm1lnb8001f2iqtvi7493qp',{
+//old style on hiu account: mapbox://styles/hiu/citm1lnb8001f2iqtvi7493qp
+  var baseLayer = L.mapbox.styleLayer('mapbox://styles/tgertin/cjd4ssbmi5kc92rnyi33sclpy',{
     minZoom: 1,
     maxZoom: 16,
     scrollWheelZoom: true,
