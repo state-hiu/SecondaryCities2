@@ -169,6 +169,13 @@ position:fixed!important;
     height:600px;
 }
 
+#map-small {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:400px;
+}
+
 @media (max-width: 400px){
         #map {
             height:250px;
@@ -411,9 +418,16 @@ console.log(txt);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
 
+
+if (window.innerWidth < 1200) {
+    console.log('window less than 1200px');
+    $("#map").attr("id","map-small");
+}
+
+
 if (window.innerWidth < 400) {
 
-var map = L.mapbox.map('map', '', {
+var map = L.mapbox.map('map-small', '', {
     attributionControl: {compact: true},
     zoomControl:false,
     scrollWheelZoom: false,
@@ -428,7 +442,7 @@ var map = L.mapbox.map('map', '', {
 
 } else if (window.innerWidth < 768) {
 
-var map = L.mapbox.map('map', '', {
+var map = L.mapbox.map('map-small', '', {
     attributionControl: {compact: true},
     zoomControl:false,
     scrollWheelZoom: false,
@@ -443,7 +457,7 @@ var map = L.mapbox.map('map', '', {
 
 } else if (window.innerWidth < 1200) {
 
-var map = L.mapbox.map('map', '', {
+var map = L.mapbox.map('map-small', '', {
     attributionControl: {compact: true},
     zoomControl:false,
     scrollWheelZoom: false,
@@ -676,7 +690,7 @@ var SecondaryCitiesIcon_santa_fe = L.icon({
 });
 
 var SecondaryCitiesIcon_santa_fe_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_santa_fe_small.png",
+    iconUrl: "/SecondaryCities2/assets/2c_pin_santa_fe.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -692,7 +706,7 @@ var SecondaryCitiesIcon_pemba = L.icon({
 });
 
 var SecondaryCitiesIcon_pemba_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_pemba_small.png",
+    iconUrl: "/SecondaryCities2/assets/2c_pin_pemba.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -702,18 +716,19 @@ var SecondaryCitiesIcon_pemba_small = L.icon({
 var SecondaryCitiesIcon_darkhan = L.icon({
     iconUrl: "/SecondaryCities2/assets/2c_pin_darkhan.png",
     iconSize: [210, 70],
-    iconAnchor: [190, 60],
+    iconAnchor: [20, 60],
     popupAnchor: [0, 0],
     className: "SecondaryCitiesIcon_darkhan"
 });
 
 var SecondaryCitiesIcon_darkhan_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_darkhan_small.png",
+    iconUrl: "/SecondaryCities2/assets/2c_pin_darkhan.png",
     iconSize: [157.5, 52.5],
-    iconAnchor: [142.5, 40],
+    iconAnchor: [15, 40],
     popupAnchor: [0, 0],
     className: "SecondaryCitiesIcon_darkhan_small"
 });
+
 
 var SecondaryCitiesIcon_indore = L.icon({
     iconUrl: "/SecondaryCities2/assets/2c_pin_indore.png",
@@ -724,7 +739,7 @@ var SecondaryCitiesIcon_indore = L.icon({
 });
 
 var SecondaryCitiesIcon_indore_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_indore_small.png",
+    iconUrl: "/SecondaryCities2/assets/2c_pin_indore.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -740,7 +755,7 @@ var SecondaryCitiesIcon_boke = L.icon({
 });
 
 var SecondaryCitiesIcon_boke_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_boke_small.png",
+    iconUrl: "/SecondaryCities2/assets/2c_pin_boke.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -862,7 +877,7 @@ if (window.innerWidth < 1200) {
 
 } 
 
-darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-310, 140)});
+darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-150, 140)});
 
 /*
 darkhanMarker.on('click', function (e) {
@@ -1620,6 +1635,9 @@ addControlPlaceholders(map);
 var info = L.control({position: 'horizontalcenter'});
 
 if (window.innerWidth < 768) {
+
+    //$(".leaflet-horizontalcenter").css({"padding-top": "380px"})
+
     info.onAdd = function (map) {
       this._div = L.DomUtil.create('div', 'info-small');
       this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
