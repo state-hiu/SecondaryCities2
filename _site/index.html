@@ -373,7 +373,11 @@ var 2c_icon = L.icon({
     text-align: right;
 }
 
-
+#label-tijuana {
+    margin-left: 17px;
+    margin-top: -52px;
+    text-align: left;
+}
 
 /*
 #DenpasarPopup:hover:before {
@@ -729,7 +733,6 @@ var SecondaryCitiesIcon_darkhan_small = L.icon({
     className: "SecondaryCitiesIcon_darkhan_small"
 });
 
-
 var SecondaryCitiesIcon_indore = L.icon({
     iconUrl: "/SecondaryCities2/assets/2c_pin_indore.png",
     iconSize: [210, 70],
@@ -760,6 +763,22 @@ var SecondaryCitiesIcon_boke_small = L.icon({
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
     className: "SecondaryCitiesIcon_boke_small"
+});
+
+var SecondaryCitiesIcon_tijuana = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_tijuana.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_tijuana"
+});
+
+var SecondaryCitiesIcon_tijuana_small = L.icon({
+    iconUrl: "/SecondaryCities2/assets/2c_pin_tijuana.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_tijuana_small"
 });
 
 /* not doing it this way because choosing the compact attribution control display
@@ -1342,6 +1361,60 @@ doualaMarker.on('mouseover', function (e) {
         });
 
 doualaMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+if (window.innerWidth < 1200) {
+
+    tijuanaMarker = L.marker([32.4193,-116.99823], {icon: SecondaryCitiesIcon_tijuana_small}).addTo(map);
+
+    var tijuanaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-douala" >Tijuana <span id="country-small">Mexico</span></span>'
+    });
+
+} else {
+
+    tijuanaMarker = L.marker([32.4193,-116.99823], {icon: SecondaryCitiesIcon_tijuana}).addTo(map);
+
+    var tijuanaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-douala" >Tijuana <span id="country">Mexico</span></span>'
+    });
+
+}
+
+
+tijuanaMarker.bindPopup('<img src="/SecondaryCities2/img/tijuana/tijuana_thumb_300px4.png" class="img-popup" alt="Tijuana"></br><span class="label-span-small">Tijuana About page coming soon</span>', {offset: new L.Point(0, 210)});
+
+//{offset: new L.Point(-150, 140)}
+
+tijuanaMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+            /*
+            notes: need to modify pop-up for indicator pointer to point left instead of pointing down from the bottom
+            adding float-left to leaflet-popup-content-wrapper and leaflet-popup-tip-container divs
+            need to disable the width of the leaflet-popup-content-wrapper child div leaflet-popup-content
+            need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
+            */
+            $( ".leaflet-popup" ).css("left", "-114px");
+            $( ".leaflet-popup-tip-container" ).css("height", "0px");
+            $( ".leaflet-popup-content-wrapper" ).css("float", "left");
+            $( ".leaflet-popup-content" ).css("width", "225px");
+            $( ".leaflet-popup-tip" ).css("margin-top", "-10px");
+            $( ".leaflet-popup-tip" ).css("border-bottom", "10px solid #fff");
+            $( ".leaflet-popup-tip" ).css("border-top", "none");
+        });
+
+tijuanaMarker.on('mouseout', function (e) {
             this.closePopup();
             $( ".leaflet-popup-close-button" ).show();
         });
