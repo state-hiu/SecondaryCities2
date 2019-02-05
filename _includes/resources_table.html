@@ -380,12 +380,15 @@ a.selected-tag {
                               </div>
                                 <div class="entry-tags" style="cursor:pointer;padding-bottom:10px;">
                                     <!--Toggle column:--> 
-                                    <a class="toggle-vis" data-column="0">Document Name</a>
-                                    <a class="toggle-vis" data-column="1">Platform(s)</a>
-                                    <a class="toggle-vis" data-column="2">Abstract</a>
-                                    <a class="toggle-vis" data-column="3">Download link</a>
-                                    <a class="toggle-vis" data-column="4">Publication Date</a>
-                                    <a class="toggle-vis" data-column="5">File Format</a>
+                                    <a class="toggle-vis" data-column="0">Platform(s)</a>
+                                    <a class="toggle-vis" data-column="1">City</a>
+                                    <a class="toggle-vis" data-column="2">Language</a>
+                                    <a class="toggle-vis" data-column="3">Document Name</a>
+                                    <a class="toggle-vis" data-column="4">Document link</a>
+                                    <a class="toggle-vis" data-column="5">Abstract</a>
+                                    <a class="toggle-vis" data-column="6">Publication Date</a>
+                                    <a class="toggle-vis" data-column="7">File Format</a>
+                                    <a class="toggle-vis" data-column="8">Document Type</a>
                                 </div>
                                 <div id="document_table"></div>
                         </div>
@@ -938,12 +941,15 @@ var columns = [{
 
 
 var columns2 = [{
-"data": "Document Name","title": "Document Name", "width":"70px"},
-{"data": "Platform","title": "Platform", "width":"50px"},
-{"data": "Abstract","title": "Abstract", "width":"90px"},
-{"data": "Document Link","title": "Document Link", "width":"15px"},
+"data": "Platform","title": "Platform", "width":"40px"},
+{"data": "City","title": "City", "width":"40px"},
+{"data": "Language","title": "Language", "width":"40px"},
+{"data": "Document Name","title": "Document Name", "width":"90px"},
+{"data": "Document Link","title": "Document Link", "width":"20px"},
+{"data": "Abstract","title": "Abstract", "width":"100px"},
 {"data": "Publication Date","title": "Publication Date", "width":"55px"},
-{"data": "File Format","title": "File Format", "width":"20px"}];
+{"data": "File Format","title": "File Format", "width":"20px"},
+{"data": "Document Type","title": "Document Type", "width":"40px"}];
 
 
 
@@ -1132,11 +1138,11 @@ function initializeTabletopObject2() {
 
     //hides certain columns
     var table2 = $('#mySelection2').DataTable();
-    table2.columns( [ 4,5] ).visible( false, false );
+    table2.columns( [ 7,8] ).visible( false, false );
 
 
     //Select default columns 0-4
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 7; i++) {
         $("a[data-column='"+i+"']").addClass('selected-tag');
     };
 
