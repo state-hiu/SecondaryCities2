@@ -380,15 +380,15 @@ a.selected-tag {
                               </div>
                                 <div class="entry-tags" style="cursor:pointer;padding-bottom:10px;">
                                     <!--Toggle column:--> 
-                                    <a class="toggle-vis" data-column="0">Platform(s)</a>
-                                    <a class="toggle-vis" data-column="1">City</a>
-                                    <a class="toggle-vis" data-column="2">Language</a>
-                                    <a class="toggle-vis" data-column="3">Document Name</a>
-                                    <a class="toggle-vis" data-column="4">Document link</a>
-                                    <a class="toggle-vis" data-column="5">Abstract</a>
-                                    <a class="toggle-vis" data-column="6">Publication Date</a>
-                                    <a class="toggle-vis" data-column="7">File Format</a>
-                                    <a class="toggle-vis" data-column="8">Document Type</a>
+                                    <a class="toggle-vis2" data-column="0">Platform(s)</a>
+                                    <a class="toggle-vis2" data-column="1">City</a>
+                                    <a class="toggle-vis2" data-column="2">Language</a>
+                                    <a class="toggle-vis2" data-column="3">Document Name</a>
+                                    <a class="toggle-vis2" data-column="4">Document link</a>
+                                    <a class="toggle-vis2" data-column="5">Abstract</a>
+                                    <a class="toggle-vis2" data-column="6">Publication Date</a>
+                                    <a class="toggle-vis2" data-column="7">File Format</a>
+                                    <a class="toggle-vis2" data-column="8">Document Type</a>
                                 </div>
                                 <div id="document_table"></div>
                         </div>
@@ -1146,7 +1146,7 @@ function initializeTabletopObject2() {
         $("a[data-column='"+i+"']").addClass('selected-tag');
     };
 
-    $('a.toggle-vis').on( 'click', function (e) {
+    $('a.toggle-vis2').on( 'click', function (e) {
         e.preventDefault();
  
         // Get the column API object
