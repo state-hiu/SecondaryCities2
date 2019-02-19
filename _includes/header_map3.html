@@ -1,170 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-
-    <title>Secondary Cities</title>
-
-    <meta name="description" content="Resiliency - Human Security - Emergency Preparedness
-">
-
-    <!-- Open Graph: https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
-    Twitter: https://dev.twitter.com/docs/cards/types/summary-card via
-    ============================== -->
-    <meta property="og:title" content="Secondary Cities "/>
-    <meta property="og:site_name" content="Secondary Cities "/>
-    <meta property="og:url" content="http://secondarycities.state.gov/ "/>
-    <meta property="og:description" content="Secondary Cities is a field-based initiative of the Office of the Geographer to map for Resiliency, Human Security, and Emergency Preparedness. "/>
-    <meta property="og:image" content="http://secondarycities.state.gov/img/logos/2C_LogoWhiteOnBlue_twitter2.png "/>
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@stateHIU">
-    <meta name="twitter:title" content="Secondary Cities">
-    <meta name="twitter:description" content="Secondary Cities is a field-based initiative of the Office of the Geographer to map for Resiliency, Human Security, and Emergency Preparedness.">
-    <meta name="twitter:image" content="http://secondarycities.state.gov/img/logos/2C_LogoWhiteOnBlue_twitter2.png">
-
-    <!-- Bootswatch Core CSS - Served by Start Bootstrap CDN powered by MaxCDN 
-    <link rel="stylesheet" href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/css/bootstrap.min.css">-->
-
-    <!-- Freelancer Theme CSS - Served by Start Bootstrap CDN powered by MaxCDN 
-    <link rel="stylesheet" href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/css/freelancer.css">-->
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/SecondaryCities2/build/style.css">
-    <link rel="stylesheet" href="/SecondaryCities2/build/freelancer.css">
-
-    <link rel="canonical" href="http://0.0.0.0:4000/SecondaryCities2/">
-
-    <link rel="alternate" type="application/rss+xml" title="Secondary Cities" href="http://0.0.0.0:4000/SecondaryCities2 /feed.xml ">
-
-    <!-- Custom Fonts 
-    <link href="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-
-    <!--<link href="/SecondaryCities2/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">-->
-
-    <link href="/SecondaryCities2/assets/css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-<!--
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
--->
-
-<!-- downloaded local google fonts from https://google-webfonts-helper.herokuapp.com/fonts -->
-    <link href="/SecondaryCities2/assets/css/fonts.css" rel="stylesheet" type="text/css">
-
-
-    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!--loading jquery in the beginning of code so I can use the window function to load jquery on hash changes-->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
-</head>
-
-
-  <body id="page-top" class="index">
-
-    <!-- Navigation -->
-
-<!--css fixes navbar from shifting when user clicks on a modal-->
-<!--https://github.com/twbs/bootstrap/issues/14040-->
-<style>
-
-html {
-    overflow-x: hidden;
-}
-
-body.modal-open{
-width:100%!important;
-padding-right:0!important;
-overflow-y:scroll!important;
-position:fixed!important;
-}
-
-</style>
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!--<a class="navbar-brand" href="#page-top">Secondary Cities</a>
-            <a href="http://www.state.gov"><img src="img/doslogo5.png" alt="" height="65" width="65"></a>-->
-
-            <a href="http://www.state.gov"><img id="dos-eagle" src="/SecondaryCities2/img/dos_eagle.png" alt="Department of State Eagle logo" height="55" width="55"></a>
-
-            <a href="/SecondaryCities2/"><img src="/SecondaryCities2/img/logos/2C_LogoWhite2.png" alt="Secondary Cities logo" height="45" width="180px" style="margin-left: 10px;"></a>
-
-
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right" style="font-size:16px;">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    
-                    <li class="page-scroll">
-                        <a href="#2Cstory">Story</a>
-                    </li>
-
-
-                    <li class="page-scroll">
-                        <a href="#data">Data</a>
-                    </li>
-
-<!--
-                    <li class="page-scroll">
-                        <a href="#portfolio">Cities</a>
-                    </li>
--->
-				<li class="page-scroll">
-                        <a href="#partners">Partners</a>
-                    </li>
-                    
-
-
-                    <li class="page-scroll">
-                        <a href="/SecondaryCities2/events/">Events</a>
-                    </li>
-
-
-                    <li class="page-scroll">
-                        <a href="/SecondaryCities2/resources/">Resources</a>
-                    </li>
-
-                    <li class="page-scroll">
-                        <a href="/SecondaryCities2/faq/">FAQ</a>
-                    </li>
-				<!-- <li class="page-scroll">
-                        <a href="#materials">Materials</a>
-                    </li> -->
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
-
-
-    <!-- Header -->
+<!-- Header -->
 
 <style>
 
@@ -251,7 +85,7 @@ position:fixed!important;
 }
 
 .icon_2c {
-    background-image: url("/SecondaryCities2/assets/2c_pin.png");
+    background-image: url("{{ site.baseurl }}/assets/2c_pin.png");
     width: 14px;
     height: 14px;
     border: 1.5px solid white;
@@ -259,7 +93,7 @@ position:fixed!important;
 
 /*
 var 2c_icon = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_icon.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_icon.png",
     iconSize: [30, 45],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -387,7 +221,7 @@ var 2c_icon = L.icon({
 
 /*
 #DenpasarPopup:hover:before {
-    content: url("/SecondaryCities2/img/portfolio/denpasar2.png"); 
+    content: url("{{ site.baseurl }}/img/portfolio/denpasar2.png"); 
 }
 */
 
@@ -401,8 +235,8 @@ var 2c_icon = L.icon({
 <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 
-<script src='/SecondaryCities2/assets/js/libs/leaflet.rrose-src.js'></script>
-<link href='/SecondaryCities2/assets/css/leaflet.rrose.css' rel='stylesheet' />
+<script src='{{ site.baseurl }}/assets/js/libs/leaflet.rrose-src.js'></script>
+<link href='{{ site.baseurl }}/assets/css/leaflet.rrose.css' rel='stylesheet' />
 
 <header class="map-header">
 
@@ -411,8 +245,7 @@ var 2c_icon = L.icon({
 
 <div id="map"></div>
 
-                    <!--<span class="skills">Resiliency - Human Security - Emergency Preparedness
-</span>
+                    <!--<span class="skills">{{ site.description }}</span>
 </header>-->
 
 <script type="text/javascript">
@@ -515,7 +348,7 @@ var map = L.mapbox.map('map', '', {
 
 //used Inkscape to save Secondary Cities icon: http://inkscapetutorials.org/2014/04/22/inkscape-faq-how-do-i-crop-in-inkscape/#document
 var SecondaryCitiesIcon = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin.png",
     iconSize: [36, 52],
     iconAnchor: [18, 52],
     popupAnchor: [0, 0],
@@ -528,7 +361,7 @@ var SecondaryCitiesIcon = L.icon({
 
 // for these icons the png dimensions are 420 by 140. You can make the iconSize half the dimensions
 var SecondaryCitiesIcon_santiago = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_santiago.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santiago.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -539,7 +372,7 @@ var SecondaryCitiesIcon_santiago = L.icon({
 });
 
 var SecondaryCitiesIcon_santiago_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_santiago.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santiago.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -547,7 +380,7 @@ var SecondaryCitiesIcon_santiago_small = L.icon({
 });
 
 var SecondaryCitiesIcon_pokhara = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_pokhara.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pokhara.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -555,7 +388,7 @@ var SecondaryCitiesIcon_pokhara = L.icon({
 });
 
 var SecondaryCitiesIcon_pokhara_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_pokhara.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pokhara.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -563,7 +396,7 @@ var SecondaryCitiesIcon_pokhara_small = L.icon({
 });
 
 var SecondaryCitiesIcon_kharkiv = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_kharkiv.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_kharkiv.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -571,7 +404,7 @@ var SecondaryCitiesIcon_kharkiv = L.icon({
 });
 
 var SecondaryCitiesIcon_kharkiv_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_kharkiv.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_kharkiv.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -579,7 +412,7 @@ var SecondaryCitiesIcon_kharkiv_small = L.icon({
 });
 
 var SecondaryCitiesIcon_medellin = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_medellin.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_medellin.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -587,7 +420,7 @@ var SecondaryCitiesIcon_medellin = L.icon({
 });
 
 var SecondaryCitiesIcon_medellin_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_medellin.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_medellin.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -595,7 +428,7 @@ var SecondaryCitiesIcon_medellin_small = L.icon({
 });
 
 var SecondaryCitiesIcon_douala = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_douala.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_douala.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -603,7 +436,7 @@ var SecondaryCitiesIcon_douala = L.icon({
 });
 
 var SecondaryCitiesIcon_douala_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_douala.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_douala.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -611,7 +444,7 @@ var SecondaryCitiesIcon_douala_small = L.icon({
 });
 
 var SecondaryCitiesIcon_cusco = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_cusco.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_cusco.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -619,7 +452,7 @@ var SecondaryCitiesIcon_cusco = L.icon({
 });
 
 var SecondaryCitiesIcon_cusco_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_cusco.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_cusco.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -627,7 +460,7 @@ var SecondaryCitiesIcon_cusco_small = L.icon({
 });
 
 var SecondaryCitiesIcon_esmeraldas = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_esmeraldas.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_esmeraldas.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -635,7 +468,7 @@ var SecondaryCitiesIcon_esmeraldas = L.icon({
 });
 
 var SecondaryCitiesIcon_esmeraldas_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_esmeraldas.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_esmeraldas.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -643,7 +476,7 @@ var SecondaryCitiesIcon_esmeraldas_small = L.icon({
 });
 
 var SecondaryCitiesIcon_denpasar = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_denpasar.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_denpasar.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -651,7 +484,7 @@ var SecondaryCitiesIcon_denpasar = L.icon({
 });
 
 var SecondaryCitiesIcon_denpasar_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_denpasar.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_denpasar.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -659,7 +492,7 @@ var SecondaryCitiesIcon_denpasar_small = L.icon({
 });
 
 var SecondaryCitiesIcon_portharcourt = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_portharcourt.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_portharcourt.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -667,7 +500,7 @@ var SecondaryCitiesIcon_portharcourt = L.icon({
 });
 
 var SecondaryCitiesIcon_portharcourt_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_portharcourt.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_portharcourt.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -675,7 +508,7 @@ var SecondaryCitiesIcon_portharcourt_small = L.icon({
 });
 
 var SecondaryCitiesIcon_mekelle = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_mekelle.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_mekelle.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -683,7 +516,7 @@ var SecondaryCitiesIcon_mekelle = L.icon({
 });
 
 var SecondaryCitiesIcon_mekelle_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_mekelle_small.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_mekelle_small.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -692,7 +525,7 @@ var SecondaryCitiesIcon_mekelle_small = L.icon({
 
 
 var SecondaryCitiesIcon_santa_fe = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_santa_fe.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santa_fe.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -700,7 +533,7 @@ var SecondaryCitiesIcon_santa_fe = L.icon({
 });
 
 var SecondaryCitiesIcon_santa_fe_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_santa_fe.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santa_fe.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -708,7 +541,7 @@ var SecondaryCitiesIcon_santa_fe_small = L.icon({
 });
 
 var SecondaryCitiesIcon_pemba = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_pemba.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pemba.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -716,7 +549,7 @@ var SecondaryCitiesIcon_pemba = L.icon({
 });
 
 var SecondaryCitiesIcon_pemba_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_pemba.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pemba.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -724,7 +557,7 @@ var SecondaryCitiesIcon_pemba_small = L.icon({
 });
 
 var SecondaryCitiesIcon_darkhan = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_darkhan.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_darkhan.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -732,7 +565,7 @@ var SecondaryCitiesIcon_darkhan = L.icon({
 });
 
 var SecondaryCitiesIcon_darkhan_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_darkhan.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_darkhan.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -740,7 +573,7 @@ var SecondaryCitiesIcon_darkhan_small = L.icon({
 });
 
 var SecondaryCitiesIcon_indore = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_indore.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_indore.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -748,7 +581,7 @@ var SecondaryCitiesIcon_indore = L.icon({
 });
 
 var SecondaryCitiesIcon_indore_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_indore.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_indore.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -756,7 +589,7 @@ var SecondaryCitiesIcon_indore_small = L.icon({
 });
 
 var SecondaryCitiesIcon_boke = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_boke.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_boke.png",
     iconSize: [210, 70],
     iconAnchor: [190, 60],
     popupAnchor: [0, 0],
@@ -764,7 +597,7 @@ var SecondaryCitiesIcon_boke = L.icon({
 });
 
 var SecondaryCitiesIcon_boke_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_boke.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_boke.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [142.5, 40],
     popupAnchor: [0, 0],
@@ -772,7 +605,7 @@ var SecondaryCitiesIcon_boke_small = L.icon({
 });
 
 var SecondaryCitiesIcon_tijuana = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_tijuana.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_tijuana.png",
     iconSize: [210, 70],
     iconAnchor: [20, 60],
     popupAnchor: [0, 0],
@@ -780,7 +613,7 @@ var SecondaryCitiesIcon_tijuana = L.icon({
 });
 
 var SecondaryCitiesIcon_tijuana_small = L.icon({
-    iconUrl: "/SecondaryCities2/assets/2c_pin_tijuana.png",
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_tijuana.png",
     iconSize: [157.5, 52.5],
     iconAnchor: [15, 40],
     popupAnchor: [0, 0],
@@ -826,7 +659,7 @@ bokeMarker.bindPopup('<span class="label-span-small"> Boké-Kamsar About page co
 
 /*
 bokeMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/cusco");
+            window.open("{{ site.baseurl }}/cusco");
         });
 */
 
@@ -863,11 +696,11 @@ if (window.innerWidth < 1200) {
 
 } 
 
-indoreMarker.bindPopup('<img src="/SecondaryCities2/img/indore/indore_thumb_300px.jpg" class="img-popup" alt="Indore"></br><span class="label-span-small">Indore About page coming soon</span>', {offset: new L.Point(0, -15)});
+indoreMarker.bindPopup('<img src="{{ site.baseurl }}/img/indore/indore_thumb_300px.jpg" class="img-popup" alt="Indore"></br><span class="label-span-small">Indore About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 /*
 indoreMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/indore");
+            window.open("{{ site.baseurl }}/indore");
         });
 */
 
@@ -904,11 +737,11 @@ if (window.innerWidth < 1200) {
 
 } 
 
-darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-150, 140)});
+darkhanMarker.bindPopup('<img src="{{ site.baseurl }}/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-150, 140)});
 
 /*
 darkhanMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/darkhan");
+            window.open("{{ site.baseurl }}/darkhan");
         });
 */
 
@@ -966,11 +799,11 @@ if (window.innerWidth < 1200) {
 
 } 
 
-pembaMarker.bindPopup('<img src="/SecondaryCities2/img/pemba/pemba_thumb_300px.jpg" class="img-popup" alt="Pemba"></br><span class="label-span-small"> Pemba About page coming soon</span>', {offset: new L.Point(0, -15)});
+pembaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pemba/pemba_thumb_300px.jpg" class="img-popup" alt="Pemba"></br><span class="label-span-small"> Pemba About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 /*
 pembaMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/pemba");
+            window.open("{{ site.baseurl }}/pemba");
         });
 */
 
@@ -1011,11 +844,11 @@ if (window.innerWidth < 1200) {
 
 } 
 
-santafeMarker.bindPopup('<img src="/SecondaryCities2/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe About page coming soon</span>', {offset: new L.Point(0, -15)});
+santafeMarker.bindPopup('<img src="{{ site.baseurl }}/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 /*
 santafeMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/cusco");
+            window.open("{{ site.baseurl }}/cusco");
         });
 */
 
@@ -1039,7 +872,7 @@ if (window.innerWidth < 1200) {
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/cusco"><div class="icon_2c"></div>'+
+        html: '<a href="{{ site.baseurl }}/cusco"><div class="icon_2c"></div>'+
                   '<span class="label-span-small" id="label-cusco">Cusco <span id="country-small">Peru</span></span></a>'
     });
     
@@ -1055,7 +888,7 @@ if (window.innerWidth < 1200) {
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/cusco"><div class="icon_2c"></div>'+
+        html: '<a href="{{ site.baseurl }}/cusco"><div class="icon_2c"></div>'+
                   '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
     });
 
@@ -1067,11 +900,11 @@ if (window.innerWidth < 1200) {
    
 } 
 
-cuscoMarker.bindPopup('<img src="/SecondaryCities2/img/cusco/cusco_thumb_300px.png" class="img-popup" alt="Cusco"></br><span class="label-span-small">Cusco (2015–2017) </span></br><span class="label-span-small"><a href="/SecondaryCities2/cusco" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=Cusco&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
+cuscoMarker.bindPopup('<img src="{{ site.baseurl }}/img/cusco/cusco_thumb_300px.png" class="img-popup" alt="Cusco"></br><span class="label-span-small">Cusco (2015–2017) </span></br><span class="label-span-small"><a href="{{ site.baseurl }}/cusco" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=Cusco&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
 
 /*
 cuscoMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/cusco");
+            window.open("{{ site.baseurl }}/cusco");
         });
 */
 
@@ -1127,10 +960,10 @@ if (window.innerWidth < 1200) {
 
 
 /*
-DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
+DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"><span class="label-span-small"></br>Denpasar (2015–2017) </span>', {offset: new L.Point(0, -15)});
+denpasarMarker.bindPopup('<img src="{{ site.baseurl }}/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"><span class="label-span-small"></br>Denpasar (2015–2017) </span>', {offset: new L.Point(0, -15)});
 
 
 /*
@@ -1161,7 +994,7 @@ if (window.innerWidth < 1200) {
 
     var kharkivIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/kharkiv"><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-kharkiv">Kharkiv <span id="country-small">Ukraine</span></span></a>'
     });
 
@@ -1178,7 +1011,7 @@ if (window.innerWidth < 1200) {
 
     var kharkivIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/kharkiv"><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/kharkiv"><div class="circleBase type1"></div>'+
                   '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
     });
 
@@ -1192,11 +1025,11 @@ if (window.innerWidth < 1200) {
 }
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
-kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span>', {offset: new L.Point(-100, 150)});
+kharkivMarker.bindPopup('<img src="{{ site.baseurl }}/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span>', {offset: new L.Point(-100, 150)});
 
 /*
 kharkivMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/kharkiv");
+            window.open("{{ site.baseurl }}/kharkiv");
         });
 */
 
@@ -1285,7 +1118,7 @@ if (window.innerWidth < 1200) {
 
     var medellinIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/medellin" ><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-medellin-small">Medellín <span id="country-small">Colombia</span></span></a>'
     });
 
@@ -1301,7 +1134,7 @@ if (window.innerWidth < 1200) {
 
     var medellinIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/medellin" ><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/medellin" ><div class="circleBase type1"></div>'+
                   '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
     });
 
@@ -1314,12 +1147,12 @@ if (window.innerWidth < 1200) {
 }
 
 
-medellinMarker.bindPopup('<img src="/SecondaryCities2/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br><span class="label-span-small">Medellin (2015–2017)</span>', {offset: new L.Point(0, -15)})
+medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br><span class="label-span-small">Medellin (2015–2017)</span>', {offset: new L.Point(0, -15)})
 
 
 /*
 medellinMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/medellin");
+            window.open("{{ site.baseurl }}/medellin");
         });
 */
 
@@ -1373,7 +1206,7 @@ if (window.innerWidth < 1200) {
 }
 
 
-doualaMarker.bindPopup('<img src="/SecondaryCities2/img/douala/douala_thumb_300px.png" class="img-popup" alt="Douala"></br><span class="label-span-small">Douala About page coming soon</span>', {offset: new L.Point(0, -15)});
+doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/douala_thumb_300px.png" class="img-popup" alt="Douala"></br><span class="label-span-small">Douala About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 doualaMarker.on('click', function (e) {
             //console.log('before popup');
@@ -1413,7 +1246,7 @@ if (window.innerWidth < 1200) {
 }
 
 
-tijuanaMarker.bindPopup('<img src="/SecondaryCities2/img/tijuana/tijuana_thumb_300px4.png" class="img-popup" alt="Tijuana"></br><span class="label-span-small">Tijuana About page coming soon</span>', {offset: new L.Point(0, 210)});
+tijuanaMarker.bindPopup('<img src="{{ site.baseurl }}/img/tijuana/tijuana_thumb_300px4.png" class="img-popup" alt="Tijuana"></br><span class="label-span-small">Tijuana About page coming soon</span>', {offset: new L.Point(0, 210)});
 
 //{offset: new L.Point(-150, 140)}
 
@@ -1480,7 +1313,7 @@ if (window.innerWidth < 1200) {
 }
 
 
-port_harcourtMarker.bindPopup('<img src="/SecondaryCities2/img/port_harcourt/port_harcourt_thumb_300px.jpg" class="img-popup" alt="Port Harcourt"></br><span class="label-span-small">Port Harcourt About page coming soon</span>', {offset: new L.Point(0, -15)});
+port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_thumb_300px.jpg" class="img-popup" alt="Port Harcourt"></br><span class="label-span-small">Port Harcourt About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 port_harcourtMarker.on('click', function (e) {
             //console.log('before popup');
@@ -1531,7 +1364,7 @@ if (window.innerWidth < 1200) {
 
 }
 
-santiagoMarker.bindPopup('<img src="/SecondaryCities2/img/santiago/santiago_city_thumb_300px.jpg" class="img-popup" alt="Santiago"></br><span class="label-span-small">Santiago About page coming soon</span>', {offset: new L.Point(0, -15)});
+santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_thumb_300px.jpg" class="img-popup" alt="Santiago"></br><span class="label-span-small">Santiago About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 
 
@@ -1586,7 +1419,7 @@ if (window.innerWidth < 1200) {
 
 }
 
-mekelleMarker.bindPopup('<img src="/SecondaryCities2/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br><span class="label-span-small">Mekelle About page coming soon</span>', {offset: new L.Point(0, -15)});
+mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br><span class="label-span-small">Mekelle About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 
 mekelleMarker.on('click', function (e) {
@@ -1610,7 +1443,7 @@ if (window.innerWidth < 1200) {
 
     var pokharaIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/pokhara" ><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
                   '<span class="label-span-small" id="label-pokhara">Pokhara <span id="country-small">Nepal</span></span></a>'
     });
 
@@ -1626,7 +1459,7 @@ if (window.innerWidth < 1200) {
 
     var pokharaIcon = L.divIcon({
         className: 'city-icon',
-        html: '<a href="/SecondaryCities2/pokhara" ><div class="circleBase type1"></div>'+
+        html: '<a href="{{ site.baseurl }}/pokhara" ><div class="circleBase type1"></div>'+
                   '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
     });
 
@@ -1639,11 +1472,11 @@ if (window.innerWidth < 1200) {
 }
 
 
-pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
+pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
 /*
 pokharaMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/pokhara");
+            window.open("{{ site.baseurl }}/pokhara");
         });
 */
 
@@ -1697,7 +1530,7 @@ if (window.innerWidth < 1200) {
 
 }
 
-esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas_thumb_300px.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas (2016–Ongoing)</span>', {offset: new L.Point(0, -15)});
+esmeraldasMarker.bindPopup('<img src="{{ site.baseurl }}/img/esmeraldas/esmeraldas_thumb_300px.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas (2016–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
 /*
 esmeraldasMarker.on('click', function (e) {
@@ -1789,302 +1622,3 @@ $( document ).ready(function() {
 
 
 </script>
-
-
-    <!-- About Section -->
-    <section class="success" id="about">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-primary2">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <center><p>Secondary Cities (2C) is a field-based initiative of the Office of the Geographer to map for Resiliency, Human Security, and Emergency Preparedness.</p></center>
-                </div>
-                <div class="col-lg-4">
-                    <center><p>We build partnerships to create geospatial capacity, enhance understanding through data and mapping, and enable science-based decision making.</p></center>
-                </div>
-            </div>
-            </br>
-            <div class="col-lg-12 text-center main-hyperlink" style="line-height:30px;">
-                <!--
-                <a href="#secondary_cities_map" data-toggle="modal">Map of Secondary Cities</a><br>
-            
-                <a href="/SecondaryCities2/story/">2C Story Map</a><br>
-                <a href="/SecondaryCities2/faq/">Frequently Asked Questions</a><br>
--->
-            </div>
-    </section>
-
-<div style="background:#92ADBB;color:#7B533F;font-size: 18px;font-weight: bold">Click on the title below to explore the 2C story.</div>
-
-
-    <!-- About Section -->
-
-<style type="">
-
-.navigation-bar {
-    height: 550px;
-    background-image: url(/SecondaryCities2/img/2c_story_map.jpg);
-    background-size: cover;
-    background-color: #fff;
-    color: #fafafa;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: 50% 70% !important;
-    position: relative;
-}
-
-</style>
-
-<div class="anchor" id="2Cstory">
-
-    <div class="navigation-bar" >
-
-        
-
-            <div class="col-lg-12 text-center" >
-
-                <a class="story-map-title"  href="/SecondaryCities2/story/" >
-
-                    <!-- <h2 id="story-map-title" onmouseover="document.getElementById('story-underline').style.display = 'block'" onmouseout="document.getElementById('story-underline').style.display = 'none';">2C Story Map</h2> -->
-
-                    <h2 id="story-map-title" >2C Story Map</h2>
-
-                </a>
-
-                <a class="story-map-title" href="/SecondaryCities2/story/" >
-
-                <hr id="story-underline" style="display: none;">
-
-                </a>
-
-            </div>
-
-        
-
-        
-        <div class="inside">Photo Credit: Melinda Laituri</div>
-
-    </div>
-
-</div>
-
-
-
-
-
-    <!-- Data -->
-    <section class="data" id="data">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Data</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <center>
-                        <p>
-                            Human Geography data collected during each <br>Secondary City project are available via the <a class="main-hyperlink" href="http://secondarycities.geonode.state.gov/" target="_blank">Secondary Cities GeoNode</a> 
-                        </p> 
-                    <center>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3><a href="/SecondaryCities2/faq/#data-integrity" > Data Integrity</a></h3>
-                </div>
-            </div>
-            <div class="row">
-            <div class="col-lg-12" style="line-height:27px;padding-top: 12px;">
-                <center>
-                        <div id="data-integrity-wrapper">
-                            <a style="padding-right:20px" class="main-hyperlink" href="/SecondaryCities2/faq/#ethics"> Ethics</a>
-                            <a class="main-hyperlink" href="/SecondaryCities2/faq/#metadata" > Metadata</a>
-                            <a style="padding-left:20px" class="main-hyperlink" href="/SecondaryCities2/faq/#qaqc" > QAQC</a>
-                        </div>
-                </center>
-            </div>
-            <div class="col-lg-10 col-lg-offset-1">
-                <p>Data integrity is the maintenance and assurance of accuracy and consistency of data over its entire life cycle. Integrity is essential to project design as well as data creation, generation, development, analysis, and management.</p>
-            </div>
-         </div>
-        </div>
-    </section>
-
-
-    <!-- Partners Section -->
-<section class="success" id="partners">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Partners</h2>
-                <hr class="star-primary2">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-5 col-lg-offset-1">
-                <p>Our lead partners facilitate relationships with local partners in the field and work with embassy and local government officials, universities, and non-governmental organizations</p>
-                
-            </div>
-            <div class="col-lg-5" style="line-height:27px;">
-                <center>
-                    <p>
-                        <a class="main-hyperlink" href="http://www.aag.org" target="_blank" > American Association of Geographers</a>
-                        <br>
-                        <a class="main-hyperlink" href="http://www.colostate.edu" target="_blank" > Colorado State University</a>
-                        <br>
-                        <a class="main-hyperlink" href="https://hiu.state.gov" target="_blank" > Humanitarian Information Unit</a>
-                        <br>
-<!--
-                        <a class="main-hyperlink" href="http://www.ecocitybuilders.org" target="_blank" > EcoCity Builders</a>
-                        <br>
-                        <a class="main-hyperlink" href="http://www.kathmandulivinglabs.org" target="_blank" > Kathmandu Living Labs</a>
-                        <br>
-                        <a class="main-hyperlink" href="http://www.wisnu.or.id/" target="_blank" > Wisnu Foundation</a>-->
-                    </p>
-                </center>
-            </div>
-         </div>
-        <br>
-        <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center" >
-                    <p>
-                        2C project and partners support any one or combination of open source and proprietary <a class="main-hyperlink" href="/SecondaryCities2/faq/#tools">geospatial tools and technologies</a> for data generation, data management and sharing, data visualization, and remote sensing. 2Cs has established a partnership with <a class="main-hyperlink" href="http://www.esri.com" target="_blank" > Esri</a> to use their <a class="main-hyperlink" href="http://www.esri.com/software/arcgis" target="_blank" > ArcGIS</a> software products.
-                    </p>
-                </div>
-            </div>
-
-    </div>
-</section>
-
-
-    
-
-    <!-- Footer -->
-<footer class="text-center">
-    <div class="footer-above">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col col-md-4">
-                    <h3>Contact</h3>
-                    <p>Humanitarian Information Unit (HIU)<br>U.S. Department of State<br><a href="https://goo.gl/maps/ywtpwr7rCLB2"> <a href="https://goo.gl/maps/ywtpwr7rCLB2">2025 E St. NW</a><br><a href="https://goo.gl/maps/ywtpwr7rCLB2">Washington, DC 20006</a></p>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>Web</h3>
-                    <ul class="list-inline">
-                        
-                        
-                        <li>
-                            <a href="https://twitter.com/stateHIU" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a href="https://github.com/state-hiu" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a href="mailto:secondarycities@state.gov" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope-o"></i></a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                <div class="footer-col col-md-4">
-                    <h3>Links</h3>
-                    <p>  
-			<a href="http://www.state.gov">U.S. State Department</a><br>
-			<a href="http://hiu.state.gov">Humanitarian Information Unit</a><br>
-			<!--<a href="http://secondarycities.state.gov">Secondary Cities Homepage</a><br>-->
-			<a href="http://mapgive.state.gov">MapGive</a><br>
-			<!--<a href="https://hotosm.org/">Humanitarian OpenStreetMap Team</a><br>-->
-		    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                        Office of the Geographer and Global Issues (GGI)
-                    <br>
-			            U.S. Department of State
-                </div>
-
-                <div class="disclaimer" style="font-size:12px">The Office of the Geographer and Global Issues, manages this site as a portal for information from the U.S. State Department.<br>
-                External links to other Internet sites should not be construed as an endorsement of the views or privacy policies contained therein.
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
-
-<!-- Google Analytics code -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-24614711-4', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
-
-
-    
-<!--<script src="build/plugins.min.js"></script>-->
-
-<!-- jQuery 
-<script src="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/js/jquery.js"></script>-->
-
-
-<!--
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
--->
-
-
-<script src="/SecondaryCities2/assets/js/libs/jquery-ui.min.js"></script>
-
-<!-- Bootstrap Core JavaScript 
-<script src="http://sbootstrap-freelancer.startbootstrapc.netdna-cdn.com/js/bootstrap.min.js"></script>-->
-
-<script src="/SecondaryCities2/assets/js/libs/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-
-<script src="/SecondaryCities2/assets/js/libs/classie.js"></script>
-<script src="/SecondaryCities2/assets/js/libs/cbpAnimatedHeader.js"></script>
- 
-<!-- Contact Form JavaScript -->
-<script src="/SecondaryCities2/assets/js/libs/jqBootstrapValidation.js"></script>
-<script src="/SecondaryCities2/assets/js/libs/contact_me.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/SecondaryCities2/assets/js/libs/freelancer.js"></script>
-
-
-
-
-
-  </body>
-
-</html>
