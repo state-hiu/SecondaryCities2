@@ -432,10 +432,10 @@ a.selected-tag {
 
 
                   <div id="bibliography" class="tab-pane active">
-                    <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.</strong>
+                    <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. Visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a>.</strong>
 </p>
 
-                    <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%"></iframe>
+                    <!--<iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%"></iframe>-->
                   </div>
 
                   <div id="ethics" class="tab-pane copper">
@@ -996,7 +996,7 @@ var columns3 = [{
 {"data": "Internet Connectivity","title": "Internet Connectivity", "width":"90px"},
 {"data": "Platform","title": "Platform", "width":"40px"},
 {"data": "Type of Media","title": "Type of Media", "width":"90px"},
-{"data": "Comments","title": "Comments", "width":"100px"},
+{"data": "Comments","title": "Comments", "width":"160px"},
 {"data": "Website","title": "Website", "width":"40px"}];
 
 
@@ -1083,7 +1083,7 @@ $(document).ready(function() {
 
     //Select default columns 0-4
     for (var i = 0; i < 4; i++) {
-        $("a[data-column='"+i+"']").addClass('selected-tag');
+        $("a.toggle-vis[data-column='"+i+"']").addClass('selected-tag');
     };
 
     $('a.toggle-vis').on( 'click', function (e) {
@@ -1189,7 +1189,7 @@ function initializeTabletopObject2() {
 
     //Select default columns 0-4
     for (var i = 0; i < 7; i++) {
-        $("a[data-column='"+i+"']").addClass('selected-tag');
+        $("a.toggle-vis2[data-column='"+i+"']").addClass('selected-tag');
     };
 
     $('a.toggle-vis2').on( 'click', function (e) {
@@ -1296,8 +1296,8 @@ function initializeTabletopObject3() {
 
 
     //Select default columns 0-4
-    for (var i = 0; i < 5; i++) {
-        $("a[data-column='"+i+"']").addClass('selected-tag');
+    for (var i = 0; i < 6; i++) {
+        $("a.toggle-vis3[data-column='"+i+"']").addClass('selected-tag');
     };
 
     $('a.toggle-vis3').on( 'click', function (e) {
