@@ -179,13 +179,14 @@ a.selected-tag {
                 </div>
 -->
                 <ul class="nav nav-tabs main-hyperlink" style="padding: 10px 10px 0px 10px;">
-                  <li class="active"><a href="#bibliography" data-toggle="tab">bibliography</a></li>
 
-                  <li><a href="#tools" data-toggle="tab">tools</a></li>
+                  <li class="active"><a href="#tools" data-toggle="tab">tools</a></li>
 
                   <li><a href="#documents" data-toggle="tab">documents</a></li>
 
                   <li><a href="#translation" data-toggle="tab">translation tools</a></li>
+
+                  <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
 
                   <!--<li><a href="#workshops" data-toggle="tab">workshop materials</a></li>
                   <li><a href="#products" data-toggle="tab">maps</a></li>
@@ -305,7 +306,7 @@ a.selected-tag {
               </div>
           </div>
 
-                <div id="tools" class="tab-pane ">
+                <div id="tools" class="tab-pane active">
                 {% for product in site.categories.resources %}
                   {% if product.id == "events" %}
                     {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
@@ -431,7 +432,7 @@ a.selected-tag {
 
 
 
-                  <div id="bibliography" class="tab-pane active">
+                  <div id="bibliography" class="tab-pane">
                     <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. Visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a>.</strong>
 </p>
 
@@ -801,7 +802,7 @@ window.addEventListener("hashchange", function () {
       $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
     } else {
       console.log('else called');
-      $(".nav-tabs a[href='#bibliography']").tab('show');
+      $(".nav-tabs a[href='#tools']").tab('show');
     }
 
     // Changes hash in the address bar for page-reload
@@ -991,7 +992,7 @@ var columns2 = [{
 
 var columns3 = [{
 "data": "Name","title": "Name", "width":"50px"},
-{"data": "Number of Languages Offered","title": "Number of Languages Offered", "width":"20px"},
+{"data": "Number of Languages Offered","title": "Number of Languages Offered", "width":"60px"},
 {"data": "Cost (US Dollars)","title": "Cost (US Dollars)", "width":"30px"},
 {"data": "Internet Connectivity","title": "Internet Connectivity", "width":"90px"},
 {"data": "Platform","title": "Platform", "width":"40px"},
