@@ -6,13 +6,16 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jul 2019 22:27:19 +0200</pubDate>
-    <lastBuildDate>Tue, 02 Jul 2019 22:27:19 +0200</lastBuildDate>
+    <pubDate>Tue, 16 Jul 2019 18:23:44 +0200</pubDate>
+    <lastBuildDate>Tue, 16 Jul 2019 18:23:44 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Dynamic Mapping of Secondary Cities Symposium II</title>
-        <description>&lt;div style=&quot;text-align:center;&quot;&gt;&lt;/div&gt;
+        <description>&lt;div style=&quot;text-align:center;&quot;&gt;
+    &lt;a href=&quot;/SecondaryCities2/resources/events/Secondary_Cities_Symposium_2019&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default2&quot; style=&quot;font-size:16px;padding:6px;margin-top:6px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Symposium Program&lt;/button&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align:center;&quot;&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div&gt;
 Solutions to today’s rapidly growing urban challenges require innovative thinking and accumulative efforts from the most forward-thinking problem solvers. Thought leaders and experts in participatory mapping, open data, and urban resilience discussed best practices for project sustainability across the key thematic areas identified above. Drawing on the experience of our attendees, the lessons learned from 2C and similar projects, and new opportunities for partner engagement, the symposium resulted in recommendations and strategies
@@ -21,9 +24,9 @@ for how best to continue and sustain 2C projects and networks.
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align:center;margin-left: 140px;&quot;&gt;
     &lt;div style=&quot;display: inline-block; text-align: left&quot;&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp2.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 1: KEYNOTE, LAY OF THE LAND, Dr. Gregg Greenough, Harvard Humanitarian Initiative&lt;/button&gt;&lt;/a&gt;
+        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp2.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 1: KEYNOTE, Lay of the Land, Dr. Gregg Greenough, Harvard Humanitarian Initiative&lt;/button&gt;&lt;/a&gt;
         &lt;br /&gt;
-        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp2-page-2.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 2: Fostering Community Engagement with GIS Initiatives, Tiffany Holland, Geographer, ESR&lt;/button&gt;&lt;/a&gt;
+        &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp2-page-2.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 2: Fostering Community Engagement with GIS Initiatives, Tiffany Holland, Geographer, ESRI&lt;/button&gt;&lt;/a&gt;
         &lt;br /&gt;
         &lt;a href=&quot;/SecondaryCities2/events/dynamic-map-symp2-page-3.html&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;btn btn-default3&quot; style=&quot;font-size:16px;padding:5px;margin-bottom:4px&quot;&gt;&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;Page 3:  Dr. Gaston Mbonglou, 2C Project Lead, Douala, Cameroon; and President, USA Cameroon Chamber of Commerce President&lt;/button&gt;&lt;/a&gt;
     &lt;/div&gt;
@@ -98,6 +101,36 @@ for how best to continue and sustain 2C projects and networks.
       </item>
     
       <item>
+        <title>Dynamic Mapping of Secondary Cities Symposium II</title>
+        <description>
+</description>
+        <pubDate>Sat, 17 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-3.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-3.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Dynamic Mapping of Secondary Cities Symposium II</title>
+        <description>
+</description>
+        <pubDate>Sat, 17 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-2.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-2.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
         <title>AAG Mapathon 2017 – Secondary Cities: Mapping Human Geography Data</title>
         <description>&lt;p&gt;This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.&lt;/p&gt;
 </description>
@@ -161,54 +194,6 @@ for how best to continue and sustain 2C projects and networks.
         <category>English</category>
         
         <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Field Papers One Pager</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>doc</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Survey123 Frequently Asked Questions</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>Russian</category>
-        
-        <category>doc</category>
         
         
         <category>resources</category>
