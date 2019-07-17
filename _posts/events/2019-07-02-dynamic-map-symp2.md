@@ -29,7 +29,7 @@ sections:
  
 ---
 <div style="text-align:center;">
-    <a href="{{ site.baseurl }}/resources/events/Secondary_Cities_Symposium_2019"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Symposium Program</button></a>
+    <a href="{{ site.baseurl }}/resources/events/Secondary_Cities_Symposium_2019.pdf"><button type="button" class="btn btn-default2" style="font-size:16px;padding:6px;margin-top:6px"><i class="fa"></i>Symposium Program</button></a>
 </div>
 <div style="text-align:center;"></div>
 <br>
