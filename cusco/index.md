@@ -1,6 +1,6 @@
 ---
 layout: report3
-title: Cusco, Peru
+title: Cusco, Peru (2015 – 2017)
 author: Leo Bottrill of CrowdCover
 date: January 20, 2015
 data_source_name: Secondary Cities
@@ -68,19 +68,32 @@ sections:
 
 ![Cusco]({{ site.baseurl }}/img/cusco/cusco_plaza_de_armas.png)
 
-Cusco is the capital of the Cusco region in southern Peru.  The City of Cusco has a population of 118,000 (2015) with informal community developments on the city periphery.  As the ancient Incan capital and a UNESCO World Heritage Site, the city experiences a high volume of tourist visits.  Its topographic setting makes Cusco prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.
+Cusco is the capital of the Cusco Region in Southern Peru. The population of Cusco is nearly 435,000 residents (2013) with informal community developments on the city periphery.  Cusco experiences sprawl and unplanned development which create challenges for transportation, water and waste management, and air quality.  Cusco’s physical location in a river valley makes it prone to natural disasters, particularly landslides and flooding.  The city of Cusco is composed of six different administrative units making both governance and geospatial data coordination challenging.  Due to its historical significance as the ancient capital of the Inca Empire and its designation as a UNESCO World Heritage Site, Cusco has development restrictions that preserve its historic design and layout.
+ 
+2C Cusco focused on community-driven mapping and data creation at the neighborhood scale, with a focus on urban flow and waste management.  An initial workshop at the Universidad Nacional San Antonio Abad (National University of St. Anthony the Abbot) introduced participants to geospatial technologies by mapping neighborhoods adjacent to the university.  The 2C Cusco project partnered with [Ecocity Builders](http://ecocitybuilders.org/) to build local partnerships and teach participatory mapping and geospatial technology through the 2C [Urbinsight](https://ecocitybuilders.org/urbinsight/) curriculum.
 
-2C Cusco works on community-driven mapping and data collection at the neighborhood scale, with a focus on urban flow and waste management.  An initial workshop at the Universidad Nacional San Antonio Abad (National University of St. Anthony the Abbot) introduced participants to geospatial technologies for mapping neighborhoods adjacent to the university.  Since then, 2C Partner EcoCity Builders has continued to build local partnerships and teach participatory mapping in geospatial technology through the EcoCompass curriculum.
-
-The US Embassy has facilitated partnerships between city, NGOs, and universities for the 2C projects.  The Embassy has been instrumental in laying the groundwork for the successful implementation of Secondary Cities projects.
 
 ### Goals
 
-The goal of this project is to map waste management issues and identify solutions for improving waste disposal.
+The goal of this project, as defined by local priorities, set out to map waste management issues and identify solutions for improving waste disposal.
 
-- &bull;  Participants use multiple tools including surveys, field mapping techniques, and analysis.  
-- &bull;  The project facilitates the establishment of composting sites and programs in the neighborhood.  
-- &bull;  This base line information provides the basis for conducting analysis on urban flows for improved city design and management.
+- &bull;  Project partners trained participants to use multiple tools including surveys, field mapping techniques, and geospatial analysis.
+- &bull;  New data provided a baseline for conducting analysis on urban flows for improved city design and management.
+- &bull;  The project facilitated a community based solution to waste issues, enabling collaboration on a composting program across four neighborhoods.
+
+### Data
+
+Through local workshops, 2C Cusco fostered [data creation](https://secondarycities.geonode.state.gov/search/?title__icontains=Cusco&limit=100&offset=0) focused on the neighborhood scale by conducting multiple surveys on waste, water quality, and quality of life, as well as investigating building characteristics and potential locations for community composting. A [Cusco Map Book](https://secondarycities.geonode.state.gov/documents/2622) was prepared for the local government and an initial urban flows analysis of waste was conducted. These dual products led to the implementation of new strategies for waste management.
+
+![2C_cusco_data]({{ site.baseurl }}/img/cusco/2C_cusco_data.png)
+
+### Project Status
+
+As a 2C graduated project, 2C Cusco continues through these activities:
+
+- &bull;  An established partnership with the UN Environmental Program Sustainable Neighborhood Plan facilitated by Ecocity Builders to enhance land use maps, parcel maps, geographical demographic data, and resource consumption data.
+- &bull;  A continued partnership with local government to implement a community reuse and recycling center to reduce waste production for neighborhoods within the Northwest region of Cusco. The neighborhood selection was based on 2C mapping of waste accumulation sites and 2C surveyed demographic data.
+- &bull;  The 2C Cusco project motivated the continued teaching of GIS courses at the Environmental Engineering Department of Alas Peruanas University.
 
 ### Lead Partner
 - [Ecocity Builders](https://www.ecocitybuilders.org/)
@@ -91,6 +104,7 @@ The goal of this project is to map waste management issues and identify solution
 - [PREDES](http://www.predes.org.pe/)
 - [Field Papers](http://fieldpapers.org/)
 - [British Columbia Institute of Technology](http://www.bcit.ca/)
+- Environmental Engineering Department of Alas Peruanas
 
 
 
