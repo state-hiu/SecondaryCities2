@@ -807,7 +807,7 @@ if (window.innerWidth < 1200) {
     var bokeIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="icon_2c"></div>'+
-                  '<span class="label-span-small" id="label-cusco">Boké-Kamsar <span id="country-small">Guinea</span></span>'
+                  '<span class="label-span-small" id="label-boke">Boké-Kamsar <span id="country-small">Guinea</span></span>'
     });
     
 } else {
@@ -817,7 +817,7 @@ if (window.innerWidth < 1200) {
     var bokeIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="icon_2c"></div>'+
-                  '<span class="label-span" id="label-cusco">Boké-Kamsar <span id="country">Guinea</span></span>'
+                  '<span class="label-span" id="label-boke">Boké-Kamsar <span id="country">Guinea</span></span>'
     });
 
 } 
@@ -828,7 +828,7 @@ bokeMarker.bindPopup('<span class="label-span-small">Boké-Kamsar (2018 – pres
 
 /*
 bokeMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/cusco");
+            window.open("/SecondaryCities2/boke");
         });
 */
 
@@ -850,7 +850,7 @@ if (window.innerWidth < 1200) {
     var indoreIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="icon_2c"></div>'+
-                  '<span class="label-span-small" id="label-cusco">Indore <span id="country-small">India</span></span>'
+                  '<span class="label-span-small" id="label-indore">Indore <span id="country-small">India</span></span>'
     });
     
 } else {
@@ -860,7 +860,7 @@ if (window.innerWidth < 1200) {
     var indoreIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="icon_2c"></div>'+
-                  '<span class="label-span" id="label-cusco">Indore <span id="country">India</span></span>'
+                  '<span class="label-span" id="label-indore">Indore <span id="country">India</span></span>'
     });
 
 } 
@@ -891,7 +891,7 @@ if (window.innerWidth < 1200) {
     var darkhanIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="icon_2c"></div>'+
-                  '<span class="label-span-small" id="label-cusco">Darkhan <span id="country-small">Mongolia</span></span>'
+                  '<span class="label-span-small" id="label-darkhan">Darkhan <span id="country-small">Mongolia</span></span>'
     });
     
 } else {
@@ -955,7 +955,7 @@ if (window.innerWidth < 1200) {
     var pembaIcon = L.divIcon({
         className: 'city-icon',
         html: '</div>'+
-                  '<span class="label-span-small" id="label-cusco">Pemba <span id="country-small">Mozambique</span></span>'
+                  '<span class="label-span-small" id="label-pemba">Pemba <span id="country-small">Mozambique</span></span>'
     });
     
 } else {
@@ -1017,11 +1017,13 @@ if (window.innerWidth < 1200) {
 
 } 
 
-santafeMarker.bindPopup('<img src="/SecondaryCities2/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe About page coming soon</span>', {offset: new L.Point(0, -15)});
+//santafeMarker.bindPopup('<img src="/SecondaryCities2/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe About page coming soon</span>', {offset: new L.Point(0, -15)});
+
+santafeMarker.bindPopup('<img src="/SecondaryCities2/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe (2018 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/santa_fe" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=santafe&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
 
 /*
 santafeMarker.on('click', function (e) {
-            window.open("/SecondaryCities2/cusco");
+            window.open("/SecondaryCities2/santafe");
         });
 */
 
@@ -1136,8 +1138,9 @@ if (window.innerWidth < 1200) {
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="/SecondaryCities2/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"><span class="label-span-small"></br>Denpasar (2015–2017) </span>', {offset: new L.Point(0, -15)});
+//denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"><span class="label-span-small"></br>Denpasar (2015–2017) </span>', {offset: new L.Point(0, -15)});
 
+denpasarMarker.bindPopup('<img src="/SecondaryCities2/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"></br><span class="label-span-small">Denpasar (2015 – 2017)</span></br><span class="label-span-small"><a href="/SecondaryCities2/denpasar" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=denpasar&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
 
 /*
 denpasarMarker.on('click', function (e) {
@@ -1651,7 +1654,9 @@ if (window.innerWidth < 1200) {
 }
 
 
-pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
+//pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
+
+pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Cusco"></br><span class="label-span-small">Pokhara (2015 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/pokhara" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=Pokhara&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
 
 /*
 pokharaMarker.on('click', function (e) {
