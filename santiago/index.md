@@ -68,7 +68,7 @@ This data will contribute to an updated municipal Land-Use map replacing a versi
 Urban and Regional Studies Center (CEUR) at the Pontificia Universidad Catolica, Madre y Maestra (PUCMM)
 
 ### Supporting Partners
-EcoCity Builders
-Ordenamiento Territorial of Santiago (POT)
+- [EcoCity Builders](https://ecocitybuilders.org/)
+- Ordenamiento Territorial of Santiago (POT)
 
 

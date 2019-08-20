@@ -1,7 +1,7 @@
 ---
 layout: report3
 title: Cusco, Peru (2015 – 2017)
-author: Leo Bottrill of CrowdCover
+author: 2C
 date: January 20, 2015
 data_source_name: Secondary Cities
 data_source_url: https://secondarycities.geonode.state.gov/

@@ -8,7 +8,7 @@ data_source_url: http://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 banner_image_source: Lorem ipsum dolor sit amet
-api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=Boke-Kamsar'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=Kamsar'
 tweet_text: 'The 2C Boké-Kamsar project develops the essential data needed for urban planning by generating a baseline dataset of services and infrastructure %23SecondaryCities'
 esri_story: false
 

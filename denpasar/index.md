@@ -1,5 +1,5 @@
 ---
-layout: report2
+layout: report3
 title: Denpasar, Indonesia
 author: Secondary Cities
 date: June 7, 2016
@@ -38,8 +38,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [-8.661, 115.205]
-    zoom: 13
+    latlng: [-8.6603,115.2284]
+    zoom: 12
     tile_layers:
     vector_data:
     body: |
