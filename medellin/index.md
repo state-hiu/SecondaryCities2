@@ -73,6 +73,8 @@ The 2C Medellin project explores the dynamics of resilient and healthy urban eco
 
 Through local workshops, data collection focused on the neighborhood scale conducting multiple surveys on waste, water quality, building characteristics, potential locations for community composting, and quality of life. Mapping has focused on Comuna 8 where a strong community partnership has formed. A Medellin Map Book was prepared for the local government and an initial urban flows analysis of waste implemented leading to new strategies for recycling.
 
+![2C_medellin_data]({{ site.baseurl }}/img/medellin/2C_medellin_data.png)
+
 ### Project Status
 
 - &bull; The E2E Foundation has continued to work with the Comuna 8 communities to use the collected data to design waste management solutions.

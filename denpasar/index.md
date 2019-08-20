@@ -60,6 +60,8 @@ The project goal was to establish a model waste management system in Indonesia w
 ### Data
 2C Denpasar collected data on the waste management services in Denpasar city.  They located and geotagged every municipal waste tip/dumpster/collection point, illegal dumping locations, and formal and informal waste collectors throughout Denpasar city and then expanded to include villages outside the city administrative boundary.
 
+![2C_denpasar_data]({{ site.baseurl }}/img/denpasar/2C_denpasar_data.png)
+
 ### Project Status
 After completion of the 2C project, Gringgo has been awarded a USAID Development Innovations grant to continue to support their waste management project.
 

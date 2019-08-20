@@ -62,6 +62,8 @@ The 2C Pokhara project aims to develop disaster resilience and emergency managem
 ### Data
 2C Pokhara has created baseline data on vital city services (banks, medical centers, schools, religious centers).  A 2C Pokhara Map Book has been published and disseminated to the city’s governing agency and local schools.
 
+![2C_pokhara_data]({{ site.baseurl }}/img/pokhara/2C_pokhara_data.png)
+
 ### Lead Partner
 - [Kathmandu Living Labs](http://www.kathmandulivinglabs.org/)
 

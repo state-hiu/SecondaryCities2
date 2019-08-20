@@ -62,6 +62,8 @@ The 2C Santiago project focuses on data creation in support of land use planning
 ### Data
 This data will contribute to an updated municipal Land-Use map replacing a version from the early 2000s. These data and maps will help guide decisions about development, especially as it pertains to the 11 vulnerable neighborhoods in the flood zone. 
 
+![2C_santiago_data]({{ site.baseurl }}/img/santiago/2C_santiago_data.png)
+
 ### Lead Partner
 Urban and Regional Studies Center (CEUR) at the Pontificia Universidad Catolica, Madre y Maestra (PUCMM)
 

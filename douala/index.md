@@ -57,6 +57,8 @@ The 2C Douala project goal is to create city-wide, shareable, and open data for 
 ### Data
 The 2C Douala partnership creates data for mapping waste management, flooding, and identifying evacuation routes in the city.  Data creation has focused on the locations of city services such as schools, medical facilities, sanitation sites, and points of previous flooding.
 
+![2C_douala_data]({{ site.baseurl }}/img/douala/2C_douala_data.png)
+
 ### Summary
 Douala is the economic capital of Cameroon and the most populous city in the country (2.7 million).  The Wouri River runs through this coastal city, forming a large estuary with many intercoastal islands.  The annual growth rate between 1987 and 2012 was 6.3% and by 2017 the population had tripled.  Experts anticipate that Douala’s population will grow to 5 million people by 2025.  As Cameroon’s chief maritime port, Douala is one of the major industrial centers and economic hubs of central Africa.
 

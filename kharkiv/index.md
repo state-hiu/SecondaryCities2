@@ -70,6 +70,8 @@ The project built partnerships with local universities, government, NGOs, and th
 ### Data
 The Kharkiv Secondary City (2C) project developed geospatial data for local emergency preparedness.  Data was created with a focus on vulnerable populations, including the elderly, people with disabilities, gender-based vulnerabilities, and internally-displaced persons.
 
+![2C_kharkiv_data]({{ site.baseurl }}/img/kharkiv/2C_kharkiv_data.png)
+
 ### Project Status
 2C Kharkiv partners continue to conduct research using data created through the 2C Initiative. Of particular note was the generation of a geospatial data layer of urban springs that provide an informal water supply in times of need.
 
