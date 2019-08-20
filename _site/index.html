@@ -910,7 +910,7 @@ if (window.innerWidth < 1200) {
 
 //darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-150, 140)});
 
-darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan, Mongolia (2018 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/darkhan" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=darkhan&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-100, 150)});
+darkhanMarker.bindPopup('<img src="/SecondaryCities2/img/darkhan/darkhan.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan, Mongolia (2018 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/darkhan" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=darkhan&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-150, 170)});
 
 /*
 darkhanMarker.on('click', function (e) {
@@ -1205,7 +1205,7 @@ if (window.innerWidth < 1200) {
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
 //kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span>', {offset: new L.Point(-100, 150)});
 
-kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span></br><span class="label-span-small"><a href="/SecondaryCities2/kharkiv" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=kharkiv&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-100, 150)});
+kharkivMarker.bindPopup('<img src="/SecondaryCities2/img/kharkiv/kharkiv.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span></br><span class="label-span-small"><a href="/SecondaryCities2/kharkiv" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=kharkiv&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-100, 170)});
 
 /*
 kharkivMarker.on('click', function (e) {
@@ -1657,7 +1657,7 @@ if (window.innerWidth < 1200) {
 
 //pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
-pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara.jpg" class="img-popup" alt="Cusco"></br><span class="label-span-small">Pokhara (2015 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/pokhara" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=Pokhara&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
+pokharaMarker.bindPopup('<img src="/SecondaryCities2/img/pokhara/pokhara.jpg" class="img-popup" alt="Cusco"></br><span class="label-span-small">Pokhara (2015 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/pokhara" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=Pokhara&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-115, 185)});
 
 /*
 pokharaMarker.on('click', function (e) {
@@ -1671,7 +1671,20 @@ pokharaMarker.on('click', function (e) {
             //debugger;
             //console.log('after popup');
             $( ".leaflet-popup-close-button" ).hide();
+            /*
+            notes: need to modify pop-up for indicator pointer to point left instead of pointing down from the bottom
+            adding float-left to leaflet-popup-content-wrapper and leaflet-popup-tip-container divs
+            need to disable the width of the leaflet-popup-content-wrapper child div leaflet-popup-content
+            need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
+            */
+            $( ".leaflet-popup-content-wrapper" ).css("float", "left");
+            $( ".leaflet-popup-content" ).css("width", "none");
+            $( ".leaflet-popup-tip-container" ).css("float", "left");
+            $( ".leaflet-popup-tip-container" ).css("width", "14px");
+            $( ".leaflet-popup-tip" ).css("margin-top", "22px");
+            $( ".leaflet-popup-tip" ).css("border-left", "none");
         });
+
 
 /*
 pokharaMarker.on('mouseout', function (e) {
@@ -1717,7 +1730,7 @@ if (window.innerWidth < 1200) {
 
 //esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas_thumb_300px.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas (2016–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
-esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas, Ecuador (2016 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/esmeraldas" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=esmeraldas&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(-100, 150)});
+esmeraldasMarker.bindPopup('<img src="/SecondaryCities2/img/esmeraldas/esmeraldas.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas, Ecuador (2016 – present)</span></br><span class="label-span-small"><a href="/SecondaryCities2/esmeraldas" target="_blank">Project page</a></span></br><span class="label-span-small"><a href="http://secondarycities.geonode.state.gov/search/?title__icontains=esmeraldas&limit=100&offset=0" target="_blank">Data page</a></span>', {offset: new L.Point(0, -15)});
 
 /*
 esmeraldasMarker.on('click', function (e) {
