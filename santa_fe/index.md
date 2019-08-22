@@ -42,7 +42,7 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [19.4596,-70.6912]
+    latlng: [-31.6151,-60.7099]
     zoom: 12
     tile_layers:
     vector_data:
