@@ -1,14 +1,14 @@
 ---
-layout: event2
-category: events
-title: Dynamic Mapping of Secondary Cities Symposium II
-subtitle: "June 17, 2019"
-ref: dynamic-map-symp
-status: past
-date: 20190617
-page-num: 1
-final-page: false
-previous-page-url: ""
+#layout: event2
+#category: events
+#title: Dynamic Mapping of Secondary Cities Symposium II
+#subtitle: "June 17, 2019"
+#ref: dynamic-map-symp
+#status: past
+#date: 20190617
+#page-num: 1
+#final-page: false
+#previous-page-url: ""
 tags:
   - event
 sections:
