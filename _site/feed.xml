@@ -6,9 +6,72 @@
 </description>
     <link>http://0.0.0.0:4000/SecondaryCities2/</link>
     <atom:link href="http://0.0.0.0:4000/SecondaryCities2/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Sep 2017 20:10:24 +0200</pubDate>
-    <lastBuildDate>Fri, 08 Sep 2017 20:10:24 +0200</lastBuildDate>
-    <generator>Jekyll v3.5.2</generator>
+    <pubDate>Tue, 03 Sep 2019 17:11:43 +0200</pubDate>
+    <lastBuildDate>Tue, 03 Sep 2019 17:11:43 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>2C Africa Technical Exchange</title>
+        <description>&lt;p&gt;The Center for Remote Sensing and GIS (CERSGIS) hosted the 2C Africa Technical Exchange (2C-ATE) in Accra, Ghana.  The 2C-ATE provided an opportunity for 2C partners to meet, discuss the status of their project, share demonstrations of new tools and technologies and identify future opportunities for networking.  2C Africa projects include:  2C Port Harcourt, Nigeria; 2C Douala, Cameroon; 2C Mekelle, Ethiopia; 2C Boke-Kamsar, Guinea; 2C Pemba, Mozambique.  The technical exchange included hands on workshop on geospatial applications and in-field data collection activities.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 03 Apr 2019 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/2c-africa-tech-exchange.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/2c-africa-tech-exchange.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>2C Latin America Technical Exchange</title>
+        <description>&lt;p&gt;The Universidad de San Francisco de Quito hosted the  2C Latin American Technical Exchange (2C-LATE) in Quito, Ecuador.  The 2C-LATE provided a venue for all 2C projects to meet, share lessons learned, build a network of geospatial experts, and discuss sustainability plans for 2C projects.  2C Latin America projects include:  2C Tijuana, Mexico; 2C Santiago, Dominican Republic; 2C Cusco, Peru; 2C Esmeraldas; and 2C Santa Fe.  The technical exchange included hands on workshops using open source tools, ArcGIS Online, and demonstrations of geospatial analysis.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 03 Apr 2019 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/2c-latin-america-tech-exchange.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/2c-latin-america-tech-exchange.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>AAG Annual Meeting Panel Session</title>
+        <description>&lt;p&gt;Since 2015, the Secondary Cities (2C) Initiative has developed a global network of universities, non-governmental organizations, and local government to generate local, geospatial data for emergency preparedness, resiliency, and human security.  Focusing on low-income and mid-income countries, the 2C Initiative spans 16 cities in as many countries.  A panel will discuss the status of the initiative, lessons learned, and highlight initial outcomes.  The 2C Initiative hosts the 2C Geonode where all data are posted and shared.  Challenges to implementing a global project are both technical (i.e., interoperability across tools and platforms) and cultural (i.e., languages).  Success is measured in the 2C partner efforts to generate data and the training of the next generation of geospatial experts.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 03 Apr 2019 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-annual-meeting-2019.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-annual-meeting-2019.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>State of the Map Asia 2017</title>
+        <description>&lt;p&gt;Kathmandu Living Labs (KLL), a Secondary City Initiative partner, hosted State of the Map (SOTM) Asia, September 23-24, 2017, two days of talks, discussions, workshops, and networking all around OpenStreetMap, the free and open map of the world. SOTM is an event for all mappers and OpenStreetMap users. Dr. Lee Schwartz, the Director of the Office of the Geographer and Global Issues was a keynote speaker.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/sotm-asia.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/sotm-asia.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
     
       <item>
         <title>Quality Assurance Checklist</title>
@@ -32,191 +95,82 @@
       </item>
     
       <item>
-        <title>Mapping Urbanization in Secondary Cities</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/before-after-video.html</guid>
-        
-        <category>urbanization</category>
-        
-        <category>video</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Field Data Collection Training</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_collection.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_collection.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Field Papers One Pager</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/fieldpapers_one_pager.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>doc</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Survey123 Frequently Asked Questions</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/survey123_faqs.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>Russian</category>
-        
-        <category>doc</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Using Survey123 1-pager</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/using_survey123.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/using_survey123.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>doc</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Kharkiv Workshop Data Collection Features &amp; Attributes</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/data-collection.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>field data collection</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Accessing Existing Geospatial Data for Kharkiv</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Aug 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/resources/accessing_geospatial_data.html</guid>
-        
-        <category>kharkiv</category>
-        
-        <category>AAG</category>
-        
-        <category>data sharing</category>
-        
-        <category>English</category>
-        
-        <category>slides</category>
-        
-        
-        <category>resources</category>
-        
-      </item>
-    
-      <item>
-        <title>Universidad San Francisco de Quito &amp; Universidad Técnica Luis Vargas Torres</title>
-        <description>&lt;p&gt;The Institute of Geography of the Universidad San Francisco de Quito together with the Universidad Técnica Luis Vargas Torres in partnership with the City of Esmeraldas will lead 2C Esmeraldas by engaging students and local partners in participatory community mapping and implementing geo-spatial tools to generate information about risk, uncertainty, vulnerability and resilience due to sanitation and natural hazards.&lt;/p&gt;
+        <title>2C South Africa Technical Exchange</title>
+        <description>&lt;p&gt;Africa EIS and Esri South Africa hosted the 2C South Africa Technical Exchange (2C-SATE) in Midrand, South Africa.  The 2C-SATE provided a venue for all 2C Africa projects to meet, share lessons learned, and create a network of geospatial experts.  2C Africa projects include:  2C Douala, Cameroon, 2C Mekelle, Ethiopia, and 2C Port Harcourt, Nigeria.  The technical exchange included hands on workshops using ArcGIS Online, geospatial data analysis, and data generation activities.&lt;/p&gt;
+
+&lt;p&gt;Each city presented on the current status of their project, providing an assessment of the 2C Initiative in Africa.  The 2C Mekelle project focuses on mapping urban growth and water resources in an arid region long subject to droughts and water shortages, and dependent on water conservation. The 2C Port Harcourt team chose to map informal residential developments and areas subjected to routine flooding, a ubiquitous problem in the watery Niger Delta region that strains the capacity of both governance and city services. The 2C Douala teams chose to focus on mapping lower-lying regions of the city subject to routine flooding, and help create responses to a routinely-occurring natural disaster. The 2C CSU team provided a change detection analysis for each city.  Each 2C city team assessed the change detection results in a participatory mapping activity to verify the outcomes.&lt;/p&gt;
+
+&lt;p&gt;Due to the success of this event, there are plans for a follow up 2C-SATE in 2018.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/partners/esmeraldas.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/partners/esmeraldas.html</guid>
+        <pubDate>Mon, 26 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/2c-SATE.html</guid>
         
-        <category>partner</category>
+        <category>event</category>
         
         
-        <category>partners</category>
+        <category>events</category>
         
       </item>
     
       <item>
-        <title>Wisnu Foundation</title>
-        <description>&lt;p&gt;Wisnu Foundation is the local implementing partner for 2C Denpasar and is helping to establish a model waste management system in the city working with local TPSTs (integrated waste facilities) and waste banks in metropolitan Denpasar. The primary goal is to develop standard management tools through the use of geospatial data and ICT technology and to improve overall management, services and planning through participatory mapping. Subsequently the lessons learned will be replicated at similar facilities in surrounding regions of Denpasar.&lt;/p&gt;
-
+        <title>Dynamic Mapping of Secondary Cities Symposium II</title>
+        <description>
 </description>
-        <pubDate>Wed, 30 Mar 2016 00:00:00 +0200</pubDate>
-        <link>http://0.0.0.0:4000/SecondaryCities2/partners/wisnu.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/partners/wisnu.html</guid>
+        <pubDate>Sat, 17 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-3.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-3.html</guid>
         
-        <category>partner</category>
+        <category>event</category>
         
         
-        <category>partners</category>
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Dynamic Mapping of Secondary Cities Symposium II</title>
+        <description>
+</description>
+        <pubDate>Sat, 17 Jun 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-2.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/dynamic-map-symp2-page-2.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>AAG Mapathon 2017 – Secondary Cities: Mapping Human Geography Data</title>
+        <description>&lt;p&gt;This session focused on the US Office of the Geographer and Global Issues signature initiative – Secondary Cities. Secondary Cities is in the second year expanding into new cities that are under-examined and under-mapped. The fundamental aim of these projects is to identify critical data needs, utilize open source tools, and create robust datasets for sustainable futures. This session provided an overview of Secondary Cities, described a case study, and presented methods for remote and local mapping of Secondary Cities.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/aag-mapathon2017.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
+        
+      </item>
+    
+      <item>
+        <title>Habitat III</title>
+        <description>&lt;p&gt;On October, 2016 at the Habitat III conference in Quito, the city of Esmeraldas, Ecuador was selected by the State Department as the newest city to join the 2C Initiative.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 +0200</pubDate>
+        <link>http://0.0.0.0:4000/SecondaryCities2/events/H3.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/SecondaryCities2/events/H3.html</guid>
+        
+        <category>event</category>
+        
+        
+        <category>events</category>
         
       </item>
     

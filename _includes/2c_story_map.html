@@ -14,63 +14,33 @@
     position: relative;
 }
 
-#2Cstory {
-    margin: 0;
-    position: relative;
-}
-
-#story-map-title {
-    color:#7B533F;
-    font-size: 4em;
-    width: 700px;
-    margin: auto;
-    margin-top: 70px;
-}
-
-hr#story-underline {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: -moz-use-text-color;
-    -moz-border-image: none;
-    -o-border-image: none;
-    border-image: none;
-    border-style: solid none none;
-    border-top: 5px solid #7B533F;
-    margin-top: 5px;
-    max-width: 560px;
-}
-
-.inside {
-    position: absolute;
-    bottom: 2px;
-    right: 10px;
-    font-size: 12px;
-}
-
-.anchor{
-  padding-top: 50px;
-  margin-top: -50px;
-}
-
 </style>
 
 <div class="anchor" id="2Cstory">
 
     <div class="navigation-bar" >
 
-        <a href="{{site.baseurl}}/story/" >
+        
 
             <div class="col-lg-12 text-center" >
 
-                <h2 id="story-map-title" onmouseover="document.getElementById('story-underline').style.display = 'block'" onmouseout="document.getElementById('story-underline').style.display = 'none';">2C Story Map</h2>
+                <a class="story-map-title"  href="{{site.baseurl}}/story/" >
+
+                    <!-- <h2 id="story-map-title" onmouseover="document.getElementById('story-underline').style.display = 'block'" onmouseout="document.getElementById('story-underline').style.display = 'none';">2C Story Map</h2> -->
+
+                    <h2 id="story-map-title" >2C Story Map</h2>
+
+                </a>
+
+                <a class="story-map-title" href="{{site.baseurl}}/story/" >
 
                 <hr id="story-underline" style="display: none;">
 
+                </a>
+
             </div>
 
-        </a>
+        
 
         
         <div class="inside">Photo Credit: Melinda Laituri</div>

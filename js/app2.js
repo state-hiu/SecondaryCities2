@@ -262,7 +262,7 @@ $(document).foundation();
 
           } else {
 
-              return $.getJSON('http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=pokhara').then(function(data) {
+              return $.getJSON('https://secondarycities.geonode.state.gov/api/layers/?title__icontains=pokhara').then(function(data) {
 
               //resolve the deferred, passing it our custom data
               //globalapiJSONpromise.resolve(data);
@@ -282,17 +282,59 @@ $(document).foundation();
 
             //This list will have the MapID as the key, and the other info as the values
 
-            var myRegexp = /geonode%3A(.*)/;
+            var myRegexp = /geonode:(.*)/;
+
+            var myRegexp2 = /geonode%3A(.*)/;
 
             for (var i = 0; i < apiJSON.objects.length; i++) {
 
+              //console.log("logging match!");
+              //console.log(apiJSON.objects[i].detail_url);
+
               var match = myRegexp.exec(apiJSON.objects[i].detail_url);
+
+              if (!match) {
+                //console.log('if is null!');
+                //console.log(i);
+
+                var match = myRegexp2.exec(apiJSON.objects[i].detail_url);
+
+              }
+
+/*
+              console.log("logging match2!");
+              console.log(match);
+              console.log(i);
+*/
 
               //console.log(apiJSON.objects[i].category__gn_description);
 
               //console.log(match[1]);
 
+              //tempObj created to substitute null values
+              var tempObj = {};
+                
+              for (var key in apiJSON.objects[i]) {
+                console.log ('logging' + key +' '+ apiJSON.objects[i][key]);
+                //if (!apiJSON.objects[i][key])
+
+                if (apiJSON.objects[i][key]) {
+                    tempObj[key] = apiJSON.objects[i][key];
+                } else {
+                    tempObj[key] = "empty";
+                }
+
+              }
+
+              //console.log('what is the tempObj');
+              //console.log(tempObj);
+
+/*
               layersList.push({ mapID: 'scgn:' + match[1], title: apiJSON.objects[i].title, abstract: apiJSON.objects[i].abstract, category: apiJSON.objects[i].category__gn_description.trim(), supplemental_information: apiJSON.objects[i].supplemental_information, distribution_url: apiJSON.objects[i].distribution_url})
+*/
+
+              layersList.push({ mapID: 'scgn:' + match[1], title: tempObj['title'], abstract: tempObj['abstract'], category: tempObj['category__gn_description'], supplemental_information: tempObj['supplemental_information'], distribution_url: tempObj['distribution_url']})
+
             }
 
             dataIndex = 1;
@@ -632,7 +674,10 @@ $(document).foundation();
         console.log('TileLayer created, layerId named: ');
         console.log(layerId);
 
-        report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {tms: true});
+        console.log('tileUrl: ');
+        console.log(tileUrl);
+
+        report.map.reportLayers[layerId] = L.tileLayer(tileUrl, {detectRetina: false});
 
       }
 
@@ -1041,7 +1086,7 @@ $(document).foundation();
       //retrieving legends from SLDs on Geoserver!
       //http://docs.geoserver.org/2.7.0/user/services/wms/get_legend_graphic/legendgraphic.html
 
-      var src_string = "http://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
+      var src_string = "https://secondarycities.geonode.state.gov/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=40&HEIGHT=40&LAYER=geonode:" + match[1];
 
       var html_string = '<div class="legend-item" data-id="' + mapId + '"><img src="' + src_string + '" class="report-legend space-bottom1" data-id="' + mapId + '" ><span id="legend-text">' + layerJSON.title + '</span></div>';
 

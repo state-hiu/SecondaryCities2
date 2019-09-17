@@ -5,7 +5,22 @@
  */
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
+
+//on mobile devices it was over-scrolling when clicking on menu items for anchor links
+//This is probably because the responsive menu push the items in the page down
+if (window.innerWidth < 768) {
+    $(function() {
+    $('body').on('click', '.page-scroll a', function(event) {
+        //$('.navbar-toggle').click();
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 250
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+} else {
+    $(function() {
     $('body').on('click', '.page-scroll a', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -14,6 +29,8 @@ $(function() {
         event.preventDefault();
     });
 });
+}
+
 
 // Floating label headings for the contact form
 $(function() {

@@ -1,0 +1,365 @@
+<style>
+
+#map {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:550px;
+}
+
+@media (max-width: 400px){
+        #map {
+            height:250px;
+        }
+    }
+
+@media (max-width: 768px){
+        #map {
+            height:300px;
+        }
+    }
+
+.main-hyperlink {
+    font-size:20px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*This sets the height of the bottom map label */
+.leaflet-horizontalcenter {
+   padding-top: 510px;
+   margin: 0 auto;
+   width: 657px;
+}
+
+.leaflet-horizontalcenter .leaflet-control {
+    margin-bottom: 0px;
+}
+
+.info {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+.info-small {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 10px;
+  color: #2c3e50;
+}
+
+.alert {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c3e50;
+  padding: 6px;
+  background-color: white;
+  display: none;
+}
+
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.type1 {
+    width: 14px;
+    height: 14px;
+    background: #7B533F;
+    border: 1.5px solid white;
+    opacity: 0.85;
+}
+
+.icon_2c {
+    background-image: url("{{ site.baseurl }}/assets/2c_pin.png");
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid white;
+}
+
+/*
+var 2c_icon = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_icon.png",
+    iconSize: [30, 45],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    //opacity: .5,
+    //fillOpacity: 0.7,
+    //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
+    className: "2c_icon"
+});
+*/
+
+.label-span {
+    font-size: 14px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:rgba(0,0,0,.75);
+    display: block;
+}
+
+.label-span-small {
+    font-size: 14px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:rgba(0,0,0,.75);
+}
+
+#country {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#country-small {
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+.country-small {
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+.img-popup {
+  width: 150px;
+}
+
+#label-medellin {
+    margin-left: 16px;
+    margin-top: -52px;
+    text-align: left;
+}
+
+#label-medellin-small {
+    margin-left: 17px;
+    margin-top: -25px;
+    text-align: left;
+}
+
+#label-cusco {
+    margin-left: -92px;
+    margin-top: -17px;
+    text-align: right;
+    width: 90px;
+    text-align: right;
+}
+
+#label-mekelle {
+    margin-left: -76px;
+    margin-top: -16px;
+    text-align: left;
+}
+
+#label-mekelle-small {
+    margin-left: -60px;
+    margin-top: -25px;
+    text-align: left;
+}
+
+#label-kharkiv {
+    margin-left: 16px;
+    margin-top: -2px;
+    text-align: left;
+}
+
+#label-douala {
+    margin-left: 16px;
+    margin-top: -2px;
+    text-align: left;
+}
+
+#label-esmeraldas {
+    margin-left: -108px;
+    margin-top: -17px;
+    text-align: right;
+    width: 105px;
+}
+
+#label-port_harcourt {
+    margin-left: -108px;
+    margin-top: -8px;
+    text-align: right;
+    width: 105px;
+}
+
+#label-pokhara {
+    margin-left: 17px;
+    margin-top: -52px;
+    text-align: left;
+}
+
+#label-santiago {
+    margin-left: 18px;
+    margin-top: -52px;
+    text-align: left;
+}
+
+#label-denpasar {
+    margin-left: -103px;
+    margin-top: -12px;
+    width: 100px;
+    text-align: right;
+}
+
+
+
+/*
+#DenpasarPopup:hover:before {
+    content: url("{{ site.baseurl }}/img/portfolio/denpasar2.png"); 
+}
+*/
+
+</style>
+
+<!--
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+-->
+
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+<script src='{{ site.baseurl }}/assets/js/libs/leaflet.rrose-src.js'></script>
+<link href='{{ site.baseurl }}/assets/css/leaflet.rrose.css' rel='stylesheet' />
+
+<header class="map-header">
+
+
+<div id="map"></div>
+
+                    <!--<span class="skills">{{ site.description }}</span>
+</header>-->
+
+<script type="text/javascript">
+
+var txt = "";
+txt += "<p>innerWidth: " + window.innerWidth + "</p>";
+txt += "<p>innerHeight: " + window.innerHeight + "</p>";
+txt += "<p>outerWidth: " + window.outerWidth + "</p>";
+txt += "<p>outerHeight: " + window.outerHeight + "</p>";
+
+console.log(txt);
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoidGdlcnRpbiIsImEiOiJYTW5sTVhRIn0.X4B5APkxkWVaiSg3KqMCaQ';
+
+if (window.innerWidth < 400) {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:true,
+    scrollWheelZoom: true,
+    touchZoom: true,
+    doubleClickZoom: true,
+    boxZoom: true,
+    tap: false,
+    //dragging: false
+  }).setView([10, 11], 1);
+
+  //$('#map').css('height', '250px');
+
+} else if (window.innerWidth < 768) {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:true,
+    scrollWheelZoom: true,
+    touchZoom: true,
+    doubleClickZoom: true,
+    boxZoom: true,
+    tap: false,
+    //dragging: false
+  }).setView([25, 11], 2);
+
+  //$('#map').css('height', '300px');
+
+} else if (window.innerWidth < 1200) {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:true,
+    scrollWheelZoom: true,
+    touchZoom: true,
+    doubleClickZoom: true,
+    boxZoom: true,
+    tap: false,
+    dragging: false
+  }).setView([18, 11], 2);
+
+} else {
+
+var map = L.mapbox.map('map', '', {
+    attributionControl: {compact: true},
+    zoomControl:true,
+    scrollWheelZoom: true,
+    touchZoom: true,
+    doubleClickZoom: true,
+    boxZoom: true,
+  }).setView([22, 15], 3);
+
+}
+
+// if (window.innerWidth < 768) {
+
+//     map.dragging.disable()
+
+// }
+
+
+westlimit=114.308; southlimit=-9.0433; eastlimit=115.9339; northlimit=-7.7869
+
+var southWest = L.latLng(-9.0433, 114.308),
+	northEast = L.latLng(-7.7869, 115.9339),
+	bounds = L.latLngBounds(southWest, northEast);
+
+
+
+map.fitBounds(bounds);
+
+//map.setView([38.97416, -95.23252], 15);
+
+var myLayer = L.mapbox.featureLayer()
+  .loadURL('http://secondarycities.geonode.state.gov/geoserver/wfs?typename=geonode%3A3_villages_customers&outputFormat=json&version=1.0.0&service=WFS&request=GetFeature')
+  .on('ready', function() {
+    myLayer.eachLayer(function(layer) {
+	//console.log(layer);
+        layer.bindPopup(layer.feature.properties.Name_Of_Vi);
+    });
+  })
+  .addTo(map);
+
+
+// Use styleLayer to add a Mapbox style created in Mapbox Studio, using the LSIB_light2 layer
+//old style on hiu account: mapbox://styles/hiu/citm1lnb8001f2iqtvi7493qp
+  var baseLayer = L.mapbox.styleLayer('mapbox://styles/tgertin/cjd4ssbmi5kc92rnyi33sclpy',{
+    minZoom: 1,
+    maxZoom: 16,
+    scrollWheelZoom: true,
+    zoomControl: false,
+    attribution: 'Names and boundary representation are not necessarily authoritative'
+  }).addTo(map);
+
+
+// http://stackoverflow.com/questions/33614912/how-to-locate-leaflet-zoom-control-in-a-desired-position
+// Create additional Control placeholders
+function addControlPlaceholders(map) {
+    var corners = map._controlCorners,
+        l = 'leaflet-',
+        container = map._controlContainer;
+
+    function createCorner(hSide) {
+        var className = l + hSide;
+
+        corners[hSide] = L.DomUtil.create('div', className, container);
+    }
+
+    //createCorner('horizontalcenter', 'top');
+    createCorner('horizontalcenter');
+}
+addControlPlaceholders(map);
+
+
+</script>

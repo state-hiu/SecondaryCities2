@@ -179,11 +179,17 @@ a.selected-tag {
                 </div>
 -->
                 <ul class="nav nav-tabs main-hyperlink" style="padding: 10px 10px 0px 10px;">
-                  <li class="active"><a href="#bibliography" data-toggle="tab">bibliography</a></li>
 
-                  <li><a href="#tools" data-toggle="tab">tools</a></li>
-                  <li><a href="#workshops" data-toggle="tab">workshop materials</a></li>
-                  <!--<li><a href="#products" data-toggle="tab">maps</a></li>
+                  <li class="active"><a href="#tools" data-toggle="tab">tools</a></li>
+
+                  <li><a href="#documents" data-toggle="tab">documents</a></li>
+
+                  <li><a href="#translation" data-toggle="tab">translation tools</a></li>
+
+                  <li><a href="#bibliography" data-toggle="tab">bibliography</a></li>
+
+                  <!--<li><a href="#workshops" data-toggle="tab">workshop materials</a></li>
+                  <li><a href="#products" data-toggle="tab">maps</a></li>
                   <li><a href="#ethics" data-toggle="tab">ethics</a></li>-->
                 </ul>
             </div>
@@ -300,7 +306,7 @@ a.selected-tag {
               </div>
           </div>
 
-                <div id="tools" class="tab-pane ">
+                <div id="tools" class="tab-pane active">
                 {% for product in site.categories.resources %}
                   {% if product.id == "events" %}
                     {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
@@ -344,11 +350,93 @@ a.selected-tag {
 
                 </div>
 
-                  <div id="bibliography" class="tab-pane active">
-                    <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. The blocking of 3rd-party cookies may prevent viewing this page correctly, however, you can visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a> directly.</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="documents" class="tab-pane ">
+                {% for product in site.categories.resources %}
+                  {% if product.id == "events" %}
+                    {% capture thecycle %}{% cycle 'odd', 'even' %}{%endcapture%}
+                    {% if thecycle == 'odd' %}
+                      {% include main/listitem_product.html odd=true %}
+                    {% else %}
+                      {% include main/listitem_product.html odd=false %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+
+                    <div class="row">
+                        <div class="col-lg-12" style="overflow: auto;">
+                              <div style="font-style: italic;">
+                                The Secondary Cities’ partners create a variety of educational and training documents. Click on the categories below to toggle columns on and off:
+
+                                </p>
+                              </div>
+                                <div class="entry-tags" style="cursor:pointer;padding-bottom:10px;">
+                                    <!--Toggle column:--> 
+                                    <a class="toggle-vis2" data-column="0">Topic</a>
+                                    <a class="toggle-vis2" data-column="1">City</a>
+                                    <a class="toggle-vis2" data-column="2">Language</a>
+                                    <a class="toggle-vis2" data-column="3">Document Name</a>
+                                    <a class="toggle-vis2" data-column="4">Document link</a>
+                                    <a class="toggle-vis2" data-column="5">Abstract</a>
+                                    <a class="toggle-vis2" data-column="6">Publication Date</a>
+                                    <a class="toggle-vis2" data-column="7">File Format</a>
+                                    <a class="toggle-vis2" data-column="8">Document Type</a>
+                                </div>
+                                <div id="document_table"></div>
+                        </div>
+                    </div>
+
+
+</div>
+
+
+
+<div id="translation" class="tab-pane ">
+
+                    <div class="row">
+                        <div class="col-lg-12" style="overflow: auto;">
+                              <div style="font-style: italic;">
+                                Translation tools available to Secondary City partners. Click on the categories below to toggle columns on and off:
+
+                                </p>
+                              </div>
+                                <div class="entry-tags" style="cursor:pointer;padding-bottom:10px;">
+                                    <!--Toggle column:--> 
+                                    <a class="toggle-vis3" data-column="0">Name</a>
+                                    <a class="toggle-vis3" data-column="1">Number of Languages Offered</a>
+                                    <a class="toggle-vis3" data-column="2">Cost (US Dollars)</a>
+                                    <a class="toggle-vis3" data-column="3">Internet Connectivity</a>
+                                    <a class="toggle-vis3" data-column="4">Platform</a>
+                                    <a class="toggle-vis3" data-column="5">Type of Media</a>
+                                    <a class="toggle-vis3" data-column="6">Comments</a>
+                                    <a class="toggle-vis3" data-column="7">Website</a>
+                                </div>
+                                <div id="translation_table"></div>
+                        </div>
+                    </div>
+
+
+</div>
+
+
+
+                  <div id="bibliography" class="tab-pane">
+                    <strong>The Secondary Cities team manages their bibliography using the open source Zotero platfrom. Visit the <a href="https://www.zotero.org/groups/secondary_cities/items">Secondary Cities Zotero page</a>.</strong>
 </p>
 
-                    <iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%"></iframe>
+                    <!--<iframe src="https://www.zotero.org/groups/secondary_cities/items" name="ZoteroLibary" scrolling="auto" frameborder="no" align="center" height = "600px" width = "98%"></iframe>-->
                   </div>
 
                   <div id="ethics" class="tab-pane copper">
@@ -714,7 +802,7 @@ window.addEventListener("hashchange", function () {
       $(".nav-tabs a[href='"+hash_no_tab+"']").tab('show');
     } else {
       console.log('else called');
-      $(".nav-tabs a[href='#bibliography']").tab('show');
+      $(".nav-tabs a[href='#tools']").tab('show');
     }
 
     // Changes hash in the address bar for page-reload
@@ -841,13 +929,15 @@ console.log(tags_in_url);
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
 
 <!-- DATATABLES -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 <!--BOOTSTRAP INTEGRATION JS -->
 <script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 <!-- TableTop -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
 
 <!-- Graphic js code -->
 
@@ -859,6 +949,14 @@ console.log(tags_in_url);
 //enter google sheets key here, sheet can only have one tab
 var key =
   "https://docs.google.com/spreadsheets/d/1Ui2G_ZPCbgxmRJ8r93WOS47zwPItfOI74vUM9W7AnDI/pubhtml";
+
+
+var key2 =
+  "https://docs.google.com/spreadsheets/d/1KAJK3Y9CqLwPwFhB2UGiNSZQrCTRMhpevDhwty62J70/pubhtml";
+
+
+var key3 = "12hllq5JK04Hr5zLQX5hLrozorAvyXo7tGf9pFlewado"
+
 
 //"data" refers to the column name with no spaces and no capitals
 //punctuation or numbers in your column name
@@ -877,6 +975,31 @@ var columns = [{
 {"data": "System Requirements","title": "System Requirements", "width":"65px"},
 /*{"data": "Contact (Harvard Symposium)","title": "Contact"},*/
 {"data": "Usability","title": "Usability", "width":"65px"}];
+
+
+
+var columns2 = [{
+"data": "Topic","title": "Topic", "width":"40px"},
+{"data": "City","title": "City", "width":"40px"},
+{"data": "Language","title": "Language", "width":"40px"},
+{"data": "Document Name","title": "Document Name", "width":"90px"},
+{"data": "Document Link","title": "Document Link", "width":"20px"},
+{"data": "Abstract","title": "Abstract", "width":"100px"},
+{"data": "Publication Date","title": "Publication Date", "width":"55px"},
+{"data": "File Format","title": "File Format", "width":"20px"},
+{"data": "Document Type","title": "Document Type", "width":"40px"}];
+
+
+var columns3 = [{
+"data": "Name","title": "Name", "width":"50px"},
+{"data": "Number of Languages Offered","title": "Number of Languages Offered", "width":"60px"},
+{"data": "Cost (US Dollars)","title": "Cost (US Dollars)", "width":"30px"},
+{"data": "Internet Connectivity","title": "Internet Connectivity", "width":"90px"},
+{"data": "Platform","title": "Platform", "width":"40px"},
+{"data": "Type of Media","title": "Type of Media", "width":"90px"},
+{"data": "Comments","title": "Comments", "width":"160px"},
+{"data": "Website","title": "Website", "width":"40px"}];
+
 
 $(document).ready(function() {
 
@@ -961,7 +1084,7 @@ $(document).ready(function() {
 
     //Select default columns 0-4
     for (var i = 0; i < 4; i++) {
-        $("a[data-column='"+i+"']").addClass('selected-tag');
+        $("a.toggle-vis[data-column='"+i+"']").addClass('selected-tag');
     };
 
     $('a.toggle-vis').on( 'click', function (e) {
@@ -982,8 +1105,227 @@ $(document).ready(function() {
         
     } );
   }
+
+
+
+//beginning of writeTable2
+
+function initializeTabletopObject2() {
+    Tabletop.init({
+      key: key2,
+      callback: function(data, tabletop) {
+        console.log('data2: ');
+        console.log(data);
+        writeTable2(data); //call up datatables function
+      },
+      simpleSheet: true,
+      debug: false
+    });
+  }
+
+  initializeTabletopObject2();
+
+  function writeTable2(data) {
+    //select main div and put a table there
+    //use bootstrap css to customize table style: http://getbootstrap.com/css/#tables
+    $('#document_table').html(
+      '<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed table-responsive" id="mySelection2" style="table-layout:fixed;"></table>'
+    );
+
+    //initialize the DataTable object and put settings in
+    $("#mySelection2").DataTable({
+      "data": data,
+      "autoWidth": false,
+      "columns": columns2,
+      "order": [
+        [1, "desc"]
+      ], //order on second column
+      "pagingType": "simple",
+      "columnDefs": [ {
+      "targets": '_all',
+      "data": null,
+      //https://datatables.net/reference/option/columns.render
+      "render": function ( data, type, full, meta ) {
+        //regex, http://stackoverflow.com/questions/32381742/js-regex-replace-contents-of-markdown-link
+
+        var re = /\[(.*?)\]\((.+?)\)/g;
+        var found = data.match(re);
+
+        //console.log('data');
+        //console.log(data);
+        //console.log('pattern match');
+        //console.log(found);
+
+        if(found) {
+            console.log('it exists 2');
+            var re1 = /\[(.*?)\]/g;
+            var title = data.match(re1);
+            var newTitle = title[0].replace(/[\[\]']/g,'' );
+            //console.log('newTitle');
+            //console.log(newTitle);
+            var re2 = /\((.+?)\)/g;
+            var url = data.match(re2);
+            var newUrl = url[0].slice(1,-1);
+            //console.log('newUrl');
+            //console.log(newUrl);
+
+            return '<a href="'+newUrl+'" target="_blank" >'+newTitle+'</a>';
+        } else {
+            return data;
+        }
+
+    }
+  } ]
+        //no page numbers
+        //uncomment these options to simplify your table
+        //"paging": false,
+        //"searching": false,
+        //"info": false
+    });
+
+    //hides certain columns
+    var table2 = $('#mySelection2').DataTable();
+    table2.columns( [ 7,8] ).visible( false, false );
+
+
+    //Select default columns 0-4
+    for (var i = 0; i < 7; i++) {
+        $("a.toggle-vis2[data-column='"+i+"']").addClass('selected-tag');
+    };
+
+    $('a.toggle-vis2').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column2 = table2.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column2.visible( ! column2.visible() );
+
+
+        if ( $(this).hasClass('selected-tag') ) {
+            $( this ).removeClass('selected-tag');
+        } else {
+            $( this ).addClass('selected-tag');
+        }
+        
+    } );
+  }
+
+//end of writeTable2
+
+
+
+//beginning of writeTable3
+
+function initializeTabletopObject3() {
+    Tabletop.init({
+      key: key3,
+      callback: function(data, tabletop) {
+        console.log('data3: ');
+        console.log(data);
+        writeTable3(data); //call up datatables function
+      },
+      simpleSheet: true,
+      debug: false
+    });
+  }
+
+  initializeTabletopObject3();
+
+  function writeTable3(data) {
+    //select main div and put a table there
+    //use bootstrap css to customize table style: http://getbootstrap.com/css/#tables
+    $('#translation_table').html(
+      '<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-condensed table-responsive" id="mySelection3" style="table-layout:fixed;"></table>'
+    );
+
+    //initialize the DataTable object and put settings in
+    $("#mySelection3").DataTable({
+      "data": data,
+      "autoWidth": false,
+      "columns": columns3,
+      "order": [
+        [1, "desc"]
+      ], //order on second column
+      "pagingType": "simple",
+      "columnDefs": [ {
+      "targets": '_all',
+      "data": null,
+      //https://datatables.net/reference/option/columns.render
+      "render": function ( data, type, full, meta ) {
+        //regex, http://stackoverflow.com/questions/32381742/js-regex-replace-contents-of-markdown-link
+
+        var re = /\[(.*?)\]\((.+?)\)/g;
+        var found = data.match(re);
+
+        //console.log('data');
+        //console.log(data);
+        //console.log('pattern match');
+        //console.log(found);
+
+        if(found) {
+            console.log('it exists 3');
+            var re1 = /\[(.*?)\]/g;
+            var title = data.match(re1);
+            var newTitle = title[0].replace(/[\[\]']/g,'' );
+            //console.log('newTitle');
+            //console.log(newTitle);
+            var re2 = /\((.+?)\)/g;
+            var url = data.match(re2);
+            var newUrl = url[0].slice(1,-1);
+            //console.log('newUrl');
+            //console.log(newUrl);
+
+            return '<a href="'+newUrl+'" target="_blank" >'+newTitle+'</a>';
+        } else {
+            return data;
+        }
+
+    }
+  } ]
+        //no page numbers
+        //uncomment these options to simplify your table
+        //"paging": false,
+        //"searching": false,
+        //"info": false
+    });
+
+    //hides certain columns
+    var table3 = $('#mySelection3').DataTable();
+    table3.columns( [ 6,7] ).visible( false, false );
+
+
+    //Select default columns 0-4
+    for (var i = 0; i < 6; i++) {
+        $("a.toggle-vis3[data-column='"+i+"']").addClass('selected-tag');
+    };
+
+    $('a.toggle-vis3').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column3 = table3.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column3.visible( ! column3.visible() );
+
+
+        if ( $(this).hasClass('selected-tag') ) {
+            $( this ).removeClass('selected-tag');
+        } else {
+            $( this ).addClass('selected-tag');
+        }
+        
+    } );
+  }
+
+//end of writeTable3
+
+
 });
-//end of writeTable
+
+
 
 </script>
 

@@ -1,6 +1,33 @@
 <!-- Header -->
 
 <style>
+
+#map {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:600px;
+}
+
+#map-small {
+    top:0px;
+    left:0px;
+    width:100%;
+    height:400px;
+}
+
+@media (max-width: 400px){
+        #map {
+            height:250px;
+        }
+    }
+
+@media (max-width: 768px){
+        #map {
+            height:300px;
+        }
+    }
+
 .main-hyperlink {
     font-size:20px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -8,7 +35,7 @@
 
 /*This sets the height of the bottom map label */
 .leaflet-horizontalcenter {
-   padding-top: 510px;
+   padding-top: 560px;
    margin: 0 auto;
    width: 657px;
 }
@@ -22,6 +49,14 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 20px;
+  color: #2c3e50;
+}
+
+.info-small {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 10px;
   color: #2c3e50;
 }
 
@@ -70,7 +105,7 @@ var 2c_icon = L.icon({
 */
 
 .label-span {
-    font-size: 18px;
+    font-size: 14px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
     display: block;
@@ -80,7 +115,21 @@ var 2c_icon = L.icon({
     font-size: 14px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color:rgba(0,0,0,.75);
-    display: block;
+}
+
+#country {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#country-small {
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+.country-small {
+    font-size: 8px;
+    text-transform: uppercase;
 }
 
 .img-popup {
@@ -164,14 +213,10 @@ var 2c_icon = L.icon({
     text-align: right;
 }
 
-#country {
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-#country-small {
-    font-size: 10px;
-    text-transform: uppercase;
+#label-tijuana {
+    margin-left: 17px;
+    margin-top: -52px;
+    text-align: left;
 }
 
 /*
@@ -193,12 +238,12 @@ var 2c_icon = L.icon({
 <script src='{{ site.baseurl }}/assets/js/libs/leaflet.rrose-src.js'></script>
 <link href='{{ site.baseurl }}/assets/css/leaflet.rrose.css' rel='stylesheet' />
 
-<header style="margin-top: 75px;">
+<header class="map-header">
 
 <div style="background:#92ADBB;color:#7B533F;font-size: 20px;">Click on a city below for more information.</div>
 
-<div id="map" style="top:0px;left:0px;width:100%;height:550px;"></div>
 
+<div id="map"></div>
 
                     <!--<span class="skills">{{ site.description }}</span>
 </header>-->
@@ -216,15 +261,54 @@ console.log(txt);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiaGl1IiwiYSI6InJWNGZJSzgifQ.xK1ndT3W8XL9lwVZrT6jvQ';
 
-if (window.innerWidth < 1200) {
 
-var map = L.mapbox.map('map', '', {
+if (window.innerWidth < 1200) {
+    console.log('window less than 1200px');
+    $("#map").attr("id","map-small");
+}
+
+
+if (window.innerWidth < 400) {
+
+var map = L.mapbox.map('map-small', '', {
     attributionControl: {compact: true},
     zoomControl:false,
     scrollWheelZoom: false,
     touchZoom: false,
     doubleClickZoom: false,
-    boxZoom: false
+    boxZoom: false,
+    tap: false,
+    //dragging: false
+  }).setView([10, 11], 1);
+
+  //$('#map').css('height', '250px');
+
+} else if (window.innerWidth < 768) {
+
+var map = L.mapbox.map('map-small', '', {
+    attributionControl: {compact: true},
+    zoomControl:false,
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    tap: false,
+    //dragging: false
+  }).setView([25, 11], 2);
+
+  //$('#map').css('height', '300px');
+
+} else if (window.innerWidth < 1200) {
+
+var map = L.mapbox.map('map-small', '', {
+    attributionControl: {compact: true},
+    zoomControl:false,
+    scrollWheelZoom: false,
+    touchZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    tap: false,
+    dragging: false
   }).setView([18, 11], 2);
 
 } else {
@@ -235,10 +319,16 @@ var map = L.mapbox.map('map', '', {
     scrollWheelZoom: false,
     touchZoom: false,
     doubleClickZoom: false,
-    boxZoom: false
-  }).setView([19, 11], 3);
+    boxZoom: false,
+  }).setView([16, 15], 3);
 
 }
+
+// if (window.innerWidth < 768) {
+
+//     map.dragging.disable()
+
+// }
 
 /*
     var map = L.mapbox.map('map')
@@ -246,6 +336,7 @@ var map = L.mapbox.map('map', '', {
 */
 
 // Use styleLayer to add a Mapbox style created in Mapbox Studio, using the LSIB_light2 layer
+//old style on hiu account: mapbox://styles/hiu/citm1lnb8001f2iqtvi7493qp
   var baseLayer = L.mapbox.styleLayer('mapbox://styles/hiu/citm1lnb8001f2iqtvi7493qp',{
     minZoom: 1,
     maxZoom: 16,
@@ -265,19 +356,513 @@ var SecondaryCitiesIcon = L.icon({
       //fillOpacity: 0.7,
       //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
       className: "SecondaryCitiesIcon"
-
 });
 
+
+// for these icons the png dimensions are 420 by 140. You can make the iconSize half the dimensions
+var SecondaryCitiesIcon_santiago = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santiago.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+      //opacity: .5,
+      //fillOpacity: 0.7,
+      //You can also give a style a className property! : http://stackoverflow.com/questions/17086195/leaflet-path-how-can-i-set-a-css-class
+      className: "SecondaryCitiesIcon_santiago"
+});
+
+var SecondaryCitiesIcon_santiago_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santiago.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_santiago_small"
+});
+
+var SecondaryCitiesIcon_pokhara = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pokhara.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_pokhara"
+});
+
+var SecondaryCitiesIcon_pokhara_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pokhara.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_pokhara_small"
+});
+
+var SecondaryCitiesIcon_kharkiv = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_kharkiv.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_kharkiv"
+});
+
+var SecondaryCitiesIcon_kharkiv_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_kharkiv.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_kharkiv_small"
+});
+
+var SecondaryCitiesIcon_medellin = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_medellin.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_medellin"
+});
+
+var SecondaryCitiesIcon_medellin_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_medellin.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_medellin_small"
+});
+
+var SecondaryCitiesIcon_douala = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_douala.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_douala"
+});
+
+var SecondaryCitiesIcon_douala_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_douala.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_douala_small"
+});
+
+var SecondaryCitiesIcon_cusco = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_cusco.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_cusco"
+});
+
+var SecondaryCitiesIcon_cusco_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_cusco.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_cusco_small"
+});
+
+var SecondaryCitiesIcon_esmeraldas = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_esmeraldas.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_esmeraldas"
+});
+
+var SecondaryCitiesIcon_esmeraldas_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_esmeraldas.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_esmeraldas_small"
+});
+
+var SecondaryCitiesIcon_denpasar = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_denpasar.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_denpasar"
+});
+
+var SecondaryCitiesIcon_denpasar_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_denpasar.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_denpasar_small"
+});
+
+var SecondaryCitiesIcon_portharcourt = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_portharcourt.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_portharcourt"
+});
+
+var SecondaryCitiesIcon_portharcourt_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_portharcourt.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_portharcourt_small"
+});
+
+var SecondaryCitiesIcon_mekelle = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_mekelle.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_mekelle"
+});
+
+var SecondaryCitiesIcon_mekelle_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_mekelle_small.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_mekelle_small"
+});
+
+
+var SecondaryCitiesIcon_santa_fe = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santa_fe.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_sante_fe"
+});
+
+var SecondaryCitiesIcon_santa_fe_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_santa_fe.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_santa_fe_small"
+});
+
+var SecondaryCitiesIcon_pemba = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pemba.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_pemba"
+});
+
+var SecondaryCitiesIcon_pemba_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_pemba.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_pemba_small"
+});
+
+var SecondaryCitiesIcon_darkhan = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_darkhan.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_darkhan"
+});
+
+var SecondaryCitiesIcon_darkhan_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_darkhan.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_darkhan_small"
+});
+
+var SecondaryCitiesIcon_indore = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_indore.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_indore"
+});
+
+var SecondaryCitiesIcon_indore_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_indore.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_indore_small"
+});
+
+var SecondaryCitiesIcon_boke = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_boke.png",
+    iconSize: [210, 70],
+    iconAnchor: [190, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_boke"
+});
+
+var SecondaryCitiesIcon_boke_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_boke.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [142.5, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_boke_small"
+});
+
+var SecondaryCitiesIcon_tijuana = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_tijuana.png",
+    iconSize: [210, 70],
+    iconAnchor: [20, 60],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_tijuana"
+});
+
+var SecondaryCitiesIcon_tijuana_small = L.icon({
+    iconUrl: "{{ site.baseurl }}/assets/2c_pin_tijuana.png",
+    iconSize: [157.5, 52.5],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, 0],
+    className: "SecondaryCitiesIcon_tijuana_small"
+});
 
 /* not doing it this way because choosing the compact attribution control display
 var credits = L.control.attribution().addTo(map);
 credits.addAttribution('Names and boundary representation are not necessarily authoritative.');
 */
 
-cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon}).addTo(map);
+
 //cuscoMarker = L.marker([-13.51845,-71.97752]).addTo(map);
 
+
+//new cities below
+
+
+
 if (window.innerWidth < 1200) {
+
+    bokeMarker = L.marker([10.6593865,-14.5957232], {icon: SecondaryCitiesIcon_boke_small}).addTo(map);
+
+    var bokeIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span-small" id="label-cusco">Boké-Kamsar <span id="country-small">Guinea</span></span>'
+    });
+    
+} else {
+
+    bokeMarker = L.marker([10.6593865,-14.5957232], {icon: SecondaryCitiesIcon_boke}).addTo(map);
+
+    var bokeIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span" id="label-cusco">Boké-Kamsar <span id="country">Guinea</span></span>'
+    });
+
+} 
+
+bokeMarker.bindPopup('<span class="label-span-small"> Boké-Kamsar About page coming soon</span>', {offset: new L.Point(0, -15)});
+
+/*
+bokeMarker.on('click', function (e) {
+            window.open("{{ site.baseurl }}/cusco");
+        });
+*/
+
+bokeMarker.on('mouseover', function (e) {
+            this.openPopup();
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+bokeMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+if (window.innerWidth < 1200) {
+
+    indoreMarker = L.marker([22.7239575,75.7938101], {icon: SecondaryCitiesIcon_indore_small}).addTo(map);
+
+    var indoreIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span-small" id="label-cusco">Indore <span id="country-small">India</span></span>'
+    });
+    
+} else {
+
+    indoreMarker = L.marker([22.7239575,75.7938101], {icon: SecondaryCitiesIcon_indore}).addTo(map);
+
+    var indoreIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span" id="label-cusco">Indore <span id="country">India</span></span>'
+    });
+
+} 
+
+indoreMarker.bindPopup('<img src="{{ site.baseurl }}/img/indore/indore_thumb_300px.jpg" class="img-popup" alt="Indore"></br><span class="label-span-small">Indore About page coming soon</span>', {offset: new L.Point(0, -15)});
+
+/*
+indoreMarker.on('click', function (e) {
+            window.open("{{ site.baseurl }}/indore");
+        });
+*/
+
+indoreMarker.on('mouseover', function (e) {
+            this.openPopup();
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+indoreMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+if (window.innerWidth < 1200) {
+
+    darkhanMarker = L.marker([49.4716602,105.8902631], {icon: SecondaryCitiesIcon_darkhan_small}).addTo(map);
+
+    var darkhanIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span-small" id="label-cusco">Darkhan <span id="country-small">Mongolia</span></span>'
+    });
+    
+} else {
+
+    darkhanMarker = L.marker([49.4716602,105.8902631], {icon: SecondaryCitiesIcon_darkhan}).addTo(map);
+
+    var darkhanIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span" id="label-darkhan">Darkhan <span id="country">Mongolia</span></span>'
+    });
+
+} 
+
+darkhanMarker.bindPopup('<img src="{{ site.baseurl }}/img/darkhan/darkhan_thumb_300px.jpg" class="img-popup" alt="Darkhan"></br><span class="label-span-small">Darkhan About page coming soon</span>', {offset: new L.Point(-150, 140)});
+
+/*
+darkhanMarker.on('click', function (e) {
+            window.open("{{ site.baseurl }}/darkhan");
+        });
+*/
+
+
+darkhanMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+
+            $( ".leaflet-popup-close-button" ).hide();
+            //turn off popup indicator on bottom
+            //$( ".leaflet-popup-tip" ).hide();
+            /*
+            notes: need to modify pop-up for indicator pointer to point left instead of pointing down from the bottom
+            adding float-left to leaflet-popup-content-wrapper and leaflet-popup-tip-container divs
+            need to disable the width of the leaflet-popup-content-wrapper child div leaflet-popup-content
+            need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
+            */
+            $( ".leaflet-popup-content-wrapper" ).css("float", "left");
+            $( ".leaflet-popup-content" ).css("width", "none");
+            $( ".leaflet-popup-tip-container" ).css("float", "left");
+            $( ".leaflet-popup-tip-container" ).css("width", "14px");
+            $( ".leaflet-popup-tip" ).css("margin-top", "22px");
+            $( ".leaflet-popup-tip" ).css("border-left", "none");
+        });
+
+darkhanMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+
+if (window.innerWidth < 1200) {
+
+    pembaMarker = L.marker([-12.9771236,40.499532], {icon: SecondaryCitiesIcon_pemba_small}).addTo(map);
+
+    var pembaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '</div>'+
+                  '<span class="label-span-small" id="label-cusco">Pemba <span id="country-small">Mozambique</span></span>'
+    });
+    
+} else {
+
+    pembaMarker = L.marker([-12.9771236,40.499532], {icon: SecondaryCitiesIcon_pemba}).addTo(map);
+
+    var pembaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '</div>'+
+                  '<span class="label-span" id="label-pemba">Pemba <span id="country">Mozambique</span></span>'
+    });
+
+} 
+
+pembaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pemba/pemba_thumb_300px.jpg" class="img-popup" alt="Pemba"></br><span class="label-span-small"> Pemba About page coming soon</span>', {offset: new L.Point(0, -15)});
+
+/*
+pembaMarker.on('click', function (e) {
+            window.open("{{ site.baseurl }}/pemba");
+        });
+*/
+
+pembaMarker.on('mouseover', function (e) {
+            this.openPopup();
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+pembaMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+
+
+
+if (window.innerWidth < 1200) {
+
+    santafeMarker = L.marker([-31.6181236,-60.7106368], {icon: SecondaryCitiesIcon_santa_fe_small}).addTo(map);
+
+    var santafeIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span-small" id="label-santa-fe">Santa Fe <span id="country-small">Argentina</span></span>'
+    });
+    
+} else {
+
+    santafeMarker = L.marker([-31.6181236,-60.7106368], {icon: SecondaryCitiesIcon_santa_fe}).addTo(map);
+
+    var santafeIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="icon_2c"></div>'+
+                  '<span class="label-span" id="label-santa-fe">Santa Fe <span id="country">Argentina</span></span>'
+    });
+
+} 
+
+santafeMarker.bindPopup('<img src="{{ site.baseurl }}/img/santa_fe/santa_fe_thumb_300px.jpg" class="img-popup" alt="Santa Fe"></br><span class="label-span-small">Santa Fe About page coming soon</span>', {offset: new L.Point(0, -15)});
+
+/*
+santafeMarker.on('click', function (e) {
+            window.open("{{ site.baseurl }}/cusco");
+        });
+*/
+
+santafeMarker.on('mouseover', function (e) {
+            this.openPopup();
+            $( ".leaflet-popup-close-button" ).hide();
+        });
+santafeMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+//older cities below
+
+
+if (window.innerWidth < 1200) {
+
+    cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon_cusco_small}).addTo(map);
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
@@ -285,13 +870,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-cusco">Cusco <span id="country-small">Peru</span></span></a>'
     });
     
-    cuscoMarker.bindTooltip('<span class="label-span-small">Cusco </br><span id="country-small">Peru</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     cuscoMarker.bindTooltip('<span class="label-span-small">Cusco </br><span id="country-small">Peru</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 } else {
+
+    cuscoMarker = L.marker([-13.51845,-71.97752], {icon: SecondaryCitiesIcon_cusco}).addTo(map);
 
     var cuscoIcon = L.divIcon({
         className: 'city-icon',
@@ -299,15 +886,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-cusco">Cusco <span id="country">Peru</span></span></a>'
     });
 
-    cuscoMarker.bindTooltip('<span class="label-span">Cusco </br><span id="country">Peru</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     cuscoMarker.bindTooltip('<span class="label-span-small">Cusco </br><span id="country">Peru</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
    
 } 
 
-cuscoMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/cusco2.png" class="img-popup" alt="Cusco"></br>Cusco (2015–2017)', {offset: new L.Point(0, -15)});
+cuscoMarker.bindPopup('<img src="{{ site.baseurl }}/img/cusco/cusco_thumb_300px.png" class="img-popup" alt="Cusco"></br><span class="label-span-small">Cusco (2015–2017) </span>', {offset: new L.Point(0, -15)});
 
 cuscoMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/cusco");
@@ -322,36 +909,40 @@ cuscoMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon}).addTo(map);
+
 
 if (window.innerWidth < 1200) {
+
+    denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon_denpasar_small}).addTo(map);
 
     var denpasarIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
-                  '<span class="label-span-small" id="label-denpasar">Denpasar <span id="country-small">Indonesia</span></span></a></div>'
+                  '<span class="label-span-small" id="label-denpasar">Denpasar<span id="country-small">Indonesia</span></span></a></div>'
     });
 
-    denpasarMarker.bindTooltip('<span class="label-span-small">Denpasar </br><span id="country-small">Indonesia</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-20, 0),
-});
+//     denpasarMarker.bindTooltip('<span class="label-span-small">Denpasar </br><span id="country-small">Indonesia</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(0, 0),
+// });
 
 
 } else {
 
+    denpasarMarker = L.marker([-8.6493,115.2169], {icon: SecondaryCitiesIcon_denpasar}).addTo(map);
+
     var denpasarIcon = L.divIcon({
             className: 'city-icon',
             html: '<div class="img-div"><a href="http://2cdenpasar.com/" target="_blank" > <div class="circleBase type1" id="DenpasarPopup"></div>'+
-                      '<span class="label-span" id="label-denpasar">Denpasar <span id="country">Indonesia</span></span></a></div>'
+                      '<span class="label-span" id="label-denpasar">Denpasar<span id="country">Indonesia</span></span></a></div>'
         });
 
-    denpasarMarker.bindTooltip('<span class="label-span">Denpasar </br><span id="country">Indonesia</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-20, 0),
-});
+//     denpasarMarker.bindTooltip('<span class="label-span-small">Denpasar </span></br><span class="country">Indonesia</span>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(0, 0),
+// });
 
 
 }
@@ -363,14 +954,15 @@ if (window.innerWidth < 1200) {
 DenpasarMarker.bindPopup('<div class="caption"><div class="caption-content"><i class=""><h3>Denpasar, Indonesia</h3></i></div></div><img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar">');
 */
 
-denpasarMarker.bindPopup('<img src="{{ site.baseurl }}/img/portfolio/denpasar2.png" class="img-popup" alt="Denpasar"></br>Denpasar (2015–2017)', {offset: new L.Point(0, -15)});
+denpasarMarker.bindPopup('<img src="{{ site.baseurl }}/img/denpasar/denpasar_thumb_300px.png" class="img-popup" alt="Denpasar"><span class="label-span-small"></br>Denpasar (2015–2017) </span>', {offset: new L.Point(0, -15)});
 
 
-
+/*
 denpasarMarker.on('click', function (e) {
             window.open("http://2cdenpasar.com/");
         });
 
+*/
 
 denpasarMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -385,9 +977,9 @@ denpasarMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon}).addTo(map);
-
 if (window.innerWidth < 1200) {
+
+    kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon_kharkiv_small}).addTo(map);
 
     var kharkivIcon = L.divIcon({
         className: 'city-icon',
@@ -395,14 +987,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-kharkiv">Kharkiv <span id="country-small">Ukraine</span></span></a>'
     });
 
-    kharkivMarker.bindTooltip('<span class="label-span-small">Kharkiv </br><span id="country-small">Ukraine</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-20, 0),
-});
+//     kharkivMarker.bindTooltip('<span class="label-span-small">Kharkiv </br><span id="country-small">Ukraine</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(-20, 0),
+// });
 
 
 } else {
+
+    kharkivMarker = L.marker([49.9811,36.2533], {icon: SecondaryCitiesIcon_kharkiv}).addTo(map);
 
     var kharkivIcon = L.divIcon({
         className: 'city-icon',
@@ -410,17 +1004,17 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-kharkiv">Kharkiv <span id="country">Ukraine</span></span></a>'
     });
 
-    kharkivMarker.bindTooltip('<span class="label-span">Kharkiv </br><span id="country">Ukraine</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(-20, 0),
-});
+//     kharkivMarker.bindTooltip('<span class="label-span">Kharkiv </br><span id="country">Ukraine</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(-0, 0),
+// });
 
 
 }
 
 // https://github.com/Leaflet/Leaflet/issues/734 you can offset the pop-up
-kharkivMarker.bindPopup('<img src="{{ site.baseurl }}/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br>Kharkiv (2015–2017)', {offset: new L.Point(-100, 150)});
+kharkivMarker.bindPopup('<img src="{{ site.baseurl }}/img/kharkiv/kharkiv_thumb_300px.jpg" class="img-popup" alt="Kharkiv"></br><span class="label-span-small">Kharkiv (2015–2017)</span>', {offset: new L.Point(-100, 150)});
 
 
 kharkivMarker.on('click', function (e) {
@@ -502,9 +1096,11 @@ map.addLayer(marker2);
 
 */
 
-medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon}).addTo(map);
+
 
 if (window.innerWidth < 1200) {
+
+    medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon_medellin_small}).addTo(map);
 
     var medellinIcon = L.divIcon({
         className: 'city-icon',
@@ -512,13 +1108,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-medellin-small">Medellín <span id="country-small">Colombia</span></span></a>'
     });
 
-    medellinMarker.bindTooltip('<span class="label-span-small">Medellín </br><span id="country-small">Colombia</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     medellinMarker.bindTooltip('<span class="label-span-small">Medellín </br><span id="country-small">Colombia</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 } else {
+
+    medellinMarker = L.marker([6.25177,-75.56349], {icon: SecondaryCitiesIcon_medellin}).addTo(map);
 
     var medellinIcon = L.divIcon({
         className: 'city-icon',
@@ -526,16 +1124,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-medellin">Medellín <span id="country">Colombia</span></span></a>'
     });
 
-    medellinMarker.bindTooltip('<span class="label-span">Medellín </br><span id="country">Colombia</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+    // medellinMarker.bindTooltip('<span class="label-span">Medellín </br><span id="country">Colombia</span></span></a>', {
+    // direction: 'auto',
+    // permanent: true,
+    // offset: L.point(15, 0),
+// });
 
 }
 
 
-medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br>Medellin (2015–2017)', {offset: new L.Point(0, -15)})
+medellinMarker.bindPopup('<img src="{{ site.baseurl }}/img/medellin/medellin_thumb_300px.jpg" class="img-popup" alt="Medellin"></br><span class="label-span-small">Medellin (2015–2017)</span>', {offset: new L.Point(0, -15)})
 
 
 
@@ -556,9 +1154,9 @@ medellinMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon}).addTo(map);
-
 if (window.innerWidth < 1200) {
+
+    doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon_douala_small}).addTo(map);
 
     var doualaIcon = L.divIcon({
         className: 'city-icon',
@@ -566,13 +1164,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-douala" >Douala <span id="country-small">Cameroon</span></span>'
     });
 
-    doualaMarker.bindTooltip('<span class="label-span-small">Douala </br><span id="country-small">Cameroon</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     doualaMarker.bindTooltip('<span class="label-span-small">Douala </br><span id="country-small">Cameroon</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 } else {
+
+    doualaMarker = L.marker([4.0494,9.8342], {icon: SecondaryCitiesIcon_douala}).addTo(map);
 
     var doualaIcon = L.divIcon({
         className: 'city-icon',
@@ -580,16 +1180,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-douala" >Douala <span id="country">Cameroon</span></span>'
     });
 
-    doualaMarker.bindTooltip('<span class="label-span">Douala </br><span id="country">Cameroon</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     doualaMarker.bindTooltip('<span class="label-span">Douala </br><span id="country">Cameroon</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 }
 
 
-doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/atrium_mall_douala.png" class="img-popup" alt="Douala"></br>Coming soon', {offset: new L.Point(0, -15)});
+doualaMarker.bindPopup('<img src="{{ site.baseurl }}/img/douala/douala_thumb_300px.png" class="img-popup" alt="Douala"></br><span class="label-span-small">Douala About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 doualaMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -604,9 +1204,64 @@ doualaMarker.on('mouseout', function (e) {
             $( ".leaflet-popup-close-button" ).show();
         });
 
-port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon}).addTo(map);
 
 if (window.innerWidth < 1200) {
+
+    tijuanaMarker = L.marker([32.4193,-116.99823], {icon: SecondaryCitiesIcon_tijuana_small}).addTo(map);
+
+    var tijuanaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span-small" id="label-douala" >Tijuana <span id="country-small">Mexico</span></span>'
+    });
+
+} else {
+
+    tijuanaMarker = L.marker([32.4193,-116.99823], {icon: SecondaryCitiesIcon_tijuana}).addTo(map);
+
+    var tijuanaIcon = L.divIcon({
+        className: 'city-icon',
+        html: '<div class="circleBase type1"></div>'+
+                  '<span class="label-span" id="label-douala" >Tijuana <span id="country">Mexico</span></span>'
+    });
+
+}
+
+
+tijuanaMarker.bindPopup('<img src="{{ site.baseurl }}/img/tijuana/tijuana_thumb_300px4.png" class="img-popup" alt="Tijuana"></br><span class="label-span-small">Tijuana About page coming soon</span>', {offset: new L.Point(0, 210)});
+
+//{offset: new L.Point(-150, 140)}
+
+tijuanaMarker.on('mouseover', function (e) {
+            //console.log('before popup');
+            this.openPopup();
+            //debugger;
+            //console.log('after popup');
+            $( ".leaflet-popup-close-button" ).hide();
+            /*
+            notes: need to modify pop-up for indicator pointer to point left instead of pointing down from the bottom
+            adding float-left to leaflet-popup-content-wrapper and leaflet-popup-tip-container divs
+            need to disable the width of the leaflet-popup-content-wrapper child div leaflet-popup-content
+            need to att margin-top: 22px and remove border-left of leaflet-popup-tip div
+            */
+            $( ".leaflet-popup" ).css("left", "-114px");
+            $( ".leaflet-popup-tip-container" ).css("height", "0px");
+            $( ".leaflet-popup-content-wrapper" ).css("float", "left");
+            $( ".leaflet-popup-content" ).css("width", "225px");
+            $( ".leaflet-popup-tip" ).css("margin-top", "-10px");
+            $( ".leaflet-popup-tip" ).css("border-bottom", "10px solid #fff");
+            $( ".leaflet-popup-tip" ).css("border-top", "none");
+        });
+
+tijuanaMarker.on('mouseout', function (e) {
+            this.closePopup();
+            $( ".leaflet-popup-close-button" ).show();
+        });
+
+
+if (window.innerWidth < 1200) {
+
+    port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon_portharcourt_small}).addTo(map);
 
     var port_harcourtIcon = L.divIcon({
         className: 'city-icon',
@@ -614,13 +1269,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-port_harcourt" >Port Harcourt <span id="country-small">Nigeria</span></span>'
     });
 
-    port_harcourtMarker.bindTooltip('<span class="label-span-small">Port Harcourt </br><span id="country-small">Nigeria</span></span></a>', {
-    direction: 'left',
-    permanent: true,
-    offset: L.point(-30, 0),
-});
+//     port_harcourtMarker.bindTooltip('<span class="label-span-small">Port Harcourt </br><span id="country-small">Nigeria</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(-30, 0),
+// });
 
 } else {
+
+    port_harcourtMarker = L.marker([4.8009,6.95], {icon: SecondaryCitiesIcon_portharcourt}).addTo(map);
 
     var port_harcourtIcon = L.divIcon({
         className: 'city-icon',
@@ -628,16 +1285,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-port_harcourt" >Port Harcourt <span id="country">Nigeria</span></span>'
     });
 
-    port_harcourtMarker.bindTooltip('<span class="label-span">Port Harcourt </br><span id="country">Nigeria</span></span></a>', {
-    direction: 'left',
-    permanent: true,
-    offset: L.point(-30, 0),
-});
+//     port_harcourtMarker.bindTooltip('<span class="label-span">Port Harcourt </br><span id="country">Nigeria</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(-30, 0),
+// });
 
 }
 
 
-port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_rivers.jpg" class="img-popup" alt="Port Harcourt"></br>Coming soon', {offset: new L.Point(0, -15)});
+port_harcourtMarker.bindPopup('<img src="{{ site.baseurl }}/img/port_harcourt/port_harcourt_thumb_300px.jpg" class="img-popup" alt="Port Harcourt"></br><span class="label-span-small">Port Harcourt About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 port_harcourtMarker.on('mouseover', function (e) {
             //console.log('before popup');
@@ -653,40 +1310,41 @@ port_harcourtMarker.on('mouseout', function (e) {
         });
 
 
-santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon}).addTo(map);
-
-
 if (window.innerWidth < 1200) {
+
+    santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon_santiago_small}).addTo(map);
 
     var santiagoIcon = L.divIcon({
         className: 'city-icon',
         html: '<div class="circleBase type1"></div>'+
-                  '<span class="label-span-small" id="label-santiago" >Santiago <span id="country-small">Dominican Republic</span></span>'
+                  '<span class="label-span-small" id="label-santiago">Santiago <span id="country-small">Dominican Republic</span></span>'
     });
 
-    santiagoMarker.bindTooltip('<span class="label-span-small">Santiago </br><span id="country-small">Dominican Republic</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, -25),
-});
+//     santiagoMarker.bindTooltip('<span class="label-span-small">Santiago </br><span id="country-small">Dominican Republic</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, -25),
+// });
 
 } else {
+
+    santiagoMarker = L.marker([19.4523,-70.6888], {icon: SecondaryCitiesIcon_santiago}).addTo(map);
 
     var santiagoIcon = L.divIcon({
             className: 'city-icon',
             html: '<div class="circleBase type1"></div>'+
-                      '<span class="label-span" id="label-santiago" >Santiago <span id="country">Dominican Republic</span></span>'
+                      '<span class="label-span" id="label-santiago">Santiago <span id="country">Dominican Republic</span></span>'
         });
 
-    santiagoMarker.bindTooltip('<span class="label-span">Santiago </br><span id="country">Dominican Republic</span></span></a>', {
-    direction: 'auto',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     santiagoMarker.bindTooltip('<span class="label-span">Santiago </br><span id="country">Dominican Republic</span></span></a>', {
+//     direction: 'auto',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 }
 
-santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_dominican.jpg" class="img-popup" alt="Santiago"></br>Coming soon', {offset: new L.Point(0, -15)});
+santiagoMarker.bindPopup('<img src="{{ site.baseurl }}/img/santiago/santiago_city_thumb_300px.jpg" class="img-popup" alt="Santiago"></br><span class="label-span-small">Santiago About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 
 
@@ -704,9 +1362,11 @@ santiagoMarker.on('mouseout', function (e) {
         });
 
 
-mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon}).addTo(map);
+
 
 if (window.innerWidth < 1200) {
+
+    mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon_mekelle_small}).addTo(map);
 
     var mekelleIcon = L.divIcon({
         className: 'city-icon',
@@ -714,13 +1374,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-mekelle-small" >Mekelle <span id="country-small">Ethiopia</span></span>'
     });
 
-    mekelleMarker.bindTooltip('<span class="label-span-small">Mekelle </br><span id="country-small">Ethiopia</span></span></a>', {
-    direction: 'right',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     mekelleMarker.bindTooltip('<span class="label-span-small">Mekelle </br><span id="country-small">Ethiopia</span></span></a>', {
+//     direction: 'right',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 } else {
+
+    mekelleMarker = L.marker([13.49640,39.47523], {icon: SecondaryCitiesIcon_mekelle}).addTo(map);
 
     var mekelleIcon = L.divIcon({
         className: 'city-icon',
@@ -728,15 +1390,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-mekelle" >Mekelle <span id="country">Ethiopia</span></span>'
     });
 
-    mekelleMarker.bindTooltip('<span class="label-span">Mekelle </br><span id="country">Ethiopia</span></span></a>', {
-    direction: 'right',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     mekelleMarker.bindTooltip('<span class="label-span">Mekelle </br><span id="country">Ethiopia</span></span></a>', {
+//     direction: 'right',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 }
 
-mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br>Coming soon', {offset: new L.Point(0, -15)});
+mekelleMarker.bindPopup('<img src="{{ site.baseurl }}/img/mekelle/mekelle_thumb_300px.jpg" class="img-popup" alt="Mekelle"></br><span class="label-span-small">Mekelle About page coming soon</span>', {offset: new L.Point(0, -15)});
 
 
 mekelleMarker.on('mouseover', function (e) {
@@ -753,9 +1415,9 @@ mekelleMarker.on('mouseout', function (e) {
         });
 
 
-pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon}).addTo(map);
-
 if (window.innerWidth < 1200) {
+
+    pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon_pokhara_small}).addTo(map);
 
     var pokharaIcon = L.divIcon({
         className: 'city-icon',
@@ -763,13 +1425,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-pokhara">Pokhara <span id="country-small">Nepal</span></span></a>'
     });
 
-    pokharaMarker.bindTooltip('<span class="label-span-small">Pokhara </br><span id="country-small">Nepal</span></span></a>', {
-    direction: 'right',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     pokharaMarker.bindTooltip('<span class="label-span-small">Pokhara </br><span id="country-small">Nepal</span></span></a>', {
+//     direction: 'right',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 } else {
+
+    pokharaMarker = L.marker([28.20907, 83.99585], {icon: SecondaryCitiesIcon_pokhara}).addTo(map);
 
     var pokharaIcon = L.divIcon({
         className: 'city-icon',
@@ -777,16 +1441,16 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-pokhara">Pokhara <span id="country">Nepal</span></span></a>'
     });
 
-    pokharaMarker.bindTooltip('<span class="label-span">Pokhara </br><span id="country">Nepal</span></span></a>', {
-    direction: 'right',
-    permanent: true,
-    offset: L.point(15, 0),
-});
+//     pokharaMarker.bindTooltip('<span class="label-span">Pokhara </br><span id="country">Nepal</span></span></a>', {
+//     direction: 'right',
+//     permanent: true,
+//     offset: L.point(15, 0),
+// });
 
 }
 
 
-pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br>Pokhara (2015–Ongoing)', {offset: new L.Point(0, -15)});
+pokharaMarker.bindPopup('<img src="{{ site.baseurl }}/img/pokhara/pokhara_thumb_300px.jpg" class="img-popup" alt="Pokhara"></br><span class="label-span-small">Pokhara (2015–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
 pokharaMarker.on('click', function (e) {
             window.open("{{ site.baseurl }}/pokhara");
@@ -806,9 +1470,11 @@ pokharaMarker.on('mouseout', function (e) {
         });
 
 
-esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon}).addTo(map);
+
 
 if (window.innerWidth < 1200) {
+
+    esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon_esmeraldas_small}).addTo(map);
 
     var esmeraldasIcon = L.divIcon({
         className: 'city-icon',
@@ -816,13 +1482,15 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span-small" id="label-esmeraldas">Esmeraldas <span id="country-small">Ecuador</span></span></a>'
     });
 
-    esmeraldasMarker.bindTooltip('<span class="label-span-small">Esmeraldas </br><span id="country-small">Ecuador</span></span></a>', {
-    direction: 'left',
-    permanent: true,
-    offset: L.point(-22, 0),
-});
+//     esmeraldasMarker.bindTooltip('<span class="label-span-small">Esmeraldas </br><span id="country-small">Ecuador</span></span></a>', {
+//     direction: 'left',
+//     permanent: true,
+//     offset: L.point(-22, 0),
+// });
 
 } else {
+
+    esmeraldasMarker = L.marker([0.9669855,-79.6748049], {icon: SecondaryCitiesIcon_esmeraldas}).addTo(map);
 
     var esmeraldasIcon = L.divIcon({
         className: 'city-icon',
@@ -830,15 +1498,14 @@ if (window.innerWidth < 1200) {
                   '<span class="label-span" id="label-esmeraldas">Esmeraldas <span id="country">Ecuador</span></span></a>'
     });
 
-    esmeraldasMarker.bindTooltip('<span class="label-span">Esmeraldas </br><span id="country">Ecuador</span></span></a>', {
-    direction: 'left',
-    permanent: true,
-    offset: L.point(-22, 0),
-});
+//     esmeraldasMarker.bindTooltip('<span class="label-span">Esmeraldas </br><span id="country">Ecuador</span></span></a>', {
+//     permanent: true,
+//     offset: L.point(0, 0)
+// });
 
 }
 
-esmeraldasMarker.bindPopup('<img src="{{ site.baseurl }}/img/esmeraldas/esmeraldas.JPG" class="img-popup" alt="Esmeraldas"></br>Esmeraldas (2016–Ongoing)', {offset: new L.Point(0, -15)});
+esmeraldasMarker.bindPopup('<img src="{{ site.baseurl }}/img/esmeraldas/esmeraldas_thumb_300px.jpg" class="img-popup" alt="Esmeraldas"></br><span class="label-span-small">Esmeraldas (2016–Ongoing)</span>', {offset: new L.Point(0, -15)});
 
 esmeraldasMarker.on('click', function (e) {
             window.open("http://arcg.is/2dCZk2t");
@@ -880,11 +1547,22 @@ addControlPlaceholders(map);
 
 var info = L.control({position: 'horizontalcenter'});
 
-info.onAdd = function (map) {
-  this._div = L.DomUtil.create('div', 'info');
-  this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
-  return this._div;
-};
+if (window.innerWidth < 768) {
+
+    //$(".leaflet-horizontalcenter").css({"padding-top": "380px"})
+
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info-small');
+      this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
+      return this._div;
+    };
+} else {
+    info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this._div.innerHTML = '<div>Resiliency · Human Security · Emergency Preparedness</div>';
+      return this._div;
+    };
+}
 
 info.addTo(map);
 

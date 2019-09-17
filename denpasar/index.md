@@ -1,14 +1,14 @@
 ---
-layout: report2
+layout: report3
 title: Denpasar, Indonesia
 author: Secondary Cities
 date: June 7, 2016
 data_source_name: Secondary Cities
-data_source_url: http://secondarycities.geonode.state.gov/
+data_source_url: https://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 banner_image_source: Lorem ipsum dolor sit amet
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=denpasar'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=denpasar'
 tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: false
 
@@ -21,7 +21,7 @@ footer: |
 
 tileOrigins:
   - name: scgn
-    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+    url: https://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
@@ -38,8 +38,8 @@ sections:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [-8.661, 115.205]
-    zoom: 13
+    latlng: [-8.6603,115.2284]
+    zoom: 12
     tile_layers:
     vector_data:
     body: |
@@ -47,63 +47,30 @@ sections:
 
           Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.
 
-  - title: Slide 2
-    banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
-    banner_image_source: Jim Hollander/European Pressphoto Agency
-    latlng: [28.232, 83.969]
-    zoom: 13
-    tile_layers: ['scgn:pokhara_schools']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a. Dolorem fugit vitae quis nam et, deleniti, odio unde dolores. Ipsam, nihil.
-
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
-
-
-  - title: Slide 3
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [28.232, 83.969]
-    zoom: 11
-    tile_layers: ['scgn:pokhara_landcover']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: Slide 4
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [6.9, -11.4]
-    zoom: 9
-    tile_layers: ['egn:lbr_lakeresa_lake_unmil']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: "Slide 5: Freetown"
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [8.468285, -13.242686]
-    zoom: 13
-    tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
+Situated on the Island of Bali, Denpasar is the capital city of Bali province and a major tourist destination.  The City of Denpasar is one of the fastest growing cities in Indonesia with a population of over 897,300 residents (Department of Statistics Denpasar, 2016).  From 2011 to 2016, the urban growth rate has been approximately 2% every year.  Greater Denpasar spills out into the tourist regions of Kuta to the south and Ubud to the north.  Tourist development, inter-island migration, and rapid urban growth have contributed to waste and environmental management challenges.
 
-#### Oceanic waste management
+2C Denpasar focused on collecting baseline information on waste management in relation to the rapidly growing tourist centers.  Coordination with the tourism industry and the city administration of Denpasar is a key aspect of this project.
 
-More information to come
+### Goals
+The project goal was to establish a model waste management system in Indonesia working with local TPSTs (integrated waste facilities) and waste banks in metropolitan Denpasar, and also to develop standard management tools through the use of geospatial data and Information and Communication Technologies (ICT) to improve overall management, services, and planning.  Geospatial data was collected to provide the foundation for a waste management system working with local waste collectors and facilities, villages, private sector, and waste banks in metropolitan Denpasar.  Subsequently, the lessons learned will be replicated at similar facilities in the regions surrounding Denpasar. 
+
+### Data
+2C Denpasar collected data on the waste management services in Denpasar city.  They located and geotagged every municipal waste tip/dumpster/collection point, illegal dumping locations, and formal and informal waste collectors throughout Denpasar city and then expanded to include villages outside the city administrative boundary.
+
+![2C_denpasar_data]({{ site.baseurl }}/img/denpasar/2C_denpasar_data.png)
+
+### Project Status
+After completion of the 2C project, Gringgo has been awarded a USAID Development Innovations grant to continue to support their waste management project.
+
+### Lead Partner
+Gringgo Project
+
+### Supporting Partners
+- Wisnu Foundation
+- TPST Seminyak District (Integrated Waste Facility)
 
 
 

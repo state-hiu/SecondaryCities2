@@ -1,14 +1,14 @@
 ---
-layout: report2
+layout: report3
 title: Mekelle, Ethiopia
 author: Secondary Cities
-date: June 7, 2016
+date: August 22, 2019
 data_source_name: Secondary Cities
-data_source_url: http://secondarycities.geonode.state.gov/
+data_source_url: https://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 banner_image_source: Lorem ipsum dolor sit amet
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=mekelle'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=mekelle'
 tweet_text: 'sample tweet text %23SecondaryCities'
 esri_story: false
 
@@ -21,7 +21,7 @@ footer: |
 
 tileOrigins:
   - name: scgn
-    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+    url: https://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
@@ -32,13 +32,13 @@ tileOrigins:
 about_tab_data:
   - tile_layers: 
     vector_data:
-    
+
 sections:
   - title:
     banner_image:
     banner_image_caption:
     banner_image_source:
-    latlng: [13.491, 39.464]
+    latlng: [13.5015,39.4761]
     zoom: 12
     tile_layers:
     vector_data:
@@ -47,63 +47,28 @@ sections:
 
           Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.
 
-  - title: Slide 2
-    banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
-    banner_image_source: Jim Hollander/European Pressphoto Agency
-    latlng: [28.232, 83.969]
-    zoom: 13
-    tile_layers: ['scgn:pokhara_schools']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a. Dolorem fugit vitae quis nam et, deleniti, odio unde dolores. Ipsam, nihil.
-
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
-
-
-  - title: Slide 3
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [28.232, 83.969]
-    zoom: 11
-    tile_layers: ['scgn:pokhara_landcover']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: Slide 4
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [6.9, -11.4]
-    zoom: 9
-    tile_layers: ['egn:lbr_lakeresa_lake_unmil']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
-
-          Explicabo distinctio facilis, dolorem nesciunt at. Accusamus eveniet quam fugit, laborum sed sapiente? In iure laborum harum aspernatur saepe itaque, ratione amet, id ipsa facere fugit quaerat quis earum dolorem quas! Reiciendis voluptates nobis itaque ad fuga quidem harum facere quasi exercitationem, repellendus delectus aperiam eveniet at tenetur soluta perspiciatis natus placeat cum aut, quibusdam, doloribus totam dignissimos? Dolorem ullam veniam rerum iste facilis facere perferendis harum! Quisquam possimus voluptate, officiis sed harum sint quasi magni animi voluptates, soluta atque quos!
-
-  - title: "Slide 5: Freetown"
-    banner_image:
-    banner_image_caption:
-    banner_image_source:
-    latlng: [8.468285, -13.242686]
-    zoom: 13
-    tile_layers: ['egn:sle_heal_pt_unmeer_ebolacarefacilities','wfp:wld_trs_unhasroutes_wfp','wfp:wld_trs_ports_wfp','wfp:wld_poi_warehouses_wfp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolorem impedit rem nulla omnis voluptatum porro possimus, fuga eos necessitatibus excepturi veniam. Natus et ex harum amet ad exercitationem voluptate necessitatibus quam, non odit nobis asperiores tenetur tempora ipsam neque aperiam ipsa culpa repellendus dolorum expedita maiores ut vitae.
 ---
 
-## Summary
+### Summary
+Mekelle (also known as Mek’ele) is the capital of the Tigray region of Ethiopia.  The city has experienced rapid population growth in recent decades.  Mekelle has a population of 215,546 according to the 2007 census.  Droughts occur frequently in northern Ethiopia; therefore, both rural and urban dwellers recognize the importance of proper water management and water infrastructure.  In Mekelle, water is pumped from reservoirs and wells and is supplied to residents via public taps and pipelines.  In 2009, it was estimated that only 51-60 percent of families had access to tap water.
 
-#### Urban water accessibility and planning
+### Goals
+The aim of 2C Mekelle is to build geospatial capacity for water management through data generation and data analysis.  With data creation and discovery of existing data, the 2C Mekelle team are developing a baseline dataset that will be used to inform long-term water management.
 
-More information to come
+### Data
+The 2C Mekelle project creates high-priority local and regional geospatial datasets with a focus on infrastructure, land-use, and water resources.  A key component of building the geospatial capacity for local data creation and analysis included use of the CSU Geospatial Lessons and Applications in Natural Resources training materials.
+
+![2C_mekelle_data]({{ site.baseurl }}/img/mekelle/2C_mekelle_data.png)
+
+### Lead Partner
+Mekelle University
+
+### Supporting Partners
+- Colorado State University (2016 – 2017)
+- Relief Society of Tigray
+- City of Mekelle
+- [Regional Environment Office for East Africa](https://et.usembassy.gov/embassy/addis-ababa/sections-offices/)
+
 
 
 

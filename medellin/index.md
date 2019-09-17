@@ -1,14 +1,14 @@
 ---
 layout: report3
-title: Medellín, Colombia
+title: Medellin, Colombia (2015 – 2017)
 author: Leo Bottrill of CrowdCover
-date: January 20, 2015
+date: August 15, 2019
 data_source_name: Secondary Cities
-data_source_url: http://secondarycities.geonode.state.gov/
+data_source_url: https://secondarycities.geonode.state.gov/
 banner_image: https://farm9.staticflickr.com/8578/16403038022_7ce6be2e6d.jpg
 banner_image_caption: Small-scale mining operations by a subsidiary of the mining company MINECOM
 banner_image_source: Menahem Kahana/Agence France-Presse — Getty Images
-api_url: 'http://secondarycities.geonode.state.gov/api/layers/?keywords__slug__in=medellin'
+api_url: 'https://secondarycities.geonode.state.gov/api/layers/?title__icontains=medellin'
 imageurl: '/img/medellin/medellin_hillside.png'
 tweet_text: 'The 2C Medellín project focuses on urban flow and waste management %23SecondaryCities'
 esri_story: true
@@ -23,7 +23,9 @@ footer: |
 
 tileOrigins:
   - name: scgn
-    url: http://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
+    url: http://secondarycities.geonode.state.gov/geoserver/gwc/service/tms/1.0.0/geonode%3A{layerId}@EPSG:3857/{z}/{x}/{-y}.png
+#    url: https://secondarycities.geonode.state.gov/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}/{z}/{x}/{y}.png
+#    url: https://secondarycities.geonode.state.gov:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
 
   - name: egn
     url: http://ebolageonode.org:8080/geoserver/gwc/service/tms/1.0.0/geonode:{layerId}@EPSG:900913@png/{z}/{x}/{y}.png
@@ -49,45 +51,49 @@ sections:
 
           Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.Tenetur nemo magnam cum pariatur nesciunt reprehenderit harum temporibus, autem cumque debitis animi quia provident incidunt, id. Cupiditate alias dolores voluptates voluptatibus, necessitatibus quasi quisquam quis veniam.
 
-  - title: Slide 2
-    banner_image: https://farm8.staticflickr.com/7385/16216317208_75fca9f8db.jpg
-    banner_image_caption: From left, a Neanderthal skull, the Manot cranium and a complete modern human skull on display near the cave in Israel where the Manot cranium was found.
-    banner_image_source: Jim Hollander/European Pressphoto Agency
-    latlng: [5.8, -9.3]
-    zoom: 6
-    tile_layers: ['egn:lbr_telc_pt_misc_transmissiontowers', 'egn:lbr_policestnp_undp']
-    vector_data:
-    body: |
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a. Dolorem fugit vitae quis nam et, deleniti, odio unde dolores. Ipsam, nihil.
-
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolores sint est beatae et quam consequuntur veniam ad nesciunt. Dolore officiis excepturi amet tempore tempora consequuntur et ducimus doloremque facere placeat debitis, ipsa recusandae voluptatibus rem natus magni laboriosam aliquid incidunt, nihil esse ex provident atque nobis a.
-
 ---
 
 ### Summary
 
 ![Medellín]({{ site.baseurl }}/img/medellin/medellin_hillside.png)
 
-Medellín is the second-largest city in Colombia (2.44 million, 2014) and is the capital of the department of Antioquia.  Surrounded by 9 other major cities, Medellín is part of the second-largest urban agglomeration in Colombia in terms of both population and economy.  It is experiencing rapid change, increasing population, and unplanned development.
+The Municipality of Medellín is the second-largest city in Colombia and the capital of the state of Antioquia. The Rio Porce river runs through the center of the city. The metropolitan area of Medellin includes nine other cities with a combined population of 3.9 million people. Medellín is the second-largest urban agglomeration in Colombia in terms of population and economy.  Many citizens living in areas of informal housing lack access to running water, electricity, or waste collection services. These informal areas are prone to landslides and flooding and are identified as “risk zones.” 
 
-The 2C Medellín project is similar to 2C Cusco, focusing on urban flow and waste management.  Focusing on one neighborhood, 2C partner Ecocity Builders has introduced a process for mapping and analysis examining waste management and recycling. This approach has sparked the interest of the Subsecreatario of Education who has expressed interest in integrating this approach into the Medellín school system.
+The 2C Medellín project is similar to 2C Cusco, focusing on urban flow and waste management. Focusing on one neighborhood, 2C partner Ecocity Builders has introduced a process for mapping and analysis examining waste management and recycling. This approach has sparked the interest of the Subsecretario of Education who has expressed interest in integrating this approach into the Medellín school system.
 
 ### Goals
 
-The 2C Medellín project is developing methods for mapping local geospatial knowledge of the community.
+The 2C Medellin project explores the dynamics of resilient and healthy urban ecosystems by examining city neighborhoods in relation to urban flows, in particular – waste management.  The 2C Medellín project is developing methods for mapping local geospatial knowledge of the community.
 
 - &bull;  Build local capacity in geospatial technology and sustainable urban design
 - &bull;  Compile and disseminate existing geospatial data sets about the city
 - &bull;  Implement ground-up, scalable approaches for mapping neighborhood waste flows.
 
+### Data
+
+Through local workshops, data collection focused on the neighborhood scale conducting multiple surveys on waste, water quality, building characteristics, potential locations for community composting, and quality of life. Mapping has focused on Comuna 8 where a strong community partnership has formed. A Medellin Map Book was prepared for the local government and an initial urban flows analysis of waste implemented leading to new strategies for recycling.
+
+![2C_medellin_data]({{ site.baseurl }}/img/medellin/2C_medellin_data.png)
+
+### Project Status
+
+- &bull; The E2E Foundation has continued to work with the Comuna 8 communities to use the collected data to design waste management solutions.
+- &bull; Waste collection routes and deposit locations were determined by mapping done in the 2C data collection activity in 2015.
+- &bull; The 2C data partner with the municipality has developed Consejo de Datos Medellín (The Data Council Medellín) with the city, tasked with generating geospatial data and enhancing the availability and use of such data.
+
 ### Lead Partner
+
 - [Ecocity Builders](https://www.ecocitybuilders.org/)
 
 #### Supporting Partners
+
 - [UNAL](http://unal.edu.co/en.html)
 - [E2E Foundation](http://www.e2efundacion.org/)
 - [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
 - [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
+- Low Carbon Cities
+- University of EAFIT
+
 
 
 
