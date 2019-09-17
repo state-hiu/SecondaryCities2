@@ -13,6 +13,6 @@ phases:
       - echo "******** Jekyll Build command ********"
       - bundle exec jekyll build
       - echo "******** Uploading to S3 ********"
-      - aws s3 sync _site/ s3://hiu.state.gov
+      - aws s3 sync _site/ s3://secondarycities.state.gov
       - echo "******** Deleting AWS CloudFront Cache ********"
       - aws cloudfront create-invalidation --distribution-id E2DN1GTZGZ5FLO --paths '/*'
