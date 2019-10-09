@@ -94,7 +94,10 @@ Through local workshops, data collection focused on the neighborhood scale condu
 - Low Carbon Cities
 - University of EAFIT
 
+### Links
 
+- [City Portal](https://geomedellin-m-medellin.opendata.arcgis.com/)
+- [Mapbook ](https://secondarycities.geonode.state.gov/documents/2664)
 
 
 
