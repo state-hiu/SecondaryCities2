@@ -64,5 +64,4 @@ Universidad Autonoma de Baja California (UABC)
 
 ### Supporting Partners
 - San Diego State University
-- Tijuana Calidad de Vida
 
