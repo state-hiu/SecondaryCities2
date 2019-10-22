@@ -64,4 +64,5 @@ Universidad Autonoma de Baja California (UABC)
 
 ### Supporting Partners
 - San Diego State University
+- Coordinación Estatal de Protección Civil de Baja California
 
