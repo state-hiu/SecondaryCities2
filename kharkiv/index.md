@@ -79,12 +79,11 @@ The Kharkiv Secondary City (2C) project developed geospatial data for local emer
 - [Association of American Geographers](http://www.aag.org/)
 
 #### Supporting Partners
-- [U.S. Embassy](http://www.usembassy.gov/)
 - [Esri](http://www.esri.com/)
 - [MapBox](http://www.mapbox.com/)
 - [Kharkiv City Government & Information Center](http://www.city.kharkov.ua/en/o-xarkove/nagradyi-soveta-evropyi.html)
 - [V.N. Karazin Kharkiv National University](http://www.univer.kharkov.ua/en)
-- [Kharkiv University of Urban Economics](http://abit.kname.edu.ua/index.php/en/home)
+- [Kharkiv University of Urban Economics](https://en.kname.edu.ua/)
 - [Kharkiv National University of Radio Electronics](http://nure.ua/en/)
 - [National University of Civil Protection of Ukraine](http://nuczu.edu.ua/eng/)
 - [Kharkiv National Aerospace University](http://www.khai.edu/efc/)
