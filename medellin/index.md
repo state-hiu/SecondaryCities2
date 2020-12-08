@@ -88,7 +88,7 @@ Through local workshops, data collection focused on the neighborhood scale condu
 #### Supporting Partners
 
 - [UNAL](http://unal.edu.co/en.html)
-- [E2E Foundation](http://www.e2efundacion.org/)
+- [E2E Foundation](http://thee2efoundation.weebly.com/)
 - [Departamento Administrativo de Planeación - Alcaldía de Medellín](http://www.medellin.gov.co/irj/portal/medellin?NavigationTarget=navurl://4121c26ad1714afe2e330a526eda1007)
 - [EPM - Empresa de Servicios Públicos](http://www.epm.com.co/)
 - Low Carbon Cities
