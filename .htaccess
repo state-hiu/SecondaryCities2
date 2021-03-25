@@ -1,5 +1,0 @@
-<IfModule mod_headers.c>
-<FilesMatch "\.(svg|ttf|otf|eot|woff|woff2)$">
-    Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
-</IfModule>
