@@ -29,3 +29,5 @@ Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https:/
 ## Other Notes
 
 Ideal picture size for front-page map is 300w * 200h
+
+-force rebuild
