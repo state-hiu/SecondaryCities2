@@ -1,3 +1,4 @@
+     
 version: 0.2
    
 phases:
@@ -6,6 +7,7 @@ phases:
         nodejs: 8
     commands:
       - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      - gem install jekyll
       - apt-get update --assume-yes --no-install-recommends
       - gem install bundler
       - bundle install

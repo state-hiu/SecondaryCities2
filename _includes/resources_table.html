@@ -939,6 +939,8 @@ console.log(tags_in_url);
 <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
 
+<script type="text/javascript" src="https://unpkg.com/papaparse@5.3.1/papaparse.min.js"></script>
+
 <!-- Graphic js code -->
 
 
@@ -949,6 +951,9 @@ console.log(tags_in_url);
 //enter google sheets key here, sheet can only have one tab
 var key =
   "https://docs.google.com/spreadsheets/d/1lIwjJiKLabaavo5mjVeyFDbKbQiLsfQnYz3k-yJ6TG4/pubhtml"; 
+  
+var key =
+  "https://docs.google.com/spreadsheets/d/1lIwjJiKLabaavo5mjVeyFDbKbQiLsfQnYz3k-yJ6TG4/pub?output=csv"; 
 
 
 //var key =
@@ -958,8 +963,12 @@ var key =
 var key2 =
   "https://docs.google.com/spreadsheets/d/1KAJK3Y9CqLwPwFhB2UGiNSZQrCTRMhpevDhwty62J70/pubhtml";
 
+var key2 =
+  "https://docs.google.com/spreadsheets/d/1KAJK3Y9CqLwPwFhB2UGiNSZQrCTRMhpevDhwty62J70/pub?output=csv"; 
 
 var key3 = "12hllq5JK04Hr5zLQX5hLrozorAvyXo7tGf9pFlewado"
+
+var key3 = "https://docs.google.com/spreadsheets/d/12hllq5JK04Hr5zLQX5hLrozorAvyXo7tGf9pFlewado/pub?output=csv"; 
 
 
 //"data" refers to the column name with no spaces and no capitals
@@ -1009,17 +1018,27 @@ $(document).ready(function() {
 
 
   function initializeTabletopObject() {
-    Tabletop.init({
-      key: key,
-      callback: function(data, tabletop) {
-        console.log('data: ');
-        console.log(data);
-        writeTable(data); //call up datatables function
-      },
-      simpleSheet: true,
-      debug: false
-    });
-  }
+		Papa.parse(key, {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+			console.log("print PapaParse data")
+            console.log(data)
+			writeTable(data);
+          }
+        })
+        <!-- Tabletop.init({ -->
+          <!-- key: key, -->
+          <!-- callback: function(data, tabletop) { -->
+            <!-- console.log('data: '); -->
+            <!-- console.log(data); -->
+            <!-- writeTable2(data); //call up datatables function -->
+          <!-- }, -->
+          <!-- simpleSheet: true, -->
+          <!-- debug: false -->
+        <!-- }); -->
+      }
 
   initializeTabletopObject();
 
@@ -1114,18 +1133,41 @@ $(document).ready(function() {
 
 //beginning of writeTable2
 
+<!-- function initializeTabletopObject2() { -->
+    <!-- Tabletop.init({ -->
+      <!-- key: key2, -->
+      <!-- callback: function(data, tabletop) { -->
+        <!-- console.log('data2: '); -->
+        <!-- console.log(data); -->
+        <!-- writeTable2(data); //call up datatables function -->
+      <!-- }, -->
+      <!-- simpleSheet: true, -->
+      <!-- debug: false -->
+    <!-- }); -->
+  <!-- } -->
+  
 function initializeTabletopObject2() {
-    Tabletop.init({
-      key: key2,
-      callback: function(data, tabletop) {
-        console.log('data2: ');
-        console.log(data);
-        writeTable2(data); //call up datatables function
-      },
-      simpleSheet: true,
-      debug: false
-    });
-  }
+		Papa.parse(key2, {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+			console.log("print PapaParse data")
+            console.log(data)
+			writeTable2(data);
+          }
+        })
+        <!-- Tabletop.init({ -->
+          <!-- key: key, -->
+          <!-- callback: function(data, tabletop) { -->
+            <!-- console.log('data: '); -->
+            <!-- console.log(data); -->
+            <!-- writeTable2(data); //call up datatables function -->
+          <!-- }, -->
+          <!-- simpleSheet: true, -->
+          <!-- debug: false -->
+        <!-- }); -->
+      }
 
   initializeTabletopObject2();
 
@@ -1222,18 +1264,30 @@ function initializeTabletopObject2() {
 
 //beginning of writeTable3
 
+
 function initializeTabletopObject3() {
-    Tabletop.init({
-      key: key3,
-      callback: function(data, tabletop) {
-        console.log('data3: ');
-        console.log(data);
-        writeTable3(data); //call up datatables function
-      },
-      simpleSheet: true,
-      debug: false
-    });
-  }
+		Papa.parse(key3, {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+			console.log("print PapaParse data")
+            console.log(data)
+			writeTable3(data);
+          }
+        })
+        <!-- Tabletop.init({ -->
+          <!-- key: key, -->
+          <!-- callback: function(data, tabletop) { -->
+            <!-- console.log('data: '); -->
+            <!-- console.log(data); -->
+            <!-- writeTable2(data); //call up datatables function -->
+          <!-- }, -->
+          <!-- simpleSheet: true, -->
+          <!-- debug: false -->
+        <!-- }); -->
+      }
+	  
 
   initializeTabletopObject3();
 
