@@ -4,10 +4,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-        nodejs: 12
+        nodejs: latest
     commands:
       - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-      - gem install jekyll
+      - rm -f /etc/apt/sources.list.d/sbt.list
       - apt-get update --assume-yes --no-install-recommends
       - gem install bundler
       - bundle install
